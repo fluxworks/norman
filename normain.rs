@@ -93,7 +93,7 @@ pub struct Transgender { pub id:Identity }
 pub struct Gender { pub id:Identity }
 
 #[derive( Clone, Debug )]
-pub struct Entity { pub id:Identity }
+pub struct Thing { pub id:Identity }
 
 #[derive( Clone, Debug )]
 pub struct Pronoun { pub id:Identity }
@@ -101,7 +101,8 @@ pub struct Pronoun { pub id:Identity }
 #[derive( Clone, Debug )]
 pub struct Use { pub id:Identity }
 
-pub type Thing<Type> = Option<Box<Type>>;
+pub type Event<Type> = Option<Box<Type>>;
+pub type Entity<Type> = Option<Box<Type>>;
 
 #[derive( Clone, Debug )]
 pub struct Project { pub id:Identity }
@@ -133,26 +134,26 @@ pub struct Is { pub id:Identity }
 #[derive( Clone, Debug )]
 pub enum Be
 {
-    Auxiliary( Thing<Verb> ),
-    Past( Thing<Verb> ),
-    Present( Thing<Verb> ),
-    Infinite( Thing<Verb> ),
-    Habitual( Thing<Verb> ),
-    Copulate( Thing<Verb> ),
-    Existant( Thing<Verb> ),
-    Indicate( Thing<Verb> ),
-    Identicate( Thing<Verb> ),
-    Predicate( Thing<Verb> ),
-    Subjicate( Thing<Verb> ),
-    Preposition( Thing<Verb> ),
-    Measure( Thing<Verb> ),
-    Temporate( Thing<Verb> ),
-    Locate( Thing<Verb> ),
-    Specificate( Thing<Verb> ),
-    Qualitate( Thing<Verb> ),
-    Naturate( Thing<Verb> ),
-    Occurance( Thing<Verb> ),
-    Conjugate( Thing<Verb> ),
+    Auxiliary( Entity<Verb> ),
+    Past( Entity<Verb> ),
+    Present( Entity<Verb> ),
+    Infinite( Entity<Verb> ),
+    Habitual( Entity<Verb> ),
+    Copulate( Entity<Verb> ),
+    Existant( Entity<Verb> ),
+    Indicate( Entity<Verb> ),
+    Identicate( Entity<Verb> ),
+    Predicate( Entity<Verb> ),
+    Subjicate( Entity<Verb> ),
+    Preposition( Entity<Verb> ),
+    Measure( Entity<Verb> ),
+    Temporate( Entity<Verb> ),
+    Locate( Entity<Verb> ),
+    Specificate( Entity<Verb> ),
+    Qualitate( Entity<Verb> ),
+    Naturate( Entity<Verb> ),
+    Occurance( Entity<Verb> ),
+    Conjugate( Entity<Verb> ),
 }
 
 #[derive( Clone, Debug )]
@@ -186,50 +187,50 @@ pub type Baby = Person;
 #[derive( Clone, Debug )]
 pub enum Identity
 {
-    Defense( Thing<Defense> ),
-    Offense( Thing<Offense> ),
-    Perjorate( Thing<Perjorate> ),
-    What( Thing<What> ),
-    Who( Thing<Who> ),
-    Which( Thing<Which> ),
-    Where( Thing<Where> ),
-    Why( Thing<Why> ),
-    How( Thing<How> ),
-    When( Thing<When> ),
-    Mock( Thing<Mock> ),
-    Inequal( Thing<Equal> ),
-    Equal( Thing<Equal> ),
-    Predicate( Thing<Predicate> ),
-    Compare( Thing<Compare> ),
-    Indicate( Thing<Indicate> ),
-    Instance( Thing<Instance> ),
-    Referral( Thing<Referral> ),
-    Refer( Thing<Refer> ),
-    Referrer( Thing<Referrer> ),
-    Reference( Thing<Reference> ),
-    Transgender( Thing<Transgender> ),
-    Gender( Thing<Gender> ),
-    Person( Thing<Person> ),
-    Animal( Thing<Animal> ),
-    Animate( Thing<Inanimate> ),
-    Inanimate( Thing<Inanimate> ),
-    Project( Thing<Project> ),
-    Subject( Thing<Subject> ),
-    Object( Thing<Object> ),
-    Place( Thing<Place> ),
-    Never( Thing<Time> ),
-    Sometime( Thing<Time> ),
-    Time( Thing<Time> ),
-    Abstract( Thing<Abstract> ),
-    Noun( Thing<Noun> ),
-    Unknown( Thing<Unknown> ),
-    Is( Thing<Is> ),
-    Be( Thing<Be> ),
-    It( Thing<It> ),
-    To( Thing<To> ),
-    Use( Thing<Use> ),
-    Nor( Thing<Nor> ),
-    Or( Thing<Or> ),
+    Defense( Entity<Defense> ),
+    Offense( Entity<Offense> ),
+    Perjorate( Entity<Perjorate> ),
+    What( Entity<What> ),
+    Who( Entity<Who> ),
+    Which( Entity<Which> ),
+    Where( Entity<Where> ),
+    Why( Entity<Why> ),
+    How( Entity<How> ),
+    When( Entity<When> ),
+    Mock( Entity<Mock> ),
+    Inequal( Entity<Equal> ),
+    Equal( Entity<Equal> ),
+    Predicate( Entity<Predicate> ),
+    Compare( Entity<Compare> ),
+    Indicate( Entity<Indicate> ),
+    Instance( Entity<Instance> ),
+    Referral( Entity<Referral> ),
+    Refer( Entity<Refer> ),
+    Referrer( Entity<Referrer> ),
+    Reference( Entity<Reference> ),
+    Transgender( Entity<Transgender> ),
+    Gender( Entity<Gender> ),
+    Person( Entity<Person> ),
+    Animal( Entity<Animal> ),
+    Animate( Entity<Inanimate> ),
+    Inanimate( Entity<Inanimate> ),
+    Project( Entity<Project> ),
+    Subject( Entity<Subject> ),
+    Object( Entity<Object> ),
+    Place( Entity<Place> ),
+    Never( Entity<Time> ),
+    Sometime( Entity<Time> ),
+    Time( Entity<Time> ),
+    Abstract( Entity<Abstract> ),
+    Noun( Entity<Noun> ),
+    Unknown( Entity<Unknown> ),
+    Is( Entity<Is> ),
+    Be( Entity<Be> ),
+    It( Entity<It> ),
+    To( Entity<To> ),
+    Use( Entity<Use> ),
+    Nor( Entity<Nor> ),
+    Or( Entity<Or> ),
 }
 
 #[derive( Clone, Debug )]
@@ -247,9 +248,9 @@ pub enum Interrogative
 #[derive( Clone, Debug )]
 pub enum PartsOfSpeech
 {
-    Interrogative( Thing<Interrogative> ),
+    Interrogative( Entity<Interrogative> ),
     Conjunction(),
-    Verb( Thing<Verb> ),
+    Verb( Entity<Verb> ),
     Perfect(),
     Intransitive(),
     Copulative(),
@@ -265,7 +266,7 @@ pub enum PartsOfSpeech
     Subject(),
     Object(),
     Project(),
-    Noun( Thing<Noun> ),
+    Noun( Entity<Noun> ),
     Instance(),
     Comparision(),
     Predicate(),
@@ -278,9 +279,9 @@ pub enum PartsOfSpeech
 #[derive( Clone, Debug )]
 pub enum Noun
 {
-    Person( Thing<Person> ),
-    Place( Thing<Place> ),
-    Entity( Thing<Entity> ),
+    Person( Entity<Person> ),
+    Place( Entity<Place> ),
+    Thing( Entity<Thing> ),
 }
 
 #[derive( Clone, Debug )]
@@ -288,4 +289,4 @@ pub enum Verb
 {
     
 }
-// 00291 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// 00292 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
