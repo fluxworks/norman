@@ -195,42 +195,42 @@ pub mod prelude
         */
 
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::marker::{Copy, Send, Sized, Sync, Unpin};
+        pub use crate::marker::{Copy, Send, Sized, Sync, Unpin};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::ops::{Drop, Fn, FnMut, FnOnce};
+        pub use crate::ops::{Drop, Fn, FnMut, FnOnce};
         #[stable(feature = "async_closure", since = "1.85.0")] #[doc(no_inline)]
-        pub use self::crate::ops::{AsyncFn, AsyncFnMut, AsyncFnOnce};
+        pub use crate::ops::{AsyncFn, AsyncFnMut, AsyncFnOnce};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::mem::drop;
+        pub use crate::mem::drop;
         #[stable(feature = "size_of_prelude", since = "1.80.0")] #[doc(no_inline)]
-        pub use self::crate::mem::{align_of, align_of_val, size_of, size_of_val};
+        pub use crate::mem::{align_of, align_of_val, size_of, size_of_val};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::clone::Clone;
+        pub use crate::clone::Clone;
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::cmp::{Eq, Ord, PartialEq, PartialOrd};
+        pub use crate::cmp::{Eq, Ord, PartialEq, PartialOrd};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::convert::{AsMut, AsRef, From, Into};
+        pub use crate::convert::{AsMut, AsRef, From, Into};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::default::Default;
+        pub use crate::default::Default;
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::iter::{DoubleEndedIterator, ExactSizeIterator, Extend, IntoIterator, Iterator};
+        pub use crate::iter::{DoubleEndedIterator, ExactSizeIterator, Extend, IntoIterator, Iterator};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::option::Option::{self, None, Some};
+        pub use crate::option::Option::{self, None, Some};
         #[stable(feature = "core_prelude", since = "1.4.0")] #[doc(no_inline)]
-        pub use self::crate::result::Result::{self, Err, Ok};
+        pub use crate::result::Result::{self, Err, Ok};
         #[stable(feature = "builtin_macro_prelude", since = "1.38.0")] #[doc(no_inline)]
-        pub use self::crate::fmt::macros::Debug;
+        pub use crate::fmt::macros::Debug;
         #[stable(feature = "builtin_macro_prelude", since = "1.38.0")] #[doc(no_inline)]
-        pub use self::crate::hash::macros::Hash;
+        pub use crate::hash::macros::Hash;
         #[stable(feature = "builtin_macro_prelude", since = "1.38.0")] #[doc(no_inline)]
-        pub use self::crate::
+        pub use crate::
         {
             assert, cfg, column, compile_error, concat, env, file, format_args,
             format_args_nl, include, include_bytes, include_str, line, log_syntax, module_path, option_env,
             stringify, trace_macros,
         };
         /*
-        pub use self::crate::
+        pub use crate::
         {
             assert, cfg, column, compile_error, concat, env, file, format_args,
             format_args_nl, include, include_bytes, include_str, line, log_syntax, module_path, option_env,
@@ -243,97 +243,92 @@ pub mod prelude
             issue = "87555",
             reason = "`concat_bytes` is not stable enough for use and is subject to change"
         )] #[doc(no_inline)]
-        pub use self::crate::concat_bytes;
+        pub use crate::concat_bytes;
 
         #[stable(feature = "builtin_macro_prelude", since = "1.38.0")]
-        pub use self::crate::macros::builtin::
+        pub use crate::macros::builtin::
         {
             alloc_error_handler, bench, derive, global_allocator, test_case,
         };
 
         #[unstable(feature = "derive_const", issue = "118304")]
-        pub use self::crate::macros::builtin::derive_const;
+        pub use crate::macros::builtin::derive_const;
         #[unstable(
             feature = "cfg_accessible",
             issue = "64797",
             reason = "`cfg_accessible` is not fully implemented"
         )]
-        pub use self::crate::macros::builtin::cfg_accessible;
+        pub use crate::macros::builtin::cfg_accessible;
         #[unstable(
             feature = "cfg_eval",
             issue = "82679",
             reason = "`cfg_eval` is a recently implemented feature"
         )]
-        pub use self::crate::macros::builtin::cfg_eval;
+        pub use crate::macros::builtin::cfg_eval;
         #[unstable(
             feature = "type_ascription",
             issue = "23416",
             reason = "placeholder syntax for type ascription"
         )]
-        pub use self::crate::macros::builtin::type_ascribe;
+        pub use crate::macros::builtin::type_ascribe;
         #[unstable(
             feature = "deref_patterns",
             issue = "87121",
             reason = "placeholder syntax for deref patterns"
         )]
-        pub use self::crate::macros::builtin::deref;
+        pub use crate::macros::builtin::deref;
         #[unstable(
             feature = "type_alias_impl_trait",
             issue = "63063",
             reason = "`type_alias_impl_trait` has open design concerns"
         )]
-        pub use self::crate::macros::builtin::define_opaque;
+        pub use crate::macros::builtin::define_opaque;
     }
     
     #[stable(feature = "prelude_2015", since = "1.55.0")]
     pub mod rust_2015 
     {
-        #[stable(feature = "prelude_2015", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::super::v1::*;
+        #[stable(feature = "prelude_2015", since = "1.55.0")] #[doc(no_inline)] pub use self::super::v1::*;
     }
     
     #[stable(feature = "prelude_2018", since = "1.55.0")]
     pub mod rust_2018 
     {
-        #[stable(feature = "prelude_2018", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::super::v1::*;
+        #[stable(feature = "prelude_2018", since = "1.55.0")] #[doc(no_inline)] pub use self::super::v1::*;
     }
     
     #[stable(feature = "prelude_2021", since = "1.55.0")]
     pub mod rust_2021 
     {
+        #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)] pub use self::super::v1::*;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::super::v1::*;
+        pub use crate::iter::FromIterator;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::iter::FromIterator;
-        #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::convert::{TryFrom, TryInto};
+        pub use crate::convert::{TryFrom, TryInto};
     }
     
     #[stable(feature = "prelude_2024", since = "1.85.0")]
     pub mod rust_2024 
     {
-        #[stable(feature = "rust1", since = "1.0.0")] #[doc(no_inline)]
-        pub use self::super::v1::*;
+        #[stable(feature = "rust1", since = "1.0.0")] #[doc(no_inline)] pub use self::super::v1::*;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::iter::FromIterator;
+        pub use crate::iter::FromIterator;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::convert::{TryFrom, TryInto};
+        pub use crate::convert::{TryFrom, TryInto};
         #[stable(feature = "prelude_2024", since = "1.85.0")] #[doc(no_inline)]
-        pub use self::crate::future::{Future, IntoFuture};
+        pub use crate::future::{Future, IntoFuture};
     }
     
     #[doc(hidden)] #[unstable(feature = "prelude_future", issue = "none")]
     pub mod rust_future 
     {
-        #[stable(feature = "rust1", since = "1.0.0")] #[doc(no_inline)]
-        pub use self::super::v1::*;
+        #[stable(feature = "rust1", since = "1.0.0")] #[doc(no_inline)] pub use self::super::v1::*;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::iter::FromIterator;
+        pub use crate::iter::FromIterator;
         #[stable(feature = "prelude_2021", since = "1.55.0")] #[doc(no_inline)]
-        pub use self::crate::convert::{TryFrom, TryInto};
+        pub use crate::convert::{TryFrom, TryInto};
         #[stable(feature = "prelude_2024", since = "1.85.0")] #[doc(no_inline)]
-        pub use self::crate::future::{Future, IntoFuture};
+        pub use crate::future::{Future, IntoFuture};
     }
 }
 #[prelude_import] #[allow(unused)] use prelude::rust_2024::*;
@@ -731,9 +726,7 @@ pub mod prelude
     macro_rules! debug_assert_eq 
     {
         ($($arg:tt)*) => {
-            if $crate::cfg!(debug_assertions) {
-                $crate::assert_eq!($($arg)*);
-            }
+            if $crate::cfg!(debug_assertions) { $crate::assert_eq!($($arg)*); }
         };
     }
     
@@ -741,18 +734,14 @@ pub mod prelude
     macro_rules! debug_assert_ne 
     {
         ($($arg:tt)*) => {
-            if $crate::cfg!(debug_assertions) {
-                $crate::assert_ne!($($arg)*);
-            }
+            if $crate::cfg!(debug_assertions) { $crate::assert_ne!($($arg)*); }
         };
     }   
 
     #[unstable(feature = "assert_matches", issue = "82775")] #[allow_internal_unstable(assert_matches)] 
     pub macro debug_assert_matches($($arg:tt)*) 
     {
-        if $crate::cfg!(debug_assertions) {
-            $crate::assert_matches::assert_matches!($($arg)*);
-        }
+        if $crate::cfg!(debug_assertions) { $crate::assert_matches::assert_matches!($($arg)*); }
     }
     
     #[macro_export] #[stable(feature = "matches_macro", since = "1.42.0")] #[allow_internal_unstable(non_exhaustive_omitted_patterns_lint, stmt_expr_attributes)]
@@ -783,23 +772,17 @@ pub mod prelude
     #[macro_export] #[stable(feature = "rust1", since = "1.0.0")] 
     macro_rules! write 
     {
-        ($dst:expr, $($arg:tt)*) => {
-            $dst.write_fmt($crate::format_args!($($arg)*))
-        };
+        ($dst:expr, $($arg:tt)*) => { $dst.write_fmt($crate::format_args!($( $arg)*) ) };
     }
     
     #[macro_export] #[stable(feature = "rust1", since = "1.0.0")] #[allow_internal_unstable(format_args_nl)]
     macro_rules! writeln 
     {
         ($dst:expr $(,)?) => 
-        {
-            $crate::write!($dst, "\n")
-        };
+        { $crate::write!( $dst, "\n" ) };
 
         ($dst:expr, $($arg:tt)*) => 
-        {
-            $dst.write_fmt($crate::format_args_nl!($($arg)*))
-        };
+        { $dst.write_fmt($crate::format_args_nl!($( $arg)*) ) };
     }
     
     #[macro_export] #[allow_internal_unstable(edition_panic)] #[stable(feature = "rust1", since = "1.0.0")] 
@@ -812,28 +795,20 @@ pub mod prelude
     macro_rules! unimplemented 
     {
         () => 
-        {
-            $crate::panicking::panic("not implemented")
-        };
+        { $crate::panicking::panic( "not implemented" ) };
 
         ($($arg:tt)+) => 
-        {
-            $crate::panic!("not implemented: {}", $crate::format_args!($($arg)+))
-        };
+        { $crate::panic!("not implemented: {}", $crate::format_args!($( $arg)+) ) };
     }
     
     #[macro_export] #[stable(feature = "todo_macro", since = "1.40.0")] #[allow_internal_unstable(panic_internals)]
     macro_rules! todo 
     {
         () => 
-        {
-            $crate::panicking::panic("not yet implemented")
-        };
+        { $crate::panicking::panic( "not yet implemented" ) };
 
         ($($arg:tt)+) => 
-        {
-            $crate::panic!("not yet implemented: {}", $crate::format_args!($($arg)+))
-        };
+        { $crate::panic!("not yet implemented: {}", $crate::format_args!($( $arg)+) ) };
     }
 }
 
@@ -841,20 +816,20 @@ pub mod prelude
 pub mod assert_matches 
 {
     #[unstable(feature = "assert_matches", issue = "82775")] 
-    pub use self::crate::macros::{assert_matches, debug_assert_matches};
+    pub use crate::macros::{assert_matches, debug_assert_matches};
 }
 
 #[unstable(feature = "derive_from", issue = "144889")]
 pub mod from
 {
     #[unstable(feature = "derive_from", issue = "144889")] 
-    pub use self::crate::macros::builtin::From;
+    pub use crate::macros::builtin::From;
 }
 
 #[unstable(feature = "autodiff", issue = "124509")]
 pub mod autodiff
 {
-    #[unstable(feature = "autodiff", issue = "124509")] pub use self::crate::macros::builtin::{autodiff_forward, autodiff_reverse};
+    #[unstable(feature = "autodiff", issue = "124509")] pub use crate::macros::builtin::{autodiff_forward, autodiff_reverse};
 }
 
 #[unstable(feature = "contracts", issue = "128044")]
@@ -867,7 +842,7 @@ pub mod contracts
         *
     };
     /*
-    pub use self::crate::macros::builtin::{contracts_ensures as ensures, contracts_requires as requires};
+    pub use crate::macros::builtin::{contracts_ensures as ensures, contracts_requires as requires};
     */
     
     #[unstable(feature = "contracts_internals", issue = "128044" /* compiler-team#759 */)]
@@ -882,7 +857,7 @@ pub mod contracts
 }
 
 #[unstable(feature = "cfg_select", issue = "115585")]
-pub use self::crate::macros::cfg_select;
+pub use crate::macros::cfg_select;
 #[macro_use] pub mod internal_macros
 {
     /*!
@@ -900,9 +875,7 @@ pub use self::crate::macros::cfg_select;
             $(#[$attr])+
             impl const $imp for &$t {
                 type Output = <$t as $imp>::Output;
-                #[inline] fn $method(self) -> <$t as $imp>::Output {
-                    $imp::$method(*self)
-                }
+                #[inline] fn $method(self) -> <$t as $imp>::Output { $imp::$method( *self ) }
             }
         }
     }
@@ -913,23 +886,17 @@ pub use self::crate::macros::cfg_select;
             $(#[$attr])+
             impl const $imp<$u> for &$t {
                 type Output = <$t as $imp<$u>>::Output;
-                #[inline] #[track_caller] fn $method(self, other: $u) -> <$t as $imp<$u>>::Output {
-                    $imp::$method(*self, other)
-                }
+                #[inline] #[track_caller] fn $method(self, other: $u) -> <$t as $imp<$u>>::Output { $imp::$method( *self, other ) }
             }
             $(#[$attr])+
             impl const $imp<&$u> for $t {
                 type Output = <$t as $imp<$u>>::Output;
-                #[inline] #[track_caller] fn $method(self, other: &$u) -> <$t as $imp<$u>>::Output {
-                    $imp::$method(self, *other)
-                }
+                #[inline] #[track_caller] fn $method(self, other: &$u) -> <$t as $imp<$u>>::Output { $imp::$method( self, *other ) }
             }
             $(#[$attr])+
             impl const $imp<&$u> for &$t {
                 type Output = <$t as $imp<$u>>::Output;
-                #[inline] #[track_caller] fn $method(self, other: &$u) -> <$t as $imp<$u>>::Output {
-                    $imp::$method(*self, *other)
-                }
+                #[inline] #[track_caller] fn $method(self, other: &$u) -> <$t as $imp<$u>>::Output { $imp::$method( *self, *other ) }
             }
         }
     }
@@ -939,9 +906,7 @@ pub use self::crate::macros::cfg_select;
         (impl $imp:ident, $method:ident for $t:ty, $u:ty, $(#[$attr:meta])+) => {
             $(#[$attr])+
             impl const $imp<&$u> for $t {
-                #[inline] #[track_caller] fn $method(&mut self, other: &$u) {
-                    $imp::$method(self, *other);
-                }
+                #[inline] #[track_caller] fn $method(&mut self, other: &$u) { $imp::$method(self, *other); }
             }
         }
     }
@@ -968,16 +933,12 @@ pub use self::crate::macros::cfg_select;
                     extern "rust-call" fn call_mut(
                         &mut self,
                         ($( $arg, )*): ($( $ArgTy, )*)
-                    ) -> $ReturnTy {
-                        Fn::call(&*self, ($( $arg, )*))
-                    }
+                    ) -> $ReturnTy { Fn::call(&*self, ($(  $arg, )*) ) }
                 }
                 impl $( <$( $lifetime ),+> )? FnOnce<($( $ArgTy, )*)> for $Name {
                     type Output = $ReturnTy;
                     #[inline]
-                    extern "rust-call" fn call_once(self, ($( $arg, )*): ($( $ArgTy, )*)) -> $ReturnTy {
-                        Fn::call(&self, ($( $arg, )*))
-                    }
+                    extern "rust-call" fn call_once(self, ($( $arg, )*): ($( $ArgTy, )*)) -> $ReturnTy { Fn::call(&self, ($(  $arg, )*) ) }
                 }
             )+
         }
@@ -1013,9 +974,9 @@ pub mod legacy_int_modules
                     "[`", stringify!($T), "::MIN", "`] instead."
                 )]
     
-                #[doc = concat!("let min = std::", stringify!($T), "::MIN;")]
+                
 
-                #[doc = concat!("let min = ", stringify!($T), "::MIN;")]
+                
 
                 #[$attr]
                 #[deprecated(since = "TBD", note = "replaced by the `MIN` associated constant on this type")]
@@ -1026,9 +987,9 @@ pub mod legacy_int_modules
                     "[`", stringify!($T), "::MAX", "`] instead."
                 )]
     
-                #[doc = concat!("let max = std::", stringify!($T), "::MAX;")]
+                
 
-                #[doc = concat!("let max = ", stringify!($T), "::MAX;")]
+                
 
                 #[$attr]
                 #[deprecated(since = "TBD", note = "replaced by the `MAX` associated constant on this type")]
@@ -1179,9 +1140,7 @@ pub mod f128
         }
 
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn is_infinite(self) -> bool {
-            (self == f128::INFINITY) | (self == f128::NEG_INFINITY)
-        }
+        pub const fn is_infinite(self) -> bool { (self == f128::INFINITY) | ( self == f128::NEG_INFINITY ) }
 
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
         pub const fn is_finite(self) -> bool {
@@ -1190,14 +1149,10 @@ pub mod f128
         }
         
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn is_subnormal(self) -> bool {
-            matches!(self.classify(), FpCategory::Subnormal)
-        }
+        pub const fn is_subnormal(self) -> bool { matches!(self.classify( ), FpCategory::Subnormal ) }
         
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn is_normal(self) -> bool {
-            matches!(self.classify(), FpCategory::Normal)
-        }
+        pub const fn is_normal(self) -> bool { matches!(self.classify( ), FpCategory::Normal ) }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")]
         pub const fn classify(self) -> FpCategory {
@@ -1299,9 +1254,7 @@ pub mod f128
             if abs_a <= HI && abs_b <= HI {
 
                 (a + b) / 2.
-            } else {
-                (a / 2.) + (b / 2.)
-            }
+            } else { (a / 2.) + ( b / 2. ) }
         }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
@@ -1316,34 +1269,22 @@ pub mod f128
         pub const fn from_bits(v: u128) -> Self { unsafe { mem::transmute(v) } }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_be_bytes(self) -> [u8; 16] {
-            self.to_bits().to_be_bytes()
-        }
+        pub const fn to_be_bytes(self) -> [u8; 16] { self.to_bits( ).to_be_bytes( ) }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_le_bytes(self) -> [u8; 16] {
-            self.to_bits().to_le_bytes()
-        }
+        pub const fn to_le_bytes(self) -> [u8; 16] { self.to_bits( ).to_le_bytes( ) }
         
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_ne_bytes(self) -> [u8; 16] {
-            self.to_bits().to_ne_bytes()
-        }
+        pub const fn to_ne_bytes(self) -> [u8; 16] { self.to_bits( ).to_ne_bytes( ) }
 
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn from_be_bytes(bytes: [u8; 16]) -> Self {
-            Self::from_bits(u128::from_be_bytes(bytes))
-        }
+        pub const fn from_be_bytes(bytes: [u8; 16]) -> Self { Self::from_bits(u128::from_be_bytes( bytes) ) }
 
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn from_le_bytes(bytes: [u8; 16]) -> Self {
-            Self::from_bits(u128::from_le_bytes(bytes))
-        }
+        pub const fn from_le_bytes(bytes: [u8; 16]) -> Self { Self::from_bits(u128::from_le_bytes( bytes) ) }
         
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
-        pub const fn from_ne_bytes(bytes: [u8; 16]) -> Self {
-            Self::from_bits(u128::from_ne_bytes(bytes))
-        }
+        pub const fn from_ne_bytes(bytes: [u8; 16]) -> Self { Self::from_bits(u128::from_ne_bytes( bytes) ) }
         
         #[inline] #[must_use] #[unstable(feature = "f128", issue = "116909")]
         pub const fn total_cmp(&self, other: &Self) -> crate::cmp::Ordering {
@@ -1382,10 +1323,7 @@ pub mod f128
         }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub const fn abs(self) -> Self {
-
-            Self::from_bits(self.to_bits() & !(1 << 127))
-        }
+        pub const fn abs(self) -> Self { Self::from_bits(self.to_bits() & !( 1 << 127) ) }
 
         #[inline] #[unstable(feature = "f128", issue = "116909")] #[must_use = "method returns a new number and does not mutate the original value"]
         pub const fn signum(self) -> f128 {
@@ -1576,9 +1514,7 @@ pub mod f16
         }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn is_infinite(self) -> bool {
-            (self == f16::INFINITY) | (self == f16::NEG_INFINITY)
-        }
+        pub const fn is_infinite(self) -> bool { (self == f16::INFINITY) | ( self == f16::NEG_INFINITY ) }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
         pub const fn is_finite(self) -> bool {
@@ -1587,14 +1523,10 @@ pub mod f16
         }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn is_subnormal(self) -> bool {
-            matches!(self.classify(), FpCategory::Subnormal)
-        }
+        pub const fn is_subnormal(self) -> bool { matches!(self.classify( ), FpCategory::Subnormal ) }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn is_normal(self) -> bool {
-            matches!(self.classify(), FpCategory::Normal)
-        }
+        pub const fn is_normal(self) -> bool { matches!(self.classify( ), FpCategory::Normal ) }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")]
         pub const fn classify(self) -> FpCategory {
@@ -1695,9 +1627,7 @@ pub mod f16
             if abs_a <= HI && abs_b <= HI {
 
                 (a + b) / 2.
-            } else {
-                (a / 2.) + (b / 2.)
-            }
+            } else { (a / 2.) + ( b / 2. ) }
         }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
@@ -1712,34 +1642,22 @@ pub mod f16
         pub const fn from_bits(v: u16) -> Self { unsafe { mem::transmute(v) } }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_be_bytes(self) -> [u8; 2] {
-            self.to_bits().to_be_bytes()
-        }
+        pub const fn to_be_bytes(self) -> [u8; 2] { self.to_bits( ).to_be_bytes( ) }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_le_bytes(self) -> [u8; 2] {
-            self.to_bits().to_le_bytes()
-        }
+        pub const fn to_le_bytes(self) -> [u8; 2] { self.to_bits( ).to_le_bytes( ) }
         
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "this returns the result of the operation, without modifying the original"]
-        pub const fn to_ne_bytes(self) -> [u8; 2] {
-            self.to_bits().to_ne_bytes()
-        }
+        pub const fn to_ne_bytes(self) -> [u8; 2] { self.to_bits( ).to_ne_bytes( ) }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn from_be_bytes(bytes: [u8; 2]) -> Self {
-            Self::from_bits(u16::from_be_bytes(bytes))
-        }
+        pub const fn from_be_bytes(bytes: [u8; 2]) -> Self { Self::from_bits(u16::from_be_bytes( bytes) ) }
 
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn from_le_bytes(bytes: [u8; 2]) -> Self {
-            Self::from_bits(u16::from_le_bytes(bytes))
-        }
+        pub const fn from_le_bytes(bytes: [u8; 2]) -> Self { Self::from_bits(u16::from_le_bytes( bytes) ) }
         
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
-        pub const fn from_ne_bytes(bytes: [u8; 2]) -> Self {
-            Self::from_bits(u16::from_ne_bytes(bytes))
-        }
+        pub const fn from_ne_bytes(bytes: [u8; 2]) -> Self { Self::from_bits(u16::from_ne_bytes( bytes) ) }
         
         #[inline] #[must_use] #[unstable(feature = "f16", issue = "116909")]
         pub const fn total_cmp(&self, other: &Self) -> crate::cmp::Ordering {
@@ -1777,10 +1695,7 @@ pub mod f16
         }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub const fn abs(self) -> Self {
-
-            Self::from_bits(self.to_bits() & !(1 << 15))
-        }
+        pub const fn abs(self) -> Self { Self::from_bits(self.to_bits() & !( 1 << 15) ) }
 
         #[inline] #[unstable(feature = "f16", issue = "116909")] #[must_use = "method returns a new number and does not mutate the original value"]
         pub const fn signum(self) -> f16 {
@@ -2005,23 +1920,16 @@ pub mod f32
             self != self
         }
         
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_infinite(self) -> bool {
-    
-            (self == f32::INFINITY) | (self == f32::NEG_INFINITY)
-        }
+        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_infinite(self) -> bool { (self == f32::INFINITY) | ( self == f32::NEG_INFINITY ) }
         
         #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_finite(self) -> bool {
 
             self.abs() < Self::INFINITY
         }
         
-        #[must_use] #[stable(feature = "is_subnormal", since = "1.53.0")] #[inline] pub const fn is_subnormal(self) -> bool {
-            matches!(self.classify(), FpCategory::Subnormal)
-        }
+        #[must_use] #[stable(feature = "is_subnormal", since = "1.53.0")] #[inline] pub const fn is_subnormal(self) -> bool { matches!(self.classify( ), FpCategory::Subnormal ) }
         
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_normal(self) -> bool {
-            matches!(self.classify(), FpCategory::Normal)
-        }
+        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_normal(self) -> bool { matches!(self.classify( ), FpCategory::Normal ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         pub const fn classify(self) -> FpCategory {
@@ -2130,9 +2038,7 @@ pub mod f32
                     if abs_a <= HI && abs_b <= HI {
 
                         (a + b) / 2.
-                    } else {
-                        (a / 2.) + (b / 2.)
-                    }
+                    } else { (a / 2.) + ( b / 2. ) }
                 }
             }
         }
@@ -2152,34 +2058,22 @@ pub mod f32
         pub const fn from_bits(v: u32) -> Self { unsafe { mem::transmute(v) } }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_be_bytes(self) -> [u8; 4] {
-            self.to_bits().to_be_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_be_bytes(self) -> [u8; 4] { self.to_bits( ).to_be_bytes( ) }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_le_bytes(self) -> [u8; 4] {
-            self.to_bits().to_le_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_le_bytes(self) -> [u8; 4] { self.to_bits( ).to_le_bytes( ) }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_ne_bytes(self) -> [u8; 4] {
-            self.to_bits().to_ne_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_ne_bytes(self) -> [u8; 4] { self.to_bits( ).to_ne_bytes( ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_be_bytes(bytes: [u8; 4]) -> Self {
-            Self::from_bits(u32::from_be_bytes(bytes))
-        }
+        #[inline] pub const fn from_be_bytes(bytes: [u8; 4]) -> Self { Self::from_bits(u32::from_be_bytes( bytes) ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_le_bytes(bytes: [u8; 4]) -> Self {
-            Self::from_bits(u32::from_le_bytes(bytes))
-        }
+        #[inline] pub const fn from_le_bytes(bytes: [u8; 4]) -> Self { Self::from_bits(u32::from_le_bytes( bytes) ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_ne_bytes(bytes: [u8; 4]) -> Self {
-            Self::from_bits(u32::from_ne_bytes(bytes))
-        }
+        #[inline] pub const fn from_ne_bytes(bytes: [u8; 4]) -> Self { Self::from_bits(u32::from_ne_bytes( bytes) ) }
         
         #[stable(feature = "total_cmp", since = "1.62.0")] #[must_use] 
         #[inline] pub const fn total_cmp(&self, other: &Self) -> crate::cmp::Ordering 
@@ -2256,9 +2150,7 @@ pub mod f32
         pub const fn trunc(x: f32) -> f32{ intrinsics::truncf32( x ) }
         
         #[inline] #[unstable(feature = "core_float_math", issue = "137578")] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub const fn fract(x: f32) -> f32 {
-            x - trunc(x)
-        }
+        pub const fn fract(x: f32) -> f32 { x - trunc( x ) }
         
         #[inline] #[doc(alias = "fmaf", alias = "fusedMultiplyAdd")] #[must_use = "method returns a new number and does not mutate the original value"] #[unstable(feature = "core_float_math", issue = "137578")]
         pub const fn mul_add(x: f32, y: f32, z: f32) -> f32{ intrinsics::fmaf32( x, y, z ) }
@@ -2294,14 +2186,10 @@ pub mod f32
                 `fdimf`, depending on how you wish to handle NaN (please consider \
                 filing an issue describing your use-case too)."
         )] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub fn abs_sub(x: f32, other: f32) -> f32 {
-            libm::fdimf(x, other)
-        }
+        pub fn abs_sub(x: f32, other: f32) -> f32 { libm::fdimf( x, other ) }
         
         #[inline] #[must_use = "method returns a new number and does not mutate the original value"] #[unstable(feature = "core_float_math", issue = "137578")]
-        pub fn cbrt(x: f32) -> f32 {
-            libm::cbrtf(x)
-        }
+        pub fn cbrt(x: f32) -> f32 { libm::cbrtf( x ) }
     }
 }
 
@@ -2451,23 +2339,16 @@ pub mod f64
             self != self
         }
         
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_infinite(self) -> bool {
-    
-            (self == f64::INFINITY) | (self == f64::NEG_INFINITY)
-        }
+        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_infinite(self) -> bool { (self == f64::INFINITY) | ( self == f64::NEG_INFINITY ) }
         
         #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_finite(self) -> bool {
 
             self.abs() < Self::INFINITY
         }
         
-        #[must_use] #[stable(feature = "is_subnormal", since = "1.53.0")] #[inline] pub const fn is_subnormal(self) -> bool {
-            matches!(self.classify(), FpCategory::Subnormal)
-        }
+        #[must_use] #[stable(feature = "is_subnormal", since = "1.53.0")] #[inline] pub const fn is_subnormal(self) -> bool { matches!(self.classify( ), FpCategory::Subnormal ) }
         
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_normal(self) -> bool {
-            matches!(self.classify(), FpCategory::Normal)
-        }
+        #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn is_normal(self) -> bool { matches!(self.classify( ), FpCategory::Normal ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         pub const fn classify(self) -> FpCategory {
@@ -2572,9 +2453,7 @@ pub mod f64
             if abs_a <= HI && abs_b <= HI {
 
                 (a + b) / 2.
-            } else {
-                (a / 2.) + (b / 2.)
-            }
+            } else { (a / 2.) + ( b / 2. ) }
         }
         
         #[must_use = "this returns the result of the operation, \
@@ -2590,34 +2469,22 @@ pub mod f64
         pub const fn from_bits(v: u64) -> Self { unsafe { mem::transmute(v) } }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_be_bytes(self) -> [u8; 8] {
-            self.to_bits().to_be_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_be_bytes(self) -> [u8; 8] { self.to_bits( ).to_be_bytes( ) }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_le_bytes(self) -> [u8; 8] {
-            self.to_bits().to_le_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_le_bytes(self) -> [u8; 8] { self.to_bits( ).to_le_bytes( ) }
         
         #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_ne_bytes(self) -> [u8; 8] {
-            self.to_bits().to_ne_bytes()
-        }
+                    without modifying the original"] #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[inline] pub const fn to_ne_bytes(self) -> [u8; 8] { self.to_bits( ).to_ne_bytes( ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_be_bytes(bytes: [u8; 8]) -> Self {
-            Self::from_bits(u64::from_be_bytes(bytes))
-        }
+        #[inline] pub const fn from_be_bytes(bytes: [u8; 8]) -> Self { Self::from_bits(u64::from_be_bytes( bytes) ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_le_bytes(bytes: [u8; 8]) -> Self {
-            Self::from_bits(u64::from_le_bytes(bytes))
-        }
+        #[inline] pub const fn from_le_bytes(bytes: [u8; 8]) -> Self { Self::from_bits(u64::from_le_bytes( bytes) ) }
         
         #[stable(feature = "float_to_from_bytes", since = "1.40.0")] #[must_use] 
-        #[inline] pub const fn from_ne_bytes(bytes: [u8; 8]) -> Self {
-            Self::from_bits(u64::from_ne_bytes(bytes))
-        }
+        #[inline] pub const fn from_ne_bytes(bytes: [u8; 8]) -> Self { Self::from_bits(u64::from_ne_bytes( bytes) ) }
         
         #[stable(feature = "total_cmp", since = "1.62.0")] #[must_use] 
         #[inline] pub const fn total_cmp(&self, other: &Self) -> crate::cmp::Ordering {
@@ -2691,9 +2558,7 @@ pub mod f64
         pub const fn trunc(x: f64) -> f64{ intrinsics::truncf64( x ) }
         
         #[inline] #[unstable(feature = "core_float_math", issue = "137578")] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub const fn fract(x: f64) -> f64 {
-            x - trunc(x)
-        }
+        pub const fn fract(x: f64) -> f64 { x - trunc( x ) }
         
         #[inline] #[doc(alias = "fma", alias = "fusedMultiplyAdd")] #[unstable(feature = "core_float_math", issue = "137578")] #[must_use = "method returns a new number and does not mutate the original value"]
 
@@ -2730,14 +2595,10 @@ pub mod f64
                     `fdim`, depending on how you wish to handle NaN (please consider \
                     filing an issue describing your use-case too)."
         )] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub fn abs_sub(x: f64, other: f64) -> f64 {
-            libm::fdim(x, other)
-        }
+        pub fn abs_sub(x: f64, other: f64) -> f64 { libm::fdim( x, other ) }
         
         #[inline] #[unstable(feature = "core_float_math", issue = "137578")] #[must_use = "method returns a new number and does not mutate the original value"]
-        pub fn cbrt(x: f64) -> f64 {
-            libm::cbrt(x)
-        }
+        pub fn cbrt(x: f64) -> f64 { libm::cbrt( x ) }
     }
 }
 
@@ -2978,6 +2839,7 @@ pub mod num
         */
         
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")] #[cfg(not(no_fp_fmt_parse))] pub use self::dec2flt::ParseFloatError;
     #[stable(feature = "int_error_matching", since = "1.55.0")] pub use self::error::IntErrorKind;
     #[stable(feature = "rust1", since = "1.0.0")] pub use self::error::ParseIntError;
@@ -3032,36 +2894,26 @@ pub mod num
     macro_rules! midpoint_impl {
         ($SelfT:ty, unsigned) => {
     
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(4), 2);")]
-            #[doc = concat!("assert_eq!(1", stringify!($SelfT), ".midpoint(4), 2);")]
+            
+            
             #[stable(feature = "num_midpoint", since = "1.85.0")]
 
             #[must_use = "this returns the result of the operation, \
                         without modifying the original"]
-            #[doc(alias = "average_floor")]
-            #[doc(alias = "average")]
-            #[inline]
-            pub const fn midpoint(self, rhs: $SelfT) -> $SelfT {
-
-                ((self ^ rhs) >> 1) + (self & rhs)
-            }
+            #[doc(alias = "average_floor")] #[doc(alias = "average")] #[inline] pub const fn midpoint(self, rhs: $SelfT) -> $SelfT { ((self ^ rhs) >> 1) + ( self & rhs ) }
         };
         ($SelfT:ty, signed) => {
     
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(4), 2);")]
-            #[doc = concat!("assert_eq!((-1", stringify!($SelfT), ").midpoint(2), 0);")]
-            #[doc = concat!("assert_eq!((-7", stringify!($SelfT), ").midpoint(0), -3);")]
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(-7), -3);")]
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(7), 3);")]
+            
+            
+            
+            
+            
             #[stable(feature = "num_midpoint_signed", since = "1.87.0")]
 
             #[must_use = "this returns the result of the operation, \
                         without modifying the original"]
-            #[doc(alias = "average_floor")]
-            #[doc(alias = "average_ceil")]
-            #[doc(alias = "average")]
-            #[inline]
-            pub const fn midpoint(self, rhs: Self) -> Self {
+            #[doc(alias = "average_floor")] #[doc(alias = "average_ceil")] #[doc(alias = "average")] #[inline] pub const fn midpoint(self, rhs: Self) -> Self {
 
                 let t = ((self ^ rhs) >> 1) + (self & rhs);
 
@@ -3070,35 +2922,28 @@ pub mod num
         };
         ($SelfT:ty, $WideT:ty, unsigned) => {
     
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(4), 2);")]
-            #[doc = concat!("assert_eq!(1", stringify!($SelfT), ".midpoint(4), 2);")]
+            
+            
             #[stable(feature = "num_midpoint", since = "1.85.0")]
 
             #[must_use = "this returns the result of the operation, \
                         without modifying the original"]
-            #[doc(alias = "average_floor")]
-            #[doc(alias = "average")]
-            #[inline]
-            pub const fn midpoint(self, rhs: $SelfT) -> $SelfT {
+            #[doc(alias = "average_floor")] #[doc(alias = "average")] #[inline] pub const fn midpoint(self, rhs: $SelfT) -> $SelfT {
                 ((self as $WideT + rhs as $WideT) / 2) as $SelfT
             }
         };
         ($SelfT:ty, $WideT:ty, signed) => {
     
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(4), 2);")]
-            #[doc = concat!("assert_eq!((-1", stringify!($SelfT), ").midpoint(2), 0);")]
-            #[doc = concat!("assert_eq!((-7", stringify!($SelfT), ").midpoint(0), -3);")]
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(-7), -3);")]
-            #[doc = concat!("assert_eq!(0", stringify!($SelfT), ".midpoint(7), 3);")]
+            
+            
+            
+            
+            
             #[stable(feature = "num_midpoint_signed", since = "1.87.0")]
 
             #[must_use = "this returns the result of the operation, \
                         without modifying the original"]
-            #[doc(alias = "average_floor")]
-            #[doc(alias = "average_ceil")]
-            #[doc(alias = "average")]
-            #[inline]
-            pub const fn midpoint(self, rhs: $SelfT) -> $SelfT {
+            #[doc(alias = "average_floor")] #[doc(alias = "average_ceil")] #[doc(alias = "average")] #[inline] pub const fn midpoint(self, rhs: $SelfT) -> $SelfT {
                 ((self as $WideT + rhs as $WideT) / 2) as $SelfT
             }
         };
@@ -3328,9 +3173,7 @@ pub mod num
             *self <= 127
         }
 
-        #[must_use] #[unstable(feature = "ascii_char", issue = "110998")] #[inline] pub const fn as_ascii(&self) -> Option<ascii::Char> {
-            ascii::Char::from_u8(*self)
-        }
+        #[must_use] #[unstable(feature = "ascii_char", issue = "110998")] #[inline] pub const fn as_ascii(&self) -> Option<ascii::Char> { ascii::Char::from_u8( *self ) }
     
         #[must_use] #[unstable(feature = "ascii_char", issue = "110998")] #[inline] pub const unsafe fn as_ascii_unchecked(&self) -> ascii::Char {
             assert_unsafe_precondition!(
@@ -3342,24 +3185,16 @@ pub mod num
             unsafe { ascii::Char::from_u8_unchecked(*self) }
         }
         
-        #[must_use = "to uppercase the value in-place, use `make_ascii_uppercase()`"] #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn to_ascii_uppercase(&self) -> u8 {
-
-            *self ^ ((self.is_ascii_lowercase() as u8) * ASCII_CASE_MASK)
-        }
+        #[must_use = "to uppercase the value in-place, use `make_ascii_uppercase()`"] #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn to_ascii_uppercase(&self) -> u8 { *self ^ ((self.is_ascii_lowercase( ) as u8) * ASCII_CASE_MASK ) }
         
-        #[must_use = "to lowercase the value in-place, use `make_ascii_lowercase()`"] #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn to_ascii_lowercase(&self) -> u8 {
-
-            *self | (self.is_ascii_uppercase() as u8 * ASCII_CASE_MASK)
-        }
+        #[must_use = "to lowercase the value in-place, use `make_ascii_lowercase()`"] #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn to_ascii_lowercase(&self) -> u8 { *self | (self.is_ascii_uppercase( ) as u8 * ASCII_CASE_MASK ) }
 
         #[inline]
         pub(crate) const fn ascii_change_case_unchecked(&self) -> u8 {
             *self ^ ASCII_CASE_MASK
         }
 
-        #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn eq_ignore_ascii_case(&self, other: &u8) -> bool {
-            self.to_ascii_lowercase() == other.to_ascii_lowercase()
-        }
+        #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn eq_ignore_ascii_case(&self, other: &u8) -> bool { self.to_ascii_lowercase( ) == other.to_ascii_lowercase( ) }
         
         #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[inline] pub const fn make_ascii_uppercase(&mut self) {
             *self = self.to_ascii_uppercase();
@@ -3379,29 +3214,17 @@ pub mod num
             }
         }
         
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_uppercase(&self) -> bool {
-            matches!(*self, b'A'..=b'Z')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_uppercase(&self) -> bool { matches!( *self, b'A'..=b'Z' ) }
         
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_lowercase(&self) -> bool {
-            matches!(*self, b'a'..=b'z')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_lowercase(&self) -> bool { matches!( *self, b'a'..=b'z' ) }
 
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_alphanumeric(&self) -> bool {
-            matches!(*self, b'0'..=b'9') | matches!(*self, b'A'..=b'Z') | matches!(*self, b'a'..=b'z')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_alphanumeric(&self) -> bool { matches!(*self, b'0'..=b'9') | matches!(*self, b'A'..=b'Z') | matches!( *self, b'a'..=b'z' ) }
         
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_digit(&self) -> bool {
-            matches!(*self, b'0'..=b'9')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_digit(&self) -> bool { matches!( *self, b'0'..=b'9' ) }
 
-        #[must_use] #[unstable(feature = "is_ascii_octdigit", issue = "101288")] #[inline] pub const fn is_ascii_octdigit(&self) -> bool {
-            matches!(*self, b'0'..=b'7')
-        }
+        #[must_use] #[unstable(feature = "is_ascii_octdigit", issue = "101288")] #[inline] pub const fn is_ascii_octdigit(&self) -> bool { matches!( *self, b'0'..=b'7' ) }
 
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_hexdigit(&self) -> bool {
-            matches!(*self, b'0'..=b'9') | matches!(*self, b'A'..=b'F') | matches!(*self, b'a'..=b'f')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_hexdigit(&self) -> bool { matches!(*self, b'0'..=b'9') | matches!(*self, b'A'..=b'F') | matches!( *self, b'a'..=b'f' ) }
 
         #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_punctuation(&self) -> bool {
             matches!(*self, b'!'..=b'/')
@@ -3410,9 +3233,7 @@ pub mod num
                 | matches!(*self, b'{'..=b'~')
         }
         
-        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_graphic(&self) -> bool {
-            matches!(*self, b'!'..=b'~')
-        }
+        #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_graphic(&self) -> bool { matches!( *self, b'!'..=b'~' ) }
 
         #[must_use] #[stable(feature = "ascii_ctype_on_intrinsics", since = "1.24.0")] #[inline] pub const fn is_ascii_whitespace(&self) -> bool {
             /*matches!(*self, b'\t' | b'\n' | b'\x0C' | b'\r' | b' ') */
@@ -3436,9 +3257,7 @@ pub mod num
         }
         
         #[must_use = "this returns the escaped byte as an iterator, \
-                    without modifying the original"] #[stable(feature = "inherent_ascii_escape", since = "1.60.0")] #[inline] pub fn escape_ascii(self) -> ascii::EscapeDefault {
-            ascii::escape_default(self)
-        }
+                    without modifying the original"] #[stable(feature = "inherent_ascii_escape", since = "1.60.0")] #[inline] pub fn escape_ascii(self) -> ascii::EscapeDefault { ascii::escape_default( self ) }
         
         #[inline]
         pub(crate) const fn is_utf8_char_boundary(self) -> bool {
@@ -3472,9 +3291,7 @@ pub mod num
         }
         midpoint_impl! { u16, u32, unsigned }
 
-        #[must_use] #[unstable(feature = "utf16_extra", issue = "94919")] #[inline] pub const fn is_utf16_surrogate(self) -> bool {
-            matches!(self, 0xD800..=0xDFFF)
-        }
+        #[must_use] #[unstable(feature = "utf16_extra", issue = "94919")] #[inline] pub const fn is_utf16_surrogate(self) -> bool { matches!( self, 0xD800..=0xDFFF ) }
     }
     
     impl u32 {
@@ -3637,9 +3454,7 @@ pub mod num
     
     impl usize {
         #[inline]
-        pub(crate) const fn repeat_u8(x: u8) -> usize {
-            usize::from_ne_bytes([x; size_of::<usize>()])
-        }
+        pub(crate) const fn repeat_u8(x: u8) -> usize { usize::from_ne_bytes([x; size_of::<usize>( )] ) }
 
         #[inline]
         pub(crate) const fn repeat_u16(x: u16) -> usize {
@@ -3701,11 +3516,9 @@ pub mod num
                     }
                 }]
     
-                #[doc = concat!("assert_eq!(", stringify!($int_ty), "::from_str(\"+10\"), Ok(10));")]
-                #[doc = concat!("assert!(", stringify!($int_ty), "::from_str(\"1 \").is_err());")]
-                #[inline] fn from_str(src: &str) -> Result<$int_ty, ParseIntError> {
-                    <$int_ty>::from_str_radix(src, 10)
-                }
+                
+                
+                #[inline] fn from_str(src: &str) -> Result<$int_ty, ParseIntError> { <$int_ty>::from_str_radix( src, 10 ) }
             }
             
             impl $int_ty {
@@ -3720,14 +3533,12 @@ pub mod num
                     }
                 }]
 
-                #[doc = concat!("assert_eq!(", stringify!($int_ty), "::from_str_radix(\"A\", 16), Ok(10));")]
-                #[doc = concat!("assert!(", stringify!($int_ty), "::from_str_radix(\"1 \", 10).is_err());")]
+                
+                
                 #[stable(feature = "rust1", since = "1.0.0")]
 
                 #[inline]
-                pub const fn from_str_radix(src: &str, radix: u32) -> Result<$int_ty, ParseIntError> {
-                    <$int_ty>::from_ascii_radix(src.as_bytes(), radix)
-                }
+                pub const fn from_str_radix(src: &str, radix: u32) -> Result<$int_ty, ParseIntError> { <$int_ty>::from_ascii_radix(src.as_bytes( ), radix ) }
     
                 #[doc = sign_dependent_expr!{
                     $signedness ?
@@ -3739,13 +3550,11 @@ pub mod num
                     }
                 }]
 
-                #[doc = concat!("assert_eq!(", stringify!($int_ty), "::from_ascii(b\"+10\"), Ok(10));")]
-                #[doc = concat!("assert!(", stringify!($int_ty), "::from_ascii(b\"1 \").is_err());")]
+                
+                
                 #[unstable(feature = "int_from_ascii", issue = "134821")]
                 #[inline]
-                pub const fn from_ascii(src: &[u8]) -> Result<$int_ty, ParseIntError> {
-                    <$int_ty>::from_ascii_radix(src, 10)
-                }
+                pub const fn from_ascii(src: &[u8]) -> Result<$int_ty, ParseIntError> { <$int_ty>::from_ascii_radix( src, 10 ) }
     
                 #[doc = sign_dependent_expr!{
                     $signedness ?
@@ -3757,8 +3566,8 @@ pub mod num
                     }
                 }]
 
-                #[doc = concat!("assert_eq!(", stringify!($int_ty), "::from_ascii_radix(b\"A\", 16), Ok(10));")]
-                #[doc = concat!("assert!(", stringify!($int_ty), "::from_ascii_radix(b\"1 \", 10).is_err());")]
+                
+                
                 #[unstable(feature = "int_from_ascii", issue = "134821")]
                 #[inline]
                 pub const fn from_ascii_radix(src: &[u8], radix: u32) -> Result<$int_ty, ParseIntError> {
@@ -3767,9 +3576,7 @@ pub mod num
                     if 2 > radix || radix > 36 {
                         from_ascii_radix_panic(radix);
                     }
-                    if src.is_empty() {
-                        return Err(PIE { kind: Empty });
-                    }
+                    if src.is_empty() { return Err(PIE { kind: Empty }); }
                     #[allow(unused_comparisons)]
                     let is_signed_ty = 0 > <$int_ty>::MIN;
                     let (is_positive, mut digits) = match src {
@@ -3801,11 +3608,7 @@ pub mod num
                                 }
                             }};
                         }
-                        if is_positive {
-                            run_unchecked_loop!(+)
-                        } else {
-                            run_unchecked_loop!(-)
-                        };
+                        if is_positive { run_unchecked_loop!( + ) } else { run_unchecked_loop!( - ) };
                     } else {
                         macro_rules! run_checked_loop {
                             ($checked_additive_op:ident, $overflow_err:ident) => {{
@@ -3819,11 +3622,7 @@ pub mod num
                                 }
                             }};
                         }
-                        if is_positive {
-                            run_checked_loop!(checked_add, PosOverflow)
-                        } else {
-                            run_checked_loop!(checked_sub, NegOverflow)
-                        };
+                        if is_positive { run_checked_loop!( checked_add, PosOverflow ) } else { run_checked_loop!( checked_sub, NegOverflow ) };
                     }
                     Ok(result)
                 }
@@ -3897,9 +3696,7 @@ pub mod hint
     }
     
     #[inline] #[stable(feature = "bench_black_box", since = "1.66.0")]
-    pub const fn black_box<T>(dummy: T) -> T {
-        crate::intrinsics::black_box(dummy)
-    }   
+    pub const fn black_box<T>(dummy: T) -> T { crate::intrinsics::black_box( dummy ) }   
 
     #[unstable(feature = "hint_must_use", issue = "94745")] #[must_use] #[inline(always)]
     pub const fn must_use<T>(value: T) -> T {
@@ -3907,14 +3704,10 @@ pub mod hint
     }   
 
     #[unstable(feature = "likely_unlikely", issue = "136873")] #[inline(always)]
-    pub const fn likely(b: bool) -> bool {
-        crate::intrinsics::likely(b)
-    }   
+    pub const fn likely(b: bool) -> bool { crate::intrinsics::likely( b ) }   
 
     #[unstable(feature = "likely_unlikely", issue = "136873")] #[inline(always)]
-    pub const fn unlikely(b: bool) -> bool {
-        crate::intrinsics::unlikely(b)
-    }
+    pub const fn unlikely(b: bool) -> bool { crate::intrinsics::unlikely( b ) }
     
     #[unstable(feature = "cold_path", issue = "136873")] #[inline(always)]
     pub const fn cold_path() {
@@ -4279,9 +4072,7 @@ pub mod intrinsics
         multiplicand: T,
         addend: T,
         carry: T,
-    ) -> (U, T) {
-        multiplier.carrying_mul_add(multiplicand, addend, carry)
-    }
+    ) -> (U, T) { multiplier.carrying_mul_add( multiplicand, addend, carry ) }
     
     #[rustc_intrinsic] #[rustc_nounwind] pub const unsafe fn exact_div<T: Copy>(x: T, y: T) -> T;
     #[rustc_intrinsic] #[rustc_nounwind] pub const unsafe fn unchecked_div<T: Copy>(x: T, y: T) -> T;
@@ -4294,16 +4085,10 @@ pub mod intrinsics
 
     
     #[miri::intrinsic_fallback_is_spec]
-    pub const fn rotate_left<T: [const] fallback::FunnelShift>(x: T, shift: u32) -> T {
-    
-        unsafe { unchecked_funnel_shl(x, x, shift % (mem::size_of::<T>() as u32 * 8)) }
-    }   
+    pub const fn rotate_left<T: [const] fallback::FunnelShift>(x: T, shift: u32) -> T { unsafe { unchecked_funnel_shl(x, x, shift % (mem::size_of::<T>( ) as u32 * 8) ) } }   
 
     #[miri::intrinsic_fallback_is_spec]
-    pub const fn rotate_right<T: [const] fallback::FunnelShift>(x: T, shift: u32) -> T {
-    
-        unsafe { unchecked_funnel_shr(x, x, shift % (mem::size_of::<T>() as u32 * 8)) }
-    }
+    pub const fn rotate_right<T: [const] fallback::FunnelShift>(x: T, shift: u32) -> T { unsafe { unchecked_funnel_shr(x, x, shift % (mem::size_of::<T>( ) as u32 * 8) ) } }
     
     #[rustc_intrinsic] #[rustc_nounwind] pub const fn wrapping_add<T: Copy>(a: T, b: T) -> T;
     #[rustc_intrinsic] #[rustc_nounwind] pub const fn wrapping_sub<T: Copy>(a: T, b: T) -> T;
@@ -4427,14 +4212,10 @@ pub(crate) macro const_eval_select {
     }
 
     #[inline(always)]
-    pub const fn ub_checks() -> bool {
-        cfg!(ub_checks)
-    }
+    pub const fn ub_checks() -> bool { cfg!( ub_checks ) }
 
         #[inline(always)]
-    pub const fn overflow_checks() -> bool {
-        cfg!(debug_assertions)
-    }
+    pub const fn overflow_checks() -> bool { cfg!( debug_assertions ) }
     
     #[miri::intrinsic_fallback_is_spec]
     pub const unsafe fn const_allocate(_size: usize, _align: usize) -> *mut u8 {
@@ -4465,10 +4246,7 @@ pub(crate) macro const_eval_select {
             if const {
 
             } else {
-                if !cond() {
-
-                    crate::panicking::panic_nounwind("failed requires check");
-                }
+                if !cond() { crate::panicking::panic_nounwind("failed requires check"); }
             }
         )
     }
@@ -4489,10 +4267,7 @@ pub(crate) macro const_eval_select {
             } else {
                 match cond {
                     crate::option::Option::Some(cond) => {
-                        if !cond(&ret) {
-
-                            crate::panicking::panic_nounwind("failed ensures check");
-                        }
+                        if !cond(&ret) { crate::panicking::panic_nounwind("failed ensures check"); }
                     },
                     crate::option::Option::None => {},
                 }
@@ -4719,6 +4494,7 @@ pub mod mem
     */
     
 }
+    
     #[stable(feature = "manually_drop", since = "1.20.0")] pub use self::manually_drop::ManuallyDrop;
     mod maybe_uninit
 {
@@ -4732,6 +4508,7 @@ pub mod mem
     */
     
 }
+    
     #[stable(feature = "maybe_uninit", since = "1.36.0")] pub use self::maybe_uninit::MaybeUninit;
     mod transmutability
 {
@@ -4760,11 +4537,9 @@ pub mod mem
 }
     #[unstable(feature = "drop_guard", issue = "144426")] pub use self::drop_guard::DropGuard;
 
-    #[stable(feature = "rust1", since = "1.0.0")] #[doc(inline)] pub use self::crate::intrinsics::transmute;
+    #[stable(feature = "rust1", since = "1.0.0")] #[doc(inline)] pub use crate::intrinsics::transmute;
     #[inline] #[stable(feature = "rust1", since = "1.0.0")]
-    pub const fn forget<T>(t: T) {
-        let _ = ManuallyDrop::new(t);
-    }   
+    pub const fn forget<T>(t: T) { let _ = ManuallyDrop::new(t); }   
 
     #[inline] #[unstable(feature = "forget_unsized", issue = "none")]
     pub fn forget_unsized<T: ?Sized>(t: T){ intrinsics::forget( t ) }
@@ -4817,9 +4592,7 @@ pub mod mem
             intrinsics::assert_mem_uninitialized_valid::<T>();
             let mut val = MaybeUninit::<T>::uninit();
 
-            if !cfg!(any(miri, sanitize = "memory")) {
-                val.as_mut_ptr().write_bytes(0x01, 1);
-            }
+            if !cfg!(any(miri, sanitize = "memory")) { val.as_mut_ptr().write_bytes(0x01, 1); }
             val.assume_init()
         }
     }
@@ -4827,9 +4600,7 @@ pub mod mem
     #[inline] #[stable(feature = "rust1", since = "1.0.0")] pub const fn swap<T>(x: &mut T, y: &mut T) { unsafe { intrinsics::typed_swap_nonoverlapping(x, y) } }
     
     #[inline] #[stable(feature = "mem_take", since = "1.40.0")]
-    pub const fn take<T: [const] Default>(dest: &mut T) -> T {
-        replace(dest, T::default())
-    }
+    pub const fn take<T: [const] Default>(dest: &mut T) -> T { replace(dest, T::default( ) ) }
     
     #[inline] #[stable(feature = "rust1", since = "1.0.0")] #[must_use = "if you don't need the old value, you can just assign the new value directly"]
     
@@ -4861,10 +4632,7 @@ pub mod mem
             "cannot transmute_copy if Dst is larger than Src"
         );
 
-        if align_of::<Dst>() > align_of::<Src>() { unsafe { ptr::read_unaligned(src as *const Src as *const Dst) } } else {
-    
-            unsafe { ptr::read(src as *const Src as *const Dst) }
-        }
+        if align_of::<Dst>() > align_of::<Src>() { unsafe { ptr::read_unaligned(src as *const Src as *const Dst) } } else { unsafe { ptr::read( src as *const Src as *const Dst ) } }
     }
     
     #[stable(feature = "discriminant_value", since = "1.21.0")]
@@ -4872,6 +4640,7 @@ pub mod mem
 
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> Copy for Discriminant<T> {}
+    
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> clone::Clone for Discriminant<T> {
         fn clone(&self) -> Self {
@@ -4880,33 +4649,31 @@ pub mod mem
     }
     #[doc(hidden)] #[unstable(feature = "trivial_clone", issue = "none")]
     unsafe impl<T> TrivialClone for Discriminant<T> {}
+    
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> cmp::PartialEq for Discriminant<T> {
         fn eq(&self, rhs: &Self) -> bool {
             self.0 == rhs.0
         }
     }
+    
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> cmp::Eq for Discriminant<T> {}
+    
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> hash::Hash for Discriminant<T> {
-        fn hash<H: hash::Hasher>(&self, state: &mut H) {
-            self.0.hash(state);
-        }
+        fn hash<H: hash::Hasher>(&self, state: &mut H) { self.0.hash(state); }
     }
+    
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     impl<T> fmt::Debug for Discriminant<T> {
-        fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt.debug_tuple("Discriminant").field(&self.0).finish()
-        }
+        fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result { fmt.debug_tuple("Discriminant").field( &self.0).finish( ) }
     }
     
     #[stable(feature = "discriminant_value", since = "1.21.0")]
     
     #[cfg_attr(miri, track_caller)]
-    pub const fn discriminant<T>(v: &T) -> Discriminant<T> {
-        Discriminant(intrinsics::discriminant_value(v))
-    }
+    pub const fn discriminant<T>(v: &T) -> Discriminant<T> { Discriminant(intrinsics::discriminant_value( v) ) }
     
     #[inline(always)] #[must_use] #[unstable(feature = "variant_count", issue = "73662")] pub const fn variant_count<T>() -> usize {
         const { intrinsics::variant_count::<T>() }
@@ -4921,10 +4688,7 @@ pub mod mem
         #[doc(hidden)] #[unstable(feature = "sized_type_properties", issue = "none")]
         const IS_ZST: bool = Self::SIZE == 0;
         #[doc(hidden)] #[unstable(feature = "sized_type_properties", issue = "none")]
-        const LAYOUT: Layout = {
-    
-            unsafe { Layout::from_size_align_unchecked(Self::SIZE, Self::ALIGN) }
-        };
+        const LAYOUT: Layout = { unsafe { Layout::from_size_align_unchecked( Self::SIZE, Self::ALIGN ) } };
         #[doc(hidden)] #[unstable(feature = "sized_type_properties", issue = "none")]
         const MAX_SLICE_LEN: usize = match Self::SIZE {
             0 => usize::MAX,
@@ -5038,6 +4802,7 @@ pub mod ptr
     */
     
 }
+    
     #[stable(feature = "nonnull", since = "1.25.0")] pub use self::non_null::NonNull;
     mod unique
 {
@@ -5140,23 +4905,14 @@ pub mod ptr
     #[stable(feature = "drop_in_place", since = "1.8.0")] #[lang = "drop_in_place"] #[allow(unconditional_recursion)] pub const unsafe fn drop_in_place<T: PointeeSized>(to_drop: *mut T)
     where
         T: [const] Destruct,
-    {
+    { unsafe { drop_in_place( to_drop ) } }
     
-        unsafe { drop_in_place(to_drop) }
-    }
+    #[inline(always)] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn null<T: PointeeSized + Thin>() -> *const T { from_raw_parts(without_provenance::<()>(0), ( ) ) }
     
-    #[inline(always)] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn null<T: PointeeSized + Thin>() -> *const T {
-        from_raw_parts(without_provenance::<()>(0), ())
-    }
-    
-    #[inline(always)] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn null_mut<T: PointeeSized + Thin>() -> *mut T {
-        from_raw_parts_mut(without_provenance_mut::<()>(0), ())
-    }
+    #[inline(always)] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn null_mut<T: PointeeSized + Thin>() -> *mut T { from_raw_parts_mut(without_provenance_mut::<()>(0), ( ) ) }
     
     #[inline(always)] #[must_use] #[stable(feature = "strict_provenance", since = "1.84.0")]
-    pub const fn without_provenance<T>(addr: usize) -> *const T {
-        without_provenance_mut(addr)
-    }
+    pub const fn without_provenance<T>(addr: usize) -> *const T { without_provenance_mut( addr ) }
     
     #[inline(always)] #[must_use] #[stable(feature = "strict_provenance", since = "1.84.0")]
     pub const fn dangling<T>() -> *const T {
@@ -5164,15 +4920,10 @@ pub mod ptr
     }
     
     #[inline(always)] #[must_use] #[stable(feature = "strict_provenance", since = "1.84.0")] #[allow(integer_to_ptr_transmutes)]
-    pub const fn without_provenance_mut<T>(addr: usize) -> *mut T {
-    
-        unsafe { mem::transmute(addr) }
-    }
+    pub const fn without_provenance_mut<T>(addr: usize) -> *mut T { unsafe { mem::transmute( addr ) } }
     
     #[inline(always)] #[must_use] #[stable(feature = "strict_provenance", since = "1.84.0")]
-    pub const fn dangling_mut<T>() -> *mut T {
-        NonNull::dangling().as_ptr()
-    }
+    pub const fn dangling_mut<T>() -> *mut T { NonNull::dangling( ).as_ptr( ) }
     
     #[must_use] #[inline(always)] #[stable(feature = "exposed_provenance", since = "1.84.0")] #[cfg_attr(miri, track_caller)] #[allow(fuzzy_provenance_casts)]
     pub const fn with_exposed_provenance<T>(addr: usize) -> *const T {
@@ -5192,13 +4943,9 @@ pub mod ptr
         r
     }   
 
-    #[inline] #[stable(feature = "slice_from_raw_parts", since = "1.42.0")] pub const fn slice_from_raw_parts<T>(data: *const T, len: usize) -> *const [T] {
-        from_raw_parts(data, len)
-    }   
+    #[inline] #[stable(feature = "slice_from_raw_parts", since = "1.42.0")] pub const fn slice_from_raw_parts<T>(data: *const T, len: usize) -> *const [T] { from_raw_parts( data, len ) }   
 
-    #[inline] #[stable(feature = "slice_from_raw_parts", since = "1.42.0")] pub const fn slice_from_raw_parts_mut<T>(data: *mut T, len: usize) -> *mut [T] {
-        from_raw_parts_mut(data, len)
-    }
+    #[inline] #[stable(feature = "slice_from_raw_parts", since = "1.42.0")] pub const fn slice_from_raw_parts_mut<T>(data: *mut T, len: usize) -> *mut [T] { from_raw_parts_mut( data, len ) }
     
     #[inline] #[stable(feature = "rust1", since = "1.0.0")] pub const unsafe fn swap<T>(x: *mut T, y: *mut T) {
 
@@ -5451,7 +5198,18 @@ pub mod ptr
             const INV_TABLE_MOD: usize = 16;
 
             let m_minus_one = unsafe { unchecked_sub(m, 1) };
-            let mut inverse = INV_TABLE_MOD_16[(x & (INV_TABLE_mod - 1)) >> 1] as usize;
+            let mut inverse = INV_TABLE_MOD_16[(x & (INV_TABLE_mod - 1)) >> 1] as usize
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
             let mut mod_gate = INV_TABLE_MOD;
 
             loop {
@@ -5523,34 +5281,31 @@ pub mod ptr
     }
 
     #[stable(feature = "ptr_addr_eq", since = "1.76.0")] #[inline(always)] #[must_use = "pointer comparison produces a value"]
-    pub fn addr_eq<T: PointeeSized, U: PointeeSized>(p: *const T, q: *const U) -> bool {
-        (p as *const ()) == (q as *const ())
-    }   
+    pub fn addr_eq<T: PointeeSized, U: PointeeSized>(p: *const T, q: *const U) -> bool { (p as *const ()) == (q as *const ( ) ) }   
 
     #[stable(feature = "ptr_fn_addr_eq", since = "1.85.0")] #[inline(always)] #[must_use = "function pointer comparison produces a value"]
-    pub fn fn_addr_eq<T: FnPtr, U: FnPtr>(f: T, g: U) -> bool {
-        f.addr() == g.addr()
-    }   
+    pub fn fn_addr_eq<T: FnPtr, U: FnPtr>(f: T, g: U) -> bool { f.addr( ) == g.addr( ) }   
 
     #[stable(feature = "ptr_hash", since = "1.35.0")]
     pub fn hash<T: PointeeSized, S: hash::Hasher>(hashee: *const T, into: &mut S) {
         use crate::hash::Hash;
         hashee.hash(into);
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")] #[diagnostic::on_const(
         message = "pointers cannot be reliably compared during const eval",
         note = "see issue #53020 <https://github.com/rust-lang/rust/issues/53020> for more information"
     )]
     impl<F: FnPtr> PartialEq for F {
-        #[inline] fn eq(&self, other: &Self) -> bool {
-            self.addr() == other.addr()
-        }
+        #[inline] fn eq(&self, other: &Self) -> bool { self.addr( ) == other.addr( ) }
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")] #[diagnostic::on_const(
         message = "pointers cannot be reliably compared during const eval",
         note = "see issue #53020 <https://github.com/rust-lang/rust/issues/53020> for more information"
     )]
     impl<F: FnPtr> Eq for F {}
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")] #[diagnostic::on_const(
         message = "pointers cannot be reliably compared during const eval",
         note = "see issue #53020 <https://github.com/rust-lang/rust/issues/53020> for more information"
@@ -5558,6 +5313,7 @@ pub mod ptr
     impl<F: FnPtr> PartialOrd for F {
         #[inline] fn partial_cmp(&self, other: &Self) -> Option<Ordering>{ self.addr().partial_cmp()(&other.addr()) }
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")] #[diagnostic::on_const(
         message = "pointers cannot be reliably compared during const eval",
         note = "see issue #53020 <https://github.com/rust-lang/rust/issues/53020> for more information"
@@ -5565,23 +5321,20 @@ pub mod ptr
     impl<F: FnPtr> Ord for F {
         #[inline] fn cmp(&self, other: &Self) -> Ordering{ self.addr().cmp()(&other.addr()) }
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")]
     impl<F: FnPtr> hash::Hash for F {
-        fn hash<HH: hash::Hasher>(&self, state: &mut HH) {
-            state.write_usize(self.addr() as _)
-        }
+        fn hash<HH: hash::Hasher>(&self, state: &mut HH) { state.write_usize(self.addr( ) as _ ) }
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")]
     impl<F: FnPtr> fmt::Pointer for F {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::pointer_fmt_inner(self.addr() as _, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::pointer_fmt_inner(self.addr( ) as _, f ) }
     }
+    
     #[stable(feature = "fnptr_impls", since = "1.4.0")]
     impl<F: FnPtr> fmt::Debug for F {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::pointer_fmt_inner(self.addr() as _, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::pointer_fmt_inner(self.addr( ) as _, f ) }
     }   
 
     #[stable(feature = "raw_ref_macros", since = "1.51.0")] pub macro addr_of($place:expr) {
@@ -5622,9 +5375,7 @@ pub mod ub_checks
                         ::core::panicking::panic_nounwind_fmt(::core::fmt::Arguments::from_str(msg), false);
                     }
                 }
-                if ::core::ub_checks::$kind() {
-                    precondition_check($($arg,)*);
-                }
+                if ::core::ub_checks::$kind() { precondition_check($($arg,)*); }
             }
         };
     }
@@ -5640,10 +5391,7 @@ pub mod ub_checks
                 if const {
 
                     false
-                } else {
-
-                    !cfg!(miri)
-                }
+                } else { !cfg!( miri ) }
             )
     }
 
@@ -5651,10 +5399,7 @@ pub mod ub_checks
         ptr: *const (),
         align: usize,
         is_zst: bool,
-    ) -> bool {
-
-        maybe_is_aligned(ptr, align) && (is_zst || !ptr.is_null())
-    }
+    ) -> bool { maybe_is_aligned(ptr, align) && (is_zst || !ptr.is_null( ) ) }
 
     #[inline] pub(crate) const fn maybe_is_aligned(ptr: *const (), align: usize) -> bool {
 
@@ -5662,9 +5407,7 @@ pub mod ub_checks
             @capture { ptr: *const (), align: usize } -> bool:
             if const {
                 true
-            } else {
-                ptr.is_aligned_to(align)
-            }
+            } else { ptr.is_aligned_to( align ) }
         )
     }
 
@@ -5714,8 +5457,7 @@ pub mod borrow
     
     
     #[stable(feature = "rust1", since = "1.0.0")] pub const trait Borrow<Borrowed: ?Sized> {
-        
-    
+  
         #[stable(feature = "rust1", since = "1.0.0")]
         fn borrow(&self) -> &Borrowed;
     }
@@ -5726,6 +5468,7 @@ pub mod borrow
         #[stable(feature = "rust1", since = "1.0.0")]
         fn borrow_mut(&mut self) -> &mut Borrowed;
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const Borrow<T> for T {
@@ -5734,6 +5477,7 @@ pub mod borrow
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const BorrowMut<T> for T {
@@ -5741,6 +5485,7 @@ pub mod borrow
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const Borrow<T> for &T {
@@ -5748,6 +5493,7 @@ pub mod borrow
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const Borrow<T> for &mut T {
@@ -5755,6 +5501,7 @@ pub mod borrow
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const BorrowMut<T> for &mut T {
@@ -5791,8 +5538,7 @@ pub mod clone
     #[stable(feature = "rust1", since = "1.0.0")] #[lang = "clone"]
     
     pub const trait Clone: Sized {
-        
-    
+  
         #[stable(feature = "rust1", since = "1.0.0")] #[must_use = "cloning is often expensive and is not expected to have side effects"] #[lang = "clone_fn"]
         fn clone(&self) -> Self;
         #[inline] #[stable(feature = "rust1", since = "1.0.0")]
@@ -5882,10 +5628,7 @@ pub mod clone
     #[unstable(feature = "clone_to_uninit", issue = "126799")]
     unsafe impl CloneToUninit for crate::ffi::CStr {
         #[cfg_attr(debug_assertions, track_caller)]
-        unsafe fn clone_to_uninit(&self, dest: *mut u8) {
-    
-            unsafe { self.to_bytes_with_nul().clone_to_uninit(dest) }
-        }
+        unsafe fn clone_to_uninit(&self, dest: *mut u8) { unsafe { self.to_bytes_with_nul().clone_to_uninit( dest ) } }
     }
     #[unstable(feature = "bstr", issue = "134915")]
     unsafe impl CloneToUninit for crate::bstr::ByteStr {
@@ -6042,10 +5785,7 @@ pub mod cmp
     
     impl Ordering {
         #[inline]
-        const fn as_raw(self) -> i8 {
-
-            crate::intrinsics::discriminant_value(&self)
-        }
+        const fn as_raw(self) -> i8 { crate::intrinsics::discriminant_value( &self ) }
         
         #[inline] #[must_use] #[stable(feature = "ordering_helpers", since = "1.53.0")]
         pub const fn is_eq(self) -> bool {
@@ -6113,9 +5853,7 @@ pub mod cmp
     #[stable(feature = "reverse_cmp_key", since = "1.19.0")]
 
     impl<T: [const] PartialOrd> const PartialOrd for Reverse<T> {
-        #[inline] fn partial_cmp(&self, other: &Reverse<T>) -> Option<Ordering> {
-            other.0.partial_cmp(&self.0)
-        }
+        #[inline] fn partial_cmp(&self, other: &Reverse<T>) -> Option<Ordering> { other.0.partial_cmp( &self.0 ) }
         
         #[inline] fn lt(&self, other: &Self) -> bool {
             other.0 < self.0
@@ -6133,27 +5871,22 @@ pub mod cmp
             other.0 >= self.0
         }
     }
+    
     #[stable(feature = "reverse_cmp_key", since = "1.19.0")]
 
     impl<T: [const] Ord> const Ord for Reverse<T> {
-        #[inline] fn cmp(&self, other: &Reverse<T>) -> Ordering {
-            other.0.cmp(&self.0)
-        }
+        #[inline] fn cmp(&self, other: &Reverse<T>) -> Ordering { other.0.cmp( &self.0 ) }
     }
+    
     #[stable(feature = "reverse_cmp_key", since = "1.19.0")]
     impl<T: Clone> Clone for Reverse<T> {
-        #[inline] fn clone(&self) -> Reverse<T> {
-            Reverse(self.0.clone())
-        }
+        #[inline] fn clone(&self) -> Reverse<T> { Reverse(self.0.clone( ) ) }
         
-        #[inline] fn clone_from(&mut self, source: &Self) {
-            self.0.clone_from(&source.0)
-        }
+        #[inline] fn clone_from(&mut self, source: &Self) { self.0.clone_from( &source.0 ) }
     }   
 
     #[doc(alias = "<")] #[doc(alias = ">")] #[doc(alias = "<=")] #[doc(alias = ">=")] #[stable(feature = "rust1", since = "1.0.0")] pub const trait Ord: [const] Eq + [const] PartialOrd<Self> + PointeeSized {
-        
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
+      #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
         fn cmp(&self, other: &Self) -> Ordering;
 
@@ -6202,54 +5935,37 @@ pub mod cmp
     pub const trait PartialOrd<Rhs: PointeeSized = Self>:
         [const] PartialEq<Rhs> + PointeeSized
     {
-        
-    
+  
         #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
         fn partial_cmp(&self, other: &Rhs) -> Option<Ordering>;
         #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
-        fn lt(&self, other: &Rhs) -> bool {
-            self.partial_cmp(other).is_some_and(Ordering::is_lt)
-        }
+        fn lt(&self, other: &Rhs) -> bool { self.partial_cmp(other).is_some_and( Ordering::is_lt ) }
     
         #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
-        fn le(&self, other: &Rhs) -> bool {
-            self.partial_cmp(other).is_some_and(Ordering::is_le)
-        }
+        fn le(&self, other: &Rhs) -> bool { self.partial_cmp(other).is_some_and( Ordering::is_le ) }
     
         #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
-        fn gt(&self, other: &Rhs) -> bool {
-            self.partial_cmp(other).is_some_and(Ordering::is_gt)
-        }
+        fn gt(&self, other: &Rhs) -> bool { self.partial_cmp(other).is_some_and( Ordering::is_gt ) }
     
         #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
 
-        fn ge(&self, other: &Rhs) -> bool {
-            self.partial_cmp(other).is_some_and(Ordering::is_ge)
-        }
+        fn ge(&self, other: &Rhs) -> bool { self.partial_cmp(other).is_some_and( Ordering::is_ge ) }
 
         #[inline] #[unstable(feature = "partial_ord_chaining_methods", issue = "none")] #[doc(hidden)]
-        fn __chaining_lt(&self, other: &Rhs) -> ControlFlow<bool> {
-            default_chaining_impl(self, other, Ordering::is_lt)
-        }
+        fn __chaining_lt(&self, other: &Rhs) -> ControlFlow<bool> { default_chaining_impl( self, other, Ordering::is_lt ) }
 
         #[inline] #[unstable(feature = "partial_ord_chaining_methods", issue = "none")] #[doc(hidden)]
-        fn __chaining_le(&self, other: &Rhs) -> ControlFlow<bool> {
-            default_chaining_impl(self, other, Ordering::is_le)
-        }
+        fn __chaining_le(&self, other: &Rhs) -> ControlFlow<bool> { default_chaining_impl( self, other, Ordering::is_le ) }
 
         #[inline] #[unstable(feature = "partial_ord_chaining_methods", issue = "none")] #[doc(hidden)]
-        fn __chaining_gt(&self, other: &Rhs) -> ControlFlow<bool> {
-            default_chaining_impl(self, other, Ordering::is_gt)
-        }
+        fn __chaining_gt(&self, other: &Rhs) -> ControlFlow<bool> { default_chaining_impl( self, other, Ordering::is_gt ) }
 
         #[inline] #[unstable(feature = "partial_ord_chaining_methods", issue = "none")] #[doc(hidden)]
-        fn __chaining_ge(&self, other: &Rhs) -> ControlFlow<bool> {
-            default_chaining_impl(self, other, Ordering::is_ge)
-        }
+        fn __chaining_ge(&self, other: &Rhs) -> ControlFlow<bool> { default_chaining_impl( self, other, Ordering::is_ge ) }
     }
 
     const fn default_chaining_impl<T, U>(
@@ -6274,9 +5990,7 @@ pub mod cmp
         /* compiler built-in */
     }   
 
-    #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn min<T: [const] Ord + [const] Destruct>(v1: T, v2: T) -> T {
-        v1.min(v2)
-    }
+    #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn min<T: [const] Ord + [const] Destruct>(v1: T, v2: T) -> T { v1.min( v2 ) }
     
     #[inline] #[must_use] #[stable(feature = "cmp_min_max_by", since = "1.53.0")]
     pub const fn min_by<T: [const] Destruct, F: [const] FnOnce(&T, &T) -> Ordering>(
@@ -6297,9 +6011,7 @@ pub mod cmp
         if f(&v2) < f(&v1) { v2 } else { v1 }
     }   
 
-    #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn max<T: [const] Ord + [const] Destruct>(v1: T, v2: T) -> T {
-        v1.max(v2)
-    }
+    #[inline] #[must_use] #[stable(feature = "rust1", since = "1.0.0")] pub const fn max<T: [const] Ord + [const] Destruct>(v1: T, v2: T) -> T { v1.max( v2 ) }
     
     #[inline] #[must_use] #[stable(feature = "cmp_min_max_by", since = "1.53.0")]
     pub const fn max_by<T: [const] Destruct, F: [const] FnOnce(&T, &T) -> Ordering>(
@@ -6446,18 +6158,14 @@ pub mod cmp
 
         impl const PartialOrd for () {
             #[inline]
-            fn partial_cmp(&self, _: &()) -> Option<Ordering> {
-                Some(Equal)
-            }
+            fn partial_cmp(&self, _: &()) -> Option<Ordering> { Some( Equal ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
 
         impl const PartialOrd for bool {
             #[inline]
-            fn partial_cmp(&self, other: &bool) -> Option<Ordering> {
-                Some(self.cmp(other))
-            }
+            fn partial_cmp(&self, other: &bool) -> Option<Ordering> { Some(self.cmp( other) ) }
             partial_ord_methods_primitive_impl!();
         }
         partial_ord_impl! { f16 f32 f64 f128 }
@@ -6467,18 +6175,14 @@ pub mod cmp
                 #[stable(feature = "rust1", since = "1.0.0")]
 
                 impl const PartialOrd for $t {
-                    #[inline] fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-                        Some(crate::intrinsics::three_way_compare(*self, *other))
-                    }
+                    #[inline] fn partial_cmp(&self, other: &Self) -> Option<Ordering> { Some(crate::intrinsics::three_way_compare( *self, *other) ) }
                     partial_ord_methods_primitive_impl!();
                 }
                 
                 #[stable(feature = "rust1", since = "1.0.0")]
 
                 impl const Ord for $t {
-                    #[inline] fn cmp(&self, other: &Self) -> Ordering {
-                        crate::intrinsics::three_way_compare(*self, *other)
-                    }
+                    #[inline] fn cmp(&self, other: &Self) -> Ordering { crate::intrinsics::three_way_compare( *self, *other ) }
                 }
             )*)
         }
@@ -6562,14 +6266,10 @@ pub mod cmp
             A: [const] PartialEq<B>,
         {
             #[inline]
-            fn eq(&self, other: &&B) -> bool {
-                PartialEq::eq(*self, *other)
-            }
+            fn eq(&self, other: &&B) -> bool { PartialEq::eq( *self, *other ) }
             
             #[inline]
-            fn ne(&self, other: &&B) -> bool {
-                PartialEq::ne(*self, *other)
-            }
+            fn ne(&self, other: &&B) -> bool { PartialEq::ne( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6578,49 +6278,31 @@ pub mod cmp
             A: [const] PartialOrd<B>,
         {
             #[inline]
-            fn partial_cmp(&self, other: &&B) -> Option<Ordering> {
-                PartialOrd::partial_cmp(*self, *other)
-            }
+            fn partial_cmp(&self, other: &&B) -> Option<Ordering> { PartialOrd::partial_cmp( *self, *other ) }
             
             #[inline]
-            fn lt(&self, other: &&B) -> bool {
-                PartialOrd::lt(*self, *other)
-            }
+            fn lt(&self, other: &&B) -> bool { PartialOrd::lt( *self, *other ) }
             
             #[inline]
-            fn le(&self, other: &&B) -> bool {
-                PartialOrd::le(*self, *other)
-            }
+            fn le(&self, other: &&B) -> bool { PartialOrd::le( *self, *other ) }
             
             #[inline]
-            fn gt(&self, other: &&B) -> bool {
-                PartialOrd::gt(*self, *other)
-            }
+            fn gt(&self, other: &&B) -> bool { PartialOrd::gt( *self, *other ) }
             
             #[inline]
-            fn ge(&self, other: &&B) -> bool {
-                PartialOrd::ge(*self, *other)
-            }
+            fn ge(&self, other: &&B) -> bool { PartialOrd::ge( *self, *other ) }
             
             #[inline]
-            fn __chaining_lt(&self, other: &&B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_lt(*self, *other)
-            }
+            fn __chaining_lt(&self, other: &&B) -> ControlFlow<bool> { PartialOrd::__chaining_lt( *self, *other ) }
             
             #[inline]
-            fn __chaining_le(&self, other: &&B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_le(*self, *other)
-            }
+            fn __chaining_le(&self, other: &&B) -> ControlFlow<bool> { PartialOrd::__chaining_le( *self, *other ) }
             
             #[inline]
-            fn __chaining_gt(&self, other: &&B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_gt(*self, *other)
-            }
+            fn __chaining_gt(&self, other: &&B) -> ControlFlow<bool> { PartialOrd::__chaining_gt( *self, *other ) }
             
             #[inline]
-            fn __chaining_ge(&self, other: &&B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_ge(*self, *other)
-            }
+            fn __chaining_ge(&self, other: &&B) -> ControlFlow<bool> { PartialOrd::__chaining_ge( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6629,9 +6311,7 @@ pub mod cmp
             A: [const] Ord,
         {
             #[inline]
-            fn cmp(&self, other: &Self) -> Ordering {
-                Ord::cmp(*self, *other)
-            }
+            fn cmp(&self, other: &Self) -> Ordering { Ord::cmp( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6644,14 +6324,10 @@ pub mod cmp
             A: [const] PartialEq<B>,
         {
             #[inline]
-            fn eq(&self, other: &&mut B) -> bool {
-                PartialEq::eq(*self, *other)
-            }
+            fn eq(&self, other: &&mut B) -> bool { PartialEq::eq( *self, *other ) }
             
             #[inline]
-            fn ne(&self, other: &&mut B) -> bool {
-                PartialEq::ne(*self, *other)
-            }
+            fn ne(&self, other: &&mut B) -> bool { PartialEq::ne( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6660,49 +6336,31 @@ pub mod cmp
             A: [const] PartialOrd<B>,
         {
             #[inline]
-            fn partial_cmp(&self, other: &&mut B) -> Option<Ordering> {
-                PartialOrd::partial_cmp(*self, *other)
-            }
+            fn partial_cmp(&self, other: &&mut B) -> Option<Ordering> { PartialOrd::partial_cmp( *self, *other ) }
             
             #[inline]
-            fn lt(&self, other: &&mut B) -> bool {
-                PartialOrd::lt(*self, *other)
-            }
+            fn lt(&self, other: &&mut B) -> bool { PartialOrd::lt( *self, *other ) }
             
             #[inline]
-            fn le(&self, other: &&mut B) -> bool {
-                PartialOrd::le(*self, *other)
-            }
+            fn le(&self, other: &&mut B) -> bool { PartialOrd::le( *self, *other ) }
             
             #[inline]
-            fn gt(&self, other: &&mut B) -> bool {
-                PartialOrd::gt(*self, *other)
-            }
+            fn gt(&self, other: &&mut B) -> bool { PartialOrd::gt( *self, *other ) }
             
             #[inline]
-            fn ge(&self, other: &&mut B) -> bool {
-                PartialOrd::ge(*self, *other)
-            }
+            fn ge(&self, other: &&mut B) -> bool { PartialOrd::ge( *self, *other ) }
             
             #[inline]
-            fn __chaining_lt(&self, other: &&mut B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_lt(*self, *other)
-            }
+            fn __chaining_lt(&self, other: &&mut B) -> ControlFlow<bool> { PartialOrd::__chaining_lt( *self, *other ) }
             
             #[inline]
-            fn __chaining_le(&self, other: &&mut B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_le(*self, *other)
-            }
+            fn __chaining_le(&self, other: &&mut B) -> ControlFlow<bool> { PartialOrd::__chaining_le( *self, *other ) }
             
             #[inline]
-            fn __chaining_gt(&self, other: &&mut B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_gt(*self, *other)
-            }
+            fn __chaining_gt(&self, other: &&mut B) -> ControlFlow<bool> { PartialOrd::__chaining_gt( *self, *other ) }
             
             #[inline]
-            fn __chaining_ge(&self, other: &&mut B) -> ControlFlow<bool> {
-                PartialOrd::__chaining_ge(*self, *other)
-            }
+            fn __chaining_ge(&self, other: &&mut B) -> ControlFlow<bool> { PartialOrd::__chaining_ge( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6711,9 +6369,7 @@ pub mod cmp
             A: [const] Ord,
         {
             #[inline]
-            fn cmp(&self, other: &Self) -> Ordering {
-                Ord::cmp(*self, *other)
-            }
+            fn cmp(&self, other: &Self) -> Ordering { Ord::cmp( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6726,14 +6382,10 @@ pub mod cmp
             A: [const] PartialEq<B>,
         {
             #[inline]
-            fn eq(&self, other: &&mut B) -> bool {
-                PartialEq::eq(*self, *other)
-            }
+            fn eq(&self, other: &&mut B) -> bool { PartialEq::eq( *self, *other ) }
             
             #[inline]
-            fn ne(&self, other: &&mut B) -> bool {
-                PartialEq::ne(*self, *other)
-            }
+            fn ne(&self, other: &&mut B) -> bool { PartialEq::ne( *self, *other ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -6742,14 +6394,10 @@ pub mod cmp
             A: [const] PartialEq<B>,
         {
             #[inline]
-            fn eq(&self, other: &&B) -> bool {
-                PartialEq::eq(*self, *other)
-            }
+            fn eq(&self, other: &&B) -> bool { PartialEq::eq( *self, *other ) }
             
             #[inline]
-            fn ne(&self, other: &&B) -> bool {
-                PartialEq::ne(*self, *other)
-            }
+            fn ne(&self, other: &&B) -> bool { PartialEq::ne( *self, *other ) }
         }
     }
 }
@@ -6803,9 +6451,7 @@ pub mod convert
                     impl FloatToInt<$Int> for $Float 
                     {
                         #[inline] unsafe fn to_int_unchecked(self) -> $Int 
-                        {
-                            unsafe { crate::intrinsics::float_to_int_unchecked(self) }
-                        }
+                        { unsafe { crate::intrinsics::float_to_int_unchecked( self ) } }
                     }
                 )+
             }
@@ -7306,9 +6952,7 @@ pub mod convert
     where
         T: [const] AsRef<U>,
     {
-        #[inline] fn as_ref(&self) -> &U {
-            <T as AsRef<U>>::as_ref(*self)
-        }
+        #[inline] fn as_ref(&self) -> &U { <T as AsRef<U>>::as_ref( *self ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -7317,9 +6961,7 @@ pub mod convert
     where
         T: [const] AsRef<U>,
     {
-        #[inline] fn as_ref(&self) -> &U {
-            <T as AsRef<U>>::as_ref(*self)
-        }
+        #[inline] fn as_ref(&self) -> &U { <T as AsRef<U>>::as_ref( *self ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -7328,9 +6970,7 @@ pub mod convert
     where
         T: [const] AsMut<U>,
     {
-        #[inline] fn as_mut(&mut self) -> &mut U {
-            (*self).as_mut()
-        }
+        #[inline] fn as_mut(&mut self) -> &mut U {  ( *self).as_mut( ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -7341,9 +6981,7 @@ pub mod convert
     {
     
         #[inline] #[track_caller]
-        fn into(self) -> U {
-            U::from(self)
-        }
+        fn into(self) -> U { U::from( self ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -7371,9 +7009,7 @@ pub mod convert
         U: [const] TryFrom<T>,
     {
         type Error = U::Error;
-        #[inline] fn try_into(self) -> Result<U, U::Error> {
-            U::try_from(self)
-        }
+        #[inline] fn try_into(self) -> Result<U, U::Error> { U::try_from( self ) }
     }
 
     #[stable(feature = "try_from", since = "1.34.0")]
@@ -7383,9 +7019,7 @@ pub mod convert
         U: [const] Into<T>,
     {
         type Error = Infallible;
-        #[inline] fn try_from(value: U) -> Result<Self, Self::Error> {
-            Ok(U::into(value))
-        }
+        #[inline] fn try_from(value: U) -> Result<Self, Self::Error> { Ok(U::into( value) ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -7396,6 +7030,7 @@ pub mod convert
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T> const AsMut<[T]> for [T] {
@@ -7404,6 +7039,7 @@ pub mod convert
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl const AsRef<str> for str {
@@ -7412,6 +7048,7 @@ pub mod convert
             self
         }
     }
+    
     #[stable(feature = "as_mut_str_for_str", since = "1.51.0")]
 
     impl const AsMut<str> for str {
@@ -7423,6 +7060,7 @@ pub mod convert
     
         #[stable(feature = "convert_infallible", since = "1.34.0")] #[derive(Copy)]
     pub enum Infallible {}
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const Clone for Infallible {
@@ -7430,20 +7068,24 @@ pub mod convert
             match *self {}
         }
     }
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
     impl fmt::Debug for Infallible {
         fn fmt(&self, _: &mut fmt::Formatter<'_>) -> fmt::Result {
             match *self {}
         }
     }
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
     impl fmt::Display for Infallible {
         fn fmt(&self, _: &mut fmt::Formatter<'_>) -> fmt::Result {
             match *self {}
         }
     }
+    
     #[stable(feature = "str_parse_error2", since = "1.8.0")]
     impl Error for Infallible {}
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const PartialEq for Infallible {
@@ -7451,9 +7093,11 @@ pub mod convert
             match *self {}
         }
     }
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const Eq for Infallible {}
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const PartialOrd for Infallible {
@@ -7461,6 +7105,7 @@ pub mod convert
             match *self {}
         }
     }
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const Ord for Infallible {
@@ -7468,6 +7113,7 @@ pub mod convert
             match *self {}
         }
     }
+    
     #[stable(feature = "convert_infallible", since = "1.34.0")]
 
     impl const From<!> for Infallible {
@@ -7475,6 +7121,7 @@ pub mod convert
             x
         }
     }
+    
     #[stable(feature = "convert_infallible_hash", since = "1.44.0")]
     impl Hash for Infallible {
         fn hash<H: Hasher>(&self, _: &mut H) {
@@ -7563,8 +7210,7 @@ pub mod error
     
     #[allow(multiple_supertrait_upcastable)]
     pub trait Error: Debug + Display {
-        
-    
+  
         #[stable(feature = "error_source", since = "1.30.0")]
         fn source(&self) -> Option<&(dyn Error + 'static)> {
             None
@@ -7629,31 +7275,19 @@ pub mod error
     }
     
     impl dyn Error + 'static + Send {
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn is<T: Error + 'static>(&self) -> bool {
-            <dyn Error + 'static>::is::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn is<T: Error + 'static>(&self) -> bool { <dyn Error + 'static>::is::<T>( self ) }
 
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_ref<T: Error + 'static>(&self) -> Option<&T> {
-            <dyn Error + 'static>::downcast_ref::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_ref<T: Error + 'static>(&self) -> Option<&T> { <dyn Error + 'static>::downcast_ref::<T>( self ) }
 
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_mut<T: Error + 'static>(&mut self) -> Option<&mut T> {
-            <dyn Error + 'static>::downcast_mut::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_mut<T: Error + 'static>(&mut self) -> Option<&mut T> { <dyn Error + 'static>::downcast_mut::<T>( self ) }
     }
     
     impl dyn Error + 'static + Send + Sync {
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn is<T: Error + 'static>(&self) -> bool {
-            <dyn Error + 'static>::is::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn is<T: Error + 'static>(&self) -> bool { <dyn Error + 'static>::is::<T>( self ) }
 
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_ref<T: Error + 'static>(&self) -> Option<&T> {
-            <dyn Error + 'static>::downcast_ref::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_ref<T: Error + 'static>(&self) -> Option<&T> { <dyn Error + 'static>::downcast_ref::<T>( self ) }
 
-        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_mut<T: Error + 'static>(&mut self) -> Option<&mut T> {
-            <dyn Error + 'static>::downcast_mut::<T>(self)
-        }
+        #[stable(feature = "error_downcast", since = "1.3.0")] #[inline] pub fn downcast_mut<T: Error + 'static>(&mut self) -> Option<&mut T> { <dyn Error + 'static>::downcast_mut::<T>( self ) }
     }
     
     impl dyn Error {
@@ -7668,17 +7302,13 @@ pub mod error
     pub fn request_value<'a, T>(err: &'a (impl Error + ?Sized)) -> Option<T>
     where
         T: 'static,
-    {
-        request_by_type_tag::<'a, tags::Value<T>>(err)
-    }
+    { request_by_type_tag::<'a, tags::Value<T>>( err ) }
     
     #[unstable(feature = "error_generic_member_access", issue = "99301")]
     pub fn request_ref<'a, T>(err: &'a (impl Error + ?Sized)) -> Option<&'a T>
     where
         T: 'static + ?Sized,
-    {
-        request_by_type_tag::<'a, tags::Ref<tags::MaybeSizedValue<T>>>(err)
-    }
+    { request_by_type_tag::<'a, tags::Ref<tags::MaybeSizedValue<T>>>( err ) }
 
     fn request_by_type_tag<'a, I>(err: &'a (impl Error + ?Sized)) -> Option<I::Reified>
     where
@@ -7692,50 +7322,37 @@ pub mod error
     #[unstable(feature = "error_generic_member_access", issue = "99301")] #[repr(transparent)]
     pub struct Request<'a>(Tagged<dyn Erased<'a> + 'a>);
     impl<'a> Request<'a> {
-        
-    
+  
         #[unstable(feature = "error_generic_member_access", issue = "99301")]
         pub fn provide_value<T>(&mut self, value: T) -> &mut Self where
             T: 'static,
-        {
-            self.provide::<tags::Value<T>>(value)
-        }
+        { self.provide::<tags::Value<T>>( value ) }
 
         #[unstable(feature = "error_generic_member_access", issue = "99301")]
         pub fn provide_value_with<T>(&mut self, fulfil: impl FnOnce() -> T) -> &mut Self where
             T: 'static,
-        {
-            self.provide_with::<tags::Value<T>>(fulfil)
-        }
+        { self.provide_with::<tags::Value<T>>( fulfil ) }
 
         #[unstable(feature = "error_generic_member_access", issue = "99301")]
-        pub fn provide_ref<T: ?Sized + 'static>(&mut self, value: &'a T) -> &mut Self {
-            self.provide::<tags::Ref<tags::MaybeSizedValue<T>>>(value)
-        }
+        pub fn provide_ref<T: ?Sized + 'static>(&mut self, value: &'a T) -> &mut Self { self.provide::<tags::Ref<tags::MaybeSizedValue<T>>>( value ) }
 
         #[unstable(feature = "error_generic_member_access", issue = "99301")]
         pub fn provide_ref_with<T: ?Sized + 'static>(
             &mut self,
             fulfil: impl FnOnce() -> &'a T,
-        ) -> &mut Self {
-            self.provide_with::<tags::Ref<tags::MaybeSizedValue<T>>>(fulfil)
-        }
+        ) -> &mut Self { self.provide_with::<tags::Ref<tags::MaybeSizedValue<T>>>( fulfil ) }
 
         fn provide<I>(&mut self, value: I::Reified) -> &mut Self where
             I: tags::Type<'a>,
         {
-            if let Some(res @ TaggedOption(None)) = self.0.downcast_mut::<I>() {
-                res.0 = Some(value);
-            }
+            if let Some(res @ TaggedOption(None)) = self.0.downcast_mut::<I>() { res.0 = Some(value); }
             self
         }
 
         fn provide_with<I>(&mut self, fulfil: impl FnOnce() -> I::Reified) -> &mut Self where
             I: tags::Type<'a>,
         {
-            if let Some(res @ TaggedOption(None)) = self.0.downcast_mut::<I>() {
-                res.0 = Some(fulfil());
-            }
+            if let Some(res @ TaggedOption(None)) = self.0.downcast_mut::<I>() { res.0 = Some(fulfil()); }
             self
         }
         
@@ -7758,15 +7375,11 @@ pub mod error
         }
         fn would_be_satisfied_by<I>(&self) -> bool where
             I: tags::Type<'a>,
-        {
-            matches!(self.0.downcast::<I>(), Some(TaggedOption(None)))
-        }
+        { matches!(self.0.downcast::<I>(), Some(TaggedOption( None)) ) }
     }
     #[unstable(feature = "error_generic_member_access", issue = "99301")]
     impl<'a> Debug for Request<'a> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
-            f.debug_struct("Request").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result { f.debug_struct( "Request").finish_non_exhaustive( ) }
     }
     
     pub(crate) mod tags {
@@ -7827,10 +7440,7 @@ pub mod error
         #[inline] fn downcast<I>(&self) -> Option<&TaggedOption<'a, I>> where
             I: tags::Type<'a>,
         {
-            if self.tag_id == TypeId::of::<I>() {
-
-                Some(&unsafe { &*(self as *const Self).cast::<Tagged<TaggedOption<'a, I>>>() }.value)
-            } else {
+            if self.tag_id == TypeId::of::<I>() { Some(&unsafe { &*(self as *const Self).cast::<Tagged<TaggedOption<'a, I>>>( ) }.value ) } else {
                 None
             }
         }
@@ -7868,31 +7478,33 @@ pub mod error
     }
     #[unstable(feature = "error_iter", issue = "58520")]
     impl<'a> crate::iter::FusedIterator for Source<'a> {}
+    
     #[stable(feature = "error_by_ref", since = "1.51.0")]
     impl<'a, T: Error + ?Sized> Error for &'a T {
         #[allow(deprecated)]
-        fn cause(&self) -> Option<&dyn Error> {
-            Error::cause(&**self)
-        }
-        fn source(&self) -> Option<&(dyn Error + 'static)> {
-            Error::source(&**self)
-        }
-        fn provide<'b>(&'b self, request: &mut Request<'b>) {
-            Error::provide(&**self, request);
-        }
+        fn cause(&self) -> Option<&dyn Error> { Error::cause( &**self ) }
+        fn source(&self) -> Option<&(dyn Error + 'static)> { Error::source( &**self ) }
+        fn provide<'b>(&'b self, request: &mut Request<'b>) { Error::provide(&**self, request); }
     }
+    
     #[stable(feature = "fmt_error", since = "1.11.0")]
     impl Error for crate::fmt::Error {}
+    
     #[stable(feature = "try_borrow", since = "1.13.0")]
     impl Error for crate::cell::BorrowError {}
+    
     #[stable(feature = "try_borrow", since = "1.13.0")]
     impl Error for crate::cell::BorrowMutError {}
+    
     #[stable(feature = "try_from", since = "1.34.0")]
     impl Error for crate::char::CharTryFromError {}
+    
     #[stable(feature = "duration_checked_float", since = "1.66.0")]
     impl Error for crate::time::TryFromFloatSecsError {}
+    
     #[stable(feature = "cstr_from_bytes_until_nul", since = "1.69.0")]
     impl Error for crate::ffi::FromBytesUntilNulError {}
+    
     #[stable(feature = "get_many_mut", since = "1.86.0")]
     impl Error for crate::slice::GetDisjointMutError {}
 }
@@ -7919,12 +7531,8 @@ pub mod index
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<usize> {
         type Output = T;
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            slice.get(cmp::min(self.0, slice.len() - 1))
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            slice.get_mut(cmp::min(self.0, slice.len() - 1))
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { slice.get(cmp::min(self.0, slice.len( ) - 1) ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { slice.get_mut(cmp::min(self.0, slice.len( ) - 1) ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { slice_get_unchecked(slice, cmp::min(self.0, slice.len() - 1)) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { slice_get_unchecked(slice, cmp::min(self.0, slice.len() - 1)) } }
         fn index(self, slice: &[T]) -> &Self::Output {
@@ -8081,110 +7689,62 @@ pub mod index
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<range::RangeFrom<usize>> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (cmp::min(self.0.start, slice.len())..).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (cmp::min(self.0.start, slice.len())..).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (cmp::min(self.0.start, slice.len())..).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (cmp::min(self.0.start, slice.len())..).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (cmp::min(self.0.start, slice.len())..).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (cmp::min(self.0.start, slice.len())..).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (cmp::min(self.0.start, slice.len())..).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (cmp::min(self.0.start, slice.len())..).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (cmp::min(self.0.start, slice.len())..).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (cmp::min(self.0.start, slice.len())..).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<ops::RangeFrom<usize>> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (cmp::min(self.0.start, slice.len())..).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (cmp::min(self.0.start, slice.len())..).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (cmp::min(self.0.start, slice.len())..).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (cmp::min(self.0.start, slice.len())..).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (cmp::min(self.0.start, slice.len())..).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (cmp::min(self.0.start, slice.len())..).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (cmp::min(self.0.start, slice.len())..).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (cmp::min(self.0.start, slice.len())..).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (cmp::min(self.0.start, slice.len())..).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (cmp::min(self.0.start, slice.len())..).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<range::RangeTo<usize>> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (..cmp::min(self.0.end, slice.len())).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (..cmp::min(self.0.end, slice.len())).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (..cmp::min(self.0.end, slice.len())).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (..cmp::min(self.0.end, slice.len())).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (..cmp::min(self.0.end, slice.len())).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (..cmp::min(self.0.end, slice.len())).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (..cmp::min(self.0.end, slice.len())).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (..cmp::min(self.0.end, slice.len())).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (..cmp::min(self.0.end, slice.len())).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (..cmp::min(self.0.end, slice.len())).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<range::RangeToInclusive<usize>> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (..=cmp::min(self.0.last, slice.len() - 1)).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (..=cmp::min(self.0.last, slice.len() - 1)).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (..=cmp::min(self.0.last, slice.len() - 1)).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (..=cmp::min(self.0.last, slice.len() - 1)).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (..=cmp::min(self.0.last, slice.len() - 1)).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (..=cmp::min(self.0.last, slice.len() - 1)).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (..=cmp::min(self.0.last, slice.len() - 1)).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (..=cmp::min(self.0.last, slice.len() - 1)).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (..=cmp::min(self.0.last, slice.len() - 1)).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (..=cmp::min(self.0.last, slice.len() - 1)).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<ops::RangeToInclusive<usize>> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (..=cmp::min(self.0.end, slice.len() - 1)).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (..=cmp::min(self.0.end, slice.len() - 1)).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (..=cmp::min(self.0.end, slice.len() - 1)).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (..=cmp::min(self.0.end, slice.len() - 1)).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (..=cmp::min(self.0.end, slice.len() - 1)).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (..=cmp::min(self.0.end, slice.len() - 1)).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (..=cmp::min(self.0.end, slice.len() - 1)).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (..=cmp::min(self.0.end, slice.len() - 1)).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (..=cmp::min(self.0.end, slice.len() - 1)).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (..=cmp::min(self.0.end, slice.len() - 1)).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Clamp<range::RangeFull> {
         type Output = [T];
-        fn get(self, slice: &[T]) -> Option<&Self::Output> {
-            (..).get(slice)
-        }
-        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> {
-            (..).get_mut(slice)
-        }
+        fn get(self, slice: &[T]) -> Option<&Self::Output> { (..).get( slice ) }
+        fn get_mut(self, slice: &mut [T]) -> Option<&mut Self::Output> { (..).get_mut( slice ) }
         unsafe fn get_unchecked(self, slice: *const [T]) -> *const Self::Output { unsafe { (..).get_unchecked(slice) } }
         unsafe fn get_unchecked_mut(self, slice: *mut [T]) -> *mut Self::Output { unsafe { (..).get_unchecked_mut(slice) } }
-        fn index(self, slice: &[T]) -> &Self::Output {
-            (..).index(slice)
-        }
-        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output {
-            (..).index_mut(slice)
-        }
+        fn index(self, slice: &[T]) -> &Self::Output { (..).index( slice ) }
+        fn index_mut(self, slice: &mut [T]) -> &mut Self::Output { (..).index_mut( slice ) }
     }
     #[unstable(feature = "sliceindex_wrappers", issue = "146179")]
     unsafe impl<T> SliceIndex<[T]> for Last {
@@ -8262,8 +7822,10 @@ pub mod marker
     pub unsafe auto trait Send {
 
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> !Send for *const T {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> !Send for *mut T {}
 
@@ -8431,8 +7993,10 @@ pub mod marker
     pub unsafe auto trait Sync {
     
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> !Sync for *const T {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> !Sync for *mut T {}
     
@@ -8442,28 +8006,32 @@ pub mod marker
     impl<T: PointeeSized> Hash for PhantomData<T> {
         #[inline] fn hash<H: Hasher>(&self, _: &mut H) {}
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> cmp::PartialEq for PhantomData<T> {
         fn eq(&self, _other: &PhantomData<T>) -> bool {
             true
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> cmp::Eq for PhantomData<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> cmp::PartialOrd for PhantomData<T> {
-        fn partial_cmp(&self, _other: &PhantomData<T>) -> Option<cmp::Ordering> {
-            Option::Some(cmp::Ordering::Equal)
-        }
+        fn partial_cmp(&self, _other: &PhantomData<T>) -> Option<cmp::Ordering> { Option::Some( cmp::Ordering::Equal ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> cmp::Ord for PhantomData<T> {
         fn cmp(&self, _other: &PhantomData<T>) -> cmp::Ordering {
             cmp::Ordering::Equal
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Copy for PhantomData<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Clone for PhantomData<T> {
         fn clone(&self) -> Self {
@@ -8472,6 +8040,7 @@ pub mod marker
     }
     #[doc(hidden)] #[unstable(feature = "trivial_clone", issue = "none")]
     unsafe impl<T: ?Sized> TrivialClone for PhantomData<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: PointeeSized> const Default for PhantomData<T> {
@@ -8735,7 +8304,7 @@ pub mod ops
         {
             ($(($($t:ty)*) => $panic:expr),*) => 
             ($($(
-                #[doc = $panic] #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_ops", issue = "143802")]
+                
                 impl const Div for $t
                 {
                     type Output = $t;
@@ -9047,58 +8616,51 @@ pub mod ops
         };
         /*
         */
-        /// An async-aware version of the [`Fn`](crate::ops::Fn) trait.
-        ///
-        /// All `async fn` and functions returning futures implement this trait.
+
+
+
         #[stable(feature = "async_closure", since = "1.85.0")]
         #[rustc_paren_sugar]
         #[must_use = "async closures are lazy and do nothing unless called"]
         #[lang = "async_fn"]
         pub trait AsyncFn<Args: Tuple>: AsyncFnMut<Args> {
-            /// Call the [`AsyncFn`], returning a future which may borrow from the called closure.
+
             #[unstable(feature = "async_fn_traits", issue = "none")]
             extern "rust-call" fn async_call(&self, args: Args) -> Self::CallRefFuture<'_>;
         }
 
-        /// An async-aware version of the [`FnMut`](crate::ops::FnMut) trait.
-        ///
-        /// All `async fn` and functions returning futures implement this trait.
+
         #[stable(feature = "async_closure", since = "1.85.0")]
         #[rustc_paren_sugar]
         #[must_use = "async closures are lazy and do nothing unless called"]
         #[lang = "async_fn_mut"]
         pub trait AsyncFnMut<Args: Tuple>: AsyncFnOnce<Args> {
-            /// Future returned by [`AsyncFnMut::async_call_mut`] and [`AsyncFn::async_call`].
-            #[unstable(feature = "async_fn_traits", issue = "none")]
-            #[lang = "call_ref_future"]
+
+            #[unstable(feature = "async_fn_traits", issue = "none")] #[lang = "call_ref_future"]
             type CallRefFuture<'a>: Future<Output = Self::Output>
             where
                 Self: 'a;
 
-            /// Call the [`AsyncFnMut`], returning a future which may borrow from the called closure.
+
             #[unstable(feature = "async_fn_traits", issue = "none")]
             extern "rust-call" fn async_call_mut(&mut self, args: Args) -> Self::CallRefFuture<'_>;
         }
 
-        /// An async-aware version of the [`FnOnce`](crate::ops::FnOnce) trait.
-        ///
-        /// All `async fn` and functions returning futures implement this trait.
+
         #[stable(feature = "async_closure", since = "1.85.0")]
         #[rustc_paren_sugar]
         #[must_use = "async closures are lazy and do nothing unless called"]
         #[lang = "async_fn_once"]
         pub trait AsyncFnOnce<Args: Tuple> {
-            /// Future returned by [`AsyncFnOnce::async_call_once`].
-            #[unstable(feature = "async_fn_traits", issue = "none")]
-            #[lang = "call_once_future"]
+
+            #[unstable(feature = "async_fn_traits", issue = "none")] #[lang = "call_once_future"]
             type CallOnceFuture: Future<Output = Self::Output>;
 
-            /// Output type of the called closure's future.
-            #[unstable(feature = "async_fn_traits", issue = "none")]
-            #[lang = "async_fn_once_output"]
+
+            #[unstable(feature = "async_fn_traits", issue = "none")] #[lang = "async_fn_once_output"]
             type Output;
 
-            /// Call the [`AsyncFnOnce`], returning a future which may move out of the called closure.
+
             #[unstable(feature = "async_fn_traits", issue = "none")]
             extern "rust-call" fn async_call_once(self, args: Args) -> Self::CallOnceFuture;
         }
@@ -9112,9 +8674,7 @@ pub mod ops
             where
                 F: AsyncFn<A>,
             {
-                extern "rust-call" fn async_call(&self, args: A) -> Self::CallRefFuture<'_> {
-                    F::async_call(*self, args)
-                }
+                extern "rust-call" fn async_call(&self, args: A) -> Self::CallRefFuture<'_> { F::async_call( *self, args ) }
             }
 
             #[stable(feature = "async_closure", since = "1.85.0")]
@@ -9127,9 +8687,7 @@ pub mod ops
                 where
                     Self: 'a;
 
-                extern "rust-call" fn async_call_mut(&mut self, args: A) -> Self::CallRefFuture<'_> {
-                    F::async_call(*self, args)
-                }
+                extern "rust-call" fn async_call_mut(&mut self, args: A) -> Self::CallRefFuture<'_> { F::async_call( *self, args ) }
             }
 
             #[stable(feature = "async_closure", since = "1.85.0")]
@@ -9140,9 +8698,7 @@ pub mod ops
                 type Output = F::Output;
                 type CallOnceFuture = F::CallRefFuture<'a>;
 
-                extern "rust-call" fn async_call_once(self, args: A) -> Self::CallOnceFuture {
-                    F::async_call(self, args)
-                }
+                extern "rust-call" fn async_call_once(self, args: A) -> Self::CallOnceFuture { F::async_call( self, args ) }
             }
 
             #[stable(feature = "async_closure", since = "1.85.0")]
@@ -9155,9 +8711,7 @@ pub mod ops
                 where
                     Self: 'a;
 
-                extern "rust-call" fn async_call_mut(&mut self, args: A) -> Self::CallRefFuture<'_> {
-                    F::async_call_mut(*self, args)
-                }
+                extern "rust-call" fn async_call_mut(&mut self, args: A) -> Self::CallRefFuture<'_> { F::async_call_mut( *self, args ) }
             }
 
             #[stable(feature = "async_closure", since = "1.85.0")]
@@ -9168,22 +8722,19 @@ pub mod ops
                 type Output = F::Output;
                 type CallOnceFuture = F::CallRefFuture<'a>;
 
-                extern "rust-call" fn async_call_once(self, args: A) -> Self::CallOnceFuture {
-                    F::async_call_mut(self, args)
-                }
+                extern "rust-call" fn async_call_once(self, args: A) -> Self::CallOnceFuture { F::async_call_mut( self, args ) }
             }
         }
 
         mod internal_implementation_detail {
-            /// A helper trait that is used to enforce that the `ClosureKind` of a goal
-            /// is within the capabilities of a `CoroutineClosure`, and which allows us
-            /// to delay the projection of the tupled upvar types until after upvar
-            /// analysis is complete.
-            ///
-            /// The `Self` type is expected to be the `kind_ty` of the coroutine-closure,
-            /// and thus either `?0` or `i8`/`i16`/`i32` (see docs for `ClosureKind`
-            /// for an explanation of that). The `GoalKind` is also the same type, but
-            /// representing the kind of the trait that the closure is being called with.
+
+
+
+
+
+
+
+
             #[lang = "async_fn_kind_helper"]
             trait AsyncFnKindHelper<GoalKind> {
                 // Projects a set of closure inputs (arguments), a region, and a set of upvars
@@ -9216,20 +8767,12 @@ pub mod ops
         #[rustc_const_unstable(feature = "const_ops", issue = "143802")]
         #[doc(alias = "!")]
         pub const trait Not {
-            /// The resulting type after applying the `!` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the unary `!` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(!true, false);
-            /// assert_eq!(!false, true);
-            /// assert_eq!(!1u8, 254);
-            /// assert_eq!(!0u8, 255);
-            /// ```
+
+ 
             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn not(self) -> Self::Output;
@@ -9264,64 +8807,44 @@ pub mod ops
                 match self {}
             }
         }
+        
 
-        /// The bitwise AND operator `&`.
-        ///
-        /// Note that `Rhs` is `Self` by default, but this is not mandatory.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `BitAnd` for a wrapper around `bool`.
-        ///
-        /// ```
-        /// use std::ops::BitAnd;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(bool);
-        ///
-        /// impl BitAnd for Scalar {
-        ///     type Output = Self;
-        ///
-        ///     // rhs is the "right-hand side" of the expression `a & b`
-        ///     fn bitand(self, rhs: Self) -> Self::Output {
-        ///         Self(self.0 & rhs.0)
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(Scalar(true) & Scalar(true), Scalar(true));
-        /// assert_eq!(Scalar(true) & Scalar(false), Scalar(false));
-        /// assert_eq!(Scalar(false) & Scalar(true), Scalar(false));
-        /// assert_eq!(Scalar(false) & Scalar(false), Scalar(false));
-        /// ```
-        ///
-        /// An implementation of `BitAnd` for a wrapper around `Vec<bool>`.
-        ///
-        /// ```
-        /// use std::ops::BitAnd;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct BooleanVector(Vec<bool>);
-        ///
-        /// impl BitAnd for BooleanVector {
-        ///     type Output = Self;
-        ///
-        ///     fn bitand(self, Self(rhs): Self) -> Self::Output {
-        ///         let Self(lhs) = self;
-        ///         assert_eq!(lhs.len(), rhs.len());
-        ///         Self(
-        ///             lhs.iter()
-        ///                 .zip(rhs.iter())
-        ///                 .map(|(x, y)| *x & *y)
-        ///                 .collect()
-        ///         )
-        ///     }
-        /// }
-        ///
-        /// let bv1 = BooleanVector(vec![true, true, false, false]);
-        /// let bv2 = BooleanVector(vec![true, false, true, false]);
-        /// let expected = BooleanVector(vec![true, false, false, false]);
-        /// assert_eq!(bv1 & bv2, expected);
-        /// ```
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "bitand"]
         #[doc(alias = "&")]
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -9331,20 +8854,12 @@ pub mod ops
             label = "no implementation for `{Self} & {Rhs}`"
         )]
         pub const trait BitAnd<Rhs = Self> {
-            /// The resulting type after applying the `&` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the `&` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(true & false, false);
-            /// assert_eq!(true & true, true);
-            /// assert_eq!(5u8 & 1u8, 1);
-            /// assert_eq!(5u8 & 2u8, 0);
-            /// ```
+
+ 
             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn bitand(self, rhs: Rhs) -> Self::Output;
@@ -9368,64 +8883,44 @@ pub mod ops
         }
 
         bitand_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
+        
 
-        /// The bitwise OR operator `|`.
-        ///
-        /// Note that `Rhs` is `Self` by default, but this is not mandatory.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `BitOr` for a wrapper around `bool`.
-        ///
-        /// ```
-        /// use std::ops::BitOr;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(bool);
-        ///
-        /// impl BitOr for Scalar {
-        ///     type Output = Self;
-        ///
-        ///     // rhs is the "right-hand side" of the expression `a | b`
-        ///     fn bitor(self, rhs: Self) -> Self::Output {
-        ///         Self(self.0 | rhs.0)
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(Scalar(true) | Scalar(true), Scalar(true));
-        /// assert_eq!(Scalar(true) | Scalar(false), Scalar(true));
-        /// assert_eq!(Scalar(false) | Scalar(true), Scalar(true));
-        /// assert_eq!(Scalar(false) | Scalar(false), Scalar(false));
-        /// ```
-        ///
-        /// An implementation of `BitOr` for a wrapper around `Vec<bool>`.
-        ///
-        /// ```
-        /// use std::ops::BitOr;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct BooleanVector(Vec<bool>);
-        ///
-        /// impl BitOr for BooleanVector {
-        ///     type Output = Self;
-        ///
-        ///     fn bitor(self, Self(rhs): Self) -> Self::Output {
-        ///         let Self(lhs) = self;
-        ///         assert_eq!(lhs.len(), rhs.len());
-        ///         Self(
-        ///             lhs.iter()
-        ///                 .zip(rhs.iter())
-        ///                 .map(|(x, y)| *x | *y)
-        ///                 .collect()
-        ///         )
-        ///     }
-        /// }
-        ///
-        /// let bv1 = BooleanVector(vec![true, true, false, false]);
-        /// let bv2 = BooleanVector(vec![true, false, true, false]);
-        /// let expected = BooleanVector(vec![true, true, true, false]);
-        /// assert_eq!(bv1 | bv2, expected);
-        /// ```
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "bitor"]
         #[doc(alias = "|")]
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -9435,20 +8930,12 @@ pub mod ops
             label = "no implementation for `{Self} | {Rhs}`"
         )]
         pub const trait BitOr<Rhs = Self> {
-            /// The resulting type after applying the `|` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the `|` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(true | false, true);
-            /// assert_eq!(false | false, false);
-            /// assert_eq!(5u8 | 1u8, 5);
-            /// assert_eq!(5u8 | 2u8, 7);
-            /// ```
+
+ 
             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn bitor(self, rhs: Rhs) -> Self::Output;
@@ -9472,64 +8959,44 @@ pub mod ops
         }
 
         bitor_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
+        
 
-        /// The bitwise XOR operator `^`.
-        ///
-        /// Note that `Rhs` is `Self` by default, but this is not mandatory.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `BitXor` that lifts `^` to a wrapper around `bool`.
-        ///
-        /// ```
-        /// use std::ops::BitXor;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(bool);
-        ///
-        /// impl BitXor for Scalar {
-        ///     type Output = Self;
-        ///
-        ///     // rhs is the "right-hand side" of the expression `a ^ b`
-        ///     fn bitxor(self, rhs: Self) -> Self::Output {
-        ///         Self(self.0 ^ rhs.0)
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(Scalar(true) ^ Scalar(true), Scalar(false));
-        /// assert_eq!(Scalar(true) ^ Scalar(false), Scalar(true));
-        /// assert_eq!(Scalar(false) ^ Scalar(true), Scalar(true));
-        /// assert_eq!(Scalar(false) ^ Scalar(false), Scalar(false));
-        /// ```
-        ///
-        /// An implementation of `BitXor` trait for a wrapper around `Vec<bool>`.
-        ///
-        /// ```
-        /// use std::ops::BitXor;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct BooleanVector(Vec<bool>);
-        ///
-        /// impl BitXor for BooleanVector {
-        ///     type Output = Self;
-        ///
-        ///     fn bitxor(self, Self(rhs): Self) -> Self::Output {
-        ///         let Self(lhs) = self;
-        ///         assert_eq!(lhs.len(), rhs.len());
-        ///         Self(
-        ///             lhs.iter()
-        ///                 .zip(rhs.iter())
-        ///                 .map(|(x, y)| *x ^ *y)
-        ///                 .collect()
-        ///         )
-        ///     }
-        /// }
-        ///
-        /// let bv1 = BooleanVector(vec![true, true, false, false]);
-        /// let bv2 = BooleanVector(vec![true, false, true, false]);
-        /// let expected = BooleanVector(vec![false, true, true, false]);
-        /// assert_eq!(bv1 ^ bv2, expected);
-        /// ```
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "bitxor"]
         #[doc(alias = "^")]
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -9539,20 +9006,12 @@ pub mod ops
             label = "no implementation for `{Self} ^ {Rhs}`"
         )]
         pub const trait BitXor<Rhs = Self> {
-            /// The resulting type after applying the `^` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the `^` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(true ^ false, true);
-            /// assert_eq!(true ^ true, false);
-            /// assert_eq!(5u8 ^ 1u8, 4);
-            /// assert_eq!(5u8 ^ 2u8, 7);
-            /// ```
+
+ 
             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn bitxor(self, rhs: Rhs) -> Self::Output;
@@ -9577,62 +9036,37 @@ pub mod ops
 
         bitxor_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
 
-        /// The left shift operator `<<`. Note that because this trait is implemented
-        /// for all integer types with multiple right-hand-side types, Rust's type
-        /// checker has special handling for `_ << _`, setting the result type for
-        /// integer operations to the type of the left-hand-side operand. This means
-        /// that though `a << b` and `a.shl(b)` are one and the same from an evaluation
-        /// standpoint, they are different when it comes to type inference.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `Shl` that lifts the `<<` operation on integers to a
-        /// wrapper around `usize`.
-        ///
-        /// ```
-        /// use std::ops::Shl;
-        ///
-        /// #[derive(PartialEq, Debug)]
-        /// struct Scalar(usize);
-        ///
-        /// impl Shl<Scalar> for Scalar {
-        ///     type Output = Self;
-        ///
-        ///     fn shl(self, Self(rhs): Self) -> Self::Output {
-        ///         let Self(lhs) = self;
-        ///         Self(lhs << rhs)
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(Scalar(4) << Scalar(2), Scalar(16));
-        /// ```
-        ///
-        /// An implementation of `Shl` that spins a vector leftward by a given amount.
-        ///
-        /// ```
-        /// use std::ops::Shl;
-        ///
-        /// #[derive(PartialEq, Debug)]
-        /// struct SpinVector<T: Clone> {
-        ///     vec: Vec<T>,
-        /// }
-        ///
-        /// impl<T: Clone> Shl<usize> for SpinVector<T> {
-        ///     type Output = Self;
-        ///
-        ///     fn shl(self, rhs: usize) -> Self::Output {
-        ///         // Rotate the vector by `rhs` places.
-        ///         let (a, b) = self.vec.split_at(rhs);
-        ///         let mut spun_vector = vec![];
-        ///         spun_vector.extend_from_slice(b);
-        ///         spun_vector.extend_from_slice(a);
-        ///         Self { vec: spun_vector }
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(SpinVector { vec: vec![0, 1, 2, 3, 4] } << 2,
-        ///            SpinVector { vec: vec![2, 3, 4, 0, 1] });
-        /// ```
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "shl"]
         #[doc(alias = "<<")]
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -9642,19 +9076,12 @@ pub mod ops
             label = "no implementation for `{Self} << {Rhs}`"
         )]
         pub const trait Shl<Rhs = Self> {
-            /// The resulting type after applying the `<<` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the `<<` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(5u8 << 1, 10);
-            /// assert_eq!(1u8 << 1, 2);
-            /// ```
-            #[must_use]
+
+             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn shl(self, rhs: Rhs) -> Self::Output;
         }
@@ -9699,62 +9126,37 @@ pub mod ops
 
         shl_impl_all! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
 
-        /// The right shift operator `>>`. Note that because this trait is implemented
-        /// for all integer types with multiple right-hand-side types, Rust's type
-        /// checker has special handling for `_ >> _`, setting the result type for
-        /// integer operations to the type of the left-hand-side operand. This means
-        /// that though `a >> b` and `a.shr(b)` are one and the same from an evaluation
-        /// standpoint, they are different when it comes to type inference.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `Shr` that lifts the `>>` operation on integers to a
-        /// wrapper around `usize`.
-        ///
-        /// ```
-        /// use std::ops::Shr;
-        ///
-        /// #[derive(PartialEq, Debug)]
-        /// struct Scalar(usize);
-        ///
-        /// impl Shr<Scalar> for Scalar {
-        ///     type Output = Self;
-        ///
-        ///     fn shr(self, Self(rhs): Self) -> Self::Output {
-        ///         let Self(lhs) = self;
-        ///         Self(lhs >> rhs)
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(Scalar(16) >> Scalar(2), Scalar(4));
-        /// ```
-        ///
-        /// An implementation of `Shr` that spins a vector rightward by a given amount.
-        ///
-        /// ```
-        /// use std::ops::Shr;
-        ///
-        /// #[derive(PartialEq, Debug)]
-        /// struct SpinVector<T: Clone> {
-        ///     vec: Vec<T>,
-        /// }
-        ///
-        /// impl<T: Clone> Shr<usize> for SpinVector<T> {
-        ///     type Output = Self;
-        ///
-        ///     fn shr(self, rhs: usize) -> Self::Output {
-        ///         // Rotate the vector by `rhs` places.
-        ///         let (a, b) = self.vec.split_at(self.vec.len() - rhs);
-        ///         let mut spun_vector = vec![];
-        ///         spun_vector.extend_from_slice(b);
-        ///         spun_vector.extend_from_slice(a);
-        ///         Self { vec: spun_vector }
-        ///     }
-        /// }
-        ///
-        /// assert_eq!(SpinVector { vec: vec![0, 1, 2, 3, 4] } >> 2,
-        ///            SpinVector { vec: vec![3, 4, 0, 1, 2] });
-        /// ```
+        
+
+
+        
+
+
+        
+
+
+
+
+
+        
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "shr"]
         #[doc(alias = ">>")]
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -9764,19 +9166,12 @@ pub mod ops
             label = "no implementation for `{Self} >> {Rhs}`"
         )]
         pub const trait Shr<Rhs = Self> {
-            /// The resulting type after applying the `>>` operator.
+
             #[stable(feature = "rust1", since = "1.0.0")]
             type Output;
 
-            /// Performs the `>>` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// assert_eq!(5u8 >> 1, 2);
-            /// assert_eq!(2u8 >> 1, 1);
-            /// ```
-            #[must_use]
+
+             #[must_use]
             #[stable(feature = "rust1", since = "1.0.0")]
             fn shr(self, rhs: Rhs) -> Self::Output;
         }
@@ -9820,72 +9215,48 @@ pub mod ops
         }
 
         shr_impl_all! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+        
 
-        /// The bitwise AND assignment operator `&=`.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `BitAndAssign` that lifts the `&=` operator to a
-        /// wrapper around `bool`.
-        ///
-        /// ```
-        /// use std::ops::BitAndAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(bool);
-        ///
-        /// impl BitAndAssign for Scalar {
-        ///     // rhs is the "right-hand side" of the expression `a &= b`
-        ///     fn bitand_assign(&mut self, rhs: Self) {
-        ///         *self = Self(self.0 & rhs.0)
-        ///     }
-        /// }
-        ///
-        /// let mut scalar = Scalar(true);
-        /// scalar &= Scalar(true);
-        /// assert_eq!(scalar, Scalar(true));
-        ///
-        /// let mut scalar = Scalar(true);
-        /// scalar &= Scalar(false);
-        /// assert_eq!(scalar, Scalar(false));
-        ///
-        /// let mut scalar = Scalar(false);
-        /// scalar &= Scalar(true);
-        /// assert_eq!(scalar, Scalar(false));
-        ///
-        /// let mut scalar = Scalar(false);
-        /// scalar &= Scalar(false);
-        /// assert_eq!(scalar, Scalar(false));
-        /// ```
-        ///
-        /// Here, the `BitAndAssign` trait is implemented for a wrapper around
-        /// `Vec<bool>`.
-        ///
-        /// ```
-        /// use std::ops::BitAndAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct BooleanVector(Vec<bool>);
-        ///
-        /// impl BitAndAssign for BooleanVector {
-        ///     // `rhs` is the "right-hand side" of the expression `a &= b`.
-        ///     fn bitand_assign(&mut self, rhs: Self) {
-        ///         assert_eq!(self.0.len(), rhs.0.len());
-        ///         *self = Self(
-        ///             self.0
-        ///                 .iter()
-        ///                 .zip(rhs.0.iter())
-        ///                 .map(|(x, y)| *x & *y)
-        ///                 .collect()
-        ///         );
-        ///     }
-        /// }
-        ///
-        /// let mut bv = BooleanVector(vec![true, true, false, false]);
-        /// bv &= BooleanVector(vec![true, false, true, false]);
-        /// let expected = BooleanVector(vec![true, false, false, false]);
-        /// assert_eq!(bv, expected);
-        /// ```
+
+        
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "bitand_assign"]
         #[doc(alias = "&=")]
         #[stable(feature = "op_assign_traits", since = "1.8.0")]
@@ -9895,27 +9266,15 @@ pub mod ops
             label = "no implementation for `{Self} &= {Rhs}`"
         )]
         pub const trait BitAndAssign<Rhs = Self> {
-            /// Performs the `&=` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// let mut x = true;
-            /// x &= false;
-            /// assert_eq!(x, false);
-            ///
-            /// let mut x = true;
-            /// x &= true;
-            /// assert_eq!(x, true);
-            ///
-            /// let mut x: u8 = 5;
-            /// x &= 1;
-            /// assert_eq!(x, 1);
-            ///
-            /// let mut x: u8 = 5;
-            /// x &= 2;
-            /// assert_eq!(x, 0);
-            /// ```
+
+             
+
+
+
+
+
+
+
             #[stable(feature = "op_assign_traits", since = "1.8.0")]
             fn bitand_assign(&mut self, rhs: Rhs);
         }
@@ -9936,31 +9295,20 @@ pub mod ops
         }
 
         bitand_assign_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
+        
 
-        /// The bitwise OR assignment operator `|=`.
-        ///
-        /// # Examples
-        ///
-        /// ```
-        /// use std::ops::BitOrAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct PersonalPreferences {
-        ///     likes_cats: bool,
-        ///     likes_dogs: bool,
-        /// }
-        ///
-        /// impl BitOrAssign for PersonalPreferences {
-        ///     fn bitor_assign(&mut self, rhs: Self) {
-        ///         self.likes_cats |= rhs.likes_cats;
-        ///         self.likes_dogs |= rhs.likes_dogs;
-        ///     }
-        /// }
-        ///
-        /// let mut prefs = PersonalPreferences { likes_cats: true, likes_dogs: false };
-        /// prefs |= PersonalPreferences { likes_cats: false, likes_dogs: true };
-        /// assert_eq!(prefs, PersonalPreferences { likes_cats: true, likes_dogs: true });
-        /// ```
+
+
+
+
+
+
+
+        
+
+
+
+
         #[lang = "bitor_assign"]
         #[doc(alias = "|=")]
         #[stable(feature = "op_assign_traits", since = "1.8.0")]
@@ -9970,27 +9318,15 @@ pub mod ops
             label = "no implementation for `{Self} |= {Rhs}`"
         )]
         pub const trait BitOrAssign<Rhs = Self> {
-            /// Performs the `|=` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// let mut x = true;
-            /// x |= false;
-            /// assert_eq!(x, true);
-            ///
-            /// let mut x = false;
-            /// x |= false;
-            /// assert_eq!(x, false);
-            ///
-            /// let mut x: u8 = 5;
-            /// x |= 1;
-            /// assert_eq!(x, 5);
-            ///
-            /// let mut x: u8 = 5;
-            /// x |= 2;
-            /// assert_eq!(x, 7);
-            /// ```
+
+             
+
+
+
+
+
+
+
             #[stable(feature = "op_assign_traits", since = "1.8.0")]
             fn bitor_assign(&mut self, rhs: Rhs);
         }
@@ -10011,31 +9347,20 @@ pub mod ops
         }
 
         bitor_assign_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
+        
 
-        /// The bitwise XOR assignment operator `^=`.
-        ///
-        /// # Examples
-        ///
-        /// ```
-        /// use std::ops::BitXorAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Personality {
-        ///     has_soul: bool,
-        ///     likes_knitting: bool,
-        /// }
-        ///
-        /// impl BitXorAssign for Personality {
-        ///     fn bitxor_assign(&mut self, rhs: Self) {
-        ///         self.has_soul ^= rhs.has_soul;
-        ///         self.likes_knitting ^= rhs.likes_knitting;
-        ///     }
-        /// }
-        ///
-        /// let mut personality = Personality { has_soul: false, likes_knitting: true };
-        /// personality ^= Personality { has_soul: true, likes_knitting: true };
-        /// assert_eq!(personality, Personality { has_soul: true, likes_knitting: false});
-        /// ```
+
+
+
+
+
+
+
+        
+
+
+
+
         #[lang = "bitxor_assign"]
         #[doc(alias = "^=")]
         #[stable(feature = "op_assign_traits", since = "1.8.0")]
@@ -10045,27 +9370,15 @@ pub mod ops
             label = "no implementation for `{Self} ^= {Rhs}`"
         )]
         pub const trait BitXorAssign<Rhs = Self> {
-            /// Performs the `^=` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// let mut x = true;
-            /// x ^= false;
-            /// assert_eq!(x, true);
-            ///
-            /// let mut x = true;
-            /// x ^= true;
-            /// assert_eq!(x, false);
-            ///
-            /// let mut x: u8 = 5;
-            /// x ^= 1;
-            /// assert_eq!(x, 4);
-            ///
-            /// let mut x: u8 = 5;
-            /// x ^= 2;
-            /// assert_eq!(x, 7);
-            /// ```
+
+             
+
+
+
+
+
+
+
             #[stable(feature = "op_assign_traits", since = "1.8.0")]
             fn bitxor_assign(&mut self, rhs: Rhs);
         }
@@ -10086,29 +9399,16 @@ pub mod ops
         }
 
         bitxor_assign_impl! { bool usize u8 u16 u32 u64 u128 isize i8 i16 i32 i64 i128 }
+        
 
-        /// The left shift assignment operator `<<=`.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `ShlAssign` for a wrapper around `usize`.
-        ///
-        /// ```
-        /// use std::ops::ShlAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(usize);
-        ///
-        /// impl ShlAssign<usize> for Scalar {
-        ///     fn shl_assign(&mut self, rhs: usize) {
-        ///         self.0 <<= rhs;
-        ///     }
-        /// }
-        ///
-        /// let mut scalar = Scalar(4);
-        /// scalar <<= 2;
-        /// assert_eq!(scalar, Scalar(16));
-        /// ```
+        
+
+
+        
+
+
+
+
         #[lang = "shl_assign"]
         #[doc(alias = "<<=")]
         #[stable(feature = "op_assign_traits", since = "1.8.0")]
@@ -10118,19 +9418,10 @@ pub mod ops
             label = "no implementation for `{Self} <<= {Rhs}`"
         )]
         pub const trait ShlAssign<Rhs = Self> {
-            /// Performs the `<<=` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// let mut x: u8 = 5;
-            /// x <<= 1;
-            /// assert_eq!(x, 10);
-            ///
-            /// let mut x: u8 = 1;
-            /// x <<= 1;
-            /// assert_eq!(x, 2);
-            /// ```
+
+ 
+
+
             #[stable(feature = "op_assign_traits", since = "1.8.0")]
             fn shl_assign(&mut self, rhs: Rhs);
         }
@@ -10172,29 +9463,16 @@ pub mod ops
         }
 
         shl_assign_impl_all! { u8 u16 u32 u64 u128 usize i8 i16 i32 i64 i128 isize }
+        
 
-        /// The right shift assignment operator `>>=`.
-        ///
-        /// # Examples
-        ///
-        /// An implementation of `ShrAssign` for a wrapper around `usize`.
-        ///
-        /// ```
-        /// use std::ops::ShrAssign;
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// struct Scalar(usize);
-        ///
-        /// impl ShrAssign<usize> for Scalar {
-        ///     fn shr_assign(&mut self, rhs: usize) {
-        ///         self.0 >>= rhs;
-        ///     }
-        /// }
-        ///
-        /// let mut scalar = Scalar(16);
-        /// scalar >>= 2;
-        /// assert_eq!(scalar, Scalar(4));
-        /// ```
+        
+
+
+        
+
+
+
+
         #[lang = "shr_assign"]
         #[doc(alias = ">>=")]
         #[stable(feature = "op_assign_traits", since = "1.8.0")]
@@ -10204,19 +9482,10 @@ pub mod ops
             label = "no implementation for `{Self} >>= {Rhs}`"
         )]
         pub const trait ShrAssign<Rhs = Self> {
-            /// Performs the `>>=` operation.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// let mut x: u8 = 5;
-            /// x >>= 1;
-            /// assert_eq!(x, 2);
-            ///
-            /// let mut x: u8 = 2;
-            /// x >>= 1;
-            /// assert_eq!(x, 1);
-            /// ```
+
+ 
+
+
             #[stable(feature = "op_assign_traits", since = "1.8.0")]
             fn shr_assign(&mut self, rhs: Rhs);
         }
@@ -10274,18 +9543,14 @@ pub mod ops
         #[stable(feature = "control_flow_enum_type", since = "1.55.0")]
         #[rustc_diagnostic_item = "ControlFlow"]
         #[must_use]
-        // ControlFlow should not implement PartialOrd or Ord, per RFC 3058:
-        // https://rust-lang.github.io/rfcs/3058-try-trait-v2.html#traits-for-controlflow
         #[derive(Copy, Debug, Hash)]
         #[derive_const(Clone, PartialEq, Eq)]
         pub enum ControlFlow<B, C = ()> {
-            /// Move on to the next phase of the operation as normal.
-            #[stable(feature = "control_flow_enum_type", since = "1.55.0")]
-            #[lang = "Continue"]
+
+            #[stable(feature = "control_flow_enum_type", since = "1.55.0")] #[lang = "Continue"]
             Continue(C),
-            /// Exit the operation without running subsequent phases.
-            #[stable(feature = "control_flow_enum_type", since = "1.55.0")]
-            #[lang = "Break"]
+
+            #[stable(feature = "control_flow_enum_type", since = "1.55.0")] #[lang = "Break"]
             Break(B),
             // Yes, the order of the variants doesn't match the type parameters.
             // They're in this order so that `ControlFlow<A, B>` <-> `Result<B, A>`
@@ -10299,9 +9564,7 @@ pub mod ops
             type Residual = ControlFlow<B, convert::Infallible>;
 
             #[inline]
-            fn from_output(output: Self::Output) -> Self {
-                ControlFlow::Continue(output)
-            }
+            fn from_output(output: Self::Output) -> Self { ControlFlow::Continue( output ) }
 
             #[inline]
             fn branch(self) -> ControlFlow<Self::Residual, Self::Output> {
@@ -10314,9 +9577,8 @@ pub mod ops
 
         #[unstable(feature = "try_trait_v2", issue = "84277", old_name = "try_trait")]
         #[rustc_const_unstable(feature = "const_try", issue = "74935")]
-        // Note: manually specifying the residual type instead of using the default to work around
-        // https://github.com/rust-lang/rust/issues/99940
-        impl<B, C> const ops::FromResidual<ControlFlow<B, convert::Infallible>> for ControlFlow<B, C> {
+        impl<B, C> const ops::FromResidual<ControlFlow<B, convert::Infallible>> for ControlFlow<B, C>
+        {
             #[inline]
             fn from_residual(residual: ControlFlow<B, convert::Infallible>) -> Self {
                 match residual {
@@ -10326,59 +9588,20 @@ pub mod ops
         }
 
         #[unstable(feature = "try_trait_v2_residual", issue = "91285")]
-        impl<B, C> ops::Residual<C> for ControlFlow<B, convert::Infallible> {
+        impl<B, C> ops::Residual<C> for ControlFlow<B, convert::Infallible>
+        {
             type TryType = ControlFlow<B, C>;
         }
 
-        impl<B, C> ControlFlow<B, C> {
-            /// Returns `true` if this is a `Break` variant.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// use std::ops::ControlFlow;
-            ///
-            /// assert!(ControlFlow::<&str, i32>::Break("Stop right there!").is_break());
-            /// assert!(!ControlFlow::<&str, i32>::Continue(3).is_break());
-            /// ```
-            #[inline]
-            #[stable(feature = "control_flow_enum_is", since = "1.59.0")]
-            #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
-            pub const fn is_break(&self) -> bool {
-                matches!(*self, ControlFlow::Break(_))
-            }
-
-            /// Returns `true` if this is a `Continue` variant.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// use std::ops::ControlFlow;
-            ///
-            /// assert!(!ControlFlow::<&str, i32>::Break("Stop right there!").is_continue());
-            /// assert!(ControlFlow::<&str, i32>::Continue(3).is_continue());
-            /// ```
-            #[inline]
-            #[stable(feature = "control_flow_enum_is", since = "1.59.0")]
-            #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
-            pub const fn is_continue(&self) -> bool {
-                matches!(*self, ControlFlow::Continue(_))
-            }
-
-            /// Converts the `ControlFlow` into an `Option` which is `Some` if the
-            /// `ControlFlow` was `Break` and `None` otherwise.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// use std::ops::ControlFlow;
-            ///
-            /// assert_eq!(ControlFlow::<&str, i32>::Break("Stop right there!").break_value(), Some("Stop right there!"));
-            /// assert_eq!(ControlFlow::<&str, i32>::Continue(3).break_value(), None);
-            /// ```
-            #[inline]
-            #[stable(feature = "control_flow_enum", since = "1.83.0")]
-            #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
+        impl<B, C> ControlFlow<B, C>
+        {
+            #[inline] #[stable(feature = "control_flow_enum_is", since = "1.59.0")] #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
+            pub const fn is_break(&self) -> bool { matches!(*self, ControlFlow::Break( _) ) }
+            
+            #[inline] #[stable(feature = "control_flow_enum_is", since = "1.59.0")] #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
+            pub const fn is_continue(&self) -> bool { matches!(*self, ControlFlow::Continue( _) ) }
+            
+            #[inline] #[stable(feature = "control_flow_enum", since = "1.83.0")] #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
             pub const fn break_value(self) -> Option<B>
             where
                 Self: [const] Destruct,
@@ -10388,75 +9611,8 @@ pub mod ops
                     ControlFlow::Break(x) => Some(x),
                 }
             }
-
-            /// Converts the `ControlFlow` into an `Result` which is `Ok` if the
-            /// `ControlFlow` was `Break` and `Err` if otherwise.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// #![feature(control_flow_ok)]
-            ///
-            /// use std::ops::ControlFlow;
-            ///
-            /// struct TreeNode<T> {
-            ///     value: T,
-            ///     left: Option<Box<TreeNode<T>>>,
-            ///     right: Option<Box<TreeNode<T>>>,
-            /// }
-            ///
-            /// impl<T> TreeNode<T> {
-            ///     fn find<'a>(&'a self, mut predicate: impl FnMut(&T) -> bool) -> Result<&'a T, ()> {
-            ///         let mut f = |t: &'a T| -> ControlFlow<&'a T> {
-            ///             if predicate(t) {
-            ///                 ControlFlow::Break(t)
-            ///             } else {
-            ///                 ControlFlow::Continue(())
-            ///             }
-            ///         };
-            ///
-            ///         self.traverse_inorder(&mut f).break_ok()
-            ///     }
-            ///
-            ///     fn traverse_inorder<'a, B>(
-            ///         &'a self,
-            ///         f: &mut impl FnMut(&'a T) -> ControlFlow<B>,
-            ///     ) -> ControlFlow<B> {
-            ///         if let Some(left) = &self.left {
-            ///             left.traverse_inorder(f)?;
-            ///         }
-            ///         f(&self.value)?;
-            ///         if let Some(right) = &self.right {
-            ///             right.traverse_inorder(f)?;
-            ///         }
-            ///         ControlFlow::Continue(())
-            ///     }
-            ///
-            ///     fn leaf(value: T) -> Option<Box<TreeNode<T>>> {
-            ///         Some(Box::new(Self {
-            ///             value,
-            ///             left: None,
-            ///             right: None,
-            ///         }))
-            ///     }
-            /// }
-            ///
-            /// let node = TreeNode {
-            ///     value: 0,
-            ///     left: TreeNode::leaf(1),
-            ///     right: Some(Box::new(TreeNode {
-            ///         value: -1,
-            ///         left: TreeNode::leaf(5),
-            ///         right: TreeNode::leaf(2),
-            ///     })),
-            /// };
-            ///
-            /// let res = node.find(|val: &i32| *val > 3);
-            /// assert_eq!(res, Ok(&5));
-            /// ```
-            #[inline]
-            #[unstable(feature = "control_flow_ok", issue = "140266")]
-            #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
+ 
+            #[inline] #[unstable(feature = "control_flow_ok", issue = "140266")] #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
             pub const fn break_ok(self) -> Result<B, C> {
                 match self {
                     ControlFlow::Continue(c) => Err(c),
@@ -10464,11 +9620,7 @@ pub mod ops
                 }
             }
 
-            /// Maps `ControlFlow<B, C>` to `ControlFlow<T, C>` by applying a function
-            /// to the break value in case it exists.
-            #[inline]
-            #[stable(feature = "control_flow_enum", since = "1.83.0")]
-            #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
+            #[inline] #[stable(feature = "control_flow_enum", since = "1.83.0")] #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
             pub const fn map_break<T, F>(self, f: F) -> ControlFlow<T, C>
             where
                 F: [const] FnOnce(B) -> T + [const] Destruct,
@@ -10478,21 +9630,8 @@ pub mod ops
                     ControlFlow::Break(x) => ControlFlow::Break(f(x)),
                 }
             }
-
-            /// Converts the `ControlFlow` into an `Option` which is `Some` if the
-            /// `ControlFlow` was `Continue` and `None` otherwise.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// use std::ops::ControlFlow;
-            ///
-            /// assert_eq!(ControlFlow::<&str, i32>::Break("Stop right there!").continue_value(), None);
-            /// assert_eq!(ControlFlow::<&str, i32>::Continue(3).continue_value(), Some(3));
-            /// ```
-            #[inline]
-            #[stable(feature = "control_flow_enum", since = "1.83.0")]
-            #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
+            
+            #[inline] #[stable(feature = "control_flow_enum", since = "1.83.0")] #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
             pub const fn continue_value(self) -> Option<C>
             where
                 Self: [const] Destruct,
@@ -10502,74 +9641,8 @@ pub mod ops
                     ControlFlow::Break(..) => None,
                 }
             }
-
-            /// Converts the `ControlFlow` into an `Result` which is `Ok` if the
-            /// `ControlFlow` was `Continue` and `Err` if otherwise.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// #![feature(control_flow_ok)]
-            ///
-            /// use std::ops::ControlFlow;
-            ///
-            /// struct TreeNode<T> {
-            ///     value: T,
-            ///     left: Option<Box<TreeNode<T>>>,
-            ///     right: Option<Box<TreeNode<T>>>,
-            /// }
-            ///
-            /// impl<T> TreeNode<T> {
-            ///     fn validate<B>(&self, f: &mut impl FnMut(&T) -> ControlFlow<B>) -> Result<(), B> {
-            ///         self.traverse_inorder(f).continue_ok()
-            ///     }
-            ///
-            ///     fn traverse_inorder<B>(&self, f: &mut impl FnMut(&T) -> ControlFlow<B>) -> ControlFlow<B> {
-            ///         if let Some(left) = &self.left {
-            ///             left.traverse_inorder(f)?;
-            ///         }
-            ///         f(&self.value)?;
-            ///         if let Some(right) = &self.right {
-            ///             right.traverse_inorder(f)?;
-            ///         }
-            ///         ControlFlow::Continue(())
-            ///     }
-            ///
-            ///     fn leaf(value: T) -> Option<Box<TreeNode<T>>> {
-            ///         Some(Box::new(Self {
-            ///             value,
-            ///             left: None,
-            ///             right: None,
-            ///         }))
-            ///     }
-            /// }
-            ///
-            /// let node = TreeNode {
-            ///     value: 0,
-            ///     left: TreeNode::leaf(1),
-            ///     right: Some(Box::new(TreeNode {
-            ///         value: -1,
-            ///         left: TreeNode::leaf(5),
-            ///         right: TreeNode::leaf(2),
-            ///     })),
-            /// };
-            ///
-            /// let res = node.validate(&mut |val| {
-            ///     if *val < 0 {
-            ///         return ControlFlow::Break("negative value detected");
-            ///     }
-            ///
-            ///     if *val > 4 {
-            ///         return ControlFlow::Break("too big value detected");
-            ///     }
-            ///
-            ///     ControlFlow::Continue(())
-            /// });
-            /// assert_eq!(res, Err("too big value detected"));
-            /// ```
-            #[inline]
-            #[unstable(feature = "control_flow_ok", issue = "140266")]
-            #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
+ 
+            #[inline] #[unstable(feature = "control_flow_ok", issue = "140266")] #[rustc_const_unstable(feature = "min_const_control_flow", issue = "148738")]
             pub const fn continue_ok(self) -> Result<C, B> {
                 match self {
                     ControlFlow::Continue(c) => Ok(c),
@@ -10577,11 +9650,7 @@ pub mod ops
                 }
             }
 
-            /// Maps `ControlFlow<B, C>` to `ControlFlow<B, T>` by applying a function
-            /// to the continue value in case it exists.
-            #[inline]
-            #[stable(feature = "control_flow_enum", since = "1.83.0")]
-            #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
+            #[inline] #[stable(feature = "control_flow_enum", since = "1.83.0")] #[rustc_const_unstable(feature = "const_control_flow", issue = "148739")]
             pub const fn map_continue<T, F>(self, f: F) -> ControlFlow<B, T>
             where
                 F: [const] FnOnce(C) -> T + [const] Destruct,
@@ -10593,20 +9662,11 @@ pub mod ops
             }
         }
 
-        impl<T> ControlFlow<T, T> {
-            /// Extracts the value `T` that is wrapped by `ControlFlow<T, T>`.
-            ///
-            /// # Examples
-            ///
-            /// ```
-            /// #![feature(control_flow_into_value)]
-            /// use std::ops::ControlFlow;
-            ///
-            /// assert_eq!(ControlFlow::<i32, i32>::Break(1024).into_value(), 1024);
-            /// assert_eq!(ControlFlow::<i32, i32>::Continue(512).into_value(), 512);
-            /// ```
-            #[unstable(feature = "control_flow_into_value", issue = "137461")]
-            #[rustc_allow_const_fn_unstable(const_precise_live_drops)]
+        impl<T> ControlFlow<T, T>
+        {
+
+ 
+            #[unstable(feature = "control_flow_into_value", issue = "137461")] #[rustc_allow_const_fn_unstable(const_precise_live_drops)]
             pub const fn into_value(self) -> T {
                 match self {
                     ControlFlow::Continue(x) | ControlFlow::Break(x) => x,
@@ -10614,22 +9674,17 @@ pub mod ops
             }
         }
 
-        /// These are used only as part of implementing the iterator adapters.
-        /// They have mediocre names and non-obvious semantics, so aren't
-        /// currently on a path to potential stabilization.
-        impl<R: ops::Try> ControlFlow<R, R::Output> {
-            /// Creates a `ControlFlow` from any type implementing `Try`.
-            #[inline]
-            pub(crate) fn from_try(r: R) -> Self {
+        impl<R: ops::Try> ControlFlow<R, R::Output>
+        {
+
+            #[inline] pub(crate) fn from_try(r: R) -> Self {
                 match R::branch(r) {
                     ControlFlow::Continue(v) => ControlFlow::Continue(v),
                     ControlFlow::Break(v) => ControlFlow::Break(R::from_residual(v)),
                 }
             }
-
-            /// Converts a `ControlFlow` into any type implementing `Try`.
-            #[inline]
-            pub(crate) fn into_try(self) -> R {
+            
+            #[inline] pub(crate) fn into_try(self) -> R {
                 match self {
                     ControlFlow::Continue(v) => R::from_output(v),
                     ControlFlow::Break(v) => v,
@@ -10653,114 +9708,56 @@ pub mod ops
         #[lang = "coroutine_state"]
         #[unstable(feature = "coroutine_trait", issue = "43122")]
         pub enum CoroutineState<Y, R> {
-            /// The coroutine suspended with a value.
-            ///
-            /// This state indicates that a coroutine has been suspended, and typically
-            /// corresponds to a `yield` statement. The value provided in this variant
-            /// corresponds to the expression passed to `yield` and allows coroutines to
-            /// provide a value each time they yield.
+
+
+
+
+
             Yielded(Y),
 
-            /// The coroutine completed with a return value.
-            ///
-            /// This state indicates that a coroutine has finished execution with the
-            /// provided value. Once a coroutine has returned `Complete` it is
-            /// considered a programmer error to call `resume` again.
+
+
+
+
             Complete(R),
         }
 
-        /// The trait implemented by builtin coroutine types.
-        ///
-        /// Coroutines are currently an
-        /// experimental language feature in Rust. Added in [RFC 2033] coroutines are
-        /// currently intended to primarily provide a building block for async/await
-        /// syntax but will likely extend to also providing an ergonomic definition for
-        /// iterators and other primitives.
-        ///
-        /// The syntax and semantics for coroutines is unstable and will require a
-        /// further RFC for stabilization. At this time, though, the syntax is
-        /// closure-like:
-        ///
-        /// ```rust
-        /// #![feature(coroutines)]
-        /// #![feature(coroutine_trait)]
-        /// #![feature(stmt_expr_attributes)]
-        ///
-        /// use std::ops::{Coroutine, CoroutineState};
-        /// use std::pin::Pin;
-        ///
-        /// fn main() {
-        ///     let mut coroutine = #[coroutine] || {
-        ///         yield 1;
-        ///         "foo"
-        ///     };
-        ///
-        ///     match Pin::new(&mut coroutine).resume(()) {
-        ///         CoroutineState::Yielded(1) => {}
-        ///         _ => panic!("unexpected return from resume"),
-        ///     }
-        ///     match Pin::new(&mut coroutine).resume(()) {
-        ///         CoroutineState::Complete("foo") => {}
-        ///         _ => panic!("unexpected return from resume"),
-        ///     }
-        /// }
-        /// ```
-        ///
-        /// More documentation of coroutines can be found in the [unstable book].
-        ///
-        /// [RFC 2033]: https://github.com/rust-lang/rfcs/pull/2033
-        /// [unstable book]: ../../unstable-book/language-features/coroutines.html
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
         #[lang = "coroutine"]
         #[unstable(feature = "coroutine_trait", issue = "43122")]
         #[fundamental]
         #[must_use = "coroutines are lazy and do nothing unless resumed"]
-        pub trait Coroutine<R = ()> {
-            /// The type of value this coroutine yields.
-            ///
-            /// This associated type corresponds to the `yield` expression and the
-            /// values which are allowed to be returned each time a coroutine yields.
-            /// For example an iterator-as-a-coroutine would likely have this type as
-            /// `T`, the type being iterated over.
-            #[lang = "coroutine_yield"]
-            type Yield;
-
-            /// The type of value this coroutine returns.
-            ///
-            /// This corresponds to the type returned from a coroutine either with a
-            /// `return` statement or implicitly as the last expression of a coroutine
-            /// literal. For example futures would use this as `Result<T, E>` as it
-            /// represents a completed future.
-            #[lang = "coroutine_return"]
-            type Return;
-
-            /// Resumes the execution of this coroutine.
-            ///
-            /// This function will resume execution of the coroutine or start execution
-            /// if it hasn't already. This call will return back into the coroutine's
-            /// last suspension point, resuming execution from the latest `yield`. The
-            /// coroutine will continue executing until it either yields or returns, at
-            /// which point this function will return.
-            ///
-            /// # Return value
-            ///
-            /// The `CoroutineState` enum returned from this function indicates what
-            /// state the coroutine is in upon returning. If the `Yielded` variant is
-            /// returned then the coroutine has reached a suspension point and a value
-            /// has been yielded out. Coroutines in this state are available for
-            /// resumption at a later point.
-            ///
-            /// If `Complete` is returned then the coroutine has completely finished
-            /// with the value provided. It is invalid for the coroutine to be resumed
-            /// again.
-            ///
-            /// # Panics
-            ///
-            /// This function may panic if it is called after the `Complete` variant has
-            /// been returned previously. While coroutine literals in the language are
-            /// guaranteed to panic on resuming after `Complete`, this is not guaranteed
-            /// for all implementations of the `Coroutine` trait.
-            #[lang = "coroutine_resume"]
-            fn resume(self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return>;
+        pub trait Coroutine<R = ()>
+        {
+            #[lang = "coroutine_yield"] type Yield;
+            #[lang = "coroutine_return"] type Return;
+            #[lang = "coroutine_resume"] fn resume(self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return>;
         }
 
         #[unstable(feature = "coroutine_trait", issue = "43122")]
@@ -10768,9 +9765,7 @@ pub mod ops
             type Yield = G::Yield;
             type Return = G::Return;
 
-            fn resume(mut self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return> {
-                G::resume((*self).as_mut(), arg)
-            }
+            fn resume(mut self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return> { G::resume((*self).as_mut( ), arg ) }
         }
 
         #[unstable(feature = "coroutine_trait", issue = "43122")]
@@ -10778,9 +9773,7 @@ pub mod ops
             type Yield = G::Yield;
             type Return = G::Return;
 
-            fn resume(mut self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return> {
-                G::resume(Pin::new(&mut *self), arg)
-            }
+            fn resume(mut self: Pin<&mut Self>, arg: R) -> CoroutineState<Self::Yield, Self::Return> { G::resume(Pin::new( &mut *self), arg ) }
         }
     }
 
@@ -10802,16 +9795,14 @@ pub mod ops
         #[rustc_diagnostic_item = "Deref"]
         #[rustc_const_unstable(feature = "const_convert", issue = "143773")]
         pub const trait Deref: PointeeSized {
-            /// The resulting type after dereferencing.
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_diagnostic_item = "deref_target"]
+
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_diagnostic_item = "deref_target"]
             #[lang = "deref_target"]
             type Target: ?Sized;
 
-            /// Dereferences the value.
+
             #[must_use]
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_diagnostic_item = "deref_method"]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_diagnostic_item = "deref_method"]
             fn deref(&self) -> &Self::Target;
         }
 
@@ -10839,103 +9830,67 @@ pub mod ops
             }
         }
 
-        /// Used for mutable dereferencing operations, like in `*v = 1;`.
-        ///
-        /// In addition to being used for explicit dereferencing operations with the
-        /// (unary) `*` operator in mutable contexts, `DerefMut` is also used implicitly
-        /// by the compiler in many circumstances. This mechanism is called
-        /// ["mutable deref coercion"][coercion]. In immutable contexts, [`Deref`] is used.
-        ///
-        /// **Warning:** Deref coercion is a powerful language feature which has
-        /// far-reaching implications for every type that implements `DerefMut`. The
-        /// compiler will silently insert calls to `DerefMut::deref_mut`. For this
-        /// reason, one should be careful about implementing `DerefMut` and only do so
-        /// when mutable deref coercion is desirable. See [the `Deref` docs][implementing]
-        /// for advice on when this is typically desirable or undesirable.
-        ///
-        /// Types that implement `DerefMut` or `Deref` are often called "smart
-        /// pointers" and the mechanism of deref coercion has been specifically designed
-        /// to facilitate the pointer-like behavior that name suggests. Often, the
-        /// purpose of a "smart pointer" type is to change the ownership semantics
-        /// of a contained value (for example, [`Rc`][rc] or [`Cow`][cow]) or the
-        /// storage semantics of a contained value (for example, [`Box`][box]).
-        ///
-        /// # Mutable deref coercion
-        ///
-        /// If `T` implements `DerefMut<Target = U>`, and `v` is a value of type `T`,
-        /// then:
-        ///
-        /// * In mutable contexts, `*v` (where `T` is neither a reference nor a raw pointer)
-        ///   is equivalent to `*DerefMut::deref_mut(&mut v)`.
-        /// * Values of type `&mut T` are coerced to values of type `&mut U`
-        /// * `T` implicitly implements all the (mutable) methods of the type `U`.
-        ///
-        /// For more details, visit [the chapter in *The Rust Programming Language*][book]
-        /// as well as the reference sections on [the dereference operator][ref-deref-op],
-        /// [method resolution] and [type coercions].
-        ///
-        /// # Fallibility
-        ///
-        /// **This trait's method should never unexpectedly fail**. Deref coercion means
-        /// the compiler will often insert calls to `DerefMut::deref_mut` implicitly.
-        /// Failure during dereferencing can be extremely confusing when `DerefMut` is
-        /// invoked implicitly. In the majority of uses it should be infallible, though
-        /// it may be acceptable to panic if the type is misused through programmer
-        /// error, for example.
-        ///
-        /// However, infallibility is not enforced and therefore not guaranteed.
-        /// As such, `unsafe` code should not rely on infallibility in general for
-        /// soundness.
-        ///
-        /// [book]: ../../book/ch15-02-deref.html
-        /// [coercion]: #mutable-deref-coercion
-        /// [implementing]: Deref#when-to-implement-deref-or-derefmut
-        /// [ref-deref-op]: ../../reference/expressions/operator-expr.html#the-dereference-operator
-        /// [method resolution]: ../../reference/expressions/method-call-expr.html
-        /// [type coercions]: ../../reference/type-coercions.html
-        /// [box]: ../../alloc/boxed/struct.Box.html
-        /// [string]: ../../alloc/string/struct.String.html
-        /// [rc]: ../../alloc/rc/struct.Rc.html
-        /// [cow]: ../../alloc/borrow/enum.Cow.html
-        ///
-        /// # Examples
-        ///
-        /// A struct with a single field which is modifiable by dereferencing the
-        /// struct.
-        ///
-        /// ```
-        /// use std::ops::{Deref, DerefMut};
-        ///
-        /// struct DerefMutExample<T> {
-        ///     value: T
-        /// }
-        ///
-        /// impl<T> Deref for DerefMutExample<T> {
-        ///     type Target = T;
-        ///
-        ///     fn deref(&self) -> &Self::Target {
-        ///         &self.value
-        ///     }
-        /// }
-        ///
-        /// impl<T> DerefMut for DerefMutExample<T> {
-        ///     fn deref_mut(&mut self) -> &mut Self::Target {
-        ///         &mut self.value
-        ///     }
-        /// }
-        ///
-        /// let mut x = DerefMutExample { value: 'a' };
-        /// *x = 'b';
-        /// assert_eq!('b', x.value);
-        /// ```
+
+
+
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+        
+
+
+
+
         #[lang = "deref_mut"]
         #[doc(alias = "*")]
         #[stable(feature = "rust1", since = "1.0.0")]
         #[rustc_const_unstable(feature = "const_convert", issue = "143773")]
         pub const trait DerefMut: [const] Deref + PointeeSized {
-            /// Mutably dereferences the value.
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_diagnostic_item = "deref_mut_method"]
+
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_diagnostic_item = "deref_mut_method"]
             fn deref_mut(&mut self) -> &mut Self::Target;
         }
 
@@ -10947,15 +9902,11 @@ pub mod ops
             }
         }
 
-        /// Perma-unstable marker trait. Indicates that the type has a well-behaved [`Deref`]
-        /// (and, if applicable, [`DerefMut`]) implementation. This is relied on for soundness
-        /// of deref patterns.
-        ///
-        /// FIXME(deref_patterns): The precise semantics are undecided; the rough idea is that
-        /// successive calls to `deref`/`deref_mut` without intermediate mutation should be
-        /// idempotent, in the sense that they return the same value as far as pattern-matching
-        /// is concerned. Calls to `deref`/`deref_mut` must leave the pointer itself likewise
-        /// unchanged.
+
+
+
+
+
         #[unstable(feature = "deref_pure_trait", issue = "87121")]
         #[lang = "deref_pure"]
         pub unsafe trait DerefPure: PointeeSized {}
@@ -10966,73 +9917,51 @@ pub mod ops
         #[unstable(feature = "deref_pure_trait", issue = "87121")]
         unsafe impl<T: ?Sized> DerefPure for &mut T {}
 
-        /// Indicates that a struct can be used as a method receiver.
-        /// That is, a type can use this type as a type of `self`, like this:
-        /// ```compile_fail
-        /// # // This is currently compile_fail because the compiler-side parts
-        /// # // of arbitrary_self_types are not implemented
-        /// use std::ops::Receiver;
-        ///
-        /// struct SmartPointer<T>(T);
-        ///
-        /// impl<T> Receiver for SmartPointer<T> {
-        ///    type Target = T;
-        /// }
-        ///
-        /// struct MyContainedType;
-        ///
-        /// impl MyContainedType {
-        ///   fn method(self: SmartPointer<Self>) {
-        ///     // ...
-        ///   }
-        /// }
-        ///
-        /// fn main() {
-        ///   let ptr = SmartPointer(MyContainedType);
-        ///   ptr.method();
-        /// }
-        /// ```
-        /// This trait is blanket implemented for any type which implements
-        /// [`Deref`], which includes stdlib pointer types like `Box<T>`,`Rc<T>`, `&T`,
-        /// and `Pin<P>`. For that reason, it's relatively rare to need to
-        /// implement this directly. You'll typically do this only if you need
-        /// to implement a smart pointer type which can't implement [`Deref`]; perhaps
-        /// because you're interfacing with another programming language and can't
-        /// guarantee that references comply with Rust's aliasing rules.
-        ///
-        /// When looking for method candidates, Rust will explore a chain of possible
-        /// `Receiver`s, so for example each of the following methods work:
-        /// ```
-        /// use std::boxed::Box;
-        /// use std::rc::Rc;
-        ///
-        /// // Both `Box` and `Rc` (indirectly) implement Receiver
-        ///
-        /// struct MyContainedType;
-        ///
-        /// fn main() {
-        ///   let t = Rc::new(Box::new(MyContainedType));
-        ///   t.method_a();
-        ///   t.method_b();
-        ///   t.method_c();
-        /// }
-        ///
-        /// impl MyContainedType {
-        ///   fn method_a(&self) {
-        ///
-        ///   }
-        ///   fn method_b(self: &Box<Self>) {
-        ///
-        ///   }
-        ///   fn method_c(self: &Rc<Box<Self>>) {
-        ///
-        ///   }
-        /// }
-        /// ```
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        
+
+
+        
+
+
+
+
+
+
         #[lang = "receiver"]
         #[unstable(feature = "arbitrary_self_types", issue = "44874")]
         pub trait Receiver: PointeeSized {
-            /// The target type on which the method may be called.
+
             #[rustc_diagnostic_item = "receiver_target"]
             #[lang = "receiver_target"]
             #[unstable(feature = "arbitrary_self_types", issue = "44874")]
@@ -11047,14 +9976,10 @@ pub mod ops
             type Target = T;
         }
 
-        /// Indicates that a struct can be used as a method receiver, without the
-        /// `arbitrary_self_types` feature. This is implemented by stdlib pointer types like `Box<T>`,
-        /// `Rc<T>`, `&T`, and `Pin<P>`.
-        ///
-        /// This trait will shortly be removed and replaced with a more generic
-        /// facility based around the current "arbitrary self types" unstable feature.
-        /// That new facility will use the replacement trait above called `Receiver`
-        /// which is why this is now named `LegacyReceiver`.
+
+
+
+
         #[lang = "legacy_receiver"]
         #[unstable(feature = "legacy_receiver_trait", issue = "none")]
         #[doc(hidden)]
@@ -11121,72 +10046,50 @@ pub mod ops
         #[must_use = "closures are lazy and do nothing unless called"]
         #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
         pub const trait Fn<Args: Tuple>: FnMut<Args> {
-            /// Performs the call operation.
+
             #[unstable(feature = "fn_traits", issue = "29625")]
             extern "rust-call" fn call(&self, args: Args) -> Self::Output;
         }
+        
 
-        /// The version of the call operator that takes a mutable receiver.
-        ///
-        /// Instances of `FnMut` can be called repeatedly and may mutate state.
-        ///
-        /// `FnMut` is implemented automatically by closures which take mutable
-        /// references to captured variables, as well as all types that implement
-        /// [`Fn`], e.g., (safe) [function pointers] (since `FnMut` is a supertrait of
-        /// [`Fn`]). Additionally, for any type `F` that implements `FnMut`, `&mut F`
-        /// implements `FnMut`, too.
-        ///
-        /// Since [`FnOnce`] is a supertrait of `FnMut`, any instance of `FnMut` can be
-        /// used where a [`FnOnce`] is expected, and since [`Fn`] is a subtrait of
-        /// `FnMut`, any instance of [`Fn`] can be used where `FnMut` is expected.
-        ///
-        /// Use `FnMut` as a bound when you want to accept a parameter of function-like
-        /// type and need to call it repeatedly, while allowing it to mutate state.
-        /// If you don't want the parameter to mutate state, use [`Fn`] as a
-        /// bound; if you don't need to call it repeatedly, use [`FnOnce`].
-        ///
-        /// See the [chapter on closures in *The Rust Programming Language*][book] for
-        /// some more information on this topic.
-        ///
-        /// Also of note is the special syntax for `Fn` traits (e.g.
-        /// `Fn(usize, bool) -> usize`). Those interested in the technical details of
-        /// this can refer to [the relevant section in the *Rustonomicon*][nomicon].
-        ///
-        /// [book]: ../../book/ch13-01-closures.html
-        /// [function pointers]: fn
-        /// [nomicon]: ../../nomicon/hrtb.html
-        ///
-        /// # Examples
-        ///
-        /// ## Calling a mutably capturing closure
-        ///
-        /// ```
-        /// let mut x = 5;
-        /// {
-        ///     let mut square_x = || x *= x;
-        ///     square_x();
-        /// }
-        /// assert_eq!(x, 25);
-        /// ```
-        ///
-        /// ## Using a `FnMut` parameter
-        ///
-        /// ```
-        /// fn do_twice<F>(mut func: F)
-        ///     where F: FnMut()
-        /// {
-        ///     func();
-        ///     func();
-        /// }
-        ///
-        /// let mut x: usize = 1;
-        /// {
-        ///     let add_two_to_x = || x += 2;
-        ///     do_twice(add_two_to_x);
-        /// }
-        ///
-        /// assert_eq!(x, 5);
-        /// ```
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+
+
         #[lang = "fn_mut"]
         #[stable(feature = "rust1", since = "1.0.0")]
         #[rustc_paren_sugar]
@@ -11208,64 +10111,43 @@ pub mod ops
         #[must_use = "closures are lazy and do nothing unless called"]
         #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
         pub const trait FnMut<Args: Tuple>: FnOnce<Args> {
-            /// Performs the call operation.
+
             #[unstable(feature = "fn_traits", issue = "29625")]
             extern "rust-call" fn call_mut(&mut self, args: Args) -> Self::Output;
         }
+        
 
-        /// The version of the call operator that takes a by-value receiver.
-        ///
-        /// Instances of `FnOnce` can be called, but might not be callable multiple
-        /// times. Because of this, if the only thing known about a type is that it
-        /// implements `FnOnce`, it can only be called once.
-        ///
-        /// `FnOnce` is implemented automatically by closures that might consume captured
-        /// variables, as well as all types that implement [`FnMut`], e.g., (safe)
-        /// [function pointers] (since `FnOnce` is a supertrait of [`FnMut`]).
-        ///
-        /// Since both [`Fn`] and [`FnMut`] are subtraits of `FnOnce`, any instance of
-        /// [`Fn`] or [`FnMut`] can be used where a `FnOnce` is expected.
-        ///
-        /// Use `FnOnce` as a bound when you want to accept a parameter of function-like
-        /// type and only need to call it once. If you need to call the parameter
-        /// repeatedly, use [`FnMut`] as a bound; if you also need it to not mutate
-        /// state, use [`Fn`].
-        ///
-        /// See the [chapter on closures in *The Rust Programming Language*][book] for
-        /// some more information on this topic.
-        ///
-        /// Also of note is the special syntax for `Fn` traits (e.g.
-        /// `Fn(usize, bool) -> usize`). Those interested in the technical details of
-        /// this can refer to [the relevant section in the *Rustonomicon*][nomicon].
-        ///
-        /// [book]: ../../book/ch13-01-closures.html
-        /// [function pointers]: fn
-        /// [nomicon]: ../../nomicon/hrtb.html
-        ///
-        /// # Examples
-        ///
-        /// ## Using a `FnOnce` parameter
-        ///
-        /// ```
-        /// fn consume_with_relish<F>(func: F)
-        ///     where F: FnOnce() -> String
-        /// {
-        ///     // `func` consumes its captured variables, so it cannot be run more
-        ///     // than once.
-        ///     println!("Consumed: {}", func());
-        ///
-        ///     println!("Delicious!");
-        ///
-        ///     // Attempting to invoke `func()` again will throw a `use of moved
-        ///     // value` error for `func`.
-        /// }
-        ///
-        /// let x = String::from("x");
-        /// let consume_and_return_x = move || x;
-        /// consume_with_relish(consume_and_return_x);
-        ///
-        /// // `consume_and_return_x` can no longer be invoked at this point
-        /// ```
+
+
+        
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        
+
+
         #[lang = "fn_once"]
         #[stable(feature = "rust1", since = "1.0.0")]
         #[rustc_paren_sugar]
@@ -11287,12 +10169,12 @@ pub mod ops
         #[must_use = "closures are lazy and do nothing unless called"]
         #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
         pub const trait FnOnce<Args: Tuple> {
-            /// The returned type after the call operator is used.
+
             #[lang = "fn_once_output"]
             #[stable(feature = "fn_once_output", since = "1.12.0")]
             type Output;
 
-            /// Performs the call operation.
+
             #[unstable(feature = "fn_traits", issue = "29625")]
             extern "rust-call" fn call_once(self, args: Args) -> Self::Output;
         }
@@ -11300,62 +10182,47 @@ pub mod ops
         mod impls {
             use crate::marker::Tuple;
 
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
             impl<A: Tuple, F: ?Sized> const Fn<A> for &F
             where
                 F: [const] Fn<A>,
             {
-                extern "rust-call" fn call(&self, args: A) -> F::Output {
-                    (**self).call(args)
-                }
+                extern "rust-call" fn call(&self, args: A) -> F::Output { (**self).call( args ) }
             }
 
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
             impl<A: Tuple, F: ?Sized> const FnMut<A> for &F
             where
                 F: [const] Fn<A>,
             {
-                extern "rust-call" fn call_mut(&mut self, args: A) -> F::Output {
-                    (**self).call(args)
-                }
+                extern "rust-call" fn call_mut(&mut self, args: A) -> F::Output { (**self).call( args ) }
             }
 
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
             impl<A: Tuple, F: ?Sized> const FnOnce<A> for &F
             where
                 F: [const] Fn<A>,
             {
                 type Output = F::Output;
 
-                extern "rust-call" fn call_once(self, args: A) -> F::Output {
-                    (*self).call(args)
-                }
+                extern "rust-call" fn call_once(self, args: A) -> F::Output { (*self).call( args ) }
             }
 
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
             impl<A: Tuple, F: ?Sized> const FnMut<A> for &mut F
             where
                 F: [const] FnMut<A>,
             {
-                extern "rust-call" fn call_mut(&mut self, args: A) -> F::Output {
-                    (*self).call_mut(args)
-                }
+                extern "rust-call" fn call_mut(&mut self, args: A) -> F::Output { (*self).call_mut( args ) }
             }
 
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_const_unstable(feature = "const_trait_impl", issue = "143874")]
             impl<A: Tuple, F: ?Sized> const FnOnce<A> for &mut F
             where
                 F: [const] FnMut<A>,
             {
                 type Output = F::Output;
-                extern "rust-call" fn call_once(self, args: A) -> F::Output {
-                    (*self).call_mut(args)
-                }
+                extern "rust-call" fn call_once(self, args: A) -> F::Output { (*self).call_mut( args ) }
             }
         }
     }
@@ -11381,91 +10248,74 @@ pub mod ops
         #[doc(alias = "[]")]
         #[rustc_const_unstable(feature = "const_index", issue = "143775")]
         pub const trait Index<Idx: ?Sized> {
-            /// The returned type after indexing.
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_diagnostic_item = "IndexOutput"]
+
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_diagnostic_item = "IndexOutput"]
             type Output: ?Sized;
 
-            /// Performs the indexing (`container[index]`) operation.
-            ///
-            /// # Panics
-            ///
-            /// May panic if the index is out of bounds.
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_no_implicit_autorefs]
+
+            
+
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_no_implicit_autorefs]
             #[track_caller]
             fn index(&self, index: Idx) -> &Self::Output;
         }
 
-        /// Used for indexing operations (`container[index]`) in mutable contexts.
-        ///
-        /// `container[index]` is actually syntactic sugar for
-        /// `*container.index_mut(index)`, but only when used as a mutable value. If
-        /// an immutable value is requested, the [`Index`] trait is used instead. This
-        /// allows nice things such as `v[index] = value`.
-        ///
-        /// # Examples
-        ///
-        /// A very simple implementation of a `Balance` struct that has two sides, where
-        /// each can be indexed mutably and immutably.
-        ///
-        /// ```
-        /// use std::ops::{Index, IndexMut};
-        ///
-        /// #[derive(Debug)]
-        /// enum Side {
-        ///     Left,
-        ///     Right,
-        /// }
-        ///
-        /// #[derive(Debug, PartialEq)]
-        /// enum Weight {
-        ///     Kilogram(f32),
-        ///     Pound(f32),
-        /// }
-        ///
-        /// struct Balance {
-        ///     pub left: Weight,
-        ///     pub right: Weight,
-        /// }
-        ///
-        /// impl Index<Side> for Balance {
-        ///     type Output = Weight;
-        ///
-        ///     fn index(&self, index: Side) -> &Self::Output {
-        ///         println!("Accessing {index:?}-side of balance immutably");
-        ///         match index {
-        ///             Side::Left => &self.left,
-        ///             Side::Right => &self.right,
-        ///         }
-        ///     }
-        /// }
-        ///
-        /// impl IndexMut<Side> for Balance {
-        ///     fn index_mut(&mut self, index: Side) -> &mut Self::Output {
-        ///         println!("Accessing {index:?}-side of balance mutably");
-        ///         match index {
-        ///             Side::Left => &mut self.left,
-        ///             Side::Right => &mut self.right,
-        ///         }
-        ///     }
-        /// }
-        ///
-        /// let mut balance = Balance {
-        ///     right: Weight::Kilogram(2.5),
-        ///     left: Weight::Pound(1.5),
-        /// };
-        ///
-        /// // In this case, `balance[Side::Right]` is sugar for
-        /// // `*balance.index(Side::Right)`, since we are only *reading*
-        /// // `balance[Side::Right]`, not writing it.
-        /// assert_eq!(balance[Side::Right], Weight::Kilogram(2.5));
-        ///
-        /// // However, in this case `balance[Side::Left]` is sugar for
-        /// // `*balance.index_mut(Side::Left)`, since we are writing
-        /// // `balance[Side::Left]`.
-        /// balance[Side::Left] = Weight::Kilogram(3.0);
-        /// ```
+
+
+
+
+        
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         #[lang = "index_mut"]
         #[rustc_on_unimplemented(
             on(
@@ -11492,13 +10342,10 @@ pub mod ops
         #[doc(alias = "[]")]
         #[rustc_const_unstable(feature = "const_index", issue = "143775")]
         pub const trait IndexMut<Idx: ?Sized>: [const] Index<Idx> {
-            /// Performs the mutable indexing (`container[index]`) operation.
-            ///
-            /// # Panics
-            ///
-            /// May panic if the index is out of bounds.
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[rustc_no_implicit_autorefs]
+
+            
+
+            #[stable(feature = "rust1", since = "1.0.0")] #[rustc_no_implicit_autorefs]
             #[track_caller]
             fn index_mut(&mut self, index: Idx) -> &mut Self::Output;
         }
@@ -11564,6 +10411,7 @@ pub mod ops
     */
     
 }
+    
     #[stable(feature = "rust1", since = "1.0.0")] pub use self::arith::{Add, Div, Mul, Neg, Rem, Sub};
     #[stable(feature = "op_assign_traits", since = "1.8.0")] pub use self::arith::{AddAssign, DivAssign, MulAssign, RemAssign, SubAssign};
     #[unstable(feature = "async_fn_traits", issue = "none")] pub use self::async_function::{AsyncFn, AsyncFnMut, AsyncFnOnce};
@@ -11606,11 +10454,11 @@ pub mod any
     
     #[stable(feature = "rust1", since = "1.0.0")]
     pub trait Any: 'static {
-        
-    
+  
         #[stable(feature = "get_type_id", since = "1.34.0")]
         fn type_id(&self) -> TypeId;
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: 'static + ?Sized> Any for T {
         fn type_id(&self) -> TypeId {
@@ -11620,27 +10468,21 @@ pub mod any
     
     #[stable(feature = "rust1", since = "1.0.0")]
     impl fmt::Debug for dyn Any {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("Any").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "Any").finish_non_exhaustive( ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl fmt::Debug for dyn Any + Send {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("Any").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "Any").finish_non_exhaustive( ) }
     }
+    
     #[stable(feature = "any_send_sync_methods", since = "1.28.0")]
     impl fmt::Debug for dyn Any + Send + Sync {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("Any").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "Any").finish_non_exhaustive( ) }
     }
     
     impl dyn Any {
-        
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn is<T: Any>(&self) -> bool {
+      #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn is<T: Any>(&self) -> bool {
 
             let t = TypeId::of::<T>();
 
@@ -11650,19 +10492,13 @@ pub mod any
         }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
-            if self.is::<T>() {
-    
-                unsafe { Some(self.downcast_unchecked_ref()) }
-            } else {
+            if self.is::<T>() { unsafe { Some(self.downcast_unchecked_ref( ) ) } } else {
                 None
             }
         }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_mut<T: Any>(&mut self) -> Option<&mut T> {
-            if self.is::<T>() {
-    
-                unsafe { Some(self.downcast_unchecked_mut()) }
-            } else {
+            if self.is::<T>() { unsafe { Some(self.downcast_unchecked_mut( ) ) } } else {
                 None
             }
         }
@@ -11681,18 +10517,11 @@ pub mod any
     }
     
     impl dyn Any + Send {
-        
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn is<T: Any>(&self) -> bool {
-            <dyn Any>::is::<T>(self)
-        }
+      #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn is<T: Any>(&self) -> bool { <dyn Any>::is::<T>( self ) }
 
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
-            <dyn Any>::downcast_ref::<T>(self)
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_ref<T: Any>(&self) -> Option<&T> { <dyn Any>::downcast_ref::<T>( self ) }
 
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_mut<T: Any>(&mut self) -> Option<&mut T> {
-            <dyn Any>::downcast_mut::<T>(self)
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn downcast_mut<T: Any>(&mut self) -> Option<&mut T> { <dyn Any>::downcast_mut::<T>( self ) }
     
         #[unstable(feature = "downcast_unchecked", issue = "90850")] #[inline] pub unsafe fn downcast_unchecked_ref<T: Any>(&self) -> &T { unsafe { <dyn Any>::downcast_unchecked_ref::<T>(self) } }
 
@@ -11700,18 +10529,11 @@ pub mod any
     }
     
     impl dyn Any + Send + Sync {
-        
-        #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn is<T: Any>(&self) -> bool {
-            <dyn Any>::is::<T>(self)
-        }
+      #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn is<T: Any>(&self) -> bool { <dyn Any>::is::<T>( self ) }
 
-        #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn downcast_ref<T: Any>(&self) -> Option<&T> {
-            <dyn Any>::downcast_ref::<T>(self)
-        }
+        #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn downcast_ref<T: Any>(&self) -> Option<&T> { <dyn Any>::downcast_ref::<T>( self ) }
 
-        #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn downcast_mut<T: Any>(&mut self) -> Option<&mut T> {
-            <dyn Any>::downcast_mut::<T>(self)
-        }
+        #[stable(feature = "any_send_sync_methods", since = "1.28.0")] #[inline] pub fn downcast_mut<T: Any>(&mut self) -> Option<&mut T> { <dyn Any>::downcast_mut::<T>( self ) }
         
         #[unstable(feature = "downcast_unchecked", issue = "90850")] #[inline] pub unsafe fn downcast_unchecked_ref<T: Any>(&self) -> &T { unsafe { <dyn Any>::downcast_unchecked_ref::<T>(self) } }
     
@@ -11729,6 +10551,7 @@ pub mod any
 
     #[stable(feature = "rust1", since = "1.0.0")]
     unsafe impl Sync for TypeId {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl const PartialEq for TypeId {
@@ -11740,23 +10563,14 @@ pub mod any
                 let this = self;
                 crate::intrinsics::const_eval_select!(
                     @capture { this: &TypeId, other: &TypeId } -> bool:
-                    if const {
-                        crate::intrinsics::type_id_eq(*this, *other)
-                    } else {
-    
-    
-                        unsafe {
-                            crate::mem::transmute::<_, u128>(*this) == crate::mem::transmute::<_, u128>(*other)
-                        }
-                    }
+                    if const { crate::intrinsics::type_id_eq( *this, *other ) } else { unsafe { crate::mem::transmute::<_, u128>(*this) == crate::mem::transmute::<_, u128>(  *other  ) } }
                 )
             }
         }
     }
     
     impl TypeId {
-        
-        #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
+      #[must_use] #[stable(feature = "rust1", since = "1.0.0")]
         pub const fn of<T: ?Sized + 'static>() -> TypeId {
             const { intrinsics::type_id::<T>() }
         }
@@ -11771,6 +10585,7 @@ pub mod any
             u128::from_ne_bytes(bytes)
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl hash::Hash for TypeId {
         #[inline] fn hash<H: hash::Hasher>(&self, state: &mut H) {
@@ -11781,11 +10596,10 @@ pub mod any
             data.hash(state);
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl fmt::Debug for TypeId {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
-            write!(f, "TypeId({:#034x})", self.as_u128())
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> { write!(f, "TypeId({:#034x})", self.as_u128( ) ) }
     }
     
     #[must_use] #[stable(feature = "type_name", since = "1.38.0")]
@@ -11873,11 +10687,10 @@ pub mod array
     */
     
 }
+    
     #[stable(feature = "array_value_iter", since = "1.51.0")] pub use self::iter::IntoIter;
     #[inline] #[must_use = "cloning is often expensive and is not expected to have side effects"] #[stable(feature = "array_repeat", since = "1.91.0")]
-    pub fn repeat<T: Clone, const N: usize>(val: T) -> [T; N] {
-        from_trusted_iterator(repeat_n(val, N))
-    }   
+    pub fn repeat<T: Clone, const N: usize>(val: T) -> [T; N] { from_trusted_iterator(repeat_n( val, N) ) }   
 
     #[inline] #[stable(feature = "array_from_fn", since = "1.63.0")]
     pub const fn from_fn<T: [const] Destruct, const N: usize, F>(f: F) -> [T; N]
@@ -11899,9 +10712,7 @@ pub mod array
             ControlFlow::Continue(()) =>
             {
                 unsafe
-                {
-                    MaybeUninit::array_assume_init(array)
-                }
+                { MaybeUninit::array_assume_init( array ) }
             }
         }
     }
@@ -11916,12 +10727,12 @@ pub mod array
     pub struct TryFromSliceError(());
     #[stable(feature = "core_array", since = "1.35.0")]
     impl fmt::Display for TryFromSliceError {
-        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            "could not convert slice to array".fmt(f)
-        }
+        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { "could not convert slice to array".fmt( f ) }
     }
+    
     #[stable(feature = "try_from", since = "1.34.0")]
     impl Error for TryFromSliceError {}
+    
     #[stable(feature = "try_from_slice_error", since = "1.36.0")]
 
     impl const From<Infallible> for TryFromSliceError {
@@ -11929,6 +10740,7 @@ pub mod array
             match x {}
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T, const N: usize> const AsRef<[T]> for [T; N] {
@@ -11936,6 +10748,7 @@ pub mod array
             &self[..]
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T, const N: usize> const AsMut<[T]> for [T; N] {
@@ -11943,6 +10756,7 @@ pub mod array
             &mut self[..]
         }
     }
+    
     #[stable(feature = "array_borrow", since = "1.4.0")]
 
     impl<T, const N: usize> const Borrow<[T]> for [T; N] {
@@ -11950,6 +10764,7 @@ pub mod array
             self
         }
     }
+    
     #[stable(feature = "array_borrow", since = "1.4.0")]
 
     impl<T, const N: usize> const BorrowMut<[T]> for [T; N] {
@@ -11965,9 +10780,7 @@ pub mod array
         T: Copy,
     {
         type Error = TryFromSliceError;
-        #[inline] fn try_from(slice: &[T]) -> Result<[T; N], TryFromSliceError> {
-            <&Self>::try_from(slice).copied()
-        }
+        #[inline] fn try_from(slice: &[T]) -> Result<[T; N], TryFromSliceError> { <&Self>::try_from( slice).copied( ) }
     }
     
     #[stable(feature = "try_from_mut_slice_to_array", since = "1.59.0")]
@@ -11977,41 +10790,33 @@ pub mod array
         T: Copy,
     {
         type Error = TryFromSliceError;
-        #[inline] fn try_from(slice: &mut [T]) -> Result<[T; N], TryFromSliceError> {
-            <Self>::try_from(&*slice)
-        }
+        #[inline] fn try_from(slice: &mut [T]) -> Result<[T; N], TryFromSliceError> { <Self>::try_from( &*slice ) }
     }
     
     #[stable(feature = "try_from", since = "1.34.0")]
 
     impl<'a, T, const N: usize> const TryFrom<&'a [T]> for &'a [T; N] {
         type Error = TryFromSliceError;
-        #[inline] fn try_from(slice: &'a [T]) -> Result<&'a [T; N], TryFromSliceError> {
-            slice.as_array().ok_or(TryFromSliceError(()))
-        }
+        #[inline] fn try_from(slice: &'a [T]) -> Result<&'a [T; N], TryFromSliceError> { slice.as_array().ok_or(TryFromSliceError(( )) ) }
     }
     
     #[stable(feature = "try_from", since = "1.34.0")]
 
     impl<'a, T, const N: usize> const TryFrom<&'a mut [T]> for &'a mut [T; N] {
         type Error = TryFromSliceError;
-        #[inline] fn try_from(slice: &'a mut [T]) -> Result<&'a mut [T; N], TryFromSliceError> {
-            slice.as_mut_array().ok_or(TryFromSliceError(()))
-        }
+        #[inline] fn try_from(slice: &'a mut [T]) -> Result<&'a mut [T; N], TryFromSliceError> { slice.as_mut_array().ok_or(TryFromSliceError(( )) ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Hash, const N: usize> Hash for [T; N] {
-        fn hash<H: hash::Hasher>(&self, state: &mut H) {
-            Hash::hash(&self[..], state)
-        }
+        fn hash<H: hash::Hasher>(&self, state: &mut H) { Hash::hash( &self[..], state ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: fmt::Debug, const N: usize> fmt::Debug for [T; N] {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Debug::fmt(&&self[..], f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Debug::fmt( &&self[..], f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T, const N: usize> IntoIterator for &'a [T; N] {
         type Item = &'a T;
@@ -12020,6 +10825,7 @@ pub mod array
             self.iter()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T, const N: usize> IntoIterator for &'a mut [T; N] {
         type Item = &'a mut T;
@@ -12028,6 +10834,7 @@ pub mod array
             self.iter_mut()
         }
     }
+    
     #[stable(feature = "index_trait_on_arrays", since = "1.50.0")]
 
     impl<T, I, const N: usize> const Index<I> for [T; N]
@@ -12035,61 +10842,44 @@ pub mod array
         [T]: [const] Index<I>,
     {
         type Output = <[T] as Index<I>>::Output;
-        #[inline] fn index(&self, index: I) -> &Self::Output {
-            Index::index(self as &[T], index)
-        }
+        #[inline] fn index(&self, index: I) -> &Self::Output { Index::index( self as &[T], index ) }
     }
+    
     #[stable(feature = "index_trait_on_arrays", since = "1.50.0")]
 
     impl<T, I, const N: usize> const IndexMut<I> for [T; N]
     where
         [T]: [const] IndexMut<I>,
     {
-        #[inline] fn index_mut(&mut self, index: I) -> &mut Self::Output {
-            IndexMut::index_mut(self as &mut [T], index)
-        }
+        #[inline] fn index_mut(&mut self, index: I) -> &mut Self::Output { IndexMut::index_mut( self as &mut [T], index ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PartialOrd, const N: usize> PartialOrd for [T; N] {
-        #[inline] fn partial_cmp(&self, other: &[T; N]) -> Option<Ordering> {
-            PartialOrd::partial_cmp(&&self[..], &&other[..])
-        }
+        #[inline] fn partial_cmp(&self, other: &[T; N]) -> Option<Ordering> { PartialOrd::partial_cmp( &&self[..], &&other[..] ) }
         
-        #[inline] fn lt(&self, other: &[T; N]) -> bool {
-            PartialOrd::lt(&&self[..], &&other[..])
-        }
+        #[inline] fn lt(&self, other: &[T; N]) -> bool { PartialOrd::lt( &&self[..], &&other[..] ) }
         
-        #[inline] fn le(&self, other: &[T; N]) -> bool {
-            PartialOrd::le(&&self[..], &&other[..])
-        }
+        #[inline] fn le(&self, other: &[T; N]) -> bool { PartialOrd::le( &&self[..], &&other[..] ) }
         
-        #[inline] fn ge(&self, other: &[T; N]) -> bool {
-            PartialOrd::ge(&&self[..], &&other[..])
-        }
+        #[inline] fn ge(&self, other: &[T; N]) -> bool { PartialOrd::ge( &&self[..], &&other[..] ) }
         
-        #[inline] fn gt(&self, other: &[T; N]) -> bool {
-            PartialOrd::gt(&&self[..], &&other[..])
-        }
+        #[inline] fn gt(&self, other: &[T; N]) -> bool { PartialOrd::gt( &&self[..], &&other[..] ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Ord, const N: usize> Ord for [T; N] {
-        #[inline] fn cmp(&self, other: &[T; N]) -> Ordering {
-            Ord::cmp(&&self[..], &&other[..])
-        }
+        #[inline] fn cmp(&self, other: &[T; N]) -> Ordering { Ord::cmp( &&self[..], &&other[..] ) }
     }
+    
     #[stable(feature = "copy_clone_array_lib", since = "1.58.0")]
     impl<T: Copy, const N: usize> Copy for [T; N] {}
+    
     #[stable(feature = "copy_clone_array_lib", since = "1.58.0")]
     impl<T: Clone, const N: usize> Clone for [T; N] {
-        #[inline] fn clone(&self) -> Self {
-            SpecArrayClone::clone(self)
-        }
+        #[inline] fn clone(&self) -> Self { SpecArrayClone::clone( self ) }
         
-        #[inline] fn clone_from(&mut self, other: &Self) {
-            self.clone_from_slice(other);
-        }
+        #[inline] fn clone_from(&mut self, other: &Self) { self.clone_from_slice(other); }
     }
     #[doc(hidden)] #[unstable(feature = "trivial_clone", issue = "none")]
     unsafe impl<T: TrivialClone, const N: usize> TrivialClone for [T; N] {}
@@ -12099,9 +10889,7 @@ pub mod array
     
     impl<T: Clone> SpecArrayClone for T {
         #[inline]
-        default fn clone<const N: usize>(array: &[T; N]) -> [T; N] {
-            from_trusted_iterator(array.iter().cloned())
-        }
+        default fn clone<const N: usize>(array: &[T; N]) -> [T; N] { from_trusted_iterator(array.iter().cloned( ) ) }
     }
     
     impl<T: TrivialClone> SpecArrayClone for T {
@@ -12194,33 +10982,25 @@ pub mod array
             feature = "split_array",
             reason = "return type should have array as 2nd element",
             issue = "90091"
-        )] #[inline] pub fn split_array_ref<const M: usize>(&self) -> (&[T; M], &[T]) {
-            self.split_first_chunk::<M>().unwrap()
-        }
+        )] #[inline] pub fn split_array_ref<const M: usize>(&self) -> (&[T; M], &[T]) { self.split_first_chunk::<M>( ).unwrap( ) }
         
         #[unstable(
             feature = "split_array",
             reason = "return type should have array as 2nd element",
             issue = "90091"
-        )] #[inline] pub fn split_array_mut<const M: usize>(&mut self) -> (&mut [T; M], &mut [T]) {
-            self.split_first_chunk_mut::<M>().unwrap()
-        }
+        )] #[inline] pub fn split_array_mut<const M: usize>(&mut self) -> (&mut [T; M], &mut [T]) { self.split_first_chunk_mut::<M>( ).unwrap( ) }
         
         #[unstable(
             feature = "split_array",
             reason = "return type should have array as 2nd element",
             issue = "90091"
-        )] #[inline] pub fn rsplit_array_ref<const M: usize>(&self) -> (&[T], &[T; M]) {
-            self.split_last_chunk::<M>().unwrap()
-        }
+        )] #[inline] pub fn rsplit_array_ref<const M: usize>(&self) -> (&[T], &[T; M]) { self.split_last_chunk::<M>( ).unwrap( ) }
         
         #[unstable(
             feature = "split_array",
             reason = "return type should have array as 2nd element",
             issue = "90091"
-        )] #[inline] pub fn rsplit_array_mut<const M: usize>(&mut self) -> (&mut [T], &mut [T; M]) {
-            self.split_last_chunk_mut::<M>().unwrap()
-        }
+        )] #[inline] pub fn rsplit_array_mut<const M: usize>(&mut self) -> (&mut [T], &mut [T; M]) { self.split_last_chunk_mut::<M>( ).unwrap( ) }
     }
     
     #[inline]
@@ -12296,14 +11076,8 @@ pub mod array
         let mut array = [const { MaybeUninit::uninit() }; N];
         let r = iter_next_chunk_erased(&mut array, iter);
         match r {
-            Ok(()) => {
-
-                Ok(unsafe { MaybeUninit::array_assume_init(array) })
-            }
-            Err(initialized) => {
-
-                Err(unsafe { IntoIter::new_unchecked(array, 0..initialized) })
-            }
+            Ok(()) => { Ok(unsafe { MaybeUninit::array_assume_init( array) } ) }
+            Err(initialized) => { Err(unsafe { IntoIter::new_unchecked( array, 0..initialized) } ) }
         }
     }
 
@@ -12359,21 +11133,16 @@ pub mod ascii
         #[must_use = "iterators are lazy and do nothing unless consumed"] #[stable(feature = "rust1", since = "1.0.0")] #[derive(Clone)]
     pub struct EscapeDefault(EscapeIterInner<4, AlwaysEscaped>);
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub fn escape_default(c: u8) -> EscapeDefault {
-        EscapeDefault::new(c)
-    }
+    pub fn escape_default(c: u8) -> EscapeDefault { EscapeDefault::new( c ) }
     
     impl EscapeDefault {
         #[inline]
-        pub(crate) const fn new(c: u8) -> Self {
-            Self(EscapeIterInner::ascii(c))
-        }
+        pub(crate) const fn new(c: u8) -> Self { Self(EscapeIterInner::ascii( c) ) }
         
         #[inline]
-        pub(crate) fn empty() -> Self {
-            Self(EscapeIterInner::empty())
-        }
+        pub(crate) fn empty() -> Self { Self(EscapeIterInner::empty( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Iterator for EscapeDefault {
         type Item = u8;
@@ -12394,39 +11163,36 @@ pub mod ascii
             self.0.next_back()
         }
         
-        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_by(n)
-        }
+        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_by( n ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl DoubleEndedIterator for EscapeDefault {
         #[inline] fn next_back(&mut self) -> Option<u8> {
             self.0.next_back()
         }
         
-        #[inline] fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_back_by(n)
-        }
+        #[inline] fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_back_by( n ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl ExactSizeIterator for EscapeDefault {
         #[inline] fn len(&self) -> usize {
             self.0.len()
         }
     }
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl FusedIterator for EscapeDefault {}
+    
     #[stable(feature = "ascii_escape_display", since = "1.39.0")]
     impl fmt::Display for EscapeDefault {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Display::fmt(&self.0, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.0, f ) }
     }
+    
     #[stable(feature = "std_debug", since = "1.16.0")]
     impl fmt::Debug for EscapeDefault {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("EscapeDefault").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "EscapeDefault").finish_non_exhaustive( ) }
     }
 }
 
@@ -12455,9 +11221,7 @@ pub mod asserting
     }
     
     impl<E> Debug for Capture<E, TryCaptureWithoutDebug> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), core::fmt::Error> {
-            f.write_str("N/A")
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), core::fmt::Error> { f.write_str( "N/A" ) }
     }
     
     #[unstable(feature = "generic_assert_internals", issue = "44838")]
@@ -12472,9 +11236,7 @@ pub mod asserting
     where
         E: Printable,
     {
-        #[inline] fn try_capture(&self, to: &mut Capture<E, TryCaptureWithDebug>) {
-            to.elem = Some(*self.0);
-        }
+        #[inline] fn try_capture(&self, to: &mut Capture<E, TryCaptureWithDebug>) { to.elem = Some(*self.0); }
     }
     
     impl<E> Debug for Capture<E, TryCaptureWithDebug>
@@ -12576,9 +11338,7 @@ pub mod bstr
         
 
         #[inline] #[unstable(feature = "bstr", issue = "134915")]
-        pub const fn new<B: ?Sized + [const] AsRef<[u8]>>(bytes: &B) -> &Self {
-            ByteStr::from_bytes(bytes.as_ref())
-        }
+        pub const fn new<B: ?Sized + [const] AsRef<[u8]>>(bytes: &B) -> &Self { ByteStr::from_bytes(bytes.as_ref( ) ) }
         
         #[doc(hidden)] #[unstable(feature = "bstr_internals", issue = "none")] #[inline]
 
@@ -12694,9 +11454,7 @@ pub mod bstr
     #[unstable(feature = "bstr", issue = "134915")]
 
     impl const AsRef<ByteStr> for str {
-        #[inline] fn as_ref(&self) -> &ByteStr {
-            ByteStr::new(self)
-        }
+        #[inline] fn as_ref(&self) -> &ByteStr { ByteStr::new( self ) }
     }
     #[unstable(feature = "bstr", issue = "134915")]
 
@@ -12723,32 +11481,24 @@ pub mod bstr
     }
     #[unstable(feature = "bstr", issue = "134915")]
     impl<'a> Default for &'a ByteStr {
-        fn default() -> Self {
-            ByteStr::from_bytes(b"")
-        }
+        fn default() -> Self { ByteStr::from_bytes( b"" ) }
     }
     #[unstable(feature = "bstr", issue = "134915")]
     impl<'a> Default for &'a mut ByteStr {
-        fn default() -> Self {
-            ByteStr::from_bytes_mut(&mut [])
-        }
+        fn default() -> Self { ByteStr::from_bytes_mut( &mut [] ) }
     }
     
     #[unstable(feature = "bstr", issue = "134915")]
 
     impl<'a> const TryFrom<&'a ByteStr> for &'a str {
         type Error = crate::str::Utf8Error;
-        #[inline] fn try_from(s: &'a ByteStr) -> Result<Self, Self::Error> {
-            crate::str::from_utf8(&s.0)
-        }
+        #[inline] fn try_from(s: &'a ByteStr) -> Result<Self, Self::Error> { crate::str::from_utf8( &s.0 ) }
     }
     #[unstable(feature = "bstr", issue = "134915")]
 
     impl<'a> const TryFrom<&'a mut ByteStr> for &'a mut str {
         type Error = crate::str::Utf8Error;
-        #[inline] fn try_from(s: &'a mut ByteStr) -> Result<Self, Self::Error> {
-            crate::str::from_utf8_mut(&mut s.0)
-        }
+        #[inline] fn try_from(s: &'a mut ByteStr) -> Result<Self, Self::Error> { crate::str::from_utf8_mut( &mut s.0 ) }
     }
 }
 
@@ -12795,68 +11545,61 @@ pub mod cell
     */
     
 }
+    
     #[stable(feature = "lazy_cell", since = "1.80.0")] pub use self::lazy::LazyCell;
     #[stable(feature = "once_cell", since = "1.70.0")] pub use self::once::OnceCell;
     #[stable(feature = "rust1", since = "1.0.0")] #[repr(transparent)]
     pub struct Cell<T: ?Sized> {
         value: UnsafeCell<T>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     unsafe impl<T: ?Sized> Send for Cell<T> where T: Send {}
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized> !Sync for Cell<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Copy> Clone for Cell<T> {
-        #[inline] fn clone(&self) -> Cell<T> {
-            Cell::new(self.get())
-        }
+        #[inline] fn clone(&self) -> Cell<T> { Cell::new(self.get( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: [const] Default> const Default for Cell<T> {
-        #[inline] fn default() -> Cell<T> {
-            Cell::new(Default::default())
-        }
+        #[inline] fn default() -> Cell<T> { Cell::new(Default::default( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PartialEq + Copy> PartialEq for Cell<T> {
-        #[inline] fn eq(&self, other: &Cell<T>) -> bool {
-            self.get() == other.get()
-        }
+        #[inline] fn eq(&self, other: &Cell<T>) -> bool { self.get( ) == other.get( ) }
     }
+    
     #[stable(feature = "cell_eq", since = "1.2.0")]
     impl<T: Eq + Copy> Eq for Cell<T> {}
+    
     #[stable(feature = "cell_ord", since = "1.10.0")]
     impl<T: PartialOrd + Copy> PartialOrd for Cell<T> {
         #[inline] fn partial_cmp(&self, other: &Cell<T>) -> Option<Ordering>{ self.get().partial_cmp()(&other.get()) }
         
-        #[inline] fn lt(&self, other: &Cell<T>) -> bool {
-            self.get() < other.get()
-        }
+        #[inline] fn lt(&self, other: &Cell<T>) -> bool { self.get( ) < other.get( ) }
         
-        #[inline] fn le(&self, other: &Cell<T>) -> bool {
-            self.get() <= other.get()
-        }
+        #[inline] fn le(&self, other: &Cell<T>) -> bool { self.get( ) <= other.get( ) }
         
-        #[inline] fn gt(&self, other: &Cell<T>) -> bool {
-            self.get() > other.get()
-        }
+        #[inline] fn gt(&self, other: &Cell<T>) -> bool { self.get( ) > other.get( ) }
         
-        #[inline] fn ge(&self, other: &Cell<T>) -> bool {
-            self.get() >= other.get()
-        }
+        #[inline] fn ge(&self, other: &Cell<T>) -> bool { self.get( ) >= other.get( ) }
     }
+    
     #[stable(feature = "cell_ord", since = "1.10.0")]
     impl<T: Ord + Copy> Ord for Cell<T> {
         #[inline] fn cmp(&self, other: &Cell<T>) -> Ordering{ self.get().cmp()(&other.get()) }
     }
+    
     #[stable(feature = "cell_from", since = "1.12.0")]
 
     impl<T> const From<T> for Cell<T> {
-        fn from(t: T) -> Cell<T> {
-            Cell::new(t)
-        }
+        fn from(t: T) -> Cell<T> { Cell::new( t ) }
     }
     
     impl<T> Cell<T> {
@@ -12887,10 +11630,7 @@ pub mod cell
 
                 return;
             }
-            if !is_nonoverlapping(self, other) {
-
-                panic!("`Cell::swap` on overlapping non-identical `Cell`s");
-            }
+            if !is_nonoverlapping(self, other) { panic!("`Cell::swap` on overlapping non-identical `Cell`s"); }
 
             unsafe {
                 mem::swap(&mut *self.value.get(), &mut *other.value.get());
@@ -12899,10 +11639,7 @@ pub mod cell
         
         #[inline] #[stable(feature = "move_cell", since = "1.17.0")]
     
-        pub const fn replace(&self, val: T) -> T {
-
-            mem::replace(unsafe { &mut *self.value.get() }, val)
-        }
+        pub const fn replace(&self, val: T) -> T { mem::replace(unsafe { &mut *self.value.get( ) }, val ) }
 
         #[stable(feature = "move_cell", since = "1.17.0")]
     
@@ -12912,8 +11649,7 @@ pub mod cell
     }
     
     impl<T: Copy> Cell<T> {
-        
-        #[inline] #[stable(feature = "rust1", since = "1.0.0")]
+      #[inline] #[stable(feature = "rust1", since = "1.0.0")]
     
         pub const fn get(&self) -> T {
 
@@ -12932,8 +11668,7 @@ pub mod cell
     }
     
     impl<T: ?Sized> Cell<T> {
-        
-        #[inline] #[stable(feature = "cell_as_ptr", since = "1.12.0")]
+      #[inline] #[stable(feature = "cell_as_ptr", since = "1.12.0")]
     
         pub const fn as_ptr(&self) -> *mut T {
             self.value.get()
@@ -12949,13 +11684,10 @@ pub mod cell
     }
     
     impl<T: Default> Cell<T> {
-        
-        #[stable(feature = "move_cell", since = "1.17.0")]
+      #[stable(feature = "move_cell", since = "1.17.0")]
         pub const fn take(&self) -> T where
             T: [const] Default,
-        {
-            self.replace(Default::default())
-        }
+        { self.replace(Default::default( ) ) }
     }
     #[unstable(feature = "coerce_unsized", issue = "18598")]
     impl<T: CoerceUnsized<U>, U> CoerceUnsized<Cell<U>> for Cell<T> {}
@@ -12964,8 +11696,7 @@ pub mod cell
     impl<T: DispatchFromDyn<U>, U> DispatchFromDyn<Cell<U>> for Cell<T> {}
     
     impl<T> Cell<[T]> {
-        
-        #[stable(feature = "as_cell", since = "1.37.0")]
+      #[stable(feature = "as_cell", since = "1.37.0")]
         pub const fn as_slice_of_cells(&self) -> &[Cell<T>] { unsafe { &*(self as *const Cell<[T]> as *const [Cell<T>]) } }
     }
     
@@ -12995,12 +11726,8 @@ pub mod cell
     unsafe impl<T: CloneFromCell> CloneFromCell for range::Range<T> {}
     #[unstable(feature = "cell_get_cloned", issue = "145329")]
     impl<T: CloneFromCell> Cell<T> {
-        
-    
-        pub fn get_cloned(&self) -> Self {
-
-            Cell::new(T::clone(unsafe { &*self.as_ptr() }))
-        }
+  
+        pub fn get_cloned(&self) -> Self { Cell::new(T::clone(unsafe { &*self.as_ptr( ) }) ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
@@ -13017,6 +11744,7 @@ pub mod cell
         #[cfg(feature = "debug_refcell")]
         location: &'static crate::panic::Location<'static>,
     }
+    
     #[stable(feature = "try_borrow", since = "1.13.0")]
     impl Display for BorrowError {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -13037,6 +11765,7 @@ pub mod cell
         #[cfg(feature = "debug_refcell")]
         location: &'static crate::panic::Location<'static>,
     }
+    
     #[stable(feature = "try_borrow", since = "1.13.0")]
     impl Display for BorrowMutError {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -13098,9 +11827,7 @@ pub mod cell
         
         #[inline] #[stable(feature = "refcell_replace", since = "1.24.0")] #[track_caller]
     
-        pub const fn replace(&self, t: T) -> T {
-            mem::replace(&mut self.borrow_mut(), t)
-        }
+        pub const fn replace(&self, t: T) -> T { mem::replace(&mut self.borrow_mut( ), t ) }
 
         #[inline] #[stable(feature = "refcell_replace_swap", since = "1.35.0")] #[track_caller]
 
@@ -13112,14 +11839,11 @@ pub mod cell
 
         #[inline] #[stable(feature = "refcell_swap", since = "1.24.0")]
     
-        pub const fn swap(&self, other: &Self) {
-            mem::swap(&mut *self.borrow_mut(), &mut *other.borrow_mut())
-        }
+        pub const fn swap(&self, other: &Self) { mem::swap(&mut *self.borrow_mut(), &mut *other.borrow_mut( ) ) }
     }
     
     impl<T: ?Sized> RefCell<T> {
-        
-    
+  
         
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] #[track_caller]
@@ -13206,10 +11930,7 @@ pub mod cell
         #[stable(feature = "borrow_state", since = "1.37.0")] #[inline]
 
         pub const unsafe fn try_borrow_unguarded(&self) -> Result<&T, BorrowError> {
-            if !is_writing(self.borrow.get()) {
-    
-                Ok(unsafe { &*self.value.get() })
-            } else {
+            if !is_writing(self.borrow.get()) { Ok(unsafe { &*self.value.get( ) } ) } else {
                 Err(BorrowError {
 
                     #[cfg(feature = "debug_refcell")]
@@ -13220,75 +11941,65 @@ pub mod cell
     }
     
     impl<T: Default> RefCell<T> {
-        
-        #[stable(feature = "refcell_take", since = "1.50.0")]
-        pub fn take(&self) -> T {
-            self.replace(Default::default())
-        }
+      #[stable(feature = "refcell_take", since = "1.50.0")]
+        pub fn take(&self) -> T { self.replace(Default::default( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     unsafe impl<T: ?Sized> Send for RefCell<T> where T: Send {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized> !Sync for RefCell<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Clone> Clone for RefCell<T> {
 
         #[inline] #[track_caller]
-        fn clone(&self) -> RefCell<T> {
-            RefCell::new(self.borrow().clone())
-        }
+        fn clone(&self) -> RefCell<T> { RefCell::new(self.borrow().clone( ) ) }
         
         #[inline] #[track_caller]
         fn clone_from(&mut self, source: &Self){ self.get_mut().clone_from()(&source.borrow()) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: [const] Default> const Default for RefCell<T> {
-        #[inline] fn default() -> RefCell<T> {
-            RefCell::new(Default::default())
-        }
+        #[inline] fn default() -> RefCell<T> { RefCell::new(Default::default( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized + PartialEq> PartialEq for RefCell<T> {
 
-        #[inline] fn eq(&self, other: &RefCell<T>) -> bool {
-            *self.borrow() == *other.borrow()
-        }
+        #[inline] fn eq(&self, other: &RefCell<T>) -> bool { *self.borrow( ) == *other.borrow( ) }
     }
+    
     #[stable(feature = "cell_eq", since = "1.2.0")]
     impl<T: ?Sized + Eq> Eq for RefCell<T> {}
+    
     #[stable(feature = "cell_ord", since = "1.10.0")]
     impl<T: ?Sized + PartialOrd> PartialOrd for RefCell<T> {
 
         #[inline] fn partial_cmp(&self, other: &RefCell<T>) -> Option<Ordering>{ self.borrow().partial_cmp()(&*other.borrow()) }
         
-        #[inline] fn lt(&self, other: &RefCell<T>) -> bool {
-            *self.borrow() < *other.borrow()
-        }
+        #[inline] fn lt(&self, other: &RefCell<T>) -> bool { *self.borrow( ) < *other.borrow( ) }
         
-        #[inline] fn le(&self, other: &RefCell<T>) -> bool {
-            *self.borrow() <= *other.borrow()
-        }
+        #[inline] fn le(&self, other: &RefCell<T>) -> bool { *self.borrow( ) <= *other.borrow( ) }
         
-        #[inline] fn gt(&self, other: &RefCell<T>) -> bool {
-            *self.borrow() > *other.borrow()
-        }
+        #[inline] fn gt(&self, other: &RefCell<T>) -> bool { *self.borrow( ) > *other.borrow( ) }
         
-        #[inline] fn ge(&self, other: &RefCell<T>) -> bool {
-            *self.borrow() >= *other.borrow()
-        }
+        #[inline] fn ge(&self, other: &RefCell<T>) -> bool { *self.borrow( ) >= *other.borrow( ) }
     }
+    
     #[stable(feature = "cell_ord", since = "1.10.0")]
     impl<T: ?Sized + Ord> Ord for RefCell<T> {
 
         #[inline] fn cmp(&self, other: &RefCell<T>) -> Ordering{ self.borrow().cmp()(&*other.borrow()) }
     }
+    
     #[stable(feature = "cell_from", since = "1.12.0")]
 
     impl<T> const From<T> for RefCell<T> {
-        fn from(t: T) -> RefCell<T> {
-            RefCell::new(t)
-        }
+        fn from(t: T) -> RefCell<T> { RefCell::new( t ) }
     }
     #[unstable(feature = "coerce_unsized", issue = "18598")]
     impl<T: CoerceUnsized<U>, U> CoerceUnsized<RefCell<U>> for RefCell<T> {}
@@ -13339,6 +12050,7 @@ pub mod cell
         value: NonNull<T>,
         borrow: BorrowRef<'b>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const Deref for Ref<'_, T> {
@@ -13405,16 +12117,14 @@ pub mod cell
     }
     #[unstable(feature = "coerce_unsized", issue = "18598")]
     impl<'b, T: ?Sized + Unsize<U>, U: ?Sized> CoerceUnsized<Ref<'b, U>> for Ref<'b, T> {}
+    
     #[stable(feature = "std_guard_impls", since = "1.20.0")]
     impl<T: ?Sized + fmt::Display> fmt::Display for Ref<'_, T> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            (**self).fmt(f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { (**self).fmt( f ) }
     }
     
     impl<'b, T: ?Sized> RefMut<'b, T> {
-        
-        #[stable(feature = "cell_map", since = "1.8.0")] #[inline] pub fn map<U: ?Sized, F>(mut orig: RefMut<'b, T>, f: F) -> RefMut<'b, U> where
+      #[stable(feature = "cell_map", since = "1.8.0")] #[inline] pub fn map<U: ?Sized, F>(mut orig: RefMut<'b, T>, f: F) -> RefMut<'b, U> where
             F: FnOnce(&mut T) -> &mut U,
         {
             let value = NonNull::from(f(&mut *orig));
@@ -13426,9 +12136,7 @@ pub mod cell
         {
     
             match f(&mut *orig) {
-                Some(value) => {
-                    Ok(RefMut { value: NonNull::from(value), borrow: orig.borrow, marker: PhantomData })
-                }
+                Some(value) => { Ok(RefMut { value: NonNull::from( value), borrow: orig.borrow, marker: PhantomData } ) }
                 None => Err(orig),
             }
         }
@@ -13439,9 +12147,7 @@ pub mod cell
         ) -> Result<RefMut<'b, U>, (Self, E)> {
     
             match f(&mut *orig) {
-                Ok(value) => {
-                    Ok(RefMut { value: NonNull::from(value), borrow: orig.borrow, marker: PhantomData })
-                }
+                Ok(value) => { Ok(RefMut { value: NonNull::from( value), borrow: orig.borrow, marker: PhantomData } ) }
                 Err(e) => Err((orig, e)),
             }
         }
@@ -13512,6 +12218,7 @@ pub mod cell
 
         marker: PhantomData<&'b mut T>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const Deref for RefMut<'_, T> {
@@ -13521,6 +12228,7 @@ pub mod cell
             unsafe { self.value.as_ref() }
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: ?Sized> const DerefMut for RefMut<'_, T> {
@@ -13533,17 +12241,17 @@ pub mod cell
     unsafe impl<T: ?Sized> DerefPure for RefMut<'_, T> {}
     #[unstable(feature = "coerce_unsized", issue = "18598")]
     impl<'b, T: ?Sized + Unsize<U>, U: ?Sized> CoerceUnsized<RefMut<'b, U>> for RefMut<'b, T> {}
+    
     #[stable(feature = "std_guard_impls", since = "1.20.0")]
     impl<T: ?Sized + fmt::Display> fmt::Display for RefMut<'_, T> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            (**self).fmt(f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { (**self).fmt( f ) }
     }   
 
     #[lang = "unsafe_cell"] #[stable(feature = "rust1", since = "1.0.0")] #[repr(transparent)]
     pub struct UnsafeCell<T: ?Sized> {
         value: T,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized> !Sync for UnsafeCell<T> {}
     
@@ -13568,8 +12276,7 @@ pub mod cell
     }
     
     impl<T: ?Sized> UnsafeCell<T> {
-        
-        #[inline(always)] #[stable(feature = "unsafe_cell_from_mut", since = "1.84.0")]
+      #[inline(always)] #[stable(feature = "unsafe_cell_from_mut", since = "1.84.0")]
         pub const fn from_mut(value: &mut T) -> &mut UnsafeCell<T> { unsafe { &mut *(value as *mut T as *mut UnsafeCell<T>) } }
 
         #[inline(always)] #[stable(feature = "rust1", since = "1.0.0")]
@@ -13601,19 +12308,17 @@ pub mod cell
         #[inline] #[unstable(feature = "unsafe_cell_access", issue = "136327")] #[allow(clippy::mut_from_ref)]
         pub const unsafe fn as_mut_unchecked(&self) -> &mut T { unsafe { self.get().as_mut_unchecked() } }
     }
+    
     #[stable(feature = "unsafe_cell_default", since = "1.10.0")]
 
     impl<T: [const] Default> const Default for UnsafeCell<T> {
-        fn default() -> UnsafeCell<T> {
-            UnsafeCell::new(Default::default())
-        }
+        fn default() -> UnsafeCell<T> { UnsafeCell::new(Default::default( ) ) }
     }
+    
     #[stable(feature = "cell_from", since = "1.12.0")]
 
     impl<T> const From<T> for UnsafeCell<T> {
-        fn from(t: T) -> UnsafeCell<T> {
-            UnsafeCell::new(t)
-        }
+        fn from(t: T) -> UnsafeCell<T> { UnsafeCell::new( t ) }
     }
     #[unstable(feature = "coerce_unsized", issue = "18598")]
     impl<T: CoerceUnsized<U>, U> CoerceUnsized<UnsafeCell<U>> for UnsafeCell<T> {}
@@ -13659,16 +12364,12 @@ pub mod cell
     #[unstable(feature = "sync_unsafe_cell", issue = "95439")]
 
     impl<T: [const] Default> const Default for SyncUnsafeCell<T> {
-        fn default() -> SyncUnsafeCell<T> {
-            SyncUnsafeCell::new(Default::default())
-        }
+        fn default() -> SyncUnsafeCell<T> { SyncUnsafeCell::new(Default::default( ) ) }
     }
     #[unstable(feature = "sync_unsafe_cell", issue = "95439")]
 
     impl<T> const From<T> for SyncUnsafeCell<T> {
-        fn from(t: T) -> SyncUnsafeCell<T> {
-            SyncUnsafeCell::new(t)
-        }
+        fn from(t: T) -> SyncUnsafeCell<T> { SyncUnsafeCell::new( t ) }
     }
     #[unstable(feature = "coerce_unsized", issue = "18598")]
 
@@ -13822,37 +12523,28 @@ pub mod char
     pub const UNICODE_VERSION: (u8, u8, u8) = char::UNICODE_VERSION;
 
     #[stable(feature = "decode_utf16", since = "1.9.0")] #[inline]
-    pub fn decode_utf16<I: IntoIterator<Item = u16>>(iter: I) -> DecodeUtf16<I::IntoIter> {
-        self::decode::decode_utf16(iter)
-    }
+    pub fn decode_utf16<I: IntoIterator<Item = u16>>(iter: I) -> DecodeUtf16<I::IntoIter> { self::decode::decode_utf16( iter ) }
 
     #[stable(feature = "rust1", since = "1.0.0")] #[must_use] #[inline]
-    pub const fn from_u32(i: u32) -> Option<char> {
-        self::convert::from_u32(i)
-    }
+    pub const fn from_u32(i: u32) -> Option<char> { self::convert::from_u32( i ) }
 
     #[stable(feature = "char_from_unchecked", since = "1.5.0")] #[must_use] #[inline]
     pub const unsafe fn from_u32_unchecked(i: u32) -> char { unsafe { self::convert::from_u32_unchecked(i) } }
 
     #[stable(feature = "rust1", since = "1.0.0")] #[must_use] #[inline]
-    pub const fn from_digit(num: u32, radix: u32) -> Option<char> {
-        self::convert::from_digit(num, radix)
-    }
+    pub const fn from_digit(num: u32, radix: u32) -> Option<char> { self::convert::from_digit( num, radix ) }
     
     #[derive(Clone, Debug)] #[stable(feature = "rust1", since = "1.0.0")]
     pub struct EscapeUnicode(EscapeIterInner<10, AlwaysEscaped>);
     impl EscapeUnicode {
         #[inline]
-        const fn new(c: char) -> Self {
-            Self(EscapeIterInner::unicode(c))
-        }
+        const fn new(c: char) -> Self { Self(EscapeIterInner::unicode( c) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Iterator for EscapeUnicode {
         type Item = char;
-        #[inline] fn next(&mut self) -> Option<char> {
-            self.0.next().map(char::from)
-        }
+        #[inline] fn next(&mut self) -> Option<char> { self.0.next().map( char::from ) }
         
         #[inline] fn size_hint(&self) -> (usize, Option<usize>) {
             let n = self.0.len();
@@ -13863,53 +12555,43 @@ pub mod char
             self.0.len()
         }
         
-        #[inline] fn last(mut self) -> Option<char> {
-            self.0.next_back().map(char::from)
-        }
+        #[inline] fn last(mut self) -> Option<char> { self.0.next_back().map( char::from ) }
         
-        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_by(n)
-        }
+        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_by( n ) }
     }
+    
     #[stable(feature = "exact_size_escape", since = "1.11.0")]
     impl ExactSizeIterator for EscapeUnicode {
         #[inline] fn len(&self) -> usize {
             self.0.len()
         }
     }
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl FusedIterator for EscapeUnicode {}
+    
     #[stable(feature = "char_struct_display", since = "1.16.0")]
     impl fmt::Display for EscapeUnicode {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Display::fmt(&self.0, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.0, f ) }
     }
     
     #[derive(Clone, Debug)] #[stable(feature = "rust1", since = "1.0.0")]
     pub struct EscapeDefault(EscapeIterInner<10, AlwaysEscaped>);
     impl EscapeDefault {
         #[inline]
-        const fn printable(c: ascii::Char) -> Self {
-            Self(EscapeIterInner::ascii(c.to_u8()))
-        }
+        const fn printable(c: ascii::Char) -> Self { Self(EscapeIterInner::ascii(c.to_u8( )) ) }
         
         #[inline]
-        const fn backslash(c: ascii::Char) -> Self {
-            Self(EscapeIterInner::backslash(c))
-        }
+        const fn backslash(c: ascii::Char) -> Self { Self(EscapeIterInner::backslash( c) ) }
         
         #[inline]
-        const fn unicode(c: char) -> Self {
-            Self(EscapeIterInner::unicode(c))
-        }
+        const fn unicode(c: char) -> Self { Self(EscapeIterInner::unicode( c) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Iterator for EscapeDefault {
         type Item = char;
-        #[inline] fn next(&mut self) -> Option<char> {
-            self.0.next().map(char::from)
-        }
+        #[inline] fn next(&mut self) -> Option<char> { self.0.next().map( char::from ) }
         
         #[inline] fn size_hint(&self) -> (usize, Option<usize>) {
             let n = self.0.len();
@@ -13920,47 +12602,39 @@ pub mod char
             self.0.len()
         }
         
-        #[inline] fn last(mut self) -> Option<char> {
-            self.0.next_back().map(char::from)
-        }
+        #[inline] fn last(mut self) -> Option<char> { self.0.next_back().map( char::from ) }
         
-        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_by(n)
-        }
+        #[inline] fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_by( n ) }
     }
+    
     #[stable(feature = "exact_size_escape", since = "1.11.0")]
     impl ExactSizeIterator for EscapeDefault {
         #[inline] fn len(&self) -> usize {
             self.0.len()
         }
     }
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl FusedIterator for EscapeDefault {}
+    
     #[stable(feature = "char_struct_display", since = "1.16.0")]
     impl fmt::Display for EscapeDefault {
-        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Display::fmt(&self.0, f)
-        }
+        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.0, f ) }
     }
     
     #[stable(feature = "char_escape_debug", since = "1.20.0")] #[derive(Clone, Debug)]
     pub struct EscapeDebug(EscapeIterInner<10, MaybeEscaped>);
     impl EscapeDebug {
         #[inline]
-        const fn printable(chr: char) -> Self {
-            Self(EscapeIterInner::printable(chr))
-        }
+        const fn printable(chr: char) -> Self { Self(EscapeIterInner::printable( chr) ) }
         
         #[inline]
-        const fn backslash(c: ascii::Char) -> Self {
-            Self(EscapeIterInner::backslash(c))
-        }
+        const fn backslash(c: ascii::Char) -> Self { Self(EscapeIterInner::backslash( c) ) }
         
         #[inline]
-        const fn unicode(c: char) -> Self {
-            Self(EscapeIterInner::unicode(c))
-        }
+        const fn unicode(c: char) -> Self { Self(EscapeIterInner::unicode( c) ) }
     }
+    
     #[stable(feature = "char_escape_debug", since = "1.20.0")]
     impl Iterator for EscapeDebug {
         type Item = char;
@@ -13977,25 +12651,25 @@ pub mod char
             self.len()
         }
     }
+    
     #[stable(feature = "char_escape_debug", since = "1.20.0")]
     impl ExactSizeIterator for EscapeDebug {
         fn len(&self) -> usize {
             self.0.len()
         }
     }
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl FusedIterator for EscapeDebug {}
+    
     #[stable(feature = "char_escape_debug", since = "1.20.0")]
     impl fmt::Display for EscapeDebug {
-        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Display::fmt(&self.0, f)
-        }
+        #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.0, f ) }
     }
     macro_rules! casemappingiter_impls {
         ($(#[$attr:meta])* $ITER_NAME:ident) => {
             $(#[$attr])*
-            #[stable(feature = "rust1", since = "1.0.0")]
-            #[derive(Debug, Clone)]
+            #[stable(feature = "rust1", since = "1.0.0")] #[derive(Debug, Clone)]
             pub struct $ITER_NAME(CaseMappingIter);
             #[stable(feature = "rust1", since = "1.0.0")]
             impl Iterator for $ITER_NAME {
@@ -14008,18 +12682,14 @@ pub mod char
                 }
                 fn fold<Acc, Fold>(self, init: Acc, fold: Fold) -> Acc where
                     Fold: FnMut(Acc, Self::Item) -> Acc,
-                {
-                    self.0.fold(init, fold)
-                }
+                { self.0.fold( init, fold ) }
                 fn count(self) -> usize {
                     self.0.count()
                 }
                 fn last(self) -> Option<Self::Item> {
                     self.0.last()
                 }
-                fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-                    self.0.advance_by(n)
-                }
+                fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_by( n ) }
                 unsafe fn __iterator_get_unchecked(&mut self, idx: usize) -> Self::Item { unsafe { self.0.__iterator_get_unchecked(idx) } }
             }
             
@@ -14030,12 +12700,8 @@ pub mod char
                 }
                 fn rfold<Acc, Fold>(self, init: Acc, rfold: Fold) -> Acc where
                     Fold: FnMut(Acc, Self::Item) -> Acc,
-                {
-                    self.0.rfold(init, rfold)
-                }
-                fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-                    self.0.advance_back_by(n)
-                }
+                { self.0.rfold( init, rfold ) }
+                fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_back_by( n ) }
             }
             
             #[stable(feature = "fused", since = "1.26.0")]
@@ -14054,21 +12720,17 @@ pub mod char
             #[unstable(feature = "trusted_len", issue = "37572")]
             unsafe impl TrustedLen for $ITER_NAME {}
 
-            #[doc(hidden)]
-            #[unstable(feature = "std_internals", issue = "none")]
+            #[doc(hidden)] #[unstable(feature = "std_internals", issue = "none")]
             unsafe impl TrustedRandomAccessNoCoerce for $ITER_NAME {
                 const MAY_HAVE_SIDE_EFFECT: bool = false;
             }
 
-            #[doc(hidden)]
-            #[unstable(feature = "std_internals", issue = "none")]
+            #[doc(hidden)] #[unstable(feature = "std_internals", issue = "none")]
             unsafe impl TrustedRandomAccess for $ITER_NAME {}
             
             #[stable(feature = "char_struct_display", since = "1.16.0")]
             impl fmt::Display for $ITER_NAME {
-                #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-                    fmt::Display::fmt(&self.0, f)
-                }
+                #[inline] fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.0, f ) }
             }
         }
     }
@@ -14108,18 +12770,14 @@ pub mod char
         }
         fn fold<Acc, Fold>(self, init: Acc, fold: Fold) -> Acc where
             Fold: FnMut(Acc, Self::Item) -> Acc,
-        {
-            self.0.fold(init, fold)
-        }
+        { self.0.fold( init, fold ) }
         fn count(self) -> usize {
             self.0.count()
         }
         fn last(self) -> Option<Self::Item> {
             self.0.last()
         }
-        fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_by(n)
-        }
+        fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_by( n ) }
         unsafe fn __iterator_get_unchecked(&mut self, idx: usize) -> Self::Item { unsafe { self.0.__iterator_get_unchecked(idx) } }
     }
     
@@ -14129,12 +12787,8 @@ pub mod char
         }
         fn rfold<Acc, Fold>(self, init: Acc, rfold: Fold) -> Acc where
             Fold: FnMut(Acc, Self::Item) -> Acc,
-        {
-            self.0.rfold(init, rfold)
-        }
-        fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.0.advance_back_by(n)
-        }
+        { self.0.rfold( init, rfold ) }
+        fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.0.advance_back_by( n ) }
     }
     
     impl ExactSizeIterator for CaseMappingIter {
@@ -14169,10 +12823,9 @@ pub mod char
     pub struct TryFromCharError(pub(crate) ());
     #[stable(feature = "u8_from_char", since = "1.59.0")]
     impl fmt::Display for TryFromCharError {
-        fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result {
-            "unicode code point out of range".fmt(fmt)
-        }
+        fn fmt(&self, fmt: &mut fmt::Formatter<'_>) -> fmt::Result { "unicode code point out of range".fmt( fmt ) }
     }
+    
     #[stable(feature = "u8_from_char", since = "1.59.0")]
     impl Error for TryFromCharError {}
 }
@@ -14239,12 +12892,13 @@ pub mod ffi
     */
     
 }
+    
     #[stable(feature = "core_ffi_c", since = "1.64.0")] pub use self::primitives::{
         c_char, c_double, c_float, c_int, c_long, c_longlong, c_schar, c_short, c_uchar, c_uint,
         c_ulong, c_ulonglong, c_ushort,
     };
     #[unstable(feature = "c_size_t", issue = "88345")] pub use self::primitives::{c_ptrdiff_t, c_size_t, c_ssize_t};
-    #[doc = include_str!("c_void.md")] #[lang = "c_void"] #[repr(u8)] #[stable(feature = "core_c_void", since = "1.30.0")]
+    
     pub enum c_void {
         #[unstable(
             feature = "c_void_variant",
@@ -14259,11 +12913,10 @@ pub mod ffi
         )] #[doc(hidden)]
         __variant2,
     }
+    
     #[stable(feature = "std_debug", since = "1.16.0")]
     impl fmt::Debug for c_void {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("c_void").finish()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "c_void").finish( ) }
     }
 
     #[cfg(all(windows, target_env = "msvc"))] #[link(
@@ -14528,9 +13181,7 @@ pub mod option
     
     
         #[must_use = "if you intended to assert that this has a value, consider `.unwrap()` instead"] #[inline] #[stable(feature = "rust1", since = "1.0.0")]
-        pub const fn is_some(&self) -> bool {
-            matches!(*self, Some(_))
-        }
+        pub const fn is_some(&self) -> bool { matches!(*self, Some( _) ) }
         
         #[must_use] #[inline] #[stable(feature = "is_some_and", since = "1.70.0")]
         pub const fn is_some_and(self, f: impl [const] FnOnce(T) -> bool + [const] Destruct) -> bool {
@@ -14759,16 +13410,12 @@ pub mod option
         #[inline] #[stable(feature = "option_deref", since = "1.40.0")]
         pub const fn as_deref(&self) -> Option<&T::Target> where
             T: [const] Deref,
-        {
-            self.as_ref().map(Deref::deref)
-        }
+        { self.as_ref().map( Deref::deref ) }
         
         #[inline] #[stable(feature = "option_deref", since = "1.40.0")]
         pub const fn as_deref_mut(&mut self) -> Option<&mut T::Target> where
             T: [const] DerefMut,
-        {
-            self.as_mut().map(DerefMut::deref_mut)
-        }
+        { self.as_mut().map( DerefMut::deref_mut ) }
 
         #[inline] #[stable(feature = "rust1", since = "1.0.0")]
         pub fn iter(&self) -> Iter<'_, T> {
@@ -14812,9 +13459,7 @@ pub mod option
             T: [const] Destruct,
         {
             if let Some(x) = self {
-                if predicate(&x) {
-                    return Some(x);
-                }
+                if predicate(&x) { return Some(x); }
             }
             None
         }
@@ -14862,16 +13507,12 @@ pub mod option
         }
         
         #[inline] #[stable(feature = "option_entry", since = "1.20.0")]
-        pub fn get_or_insert(&mut self, value: T) -> &mut T {
-            self.get_or_insert_with(|| value)
-        }
+        pub fn get_or_insert(&mut self, value: T) -> &mut T { self.get_or_insert_with( || value ) }
         
         #[inline] #[stable(feature = "option_get_or_insert_default", since = "1.83.0")]
         pub const fn get_or_insert_default(&mut self) -> &mut T where
             T: [const] Default + [const] Destruct,
-        {
-            self.get_or_insert_with(T::default)
-        }
+        { self.get_or_insert_with( T::default ) }
         
         #[inline] #[stable(feature = "option_entry", since = "1.20.0")]
         pub const fn get_or_insert_with<F>(&mut self, f: F) -> &mut T where
@@ -14886,10 +13527,7 @@ pub mod option
         }
 
         #[inline] #[stable(feature = "rust1", since = "1.0.0")]
-        pub const fn take(&mut self) -> Option<T> {
-
-            mem::replace(self, None)
-        }
+        pub const fn take(&mut self) -> Option<T> { mem::replace( self, None ) }
 
         #[inline] #[stable(feature = "option_take_if", since = "1.80.0")]
         pub const fn take_if<P>(&mut self, predicate: P) -> Option<T> where
@@ -14899,9 +13537,7 @@ pub mod option
         }
         
         #[inline] #[stable(feature = "option_replace", since = "1.31.0")]
-        pub const fn replace(&mut self, value: T) -> Option<T> {
-            mem::replace(self, Some(value))
-        }
+        pub const fn replace(&mut self, value: T) -> Option<T> { mem::replace(self, Some( value) ) }
 
         #[stable(feature = "option_zip_option", since = "1.46.0")]
         pub const fn zip<U>(self, other: Option<U>) -> Option<(T, U)> where
@@ -14942,8 +13578,7 @@ pub mod option
     }
     
     impl<T, U> Option<(T, U)> {
-        
-        #[inline] #[stable(feature = "unzip_option", since = "1.66.0")]
+      #[inline] #[stable(feature = "unzip_option", since = "1.66.0")]
         pub fn unzip(self) -> (Option<T>, Option<U>) {
             match self {
                 Some((a, b)) => (Some(a), Some(b)),
@@ -15000,8 +13635,7 @@ pub mod option
     }
     
     impl<T, E> Option<Result<T, E>> {
-        
-        #[inline] #[stable(feature = "transpose_result", since = "1.33.0")]
+      #[inline] #[stable(feature = "transpose_result", since = "1.33.0")]
     
         pub const fn transpose(self) -> Result<Option<T>, E> {
             match self {
@@ -15012,14 +13646,10 @@ pub mod option
         }
     }
     #[cfg_attr(not(panic = "immediate-abort"), inline(never))] #[cfg_attr(panic = "immediate-abort", inline)] #[cold] #[track_caller]
-    const fn unwrap_failed() -> ! {
-        panic("called `Option::unwrap()` on a `None` value")
-    }
+    const fn unwrap_failed() -> ! { panic("called `Option::unwrap( )` on a `None` value" ) }
 
     #[cfg_attr(not(panic = "immediate-abort"), inline(never))] #[cfg_attr(panic = "immediate-abort", inline)] #[cold] #[track_caller]
-    const fn expect_failed(msg: &str) -> ! {
-        panic_display(&msg)
-    }
+    const fn expect_failed(msg: &str) -> ! { panic_display( &msg ) }
     
     #[stable(feature = "rust1", since = "1.0.0")]
 
@@ -15047,6 +13677,7 @@ pub mod option
     #[doc(hidden)] #[unstable(feature = "trivial_clone", issue = "none")]
 
     unsafe impl<T> const TrivialClone for Option<T> where T: [const] TrivialClone + [const] Destruct {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T> const Default for Option<T> {
@@ -15055,6 +13686,7 @@ pub mod option
             None
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> IntoIterator for Option<T> {
         type Item = T;
@@ -15063,6 +13695,7 @@ pub mod option
             IntoIter { inner: Item { opt: self } }
         }
     }
+    
     #[stable(since = "1.4.0", feature = "option_iter")]
     impl<'a, T> IntoIterator for &'a Option<T> {
         type Item = &'a T;
@@ -15071,6 +13704,7 @@ pub mod option
             self.iter()
         }
     }
+    
     #[stable(since = "1.4.0", feature = "option_iter")]
     impl<'a, T> IntoIterator for &'a mut Option<T> {
         type Item = &'a mut T;
@@ -15079,15 +13713,15 @@ pub mod option
             self.iter_mut()
         }
     }
+    
     #[stable(since = "1.12.0", feature = "option_from")]
 
     impl<T> const From<T> for Option<T> {
         
 
-        fn from(val: T) -> Option<T> {
-            Some(val)
-        }
+        fn from(val: T) -> Option<T> { Some( val ) }
     }
+    
     #[stable(feature = "option_ref_from_ref_option", since = "1.30.0")]
 
     impl<'a, T> const From<&'a Option<T>> for Option<&'a T> {
@@ -15096,17 +13730,18 @@ pub mod option
             o.as_ref()
         }
     }
+    
     #[stable(feature = "option_ref_from_ref_option", since = "1.30.0")]
 
     impl<'a, T> const From<&'a mut Option<T>> for Option<&'a mut T> {
-        
-        fn from(o: &'a mut Option<T>) -> Option<&'a mut T> {
+      fn from(o: &'a mut Option<T>) -> Option<&'a mut T> {
             o.as_mut()
         }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> crate::marker::StructuralPartialEq for Option<T> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: [const] PartialEq> const PartialEq for Option<T> {
@@ -15133,6 +13768,7 @@ pub mod option
             }
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T: [const] Ord> const Ord for Option<T> {
@@ -15182,6 +13818,7 @@ pub mod option
     pub struct Iter<'a, A: 'a> {
         inner: Item<&'a A>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, A> Iterator for Iter<'a, A> {
         type Item = &'a A;
@@ -15193,18 +13830,22 @@ pub mod option
             self.inner.size_hint()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, A> DoubleEndedIterator for Iter<'a, A> {
         #[inline] fn next_back(&mut self) -> Option<&'a A> {
             self.inner.next_back()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> ExactSizeIterator for Iter<'_, A> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<A> FusedIterator for Iter<'_, A> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
     unsafe impl<A> TrustedLen for Iter<'_, A> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> Clone for Iter<'_, A> {
         #[inline] fn clone(&self) -> Self {
@@ -15216,6 +13857,7 @@ pub mod option
     pub struct IterMut<'a, A: 'a> {
         inner: Item<&'a mut A>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, A> Iterator for IterMut<'a, A> {
         type Item = &'a mut A;
@@ -15227,14 +13869,17 @@ pub mod option
             self.inner.size_hint()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, A> DoubleEndedIterator for IterMut<'a, A> {
         #[inline] fn next_back(&mut self) -> Option<&'a mut A> {
             self.inner.next_back()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> ExactSizeIterator for IterMut<'_, A> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<A> FusedIterator for IterMut<'_, A> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
@@ -15244,6 +13889,7 @@ pub mod option
     pub struct IntoIter<A> {
         inner: Item<A>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> Iterator for IntoIter<A> {
         type Item = A;
@@ -15255,14 +13901,17 @@ pub mod option
             self.inner.size_hint()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> DoubleEndedIterator for IntoIter<A> {
         #[inline] fn next_back(&mut self) -> Option<A> {
             self.inner.next_back()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<A> ExactSizeIterator for IntoIter<A> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<A> FusedIterator for IntoIter<A> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
@@ -15273,19 +13922,14 @@ pub mod option
 
         
     
-        #[inline] fn from_iter<I: IntoIterator<Item = Option<A>>>(iter: I) -> Option<V> {
-
-            iter::try_process(iter.into_iter(), |i| i.collect())
-        }
+        #[inline] fn from_iter<I: IntoIterator<Item = Option<A>>>(iter: I) -> Option<V> { iter::try_process(iter.into_iter(), |i| i.collect( ) ) }
     }
     #[unstable(feature = "try_trait_v2", issue = "84277", old_name = "try_trait")]
 
     impl<T> const ops::Try for Option<T> {
         type Output = T;
         type Residual = Option<convert::Infallible>;
-        #[inline] fn from_output(output: Self::Output) -> Self {
-            Some(output)
-        }
+        #[inline] fn from_output(output: Self::Output) -> Self { Some( output ) }
         
         #[inline] fn branch(self) -> ControlFlow<Self::Residual, Self::Output> {
             match self {
@@ -15317,8 +13961,7 @@ pub mod option
     }
     
     impl<T> Option<Option<T>> {
-        
-    
+  
         #[inline] #[stable(feature = "option_flattening", since = "1.40.0")]
     
         pub const fn flatten(self) -> Option<T> {
@@ -15331,11 +13974,8 @@ pub mod option
     }
     
     impl<T, const N: usize> [Option<T>; N] {
-        
-        #[inline] #[unstable(feature = "option_array_transpose", issue = "130828")]
-        pub fn transpose(self) -> Option<[T; N]> {
-            self.try_map(core::convert::identity)
-        }
+      #[inline] #[unstable(feature = "option_array_transpose", issue = "130828")]
+        pub fn transpose(self) -> Option<[T; N]> { self.try_map( core::convert::identity ) }
     }
 }
 
@@ -15427,6 +14067,7 @@ pub mod panic
     */
     
 }
+    
     #[stable(feature = "panic_hooks", since = "1.10.0")] pub use self::location::Location;
     #[stable(feature = "panic_hooks", since = "1.10.0")] pub use self::panic_info::PanicInfo;
     #[stable(feature = "panic_info_message", since = "1.81.0")] pub use self::panic_info::PanicMessage;
@@ -15507,17 +14148,12 @@ pub mod panic
     pub macro const_panic {
         ($const_msg:literal, $runtime_msg:literal, $($arg:ident : $ty:ty = $val:expr),* $(,)?) => {{
     
-            #[inline(always)]
-            #[track_caller]
+            #[inline(always)] #[track_caller]
             const fn do_panic($($arg: $ty),*) -> ! {
                 $crate::intrinsics::const_eval_select!(
                     @capture { $($arg: $ty = $arg),* } -> !:
                     #[noinline]
-                    if const #[track_caller] #[inline] {
-                        $crate::panic!($const_msg)
-                    } else #[track_caller] {
-                        $crate::panic!($runtime_msg)
-                    }
+                    if const #[track_caller] #[inline] { $crate::panic!( $const_msg ) } else #[track_caller] { $crate::panic!( $runtime_msg ) }
                 )
             }
             do_panic($($val),*)
@@ -15535,9 +14171,7 @@ pub mod panic
     #[unstable(feature = "panic_internals", issue = "none")] #[doc(hidden)]
     pub macro const_assert {
         ($condition: expr, $const_msg:literal, $runtime_msg:literal, $($arg:tt)*) => {{
-            if !$crate::intrinsics::likely($condition) {
-                $crate::panic::const_panic!($const_msg, $runtime_msg, $($arg)*)
-            }
+            if !$crate::intrinsics::likely($condition) { $crate::panic::const_panic!($const_msg, $runtime_msg, $( $arg)* ) }
         }}
     }
 }
@@ -15588,10 +14222,7 @@ pub mod panicking
     pub const fn panic_nounwind_fmt(fmt: fmt::Arguments<'_>, force_no_backtrace: bool) -> ! {
         const_eval_select!(
             @capture { fmt: fmt::Arguments<'_>, force_no_backtrace: bool } -> !:
-            if const #[track_caller] {
-
-                panic_fmt(fmt)
-            } else #[track_caller] {
+            if const #[track_caller] { panic_fmt( fmt ) } else #[track_caller] {
                 if cfg!(panic = "immediate-abort") {
                     super::intrinsics::abort()
                 }
@@ -15741,25 +14372,16 @@ pub mod panicking
     
     #[cfg_attr(not(panic = "immediate-abort"), inline(never), cold, optimize(size))] #[cfg_attr(panic = "immediate-abort", inline)] #[lang = "panic_cannot_unwind"]
 
-    fn panic_cannot_unwind() -> ! {
-
-        panic_nounwind("panic in a function that cannot unwind")
-    }
+    fn panic_cannot_unwind() -> ! { panic_nounwind( "panic in a function that cannot unwind" ) }
     
     #[cfg_attr(not(panic = "immediate-abort"), inline(never), cold, optimize(size))] #[cfg_attr(panic = "immediate-abort", inline)] #[lang = "panic_in_cleanup"]
 
-    fn panic_in_cleanup() -> ! {
-
-        panic_nounwind_nobacktrace("panic in a destructor during cleanup")
-    }
+    fn panic_in_cleanup() -> ! { panic_nounwind_nobacktrace( "panic in a destructor during cleanup" ) }
 
     #[lang = "const_panic_fmt"]
 
     pub const fn const_panic_fmt(fmt: fmt::Arguments<'_>) -> ! {
-        if let Some(msg) = fmt.as_str() {
-
-            panic_display(&msg);
-        } else {
+        if let Some(msg) = fmt.as_str() { panic_display(&msg); } else {
     
             unsafe { crate::hint::unreachable_unchecked() };
         }
@@ -15781,9 +14403,7 @@ pub mod panicking
     where
         T: fmt::Debug + ?Sized,
         U: fmt::Debug + ?Sized,
-    {
-        assert_failed_inner(kind, &left, &right, args)
-    }
+    { assert_failed_inner( kind, &left, &right, args ) }
 
     #[cfg_attr(not(panic = "immediate-abort"), inline(never), cold, optimize(size))] #[cfg_attr(panic = "immediate-abort", inline)] #[track_caller] #[doc(hidden)]
     pub fn assert_matches_failed<T: fmt::Debug + ?Sized>(
@@ -15794,9 +14414,7 @@ pub mod panicking
 
         struct Pattern<'a>(&'a str);
         impl fmt::Debug for Pattern<'_> {
-            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-                f.write_str(self.0)
-            }
+            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.write_str( self.0 ) }
         }
         assert_failed_inner(AssertKind::Match, &left, &Pattern(right), args);
     }
@@ -15955,47 +14573,33 @@ pub mod pin
     where
         Ptr::Target: PartialEq<Q::Target>,
     {
-        fn eq(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::eq(self, other)
-        }
-        fn ne(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::ne(self, other)
-        }
+        fn eq(&self, other: &Pin<Q>) -> bool { Ptr::Target::eq( self, other ) }
+        fn ne(&self, other: &Pin<Q>) -> bool { Ptr::Target::ne( self, other ) }
     }
+    
     #[stable(feature = "pin_trait_impls", since = "1.41.0")]
     impl<Ptr: Deref<Target: Eq>> Eq for Pin<Ptr> {}
+    
     #[stable(feature = "pin_trait_impls", since = "1.41.0")]
     impl<Ptr: Deref, Q: Deref> PartialOrd<Pin<Q>> for Pin<Ptr>
     where
         Ptr::Target: PartialOrd<Q::Target>,
     {
-        fn partial_cmp(&self, other: &Pin<Q>) -> Option<cmp::Ordering> {
-            Ptr::Target::partial_cmp(self, other)
-        }
-        fn lt(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::lt(self, other)
-        }
-        fn le(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::le(self, other)
-        }
-        fn gt(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::gt(self, other)
-        }
-        fn ge(&self, other: &Pin<Q>) -> bool {
-            Ptr::Target::ge(self, other)
-        }
+        fn partial_cmp(&self, other: &Pin<Q>) -> Option<cmp::Ordering> { Ptr::Target::partial_cmp( self, other ) }
+        fn lt(&self, other: &Pin<Q>) -> bool { Ptr::Target::lt( self, other ) }
+        fn le(&self, other: &Pin<Q>) -> bool { Ptr::Target::le( self, other ) }
+        fn gt(&self, other: &Pin<Q>) -> bool { Ptr::Target::gt( self, other ) }
+        fn ge(&self, other: &Pin<Q>) -> bool { Ptr::Target::ge( self, other ) }
     }
+    
     #[stable(feature = "pin_trait_impls", since = "1.41.0")]
     impl<Ptr: Deref<Target: Ord>> Ord for Pin<Ptr> {
-        fn cmp(&self, other: &Self) -> cmp::Ordering {
-            Ptr::Target::cmp(self, other)
-        }
+        fn cmp(&self, other: &Self) -> cmp::Ordering { Ptr::Target::cmp( self, other ) }
     }
+    
     #[stable(feature = "pin_trait_impls", since = "1.41.0")]
     impl<Ptr: Deref<Target: Hash>> Hash for Pin<Ptr> {
-        fn hash<H: Hasher>(&self, state: &mut H) {
-            Ptr::Target::hash(self, state);
-        }
+        fn hash<H: Hasher>(&self, state: &mut H) { Ptr::Target::hash(self, state); }
     }
     
     impl<Ptr: Deref<Target: Unpin>> Pin<Ptr> {
@@ -16028,8 +14632,7 @@ pub mod pin
     }
     
     impl<Ptr: DerefMut> Pin<Ptr> {
-        
-        #[stable(feature = "pin", since = "1.33.0")] #[inline(always)]
+      #[stable(feature = "pin", since = "1.33.0")] #[inline(always)]
         pub const fn as_mut(&mut self) -> Pin<&mut Ptr::Target> where
             Ptr: [const] DerefMut,
         { unsafe { Pin::new_unchecked(&mut *self.pointer) } }
@@ -16037,12 +14640,7 @@ pub mod pin
         #[stable(feature = "pin_deref_mut", since = "1.84.0")] #[must_use = "`self` will be dropped if the result is not used"] #[inline(always)]
         pub const fn as_deref_mut(self: Pin<&mut Self>) -> Pin<&mut Ptr::Target> where
             Ptr: [const] DerefMut,
-        {
-    
-    
-    
-            unsafe { self.get_unchecked_mut() }.as_mut()
-        }
+        { unsafe { self.get_unchecked_mut( ) }.as_mut( ) }
 
         #[stable(feature = "pin", since = "1.33.0")] #[inline(always)]
         pub fn set(&mut self, value: Ptr::Target) where
@@ -16122,13 +14720,12 @@ pub mod pin
         #[stable(feature = "pin_static_ref", since = "1.61.0")]
         pub const fn static_mut(r: &'static mut T) -> Pin<&'static mut T> { unsafe { Pin::new_unchecked(r) } }
     }
+    
     #[stable(feature = "pin", since = "1.33.0")]
 
     impl<Ptr: [const] Deref> const Deref for Pin<Ptr> {
         type Target = Ptr::Target;
-        fn deref(&self) -> &Ptr::Target {
-            Pin::get_ref(Pin::as_ref(self))
-        }
+        fn deref(&self) -> &Ptr::Target { Pin::get_ref(Pin::as_ref( self) ) }
     }
     mod helper {
         
@@ -16157,6 +14754,7 @@ pub mod pin
             }
         }
     }
+    
     #[stable(feature = "pin", since = "1.33.0")] #[cfg(not(doc))]
     impl<Ptr> const DerefMut for Pin<Ptr>
     where
@@ -16165,9 +14763,7 @@ pub mod pin
     {
         #[inline] fn deref_mut(&mut self) -> &mut Ptr::Target {
 
-            helper::PinDerefMutHelper::deref_mut(unsafe {
-                &mut *(self as *mut Pin<Ptr> as *mut helper::PinHelper<Ptr>)
-            })
+            helper::PinDerefMutHelper::deref_mut(unsafe { &mut *( self as *mut Pin<Ptr> as *mut helper::PinHelper<Ptr> ) })
         }
     }
     
@@ -16177,31 +14773,26 @@ pub mod pin
         Ptr: [const] DerefMut,
         <Ptr as Deref>::Target: Unpin,
     {
-        fn deref_mut(&mut self) -> &mut Ptr::Target {
-            Pin::get_mut(Pin::as_mut(self))
-        }
+        fn deref_mut(&mut self) -> &mut Ptr::Target { Pin::get_mut(Pin::as_mut( self) ) }
     }
     #[unstable(feature = "deref_pure_trait", issue = "87121")]
     unsafe impl<Ptr: DerefPure> DerefPure for Pin<Ptr> {}
     #[unstable(feature = "legacy_receiver_trait", issue = "none")]
     impl<Ptr: LegacyReceiver> LegacyReceiver for Pin<Ptr> {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     impl<Ptr: fmt::Debug> fmt::Debug for Pin<Ptr> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Debug::fmt(&self.pointer, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Debug::fmt( &self.pointer, f ) }
     }
+    
     #[stable(feature = "pin", since = "1.33.0")]
     impl<Ptr: fmt::Display> fmt::Display for Pin<Ptr> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Display::fmt(&self.pointer, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Display::fmt( &self.pointer, f ) }
     }
+    
     #[stable(feature = "pin", since = "1.33.0")]
     impl<Ptr: fmt::Pointer> fmt::Pointer for Pin<Ptr> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            fmt::Pointer::fmt(&self.pointer, f)
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { fmt::Pointer::fmt( &self.pointer, f ) }
     }
 
     #[stable(feature = "pin", since = "1.33.0")]
@@ -16211,6 +14802,7 @@ pub mod pin
         U: PinCoerceUnsized,
     {
     }
+    
     #[stable(feature = "pin", since = "1.33.0")]
     impl<Ptr, U> DispatchFromDyn<Pin<U>> for Pin<Ptr>
     where
@@ -16223,14 +14815,19 @@ pub mod pin
     
     
     pub unsafe trait PinCoerceUnsized {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     unsafe impl<'a, T: ?Sized> PinCoerceUnsized for &'a T {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     unsafe impl<'a, T: ?Sized> PinCoerceUnsized for &'a mut T {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     unsafe impl<T: PinCoerceUnsized> PinCoerceUnsized for Pin<T> {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     unsafe impl<T: ?Sized> PinCoerceUnsized for *const T {}
+    
     #[stable(feature = "pin", since = "1.33.0")]
     unsafe impl<T: ?Sized> PinCoerceUnsized for *mut T {}   
 
@@ -16270,9 +14867,7 @@ pub mod random
     }
     
     impl<T, DT: Distribution<T>> Distribution<T> for &DT {
-        fn sample(&self, source: &mut (impl RandomSource + ?Sized)) -> T {
-            (*self).sample(source)
-        }
+        fn sample(&self, source: &mut (impl RandomSource + ?Sized)) -> T { (*self).sample( source ) }
     }
     
     impl Distribution<bool> for RangeFull {
@@ -16347,8 +14942,8 @@ pub mod range
 }
     use Bound::{Excluded, Included, Unbounded};
     #[doc(inline)] pub use self::iter::{RangeFromIter, RangeInclusiveIter, RangeIter};
-    #[doc(inline)] pub use self::crate::iter::Step;
-    #[doc(inline)] pub use self::crate::ops::{Bound, IntoBounds, OneSidedRange, RangeBounds, RangeFull, RangeTo};
+    #[doc(inline)] pub use crate::iter::Step;
+    #[doc(inline)] pub use crate::ops::{Bound, IntoBounds, OneSidedRange, RangeBounds, RangeFull, RangeTo};
     #[lang = "RangeCopy"] #[derive(Copy, Hash)] #[derive_const(Clone, Default, PartialEq, Eq)] #[unstable(feature = "new_range_api", issue = "125687")]
     pub struct Range<Idx> {
         #[unstable(feature = "new_range_api", issue = "125687")]
@@ -16367,10 +14962,7 @@ pub mod range
     }
     
     impl<Idx: Step> Range<Idx> {
-        
-        #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeIter<Idx> {
-            self.clone().into_iter()
-        }
+      #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeIter<Idx> { self.clone( ).into_iter( ) }
     }
     
     impl<Idx: PartialOrd<Idx>> Range<Idx> {
@@ -16380,45 +14972,31 @@ pub mod range
         pub const fn contains<U>(&self, item: &U) -> bool where
             Idx: [const] PartialOrd<U>,
             U: ?Sized + [const] PartialOrd<Idx>,
-        {
-            <Self as RangeBounds<Idx>>::contains(self, item)
-        }
+        { <Self as RangeBounds<Idx>>::contains( self, item ) }
 
         #[inline] #[unstable(feature = "new_range_api", issue = "125687")]
         pub const fn is_empty(&self) -> bool where
             Idx: [const] PartialOrd,
-        {
-            !(self.start < self.end)
-        }
+        { !( self.start < self.end ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for Range<T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(&self.start)
-        }
-        fn end_bound(&self) -> Bound<&T> {
-            Excluded(&self.end)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( &self.start ) }
+        fn end_bound(&self) -> Bound<&T> { Excluded( &self.end ) }
     }
     
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for Range<&T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(self.start)
-        }
-        fn end_bound(&self) -> Bound<&T> {
-            Excluded(self.end)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( self.start ) }
+        fn end_bound(&self) -> Bound<&T> { Excluded( self.end ) }
     }
 
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const IntoBounds<T> for Range<T> {
-        fn into_bounds(self) -> (Bound<T>, Bound<T>) {
-            (Included(self.start), Excluded(self.end))
-        }
+        fn into_bounds(self) -> (Bound<T>, Bound<T>) { (Included(self.start), Excluded( self.end) ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
@@ -16459,24 +15037,17 @@ pub mod range
         pub const fn contains<U>(&self, item: &U) -> bool where
             Idx: [const] PartialOrd<U>,
             U: ?Sized + [const] PartialOrd<Idx>,
-        {
-            <Self as RangeBounds<Idx>>::contains(self, item)
-        }
+        { <Self as RangeBounds<Idx>>::contains( self, item ) }
 
         #[unstable(feature = "new_range_api", issue = "125687")] #[inline]
 
         pub const fn is_empty(&self) -> bool where
             Idx: [const] PartialOrd,
-        {
-            !(self.start <= self.last)
-        }
+        { !( self.start <= self.last ) }
     }
     
     impl<Idx: Step> RangeInclusive<Idx> {
-        
-        #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeInclusiveIter<Idx> {
-            self.clone().into_iter()
-        }
+      #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeInclusiveIter<Idx> { self.clone( ).into_iter( ) }
     }
     
     impl RangeInclusive<usize> {
@@ -16489,38 +15060,26 @@ pub mod range
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for RangeInclusive<T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(&self.start)
-        }
-        fn end_bound(&self) -> Bound<&T> {
-            Included(&self.last)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( &self.start ) }
+        fn end_bound(&self) -> Bound<&T> { Included( &self.last ) }
     }
     
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for RangeInclusive<&T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(self.start)
-        }
-        fn end_bound(&self) -> Bound<&T> {
-            Included(self.last)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( self.start ) }
+        fn end_bound(&self) -> Bound<&T> { Included( self.last ) }
     }
 
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const IntoBounds<T> for RangeInclusive<T> {
-        fn into_bounds(self) -> (Bound<T>, Bound<T>) {
-            (Included(self.start), Included(self.last))
-        }
+        fn into_bounds(self) -> (Bound<T>, Bound<T>) { (Included(self.start), Included( self.last) ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const From<RangeInclusive<T>> for legacy::RangeInclusive<T> {
-        #[inline] fn from(value: RangeInclusive<T>) -> Self {
-            Self::new(value.start, value.last)
-        }
+        #[inline] fn from(value: RangeInclusive<T>) -> Self { Self::new( value.start, value.last ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
@@ -16550,28 +15109,20 @@ pub mod range
     }
     
     impl<Idx: Step> RangeFrom<Idx> {
-        
-        #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeFromIter<Idx> {
-            self.clone().into_iter()
-        }
+      #[unstable(feature = "new_range_api", issue = "125687")] #[inline] pub fn iter(&self) -> RangeFromIter<Idx> { self.clone( ).into_iter( ) }
     }
     
     impl<Idx: PartialOrd<Idx>> RangeFrom<Idx> {
-        
-        #[inline] #[unstable(feature = "new_range_api", issue = "125687")]
+      #[inline] #[unstable(feature = "new_range_api", issue = "125687")]
         pub const fn contains<U>(&self, item: &U) -> bool where
             Idx: [const] PartialOrd<U>,
             U: ?Sized + [const] PartialOrd<Idx>,
-        {
-            <Self as RangeBounds<Idx>>::contains(self, item)
-        }
+        { <Self as RangeBounds<Idx>>::contains( self, item ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for RangeFrom<T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(&self.start)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( &self.start ) }
         fn end_bound(&self) -> Bound<&T> {
             Unbounded
         }
@@ -16580,9 +15131,7 @@ pub mod range
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const RangeBounds<T> for RangeFrom<&T> {
-        fn start_bound(&self) -> Bound<&T> {
-            Included(self.start)
-        }
+        fn start_bound(&self) -> Bound<&T> { Included( self.start ) }
         fn end_bound(&self) -> Bound<&T> {
             Unbounded
         }
@@ -16591,9 +15140,7 @@ pub mod range
     #[unstable(feature = "new_range_api", issue = "125687")]
 
     impl<T> const IntoBounds<T> for RangeFrom<T> {
-        fn into_bounds(self) -> (Bound<T>, Bound<T>) {
-            (Included(self.start), Unbounded)
-        }
+        fn into_bounds(self) -> (Bound<T>, Bound<T>) { (Included( self.start), Unbounded ) }
     }
     #[unstable(feature = "new_range_api", issue = "125687")]
 
@@ -16631,9 +15178,7 @@ pub mod range
         pub const fn contains<U>(&self, item: &U) -> bool where
             Idx: [const] PartialOrd<U>,
             U: ?Sized + [const] PartialOrd<Idx>,
-        {
-            <Self as RangeBounds<Idx>>::contains(self, item)
-        }
+        { <Self as RangeBounds<Idx>>::contains( self, item ) }
     }
     
     impl<T> From<legacy::RangeToInclusive<T>> for RangeToInclusive<T> {
@@ -16654,16 +15199,12 @@ pub mod range
         fn start_bound(&self) -> Bound<&T> {
             Unbounded
         }
-        fn end_bound(&self) -> Bound<&T> {
-            Included(&self.last)
-        }
+        fn end_bound(&self) -> Bound<&T> { Included( &self.last ) }
     }
     #[unstable(feature = "range_into_bounds", issue = "136903")]
 
     impl<T> const IntoBounds<T> for RangeToInclusive<T> {
-        fn into_bounds(self) -> (Bound<T>, Bound<T>) {
-            (Unbounded, Included(self.last))
-        }
+        fn into_bounds(self) -> (Bound<T>, Bound<T>) { (Unbounded, Included( self.last) ) }
     }
 }
 
@@ -16695,9 +15236,7 @@ pub mod result
     
     
         #[must_use = "if you intended to assert that this is ok, consider `.unwrap()` instead"] #[inline] #[stable(feature = "rust1", since = "1.0.0")]
-        pub const fn is_ok(&self) -> bool {
-            matches!(*self, Ok(_))
-        }
+        pub const fn is_ok(&self) -> bool { matches!(*self, Ok( _) ) }
         
         #[must_use] #[inline] #[stable(feature = "is_some_and", since = "1.70.0")]
         pub const fn is_ok_and<F>(self, f: F) -> bool where
@@ -16847,16 +15386,12 @@ pub mod result
         #[inline] #[stable(feature = "inner_deref", since = "1.47.0")]
         pub const fn as_deref(&self) -> Result<&T::Target, &E> where
             T: [const] Deref,
-        {
-            self.as_ref().map(Deref::deref)
-        }
+        { self.as_ref().map( Deref::deref ) }
 
         #[inline] #[stable(feature = "inner_deref", since = "1.47.0")]
         pub const fn as_deref_mut(&mut self) -> Result<&mut T::Target, &mut E> where
             T: [const] DerefMut,
-        {
-            self.as_mut().map(DerefMut::deref_mut)
-        }
+        { self.as_mut().map( DerefMut::deref_mut ) }
 
         #[inline] #[stable(feature = "rust1", since = "1.0.0")]
         pub const fn iter(&self) -> Iter<'_, T> {
@@ -17053,9 +15588,7 @@ pub mod result
         #[inline] #[stable(feature = "result_cloned", since = "1.59.0")]
         pub fn cloned(self) -> Result<T, E> where
             T: Clone,
-        {
-            self.map(|t| t.clone())
-        }
+        { self.map(|t| t.clone( ) ) }
     }
     
     impl<T, E> Result<&mut T, E> {
@@ -17075,14 +15608,11 @@ pub mod result
         #[inline] #[stable(feature = "result_cloned", since = "1.59.0")]
         pub fn cloned(self) -> Result<T, E> where
             T: Clone,
-        {
-            self.map(|t| t.clone())
-        }
+        { self.map(|t| t.clone( ) ) }
     }
     
     impl<T, E> Result<Option<T>, E> {
-        
-        #[inline] #[stable(feature = "transpose_result", since = "1.33.0")]
+      #[inline] #[stable(feature = "transpose_result", since = "1.33.0")]
     
         pub const fn transpose(self) -> Option<Result<T, E>> {
             match self {
@@ -17094,8 +15624,7 @@ pub mod result
     }
     
     impl<T, E> Result<Result<T, E>, E> {
-        
-        #[inline] #[stable(feature = "result_flattening", since = "1.89.0")]
+      #[inline] #[stable(feature = "result_flattening", since = "1.89.0")]
     
         pub const fn flatten(self) -> Result<T, E> {
 
@@ -17144,6 +15673,7 @@ pub mod result
         E: crate::clone::UseCloned,
     {
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T, E> IntoIterator for Result<T, E> {
         type Item = T;
@@ -17154,6 +15684,7 @@ pub mod result
             IntoIter { inner: self.ok() }
         }
     }
+    
     #[stable(since = "1.4.0", feature = "result_iter")]
     impl<'a, T, E> IntoIterator for &'a Result<T, E> {
         type Item = &'a T;
@@ -17162,6 +15693,7 @@ pub mod result
             self.iter()
         }
     }
+    
     #[stable(since = "1.4.0", feature = "result_iter")]
     impl<'a, T, E> IntoIterator for &'a mut Result<T, E> {
         type Item = &'a mut T;
@@ -17175,6 +15707,7 @@ pub mod result
     pub struct Iter<'a, T: 'a> {
         inner: Option<&'a T>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T> Iterator for Iter<'a, T> {
         type Item = &'a T;
@@ -17187,18 +15720,22 @@ pub mod result
             (n, Some(n))
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T> DoubleEndedIterator for Iter<'a, T> {
         #[inline] fn next_back(&mut self) -> Option<&'a T> {
             self.inner.take()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> ExactSizeIterator for Iter<'_, T> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<T> FusedIterator for Iter<'_, T> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
     unsafe impl<A> TrustedLen for Iter<'_, A> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> Clone for Iter<'_, T> {
         #[inline] fn clone(&self) -> Self {
@@ -17210,6 +15747,7 @@ pub mod result
     pub struct IterMut<'a, T: 'a> {
         inner: Option<&'a mut T>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T> Iterator for IterMut<'a, T> {
         type Item = &'a mut T;
@@ -17222,14 +15760,17 @@ pub mod result
             (n, Some(n))
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<'a, T> DoubleEndedIterator for IterMut<'a, T> {
         #[inline] fn next_back(&mut self) -> Option<&'a mut T> {
             self.inner.take()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> ExactSizeIterator for IterMut<'_, T> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<T> FusedIterator for IterMut<'_, T> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
@@ -17239,6 +15780,7 @@ pub mod result
     pub struct IntoIter<T> {
         inner: Option<T>,
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> Iterator for IntoIter<T> {
         type Item = T;
@@ -17251,14 +15793,17 @@ pub mod result
             (n, Some(n))
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> DoubleEndedIterator for IntoIter<T> {
         #[inline] fn next_back(&mut self) -> Option<T> {
             self.inner.take()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T> ExactSizeIterator for IntoIter<T> {}
+    
     #[stable(feature = "fused", since = "1.26.0")]
     impl<T> FusedIterator for IntoIter<T> {}
     #[unstable(feature = "trusted_len", issue = "37572")]
@@ -17270,18 +15815,14 @@ pub mod result
         
         
     
-        #[inline] fn from_iter<I: IntoIterator<Item = Result<A, E>>>(iter: I) -> Result<V, E> {
-            iter::try_process(iter.into_iter(), |i| i.collect())
-        }
+        #[inline] fn from_iter<I: IntoIterator<Item = Result<A, E>>>(iter: I) -> Result<V, E> { iter::try_process(iter.into_iter(), |i| i.collect( ) ) }
     }
     #[unstable(feature = "try_trait_v2", issue = "84277", old_name = "try_trait")]
 
     impl<T, E> const ops::Try for Result<T, E> {
         type Output = T;
         type Residual = Result<convert::Infallible, E>;
-        #[inline] fn from_output(output: Self::Output) -> Self {
-            Ok(output)
-        }
+        #[inline] fn from_output(output: Self::Output) -> Self { Ok( output ) }
         
         #[inline] fn branch(self) -> ControlFlow<Self::Residual, Self::Output> {
             match self {
@@ -17305,9 +15846,7 @@ pub mod result
     #[diagnostic::do_not_recommend] #[unstable(feature = "try_trait_v2_yeet", issue = "96374")]
 
     impl<T, E, F: [const] From<E>> const ops::FromResidual<ops::Yeet<E>> for Result<T, F> {
-        #[inline] fn from_residual(ops::Yeet(e): ops::Yeet<E>) -> Self {
-            Err(From::from(e))
-        }
+        #[inline] fn from_residual(ops::Yeet(e): ops::Yeet<E>) -> Self { Err(From::from( e) ) }
     }
     #[unstable(feature = "try_trait_v2_residual", issue = "91285")]
 
@@ -17369,22 +15908,14 @@ pub mod unsafe_binder
     */
     #[allow_internal_unstable(builtin_syntax)] #[unstable(feature = "unsafe_binders", issue = "130516")]
     pub macro unwrap_binder {
-        ($expr:expr) => {
-            builtin # unwrap_binder ( $expr )
-        },
-        ($expr:expr ; $ty:ty) => {
-            builtin # unwrap_binder ( $expr, $ty )
-        },
+        ($expr:expr) => { builtin # unwrap_binder (  $expr  ) },
+        ($expr:expr ; $ty:ty) => { builtin # unwrap_binder (  $expr, $ty  ) },
     }
 
     #[allow_internal_unstable(builtin_syntax)] #[unstable(feature = "unsafe_binders", issue = "130516")]
     pub macro wrap_binder {
-        ($expr:expr) => {
-            builtin # wrap_binder ( $expr )
-        },
-        ($expr:expr ; $ty:ty) => {
-            builtin # wrap_binder ( $expr, $ty )
-        },
+        ($expr:expr) => { builtin # wrap_binder (  $expr  ) },
+        ($expr:expr ; $ty:ty) => { builtin # wrap_binder (  $expr, $ty  ) },
     }
 }
 
@@ -17480,6 +16011,7 @@ pub mod fmt
     */
     
 }
+    
     #[stable(feature = "fmt_flags_align", since = "1.28.0")] #[derive(Copy, Clone, Debug, PartialEq, Eq)]
     pub enum Alignment {
         #[stable(feature = "fmt_flags_align", since = "1.28.0")]
@@ -17505,9 +16037,7 @@ pub mod fmt
         fn write_str(&mut self, s: &str) -> Result;
         
         #[stable(feature = "fmt_write_char", since = "1.1.0")]
-        fn write_char(&mut self, c: char) -> Result {
-            self.write_str(c.encode_utf8(&mut [0; char::MAX_LEN_UTF8]))
-        }
+        fn write_char(&mut self, c: char) -> Result { self.write_str(c.encode_utf8( &mut [0; char::MAX_LEN_UTF8]) ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         fn write_fmt(&mut self, args: Arguments<'_>) -> Result {
@@ -17519,37 +16049,24 @@ pub mod fmt
             impl<W: Write + ?Sized> SpecWriteFmt for &mut W {
                 #[inline]
                 default fn spec_write_fmt(mut self, args: Arguments<'_>) -> Result {
-                    if let Some(s) = args.as_statically_known_str() {
-                        self.write_str(s)
-                    } else {
-                        write(&mut self, args)
-                    }
+                    if let Some(s) = args.as_statically_known_str() { self.write_str( s ) } else { write( &mut self, args ) }
                 }
             }
             
             impl<W: Write> SpecWriteFmt for &mut W {
                 #[inline] fn spec_write_fmt(self, args: Arguments<'_>) -> Result {
-                    if let Some(s) = args.as_statically_known_str() {
-                        self.write_str(s)
-                    } else {
-                        write(self, args)
-                    }
+                    if let Some(s) = args.as_statically_known_str() { self.write_str( s ) } else { write( self, args ) }
                 }
             }
             self.spec_write_fmt(args)
         }
     }
+    
     #[stable(feature = "fmt_write_blanket_impl", since = "1.4.0")]
     impl<W: Write + ?Sized> Write for &mut W {
-        fn write_str(&mut self, s: &str) -> Result {
-            (**self).write_str(s)
-        }
-        fn write_char(&mut self, c: char) -> Result {
-            (**self).write_char(c)
-        }
-        fn write_fmt(&mut self, args: Arguments<'_>) -> Result {
-            (**self).write_fmt(args)
-        }
+        fn write_str(&mut self, s: &str) -> Result { (**self).write_str( s ) }
+        fn write_char(&mut self, c: char) -> Result { (**self).write_char( c ) }
+        fn write_fmt(&mut self, args: Arguments<'_>) -> Result { (**self).write_fmt( args ) }
     }
 
     #[derive(Copy, Clone, Debug, PartialEq, Eq)] #[unstable(feature = "formatting_options", issue = "118117")]
@@ -17682,11 +16199,7 @@ pub mod fmt
 
         #[unstable(feature = "formatting_options", issue = "118117")]
         pub const fn get_sign(&self) -> Option<Sign> {
-            if self.flags & flags::SIGN_PLUS_FLAG != 0 {
-                Some(Sign::Plus)
-            } else if self.flags & flags::SIGN_MINUS_FLAG != 0 {
-                Some(Sign::Minus)
-            } else {
+            if self.flags & flags::SIGN_PLUS_FLAG != 0 { Some( Sign::Plus ) } else if self.flags & flags::SIGN_MINUS_FLAG != 0 { Some( Sign::Minus ) } else {
                 None
             }
         }
@@ -17726,11 +16239,7 @@ pub mod fmt
         
         #[unstable(feature = "formatting_options", issue = "118117")]
         pub const fn get_debug_as_hex(&self) -> Option<DebugAsHex> {
-            if self.flags & flags::DEBUG_LOWER_HEX_FLAG != 0 {
-                Some(DebugAsHex::Lower)
-            } else if self.flags & flags::DEBUG_UPPER_HEX_FLAG != 0 {
-                Some(DebugAsHex::Upper)
-            } else {
+            if self.flags & flags::DEBUG_LOWER_HEX_FLAG != 0 { Some( DebugAsHex::Lower ) } else if self.flags & flags::DEBUG_UPPER_HEX_FLAG != 0 { Some( DebugAsHex::Upper ) } else {
                 None
             }
         }
@@ -17785,17 +16294,13 @@ pub mod fmt
             unsafe { Arguments { template: mem::transmute(template), args: mem::transmute(args) } }
         }
 
-        #[inline] pub fn from_str_nonconst(s: &'static str) -> Arguments<'a> {
-            Arguments::from_str(s)
-        }
+        #[inline] pub fn from_str_nonconst(s: &'static str) -> Arguments<'a> { Arguments::from_str( s ) }
     }
     #[doc(hidden)] #[unstable(feature = "fmt_internals", issue = "none")]
     impl<'a> Arguments<'a> {
     
         #[inline] pub fn estimated_capacity(&self) -> usize {
-            if let Some(s) = self.as_str() {
-                return s.len();
-            }
+            if let Some(s) = self.as_str() { return s.len(); }
 
             let mut length = 0usize;
             let mut starts_with_placeholder = false;
@@ -17835,10 +16340,7 @@ pub mod fmt
             if starts_with_placeholder && length < 16 {
     
                 0
-            } else {
-    
-                length.wrapping_mul(2)
-            }
+            } else { length.wrapping_mul( 2 ) }
         }
     }
     
@@ -17887,19 +16389,18 @@ pub mod fmt
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl !Send for Arguments<'_> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl !Sync for Arguments<'_> {}
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Debug for Arguments<'_> {
-        fn fmt(&self, fmt: &mut Formatter<'_>) -> Result {
-            Display::fmt(self, fmt)
-        }
+        fn fmt(&self, fmt: &mut Formatter<'_>) -> Result { Display::fmt( self, fmt ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Display for Arguments<'_> {
-        fn fmt(&self, fmt: &mut Formatter<'_>) -> Result {
-            write(fmt.buf, *self)
-        }
+        fn fmt(&self, fmt: &mut Formatter<'_>) -> Result { write( fmt.buf, *self ) }
     }
     
     #[stable(feature = "rust1", since = "1.0.0")] #[rustc_on_unimplemented(
@@ -17913,8 +16414,7 @@ pub mod fmt
         ),
         message = "`{Self}` doesn't implement `{This}`"
     )] #[doc(alias = "{:?}")] pub trait Debug: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")]
-        
+      
         #[stable(feature = "rust1", since = "1.0.0")]
         fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
@@ -17926,6 +16426,7 @@ pub mod fmt
             /* compiler built-in */
         }
     }
+    
     #[stable(feature = "builtin_macro_prelude", since = "1.38.0")] #[doc(inline)] pub use self::macros::Debug;
     #[rustc_on_unimplemented(
         on(
@@ -17941,86 +16442,86 @@ pub mod fmt
         ),
         message = "`{Self}` doesn't implement `{This}`"
     )] #[doc(alias = "{}")] #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait Display: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")]
-        
-
+    pub trait Display: PointeeSized
+    {
         #[stable(feature = "rust1", since = "1.0.0")]
         fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }   
 
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait Octal: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait Octal: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }   
 
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait Binary: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait Binary: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait LowerHex: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait LowerHex: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait UpperHex: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait UpperHex: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait Pointer: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait Pointer: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait LowerExp: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait LowerExp: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }
     
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub trait UpperExp: PointeeSized {
-        #[doc = include_str!("fmt_trait_method_doc.md")] #[stable(feature = "rust1", since = "1.0.0")]
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result;
+    pub trait UpperExp: PointeeSized
+    {
+      fn fmt(&self, f: &mut Formatter<'_>) -> Result;
     }   
 
     #[stable(feature = "rust1", since = "1.0.0")]
-    pub fn write(output: &mut dyn Write, fmt: Arguments<'_>) -> Result {
-        if let Some(s) = fmt.as_str() {
-            return output.write_str(s);
-        }
+    pub fn write(output: &mut dyn Write, fmt: Arguments<'_>) -> Result
+    {
+        if let Some(s) = fmt.as_str() { return output.write_str(s); }
+
         let mut template = fmt.template;
         let args = fmt.args;
         let mut arg_index = 0;
 
-        loop {
-
-            let n = unsafe {
+        loop 
+        {
+            let n = unsafe
+            {
                 let n = template.read();
                 template = template.add(1);
                 n
             };
-            if n == 0 {
 
-                return Ok(());
-            } else if n < 0x80 {
-
-                let s = unsafe {
+            if n == 0 { return Ok(()); } else if n < 0x80
+            {
+                let s = unsafe
+                {
                     let s = crate::str::from_raw_parts(template.as_ptr(), n as usize);
                     template = template.add(n as usize);
                     s
                 };
-                output.write_str(s)?;
-            } else if n == 0x80 {
 
-                let s = unsafe {
+                output.write_str(s)?;
+            } else if n == 0x80
+            {
+                let s = unsafe
+                {
                     let len = usize::from(u16::from_le_bytes(template.cast_array().read()));
                     template = template.add(2);
                     let s = crate::str::from_raw_parts(template.as_ptr(), len);
@@ -18028,88 +16529,97 @@ pub mod fmt
                     s
                 };
                 output.write_str(s)?;
-            } else if n == 0xC0 {
-    
-                unsafe {
+            } else if n == 0xC0
+            {
+                unsafe
+                {
                     args.add(arg_index)
-                        .as_ref()
-                        .fmt(&mut Formatter::new(output, FormattingOptions::new()))?;
+                    .as_ref()
+                    .fmt(&mut Formatter::new(output, FormattingOptions::new()))?;
                 }
+
                 arg_index += 1;
-            } else {
-
-                unsafe { assert_unchecked(n > 0xC0) };
-
-                let mut opt = FormattingOptions::new();
-
-                unsafe {
-                    if n & 1 != 0 {
+            }
+            
+            else
+            {
+                unsafe
+                {
+                    assert_unchecked(n > 0xC0);
+                    let mut opt = FormattingOptions::new();
+                    
+                    if n & 1 != 0
+                    {
                         opt.flags = u32::from_le_bytes(template.cast_array().read());
                         template = template.add(4);
                     }
-                    if n & 2 != 0 {
+
+                    if n & 2 != 0
+                    {
                         opt.width = u16::from_le_bytes(template.cast_array().read());
                         template = template.add(2);
                     }
-                    if n & 4 != 0 {
+
+                    if n & 4 != 0
+                    {
                         opt.precision = u16::from_le_bytes(template.cast_array().read());
                         template = template.add(2);
                     }
-                    if n & 8 != 0 {
+
+                    if n & 8 != 0
+                    {
                         arg_index = usize::from(u16::from_le_bytes(template.cast_array().read()));
                         template = template.add(2);
                     }
-                }
-                if n & 16 != 0 {
 
-                    unsafe {
+                    if n & 16 != 0
+                    {
                         opt.width = args.add(opt.width as usize).as_ref().as_u16().unwrap_unchecked();
                     }
-                }
-                if n & 32 != 0 {
 
-                    unsafe {
-                        opt.precision =
-                            args.add(opt.precision as usize).as_ref().as_u16().unwrap_unchecked();
+                    if n & 32 != 0
+                    {
+                        opt.precision = args.add(opt.precision as usize).as_ref().as_u16().unwrap_unchecked();
                     }
-                }
 
-                unsafe {
                     args.add(arg_index).as_ref().fmt(&mut Formatter::new(output, opt))?;
+                    arg_index += 1;
                 }
-                arg_index += 1;
             }
         }
     }
 
     #[must_use = "don't forget to write the post padding"]
-    pub(crate) struct PostPadding {
+    pub(crate) struct PostPadding
+    {
         fill: char,
         padding: u16,
     }
     
-    impl PostPadding {
-        fn new(fill: char, padding: u16) -> PostPadding {
-            PostPadding { fill, padding }
-        }
+    impl PostPadding
+    {
+        fn new(fill: char, padding: u16) -> PostPadding { PostPadding { fill, padding } }
 
-        pub(crate) fn write(self, f: &mut Formatter<'_>) -> Result {
-            for _ in 0..self.padding {
+        pub(crate) fn write(self, f: &mut Formatter<'_>) -> Result
+        {
+            for _ in 0..self.padding
+            {
                 f.buf.write_char(self.fill)?;
             }
+
             Ok(())
         }
     }
     
-    impl<'a> Formatter<'a> {
+    impl<'a> Formatter<'a>
+    {
         fn wrap_buf<'b, 'c, F>(&'b mut self, wrap: F) -> Formatter<'c> where
-            'b: 'c,
-            F: FnOnce(&'b mut (dyn Write + 'b)) -> &'c mut (dyn Write + 'c),
+        'b: 'c,
+        F: FnOnce(&'b mut (dyn Write + 'b)) -> &'c mut (dyn Write + 'c),
         {
-            Formatter {
-
+            Formatter
+            {
                 buf: wrap(self.buf),
-
                 options: self.options,
             }
         }
@@ -18181,10 +16691,7 @@ pub mod fmt
 
                 let truncated = unsafe { s.get_unchecked(..iter.offset()) };
                 (truncated, usize::from(max_char_count) - remaining)
-            } else {
-
-                (s, s.chars().count())
-            };
+            } else { (s, s.chars().count( ) ) };
 
             if char_count < usize::from(self.options.width) {
 
@@ -18192,10 +16699,7 @@ pub mod fmt
                     self.padding(self.options.width - char_count as u16, Alignment::Left)?;
                 self.buf.write_str(s)?;
                 post_padding.write(self)
-            } else {
-
-                self.buf.write_str(s)
-            }
+            } else { self.buf.write_str( s ) }
         }
 
         pub(crate) fn padding(
@@ -18245,10 +16749,7 @@ pub mod fmt
             }
         }
         unsafe fn write_formatted_parts(&mut self, formatted: &numfmt::Formatted<'_>) -> Result {
-            unsafe fn write_bytes(buf: &mut dyn Write, s: &[u8]) -> Result {
-    
-                buf.write_str(unsafe { str::from_utf8_unchecked(s) })
-            }
+            unsafe fn write_bytes(buf: &mut dyn Write, s: &[u8]) -> Result { buf.write_str(unsafe { str::from_utf8_unchecked( s) } ) }
             if !formatted.sign.is_empty() {
                 self.buf.write_str(formatted.sign)?;
             }
@@ -18287,16 +16788,10 @@ pub mod fmt
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
-        pub fn write_str(&mut self, data: &str) -> Result {
-            self.buf.write_str(data)
-        }
+        pub fn write_str(&mut self, data: &str) -> Result { self.buf.write_str( data ) }
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn write_fmt(&mut self, fmt: Arguments<'_>) -> Result {
-            if let Some(s) = fmt.as_statically_known_str() {
-                self.buf.write_str(s)
-            } else {
-                write(self.buf, fmt)
-            }
+            if let Some(s) = fmt.as_statically_known_str() { self.buf.write_str( s ) } else { write( self.buf, fmt ) }
         }
 
         #[must_use] #[stable(feature = "rust1", since = "1.0.0")] #[deprecated(
@@ -18323,18 +16818,14 @@ pub mod fmt
         pub fn width(&self) -> Option<usize> {
             if self.options.flags & flags::WIDTH_FLAG == 0 {
                 None
-            } else {
-                Some(self.options.width as usize)
-            }
+            } else { Some( self.options.width as usize ) }
         }
         
         #[must_use] #[stable(feature = "fmt_flags", since = "1.5.0")]
         pub fn precision(&self) -> Option<usize> {
             if self.options.flags & flags::PRECISION_FLAG == 0 {
                 None
-            } else {
-                Some(self.options.precision as usize)
-            }
+            } else { Some( self.options.precision as usize ) }
         }
         
         #[must_use] #[stable(feature = "fmt_flags", since = "1.5.0")]
@@ -18365,9 +16856,7 @@ pub mod fmt
         }
 
         #[stable(feature = "debug_builders", since = "1.2.0")]
-        pub fn debug_struct<'b>(&'b mut self, name: &str) -> DebugStruct<'b, 'a> {
-            builders::debug_struct_new(self, name)
-        }
+        pub fn debug_struct<'b>(&'b mut self, name: &str) -> DebugStruct<'b, 'a> { builders::debug_struct_new( self, name ) }
 
         #[doc(hidden)] #[unstable(feature = "fmt_helpers_for_derive", issue = "none")]
         pub fn debug_struct_field1_finish<'b>(
@@ -18468,16 +16957,12 @@ pub mod fmt
         ) -> Result {
             assert_eq!(names.len(), values.len());
             let mut builder = builders::debug_struct_new(self, name);
-            for (name, value) in iter::zip(names, values) {
-                builder.field(name, value);
-            }
+            for (name, value) in iter::zip(names, values) { builder.field(name, value); }
             builder.finish()
         }
         
         #[stable(feature = "debug_builders", since = "1.2.0")]
-        pub fn debug_tuple<'b>(&'b mut self, name: &str) -> DebugTuple<'b, 'a> {
-            builders::debug_tuple_new(self, name)
-        }
+        pub fn debug_tuple<'b>(&'b mut self, name: &str) -> DebugTuple<'b, 'a> { builders::debug_tuple_new( self, name ) }
 
         #[doc(hidden)] #[unstable(feature = "fmt_helpers_for_derive", issue = "none")]
         pub fn debug_tuple_field1_finish<'b>(&'b mut self, name: &str, value1: &dyn Debug) -> Result {
@@ -18564,19 +17049,13 @@ pub mod fmt
         }
         
         #[stable(feature = "debug_builders", since = "1.2.0")]
-        pub fn debug_list<'b>(&'b mut self) -> DebugList<'b, 'a> {
-            builders::debug_list_new(self)
-        }
+        pub fn debug_list<'b>(&'b mut self) -> DebugList<'b, 'a> { builders::debug_list_new( self ) }
         
         #[stable(feature = "debug_builders", since = "1.2.0")]
-        pub fn debug_set<'b>(&'b mut self) -> DebugSet<'b, 'a> {
-            builders::debug_set_new(self)
-        }
+        pub fn debug_set<'b>(&'b mut self) -> DebugSet<'b, 'a> { builders::debug_set_new( self ) }
         
         #[stable(feature = "debug_builders", since = "1.2.0")]
-        pub fn debug_map<'b>(&'b mut self) -> DebugMap<'b, 'a> {
-            builders::debug_map_new(self)
-        }
+        pub fn debug_map<'b>(&'b mut self) -> DebugMap<'b, 'a> { builders::debug_map_new( self ) }
 
         #[unstable(feature = "formatting_options", issue = "118117")]
         pub const fn sign(&self) -> Option<Sign> {
@@ -18588,28 +17067,20 @@ pub mod fmt
             self.options
         }
     }
+    
     #[stable(since = "1.2.0", feature = "formatter_write")]
     impl Write for Formatter<'_> {
-        fn write_str(&mut self, s: &str) -> Result {
-            self.buf.write_str(s)
-        }
-        fn write_char(&mut self, c: char) -> Result {
-            self.buf.write_char(c)
-        }
+        fn write_str(&mut self, s: &str) -> Result { self.buf.write_str( s ) }
+        fn write_char(&mut self, c: char) -> Result { self.buf.write_char( c ) }
         
         #[inline] fn write_fmt(&mut self, args: Arguments<'_>) -> Result {
-            if let Some(s) = args.as_statically_known_str() {
-                self.buf.write_str(s)
-            } else {
-                write(self.buf, args)
-            }
+            if let Some(s) = args.as_statically_known_str() { self.buf.write_str( s ) } else { write( self.buf, args ) }
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Display for Error {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Display::fmt("an error occurred when formatting an argument", f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Display::fmt( "an error occurred when formatting an argument", f ) }
     }
 
     macro_rules! fmt_refs {
@@ -18640,18 +17111,17 @@ pub mod fmt
             *self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Debug for bool {
-        #[inline] fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Display::fmt(self, f)
-        }
+        #[inline] fn fmt(&self, f: &mut Formatter<'_>) -> Result { Display::fmt( self, f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Display for bool {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Display::fmt(if *self { "true" } else { "false" }, f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Display::fmt( if *self { "true" } else { "false" }, f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Debug for str {
         fn fmt(&self, f: &mut Formatter<'_>) -> Result {
@@ -18692,12 +17162,12 @@ pub mod fmt
             f.write_char('"')
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Display for str {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.pad(self)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.pad( self ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Debug for char {
         fn fmt(&self, f: &mut Formatter<'_>) -> Result {
@@ -18711,22 +17181,18 @@ pub mod fmt
             f.write_char('\'')
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Display for char {
         fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            if f.options.flags & (flags::WIDTH_FLAG | flags::PRECISION_FLAG) == 0 {
-                f.write_char(*self)
-            } else {
-                f.pad(self.encode_utf8(&mut [0; char::MAX_LEN_UTF8]))
-            }
+            if f.options.flags & (flags::WIDTH_FLAG | flags::PRECISION_FLAG) == 0 { f.write_char( *self ) } else { f.pad(self.encode_utf8( &mut [0; char::MAX_LEN_UTF8]) ) }
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Pointer for *const T {
         fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            if <<T as core::ptr::Pointee>::Metadata as core::unit::IsUnit>::is_unit() {
-                pointer_fmt_inner(self.expose_provenance(), f)
-            } else {
+            if <<T as core::ptr::Pointee>::Metadata as core::unit::IsUnit>::is_unit() { pointer_fmt_inner(self.expose_provenance( ), f ) } else {
                 f.debug_struct("Pointer")
                     .field_with("addr", |f| pointer_fmt_inner(self.expose_provenance(), f))
                     .field("metadata", &core::ptr::metadata(*self))
@@ -18739,49 +17205,39 @@ pub mod fmt
         let old_options = f.options;
     if f.options.get_alternate() {
             f.options.sign_aware_zero_pad(true);
-            if f.options.get_width().is_none() {
-                f.options.width(Some((usize::BITS / 4) as u16 + 2));
-            }
+            if f.options.get_width().is_none() { f.options.width(Some((usize::BITS / 4) as u16 + 2)); }
         }
         f.options.alternate(true);
         let ret = LowerHex::fmt(&ptr_addr, f);
         f.options = old_options;
         ret
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Pointer for *mut T {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Pointer::fmt(&(*self as *const T), f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Pointer::fmt(&( *self as *const T), f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Pointer for &T {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Pointer::fmt(&(*self as *const T), f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Pointer::fmt(&( *self as *const T), f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Pointer for &mut T {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Pointer::fmt(&(&**self as *const T), f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Pointer::fmt(&( &**self as *const T), f ) }
     }
 
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Debug for *const T {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Pointer::fmt(self, f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Pointer::fmt( self, f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: PointeeSized> Debug for *mut T {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Pointer::fmt(self, f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Pointer::fmt( self, f ) }
     }
-    macro_rules! peel {
-        ($name:ident, $($other:ident,)*) => (tuple! { $($other,)* })
-    }
+    macro_rules! peel { ($name:ident, $($other:ident,)*) => (tuple! { $( $other,)* } ) }
     macro_rules! tuple {
         () => ();
         ( $($name:ident,)+ ) => (
@@ -18805,42 +17261,37 @@ pub mod fmt
     }
     macro_rules! maybe_tuple_doc {
         ($a:ident @ #[$meta:meta] $item:item) => {
-            #[doc(fake_variadic)]
-            #[doc = "This trait is implemented for tuples up to twelve items long."]
+            #[doc(fake_variadic)] #[doc = "This trait is implemented for tuples up to twelve items long."]
             #[$meta]
             $item
         };
         ($a:ident $($rest_a:ident)+ @ #[$meta:meta] $item:item) => {
-            #[doc(hidden)]
-            #[$meta]
+            #[doc(hidden)] #[$meta]
             $item
         };
     }
     tuple! { E, D, C, B, A, Z, Y, X, W, V, U, T, }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Debug> Debug for [T] {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.debug_list().entries(self.iter()).finish()
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.debug_list().entries(self.iter( )).finish( ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl Debug for () {
-        #[inline] fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.pad("()")
-        }
+        #[inline] fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.pad("( )" ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized> Debug for PhantomData<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            write!(f, "PhantomData<{}>", crate::any::type_name::<T>())
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { write!(f, "PhantomData<{}>", crate::any::type_name::<T>( ) ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: Copy + Debug> Debug for Cell<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.debug_struct("Cell").field("value", &self.get()).finish()
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.debug_struct("Cell").field("value", &self.get( )).finish( ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized + Debug> Debug for RefCell<T> {
         fn fmt(&self, f: &mut Formatter<'_>) -> Result {
@@ -18852,29 +17303,24 @@ pub mod fmt
             d.finish()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized + Debug> Debug for Ref<'_, T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Debug::fmt(&**self, f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Debug::fmt( &**self, f ) }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
     impl<T: ?Sized + Debug> Debug for RefMut<'_, T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            Debug::fmt(&*(self.deref()), f)
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { Debug::fmt(&*(self.deref( )), f ) }
     }
+    
     #[stable(feature = "core_impl_debug", since = "1.9.0")]
     impl<T: ?Sized> Debug for UnsafeCell<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.debug_struct("UnsafeCell").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.debug_struct( "UnsafeCell").finish_non_exhaustive( ) }
     }
     #[unstable(feature = "sync_unsafe_cell", issue = "95439")]
     impl<T: ?Sized> Debug for SyncUnsafeCell<T> {
-        fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-            f.debug_struct("SyncUnsafeCell").finish_non_exhaustive()
-        }
+        fn fmt(&self, f: &mut Formatter<'_>) -> Result { f.debug_struct( "SyncUnsafeCell").finish_non_exhaustive( ) }
     }
 
 }
@@ -18918,9 +17364,7 @@ pub mod hash
         fn hash_slice<H: Hasher>(data: &[Self], state: &mut H) where
             Self: Sized,
         {
-            for piece in data {
-                piece.hash(state)
-            }
+            for piece in data { piece.hash( state ) }
         }
     }
 
@@ -18931,79 +17375,53 @@ pub mod hash
             /* compiler built-in */
         }
     }
+    
     #[stable(feature = "builtin_macro_prelude", since = "1.38.0")] #[doc(inline)] pub use self::macros::Hash;
     #[stable(feature = "rust1", since = "1.0.0")]
     pub trait Hasher {
-        
-        #[stable(feature = "rust1", since = "1.0.0")] #[must_use]
+      #[stable(feature = "rust1", since = "1.0.0")] #[must_use]
         fn finish(&self) -> u64;
         #[stable(feature = "rust1", since = "1.0.0")]
         fn write(&mut self, bytes: &[u8]);
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_u8(&mut self, i: u8) {
-            self.write(&[i])
-        }
+        fn write_u8(&mut self, i: u8) { self.write( &[i] ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_u16(&mut self, i: u16) {
-            self.write(&i.to_ne_bytes())
-        }
+        fn write_u16(&mut self, i: u16) { self.write(&i.to_ne_bytes( ) ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_u32(&mut self, i: u32) {
-            self.write(&i.to_ne_bytes())
-        }
+        fn write_u32(&mut self, i: u32) { self.write(&i.to_ne_bytes( ) ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_u64(&mut self, i: u64) {
-            self.write(&i.to_ne_bytes())
-        }
+        fn write_u64(&mut self, i: u64) { self.write(&i.to_ne_bytes( ) ) }
         
         #[inline] #[stable(feature = "i128", since = "1.26.0")]
-        fn write_u128(&mut self, i: u128) {
-            self.write(&i.to_ne_bytes())
-        }
+        fn write_u128(&mut self, i: u128) { self.write(&i.to_ne_bytes( ) ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_usize(&mut self, i: usize) {
-            self.write(&i.to_ne_bytes())
-        }
+        fn write_usize(&mut self, i: usize) { self.write(&i.to_ne_bytes( ) ) }
 
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_i8(&mut self, i: i8) {
-            self.write_u8(i as u8)
-        }
+        fn write_i8(&mut self, i: i8) { self.write_u8( i as u8 ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_i16(&mut self, i: i16) {
-            self.write_u16(i as u16)
-        }
+        fn write_i16(&mut self, i: i16) { self.write_u16( i as u16 ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_i32(&mut self, i: i32) {
-            self.write_u32(i as u32)
-        }
+        fn write_i32(&mut self, i: i32) { self.write_u32( i as u32 ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_i64(&mut self, i: i64) {
-            self.write_u64(i as u64)
-        }
+        fn write_i64(&mut self, i: i64) { self.write_u64( i as u64 ) }
         
         #[inline] #[stable(feature = "i128", since = "1.26.0")]
-        fn write_i128(&mut self, i: i128) {
-            self.write_u128(i as u128)
-        }
+        fn write_i128(&mut self, i: i128) { self.write_u128( i as u128 ) }
         
         #[inline] #[stable(feature = "hasher_write", since = "1.3.0")]
-        fn write_isize(&mut self, i: isize) {
-            self.write_usize(i as usize)
-        }
+        fn write_isize(&mut self, i: isize) { self.write_usize( i as usize ) }
     
     
         #[inline] #[unstable(feature = "hasher_prefixfree_extras", issue = "96762")]
-        fn write_length_prefix(&mut self, len: usize) {
-            self.write_usize(len);
-        }
+        fn write_length_prefix(&mut self, len: usize) { self.write_usize(len); }
     
         
 
@@ -19016,56 +17434,25 @@ pub mod hash
             self.write_u8(0xff);
         }
     }
+    
     #[stable(feature = "indirect_hasher_impl", since = "1.22.0")]
     impl<H: Hasher + ?Sized> Hasher for &mut H {
-        fn finish(&self) -> u64 {
-            (**self).finish()
-        }
-        fn write(&mut self, bytes: &[u8]) {
-            (**self).write(bytes)
-        }
-        fn write_u8(&mut self, i: u8) {
-            (**self).write_u8(i)
-        }
-        fn write_u16(&mut self, i: u16) {
-            (**self).write_u16(i)
-        }
-        fn write_u32(&mut self, i: u32) {
-            (**self).write_u32(i)
-        }
-        fn write_u64(&mut self, i: u64) {
-            (**self).write_u64(i)
-        }
-        fn write_u128(&mut self, i: u128) {
-            (**self).write_u128(i)
-        }
-        fn write_usize(&mut self, i: usize) {
-            (**self).write_usize(i)
-        }
-        fn write_i8(&mut self, i: i8) {
-            (**self).write_i8(i)
-        }
-        fn write_i16(&mut self, i: i16) {
-            (**self).write_i16(i)
-        }
-        fn write_i32(&mut self, i: i32) {
-            (**self).write_i32(i)
-        }
-        fn write_i64(&mut self, i: i64) {
-            (**self).write_i64(i)
-        }
-        fn write_i128(&mut self, i: i128) {
-            (**self).write_i128(i)
-        }
-        fn write_isize(&mut self, i: isize) {
-            (**self).write_isize(i)
-        }
-        fn write_length_prefix(&mut self, len: usize) {
-            (**self).write_length_prefix(len)
-        }
-        fn write_str(&mut self, s: &str) {
-            (**self).write_str(s)
-        }
+        fn finish(&self) -> u64 {  ( **self).finish( ) }
+        fn write(&mut self, bytes: &[u8]) { (**self).write( bytes ) }
+        fn write_u8(&mut self, i: u8) { (**self).write_u8( i ) }
+        fn write_u16(&mut self, i: u16) { (**self).write_u16( i ) }
+        fn write_u32(&mut self, i: u32) { (**self).write_u32( i ) }
+        fn write_u64(&mut self, i: u64) { (**self).write_u64( i ) }
+        fn write_u128(&mut self, i: u128) { (**self).write_u128( i ) }
+        fn write_usize(&mut self, i: usize) { (**self).write_usize( i ) }
+        fn write_i8(&mut self, i: i8) { (**self).write_i8( i ) }
+        fn write_i16(&mut self, i: i16) { (**self).write_i16( i ) }
+        fn write_i32(&mut self, i: i32) { (**self).write_i32( i ) }
+        fn write_i64(&mut self, i: i64) { (**self).write_i64( i ) }
+        fn write_i128(&mut self, i: i128) { (**self).write_i128( i ) }
+        fn write_isize(&mut self, i: isize) { (**self).write_isize( i ) }
+        fn write_length_prefix(&mut self, len: usize) { (**self).write_length_prefix( len ) }
+        fn write_str(&mut self, s: &str) { (**self).write_str( s ) }
     }
     
     #[cfg_attr(not(test), rustc_diagnostic_item = "BuildHasher")] #[stable(since = "1.7.0", feature = "build_hasher")]
@@ -19091,16 +17478,14 @@ pub mod hash
     pub struct BuildHasherDefault<H>(marker::PhantomData<fn() -> H>);
     impl<H> BuildHasherDefault<H> {
         #[stable(feature = "build_hasher_default_const_new", since = "1.85.0")]
-        pub const fn new() -> Self {
-            BuildHasherDefault(marker::PhantomData)
-        }
+        pub const fn new() -> Self { BuildHasherDefault( marker::PhantomData ) }
     }
+    
     #[stable(since = "1.9.0", feature = "core_impl_debug")]
     impl<H> fmt::Debug for BuildHasherDefault<H> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_struct("BuildHasherDefault").finish()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_struct( "BuildHasherDefault").finish( ) }
     }
+    
     #[stable(since = "1.7.0", feature = "build_hasher")]
     impl<H: Default + Hasher> BuildHasher for BuildHasherDefault<H> {
         type Hasher = H;
@@ -19108,24 +17493,26 @@ pub mod hash
             H::default()
         }
     }
+    
     #[stable(since = "1.7.0", feature = "build_hasher")]
     impl<H> Clone for BuildHasherDefault<H> {
-        fn clone(&self) -> BuildHasherDefault<H> {
-            BuildHasherDefault(marker::PhantomData)
-        }
+        fn clone(&self) -> BuildHasherDefault<H> { BuildHasherDefault( marker::PhantomData ) }
     }
+    
     #[stable(since = "1.7.0", feature = "build_hasher")]
     impl<H> Default for BuildHasherDefault<H> {
         fn default() -> BuildHasherDefault<H> {
             Self::new()
         }
     }
+    
     #[stable(since = "1.29.0", feature = "build_hasher_eq")]
     impl<H> PartialEq for BuildHasherDefault<H> {
         fn eq(&self, _other: &BuildHasherDefault<H>) -> bool {
             true
         }
     }
+    
     #[stable(since = "1.29.0", feature = "build_hasher_eq")]
     impl<H> Eq for BuildHasherDefault<H> {}
     mod impls {
@@ -19135,9 +17522,7 @@ pub mod hash
             ($(($ty:ident, $meth:ident),)*) => {$(
                 #[stable(feature = "rust1", since = "1.0.0")]
                 impl Hash for $ty {
-                    #[inline] fn hash<H: Hasher>(&self, state: &mut H) {
-                        state.$meth(*self)
-                    }
+                    #[inline] fn hash<H: Hasher>(&self, state: &mut H) { state.$meth( *self ) }
                     #[inline] fn hash_slice<H: Hasher>(data: &[$ty], state: &mut H) {
                         let newlen = size_of_val(data);
                         let ptr = data.as_ptr() as *const u8;
@@ -19165,25 +17550,19 @@ pub mod hash
         #[stable(feature = "rust1", since = "1.0.0")]
         impl Hash for bool {
             #[inline]
-            fn hash<H: Hasher>(&self, state: &mut H) {
-                state.write_u8(*self as u8)
-            }
+            fn hash<H: Hasher>(&self, state: &mut H) { state.write_u8( *self as u8 ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         impl Hash for char {
             #[inline]
-            fn hash<H: Hasher>(&self, state: &mut H) {
-                state.write_u32(*self as u32)
-            }
+            fn hash<H: Hasher>(&self, state: &mut H) { state.write_u32( *self as u32 ) }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         impl Hash for str {
             #[inline]
-            fn hash<H: Hasher>(&self, state: &mut H) {
-                state.write_str(self);
-            }
+            fn hash<H: Hasher>(&self, state: &mut H) { state.write_str(self); }
         }
         
         #[stable(feature = "never_hash", since = "1.29.0")]
@@ -19269,17 +17648,13 @@ pub mod hash
         #[stable(feature = "rust1", since = "1.0.0")]
         impl<T: ?Sized + marker::PointeeSized + Hash> Hash for &T {
             #[inline]
-            fn hash<H: Hasher>(&self, state: &mut H) {
-                (**self).hash(state);
-            }
+            fn hash<H: Hasher>(&self, state: &mut H) { (**self).hash(state); }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         impl<T: ?Sized + marker::PointeeSized + Hash> Hash for &mut T {
             #[inline]
-            fn hash<H: Hasher>(&self, state: &mut H) {
-                (**self).hash(state);
-            }
+            fn hash<H: Hasher>(&self, state: &mut H) { (**self).hash(state); }
         }
         
         #[stable(feature = "rust1", since = "1.0.0")]
@@ -19550,9 +17925,7 @@ pub mod slice
 
         #[lang = "slice_len_fn"] #[stable(feature = "rust1", since = "1.0.0")]
         #[inline] #[must_use]
-        pub const fn len(&self) -> usize {
-            ptr::metadata(self)
-        }
+        pub const fn len(&self) -> usize { ptr::metadata( self ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         #[inline] #[must_use]
@@ -19604,20 +17977,14 @@ pub mod slice
         pub const fn first_chunk<const N: usize>(&self) -> Option<&[T; N]> {
             if self.len() < N {
                 None
-            } else {
-
-                Some(unsafe { &*(self.as_ptr().cast_array()) })
-            }
+            } else { Some(unsafe { &*(self.as_ptr().cast_array( )) } ) }
         }
         
         #[inline] #[stable(feature = "slice_first_last_chunk", since = "1.77.0")]
         pub const fn first_chunk_mut<const N: usize>(&mut self) -> Option<&mut [T; N]> {
             if self.len() < N {
                 None
-            } else {
-    
-                Some(unsafe { &mut *(self.as_mut_ptr().cast_array()) })
-            }
+            } else { Some(unsafe { &mut *(self.as_mut_ptr().cast_array( )) } ) }
         }
         
         #[inline] #[stable(feature = "slice_first_last_chunk", since = "1.77.0")]
@@ -19676,17 +18043,13 @@ pub mod slice
 
         pub const fn get<I>(&self, index: I) -> Option<&I::Output> where
             I: [const] SliceIndex<Self>,
-        {
-            index.get(self)
-        }
+        { index.get( self ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] #[must_use]
 
         pub const fn get_mut<I>(&mut self, index: I) -> Option<&mut I::Output> where
             I: [const] SliceIndex<Self>,
-        {
-            index.get_mut(self)
-        }
+        { index.get_mut( self ) }
     
         
     
@@ -19694,10 +18057,7 @@ pub mod slice
 
         pub const unsafe fn get_unchecked<I>(&self, index: I) -> &I::Output where
             I: [const] SliceIndex<Self>,
-        {
-    
-            unsafe { &*index.get_unchecked(self) }
-        }
+        { unsafe { &*index.get_unchecked( self ) } }
     
         
     
@@ -19705,10 +18065,7 @@ pub mod slice
 
         pub const unsafe fn get_unchecked_mut<I>(&mut self, index: I) -> &mut I::Output where
             I: [const] SliceIndex<Self>,
-        {
-    
-            unsafe { &mut *index.get_unchecked_mut(self) }
-        }
+        { unsafe { &mut *index.get_unchecked_mut( self ) } }
     
         
     
@@ -19828,13 +18185,9 @@ pub mod slice
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline]
 
-        pub const fn iter(&self) -> Iter<'_, T> {
-            Iter::new(self)
-        }
+        pub const fn iter(&self) -> Iter<'_, T> { Iter::new( self ) }
 
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn iter_mut(&mut self) -> IterMut<'_, T> {
-            IterMut::new(self)
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub const fn iter_mut(&mut self) -> IterMut<'_, T> { IterMut::new( self ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] #[track_caller]
         pub const fn windows(&self, size: usize) -> Windows<'_, T> {
@@ -19984,15 +18337,11 @@ pub mod slice
         
         #[stable(feature = "slice_group_by", since = "1.77.0")] #[inline] pub const fn chunk_by<F>(&self, pred: F) -> ChunkBy<'_, T, F> where
             F: FnMut(&T, &T) -> bool,
-        {
-            ChunkBy::new(self, pred)
-        }
+        { ChunkBy::new( self, pred ) }
         
         #[stable(feature = "slice_group_by", since = "1.77.0")] #[inline] pub const fn chunk_by_mut<F>(&mut self, pred: F) -> ChunkByMut<'_, T, F> where
             F: FnMut(&T, &T) -> bool,
-        {
-            ChunkByMut::new(self, pred)
-        }
+        { ChunkByMut::new( self, pred ) }
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] #[track_caller] #[must_use]
         pub const fn split_at(&self, mid: usize) -> (&[T], &[T]) {
@@ -20046,84 +18395,58 @@ pub mod slice
         
         #[stable(feature = "split_at_checked", since = "1.80.0")] #[inline] #[must_use]
         pub const fn split_at_checked(&self, mid: usize) -> Option<(&[T], &[T])> {
-            if mid <= self.len() {
-
-                Some(unsafe { self.split_at_unchecked(mid) })
-            } else {
+            if mid <= self.len() { Some(unsafe { self.split_at_unchecked( mid) } ) } else {
                 None
             }
         }
         
         #[stable(feature = "split_at_checked", since = "1.80.0")] #[inline] #[must_use]
         pub const fn split_at_mut_checked(&mut self, mid: usize) -> Option<(&mut [T], &mut [T])> {
-            if mid <= self.len() {
-
-                Some(unsafe { self.split_at_mut_unchecked(mid) })
-            } else {
+            if mid <= self.len() { Some(unsafe { self.split_at_mut_unchecked( mid) } ) } else {
                 None
             }
         }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn split<F>(&self, pred: F) -> Split<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            Split::new(self, pred)
-        }
+        { Split::new( self, pred ) }
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn split_mut<F>(&mut self, pred: F) -> SplitMut<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            SplitMut::new(self, pred)
-        }
+        { SplitMut::new( self, pred ) }
         
         #[stable(feature = "split_inclusive", since = "1.51.0")] #[inline] pub fn split_inclusive<F>(&self, pred: F) -> SplitInclusive<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            SplitInclusive::new(self, pred)
-        }
+        { SplitInclusive::new( self, pred ) }
         
         #[stable(feature = "split_inclusive", since = "1.51.0")] #[inline] pub fn split_inclusive_mut<F>(&mut self, pred: F) -> SplitInclusiveMut<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            SplitInclusiveMut::new(self, pred)
-        }
+        { SplitInclusiveMut::new( self, pred ) }
     
         
         #[stable(feature = "slice_rsplit", since = "1.27.0")] #[inline] pub fn rsplit<F>(&self, pred: F) -> RSplit<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            RSplit::new(self, pred)
-        }
+        { RSplit::new( self, pred ) }
 
         #[stable(feature = "slice_rsplit", since = "1.27.0")] #[inline] pub fn rsplit_mut<F>(&mut self, pred: F) -> RSplitMut<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            RSplitMut::new(self, pred)
-        }
+        { RSplitMut::new( self, pred ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn splitn<F>(&self, n: usize, pred: F) -> SplitN<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            SplitN::new(self.split(pred), n)
-        }
+        { SplitN::new(self.split( pred), n ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn splitn_mut<F>(&mut self, n: usize, pred: F) -> SplitNMut<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            SplitNMut::new(self.split_mut(pred), n)
-        }
+        { SplitNMut::new(self.split_mut( pred), n ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rsplitn<F>(&self, n: usize, pred: F) -> RSplitN<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            RSplitN::new(self.rsplit(pred), n)
-        }
+        { RSplitN::new(self.rsplit( pred), n ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rsplitn_mut<F>(&mut self, n: usize, pred: F) -> RSplitNMut<'_, T, F> where
             F: FnMut(&T) -> bool,
-        {
-            RSplitNMut::new(self.rsplit_mut(pred), n)
-        }
+        { RSplitNMut::new(self.rsplit_mut( pred), n ) }
         
         #[unstable(feature = "slice_split_once", reason = "newly added", issue = "112811")] #[inline] pub fn split_once<F>(&self, pred: F) -> Option<(&[T], &[T])> where
             F: FnMut(&T) -> bool,
@@ -20142,9 +18465,7 @@ pub mod slice
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] #[must_use]
         pub fn contains(&self, x: &T) -> bool where
             T: PartialEq,
-        {
-            cmp::SliceContains::slice_contains(x, self)
-        }
+        { cmp::SliceContains::slice_contains( x, self ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[must_use]
         pub fn starts_with(&self, needle: &[T]) -> bool where
@@ -20199,9 +18520,7 @@ pub mod slice
             T: PartialEq,
             S: SlicePattern<Item = T> + ?Sized,
             P: SlicePattern<Item = T> + ?Sized,
-        {
-            self.strip_prefix(prefix)?.strip_suffix(suffix)
-        }
+        { self.strip_prefix(prefix)?.strip_suffix( suffix ) }
         
         #[must_use = "returns the subslice without modifying the original"] #[unstable(feature = "trim_prefix_suffix", issue = "142312")]
         pub fn trim_prefix<P: SlicePattern<Item = T> + ?Sized>(&self, prefix: &P) -> &[T] where
@@ -20239,9 +18558,7 @@ pub mod slice
         #[stable(feature = "rust1", since = "1.0.0")]
         pub fn binary_search(&self, x: &T) -> Result<usize, usize> where
             T: Ord,
-        {
-            self.binary_search_by(|p| p.cmp(x))
-        }
+        { self.binary_search_by(|p| p.cmp( x) ) }
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn binary_search_by<'a, F>(&'a self, mut f: F) -> Result<usize, usize> where
             F: FnMut(&'a T) -> Ordering,
@@ -20277,9 +18594,7 @@ pub mod slice
         #[allow(rustdoc::broken_intra_doc_links)] #[stable(feature = "slice_binary_search_by_key", since = "1.10.0")] #[inline] pub fn binary_search_by_key<'a, B, F>(&'a self, b: &B, mut f: F) -> Result<usize, usize> where
             F: FnMut(&'a T) -> B,
             B: Ord,
-        {
-            self.binary_search_by(|k| f(k).cmp(b))
-        }
+        { self.binary_search_by(|k| f(k).cmp( b) ) }
     
     
         #[stable(feature = "sort_unstable", since = "1.20.0")] #[inline] pub fn sort_unstable(&mut self) where
@@ -20309,9 +18624,7 @@ pub mod slice
         
         #[stable(feature = "slice_select_nth_unstable", since = "1.49.0")] #[inline] pub fn select_nth_unstable(&mut self, index: usize) -> (&mut [T], &mut T, &mut [T]) where
             T: Ord,
-        {
-            sort::select::partition_at_index(self, index, T::lt)
-        }
+        { sort::select::partition_at_index( self, index, T::lt ) }
     
         
     
@@ -20321,9 +18634,7 @@ pub mod slice
             mut compare: F,
         ) -> (&mut [T], &mut T, &mut [T]) where
             F: FnMut(&T, &T) -> Ordering,
-        {
-            sort::select::partition_at_index(self, index, |a: &T, b: &T| compare(a, b) == Less)
-        }
+        { sort::select::partition_at_index(self, index, |a: &T, b: &T| compare( a, b) == Less ) }
         
         
 
@@ -20334,15 +18645,11 @@ pub mod slice
         ) -> (&mut [T], &mut T, &mut [T]) where
             F: FnMut(&T) -> K,
             K: Ord,
-        {
-            sort::select::partition_at_index(self, index, |a: &T, b: &T| f(a).lt(&f(b)))
-        }
+        { sort::select::partition_at_index(self, index, |a: &T, b: &T| f(a).lt(&f( b)) ) }
         
         #[unstable(feature = "slice_partition_dedup", issue = "54279")] #[inline] pub fn partition_dedup(&mut self) -> (&mut [T], &mut [T]) where
             T: PartialEq,
-        {
-            self.partition_dedup_by(|a, b| a == b)
-        }
+        { self.partition_dedup_by( |a, b| a == b ) }
         
         #[unstable(feature = "slice_partition_dedup", issue = "54279")] #[inline] pub fn partition_dedup_by<F>(&mut self, mut same_bucket: F) -> (&mut [T], &mut [T]) where
             F: FnMut(&mut T, &mut T) -> bool,
@@ -20378,9 +18685,7 @@ pub mod slice
         #[unstable(feature = "slice_partition_dedup", issue = "54279")] #[inline] pub fn partition_dedup_by_key<K, F>(&mut self, mut key: F) -> (&mut [T], &mut [T]) where
             F: FnMut(&mut T) -> K,
             K: PartialEq,
-        {
-            self.partition_dedup_by(|a, b| key(a) == key(b))
-        }
+        { self.partition_dedup_by(|a, b| key(a) == key( b) ) }
         
         #[stable(feature = "slice_rotate", since = "1.26.0")]
         pub const fn rotate_left(&mut self, mid: usize) {
@@ -20487,9 +18792,7 @@ pub mod slice
             let ptr = self.as_ptr();
 
             let offset = unsafe { crate::ptr::align_offset(ptr, align_of::<U>()) };
-            if offset > self.len() {
-                (self, &[], &[])
-            } else {
+            if offset > self.len() {  ( self, &[], &[] ) } else {
                 let (left, rest) = self.split_at(offset);
                 let (us_len, ts_len) = rest.align_to_offsets::<U>();
 
@@ -20520,9 +18823,7 @@ pub mod slice
             let ptr = self.as_ptr();
 
             let offset = unsafe { crate::ptr::align_offset(ptr, align_of::<U>()) };
-            if offset > self.len() {
-                (self, &mut [], &mut [])
-            } else {
+            if offset > self.len() {  ( self, &mut [], &mut [] ) } else {
                 let (left, rest) = self.split_at_mut(offset);
                 let (us_len, ts_len) = rest.align_to_offsets::<U>();
                 let rest_len = rest.len();
@@ -20596,24 +18897,18 @@ pub mod slice
         #[stable(feature = "is_sorted", since = "1.82.0")] #[must_use]
         pub fn is_sorted_by<'a, F>(&'a self, mut compare: F) -> bool where
             F: FnMut(&'a T, &'a T) -> bool,
-        {
-            self.array_windows().all(|[a, b]| compare(a, b))
-        }
+        { self.array_windows().all(|[a, b]| compare( a, b) ) }
 
         #[inline] #[stable(feature = "is_sorted", since = "1.82.0")] #[must_use]
         pub fn is_sorted_by_key<'a, F, K>(&'a self, f: F) -> bool where
             F: FnMut(&'a T) -> K,
             K: PartialOrd,
-        {
-            self.iter().is_sorted_by_key(f)
-        }
+        { self.iter().is_sorted_by_key( f ) }
     
         #[stable(feature = "partition_point", since = "1.52.0")] #[must_use]
         pub fn partition_point<P>(&self, mut pred: P) -> usize where
             P: FnMut(&T) -> bool,
-        {
-            self.binary_search_by(|x| if pred(x) { Less } else { Greater }).unwrap_or_else(|i| i)
-        }
+        { self.binary_search_by(|x| if pred(x) { Less } else { Greater }).unwrap_or_else( |i| i ) }
         
         #[inline] #[must_use = "method does not modify the slice if the range is out of bounds"] #[stable(feature = "slice_take", since = "1.87.0")]
         pub fn split_off<'a, R: OneSidedRange<usize>>(
@@ -20775,13 +19070,10 @@ pub mod slice
     
     impl<T, const N: usize> [[T; N]] 
     {
-        
-        
+      
         #[stable(feature = "slice_flatten", since = "1.80.0")]
         pub const fn as_flattened(&self) -> &[T] {
-            let len = if T::IS_ZST {
-                self.len().checked_mul(N).expect("slice len overflow")
-            } else { unsafe { self.len().unchecked_mul(N) } };
+            let len = if T::IS_ZST { self.len().checked_mul(N).expect( "slice len overflow" ) } else { unsafe { self.len().unchecked_mul(N) } };
 
             unsafe { from_raw_parts(self.as_ptr().cast(), len) }
         }
@@ -20790,9 +19082,7 @@ pub mod slice
         
         #[stable(feature = "slice_flatten", since = "1.80.0")]
         pub const fn as_flattened_mut(&mut self) -> &mut [T] {
-            let len = if T::IS_ZST {
-                self.len().checked_mul(N).expect("slice len overflow")
-            } else { unsafe { self.len().unchecked_mul(N) } };
+            let len = if T::IS_ZST { self.len().checked_mul(N).expect( "slice len overflow" ) } else { unsafe { self.len().unchecked_mul(N) } };
 
             unsafe { from_raw_parts_mut(self.as_mut_ptr().cast(), len) }
         }
@@ -20800,18 +19090,12 @@ pub mod slice
     
     impl [f32] 
     {
-        
-        #[unstable(feature = "sort_floats", issue = "93396")] #[inline] pub fn sort_floats(&mut self) {
-            self.sort_unstable_by(f32::total_cmp);
-        }
+      #[unstable(feature = "sort_floats", issue = "93396")] #[inline] pub fn sort_floats(&mut self) { self.sort_unstable_by(f32::total_cmp); }
     }
     
     impl [f64] 
     {
-        
-        #[unstable(feature = "sort_floats", issue = "93396")] #[inline] pub fn sort_floats(&mut self) {
-            self.sort_unstable_by(f64::total_cmp);
-        }
+      #[unstable(feature = "sort_floats", issue = "93396")] #[inline] pub fn sort_floats(&mut self) { self.sort_unstable_by(f64::total_cmp); }
     }
 
     #[track_caller] const unsafe fn copy_from_slice_impl<T: Clone>(dest: &mut [T], src: &[T])
@@ -20826,9 +19110,7 @@ pub mod slice
                 dst_len: usize,
             )
         }
-        if dest.len() != src.len() {
-            len_mismatch_fail(dest.len(), src.len());
-        }
+        if dest.len() != src.len() { len_mismatch_fail(dest.len(), src.len()); }
 
         unsafe {
             ptr::copy_nonoverlapping(src.as_ptr(), dest.as_mut_ptr(), dest.len());
@@ -20867,6 +19149,7 @@ pub mod slice
             }
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl<T> const Default for &[T] {
@@ -20874,6 +19157,7 @@ pub mod slice
             &[]
         }
     }
+    
     #[stable(feature = "mut_slice_default", since = "1.5.0")]
 
     impl<T> const Default for &mut [T] {
@@ -20887,6 +19171,7 @@ pub mod slice
 
         fn as_slice(&self) -> &[Self::Item];
     }
+    
     #[stable(feature = "slice_strip", since = "1.51.0")]
     impl<T> SlicePattern for [T] {
         type Item = T;
@@ -20894,6 +19179,7 @@ pub mod slice
             self
         }
     }
+    
     #[stable(feature = "slice_strip", since = "1.51.0")]
     impl<T, const N: usize> SlicePattern for [T; N] {
         type Item = T;
@@ -20909,13 +19195,9 @@ pub mod slice
     ) -> Result<(), GetDisjointMutError> {
 
         for (i, idx) in indices.iter().enumerate() {
-            if !idx.is_in_bounds(len) {
-                return Err(GetDisjointMutError::IndexOutOfBounds);
-            }
+            if !idx.is_in_bounds(len) { return Err(GetDisjointMutError::IndexOutOfBounds); }
             for idx2 in &indices[..i] {
-                if idx.is_overlapping(idx2) {
-                    return Err(GetDisjointMutError::OverlappingIndices);
-                }
+                if idx.is_overlapping(idx2) { return Err(GetDisjointMutError::OverlappingIndices); }
             }
         }
         Ok(())
@@ -20926,6 +19208,7 @@ pub mod slice
         IndexOutOfBounds,
         OverlappingIndices,
     }
+    
     #[stable(feature = "get_many_mut", since = "1.86.0")]
     impl fmt::Display for GetDisjointMutError {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -20980,46 +19263,30 @@ pub mod slice
     #[unstable(feature = "get_disjoint_mut_helpers", issue = "none")]
 
     unsafe impl GetDisjointMutIndex for Range<usize> {
-        #[inline] fn is_in_bounds(&self, len: usize) -> bool {
-            (self.start <= self.end) & (self.end <= len)
-        }
+        #[inline] fn is_in_bounds(&self, len: usize) -> bool { (self.start <= self.end) & ( self.end <= len ) }
         
-        #[inline] fn is_overlapping(&self, other: &Self) -> bool {
-            (self.start < other.end) & (other.start < self.end)
-        }
+        #[inline] fn is_overlapping(&self, other: &Self) -> bool { (self.start < other.end) & ( other.start < self.end ) }
     }
     #[unstable(feature = "get_disjoint_mut_helpers", issue = "none")]
 
     unsafe impl GetDisjointMutIndex for RangeInclusive<usize> {
-        #[inline] fn is_in_bounds(&self, len: usize) -> bool {
-            (self.start <= self.end) & (self.end < len)
-        }
+        #[inline] fn is_in_bounds(&self, len: usize) -> bool { (self.start <= self.end) & ( self.end < len ) }
         
-        #[inline] fn is_overlapping(&self, other: &Self) -> bool {
-            (self.start <= other.end) & (other.start <= self.end)
-        }
+        #[inline] fn is_overlapping(&self, other: &Self) -> bool { (self.start <= other.end) & ( other.start <= self.end ) }
     }
     #[unstable(feature = "get_disjoint_mut_helpers", issue = "none")]
 
     unsafe impl GetDisjointMutIndex for range::Range<usize> {
-        #[inline] fn is_in_bounds(&self, len: usize) -> bool {
-            Range::from(*self).is_in_bounds(len)
-        }
+        #[inline] fn is_in_bounds(&self, len: usize) -> bool { Range::from(*self).is_in_bounds( len ) }
         
-        #[inline] fn is_overlapping(&self, other: &Self) -> bool {
-            Range::from(*self).is_overlapping(&Range::from(*other))
-        }
+        #[inline] fn is_overlapping(&self, other: &Self) -> bool { Range::from(*self).is_overlapping(&Range::from( *other) ) }
     }
     #[unstable(feature = "get_disjoint_mut_helpers", issue = "none")]
 
     unsafe impl GetDisjointMutIndex for range::RangeInclusive<usize> {
-        #[inline] fn is_in_bounds(&self, len: usize) -> bool {
-            RangeInclusive::from(*self).is_in_bounds(len)
-        }
+        #[inline] fn is_in_bounds(&self, len: usize) -> bool { RangeInclusive::from(*self).is_in_bounds( len ) }
         
-        #[inline] fn is_overlapping(&self, other: &Self) -> bool {
-            RangeInclusive::from(*self).is_overlapping(&RangeInclusive::from(*other))
-        }
+        #[inline] fn is_overlapping(&self, other: &Self) -> bool { RangeInclusive::from(*self).is_overlapping(&RangeInclusive::from( *other) ) }
     }
 }
 
@@ -21155,13 +19422,9 @@ pub mod str
     #[stable(feature = "rust1", since = "1.0.0")] pub use self::traits::FromStr;
     #[unstable(feature = "str_internals", issue = "none")] pub use self::validations::{next_code_point, utf8_char_width};
     #[inline(never)] #[cold] #[track_caller] #[cfg(not(panic = "immediate-abort"))]
-    const fn slice_error_fail(s: &str, begin: usize, end: usize) -> ! {
-        crate::intrinsics::const_eval_select((s, begin, end), slice_error_fail_ct, slice_error_fail_rt)
-    }
+    const fn slice_error_fail(s: &str, begin: usize, end: usize) -> ! { crate::intrinsics::const_eval_select(( s, begin, end), slice_error_fail_ct, slice_error_fail_rt ) }
     #[cfg(panic = "immediate-abort")]
-    const fn slice_error_fail(s: &str, begin: usize, end: usize) -> ! {
-        slice_error_fail_ct(s, begin, end)
-    }
+    const fn slice_error_fail(s: &str, begin: usize, end: usize) -> ! { slice_error_fail_ct( s, begin, end ) }
     #[track_caller]
     const fn slice_error_fail_ct(_: &str, _: usize, _: usize) -> ! {
         panic!("failed to slice string");
@@ -21200,12 +19463,9 @@ pub mod str
     }
     
     impl str {
-        
-    
+  
         #[stable(feature = "rust1", since = "1.0.0")]
-        #[must_use] #[inline] pub const fn len(&self) -> usize {
-            self.as_bytes().len()
-        }
+        #[must_use] #[inline] pub const fn len(&self) -> usize { self.as_bytes( ).len( ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         #[must_use] #[inline] pub const fn is_empty(&self) -> bool {
@@ -21217,15 +19477,11 @@ pub mod str
 
         #[stable(feature = "inherent_str_constructors", since = "1.87.0")]
     
-        pub const fn from_utf8(v: &[u8]) -> Result<&str, Utf8Error> {
-            converts::from_utf8(v)
-        }
+        pub const fn from_utf8(v: &[u8]) -> Result<&str, Utf8Error> { converts::from_utf8( v ) }
 
         #[stable(feature = "inherent_str_constructors", since = "1.87.0")]
     
-        pub const fn from_utf8_mut(v: &mut [u8]) -> Result<&mut str, Utf8Error> {
-            converts::from_utf8_mut(v)
-        }
+        pub const fn from_utf8_mut(v: &mut [u8]) -> Result<&mut str, Utf8Error> { converts::from_utf8_mut( v ) }
         
         #[inline] #[must_use] #[stable(feature = "inherent_str_constructors", since = "1.87.0")]
     
@@ -21243,9 +19499,7 @@ pub mod str
             if index >= self.len() {
     
                 index == self.len()
-            } else {
-                self.as_bytes()[index].is_utf8_char_boundary()
-            }
+            } else { self.as_bytes( )[index].is_utf8_char_boundary( ) }
         }
 
         #[stable(feature = "round_char_boundary", since = "1.91.0")] #[inline] pub const fn floor_char_boundary(&self, index: usize) -> usize {
@@ -21286,10 +19540,7 @@ pub mod str
         pub const fn as_bytes(&self) -> &[u8] { unsafe { mem::transmute(self) } }
         
         #[stable(feature = "str_mut_extras", since = "1.20.0")] #[must_use] #[inline(always)]
-        pub const unsafe fn as_bytes_mut(&mut self) -> &mut [u8] {
-    
-            unsafe { &mut *(self as *mut str as *mut [u8]) }
-        }
+        pub const unsafe fn as_bytes_mut(&mut self) -> &mut [u8] { unsafe { &mut *( self as *mut str as *mut [u8] ) } }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         #[must_use] #[inline(always)]
@@ -21303,37 +19554,21 @@ pub mod str
             self as *mut str as *mut u8
         }
         
-        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub const fn get<I: [const] SliceIndex<str>>(&self, i: I) -> Option<&I::Output> {
-            i.get(self)
-        }
+        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub const fn get<I: [const] SliceIndex<str>>(&self, i: I) -> Option<&I::Output> { i.get( self ) }
 
-        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub const fn get_mut<I: [const] SliceIndex<str>>(&mut self, i: I) -> Option<&mut I::Output> {
-            i.get_mut(self)
-        }
+        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub const fn get_mut<I: [const] SliceIndex<str>>(&mut self, i: I) -> Option<&mut I::Output> { i.get_mut( self ) }
         
-        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub unsafe fn get_unchecked<I: SliceIndex<str>>(&self, i: I) -> &I::Output {
-    
-            unsafe { &*i.get_unchecked(self) }
-        }
+        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub unsafe fn get_unchecked<I: SliceIndex<str>>(&self, i: I) -> &I::Output { unsafe { &*i.get_unchecked( self ) } }
         
-        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub unsafe fn get_unchecked_mut<I: SliceIndex<str>>(&mut self, i: I) -> &mut I::Output {
-    
-            unsafe { &mut *i.get_unchecked_mut(self) }
-        }
+        #[stable(feature = "str_checked_slicing", since = "1.20.0")] #[inline] pub unsafe fn get_unchecked_mut<I: SliceIndex<str>>(&mut self, i: I) -> &mut I::Output { unsafe { &mut *i.get_unchecked_mut( self ) } }
     
         
         
-        #[stable(feature = "rust1", since = "1.0.0")] #[deprecated(since = "1.29.0", note = "use `get_unchecked(begin..end)` instead")] #[must_use] #[inline] pub unsafe fn slice_unchecked(&self, begin: usize, end: usize) -> &str {
-    
-            unsafe { &*(begin..end).get_unchecked(self) }
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[deprecated(since = "1.29.0", note = "use `get_unchecked(begin..end)` instead")] #[must_use] #[inline] pub unsafe fn slice_unchecked(&self, begin: usize, end: usize) -> &str { unsafe { &*(begin..end).get_unchecked( self ) } }
     
         
     
-        #[stable(feature = "str_slice_mut", since = "1.5.0")] #[deprecated(since = "1.29.0", note = "use `get_unchecked_mut(begin..end)` instead")] #[inline] pub unsafe fn slice_mut_unchecked(&mut self, begin: usize, end: usize) -> &mut str {
-    
-            unsafe { &mut *(begin..end).get_unchecked_mut(self) }
-        }
+        #[stable(feature = "str_slice_mut", since = "1.5.0")] #[deprecated(since = "1.29.0", note = "use `get_unchecked_mut(begin..end)` instead")] #[inline] pub unsafe fn slice_mut_unchecked(&mut self, begin: usize, end: usize) -> &mut str { unsafe { &mut *(begin..end).get_unchecked_mut( self ) } }
     
         
     
@@ -21348,19 +19583,14 @@ pub mod str
         #[inline] #[must_use] #[stable(feature = "str_split_at", since = "1.4.0")]
         pub const fn split_at_mut(&mut self, mid: usize) -> (&mut str, &mut str) {
 
-            if self.is_char_boundary(mid) { unsafe { self.split_at_mut_unchecked(mid) } } else {
-                slice_error_fail(self, 0, mid)
-            }
+            if self.is_char_boundary(mid) { unsafe { self.split_at_mut_unchecked(mid) } } else { slice_error_fail( self, 0, mid ) }
         }
     
         
         #[inline] #[must_use] #[stable(feature = "split_at_checked", since = "1.80.0")]
         pub const fn split_at_checked(&self, mid: usize) -> Option<(&str, &str)> {
 
-            if self.is_char_boundary(mid) {
-
-                Some(unsafe { self.split_at_unchecked(mid) })
-            } else {
+            if self.is_char_boundary(mid) { Some(unsafe { self.split_at_unchecked( mid) } ) } else {
                 None
             }
         }
@@ -21368,10 +19598,7 @@ pub mod str
         #[inline] #[must_use] #[stable(feature = "split_at_checked", since = "1.80.0")]
         pub const fn split_at_mut_checked(&mut self, mid: usize) -> Option<(&mut str, &mut str)> {
 
-            if self.is_char_boundary(mid) {
-
-                Some(unsafe { self.split_at_mut_unchecked(mid) })
-            } else {
+            if self.is_char_boundary(mid) { Some(unsafe { self.split_at_mut_unchecked( mid) } ) } else {
                 None
             }
         }
@@ -21413,9 +19640,7 @@ pub mod str
             CharIndices { front_offset: 0, iter: self.chars() }
         }
 
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn bytes(&self) -> Bytes<'_> {
-            Bytes(self.as_bytes().iter().copied())
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn bytes(&self) -> Bytes<'_> { Bytes(self.as_bytes().iter().copied( ) ) }
         
         #[must_use = "this returns the split string as an iterator, \
                     without modifying the original"] #[stable(feature = "split_whitespace", since = "1.1.0")] #[inline] pub fn split_whitespace(&self) -> SplitWhitespace<'_> {
@@ -21432,14 +19657,10 @@ pub mod str
         
         
 
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn lines(&self) -> Lines<'_> {
-            Lines(self.split_inclusive('\n').map(LinesMap))
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn lines(&self) -> Lines<'_> { Lines(self.split_inclusive('\n').map( LinesMap) ) }
 
         #[stable(feature = "rust1", since = "1.0.0")] #[deprecated(since = "1.4.0", note = "use lines() instead now", suggestion = "lines")] #[inline] #[allow(deprecated)]
-        pub fn lines_any(&self) -> LinesAny<'_> {
-            LinesAny(self.lines())
-        }
+        pub fn lines_any(&self) -> LinesAny<'_> { LinesAny(self.lines( ) ) }
 
         #[must_use = "this returns the encoded string as an iterator, \
                     without modifying the original"] #[stable(feature = "encode_utf16", since = "1.8.0")]
@@ -21447,33 +19668,23 @@ pub mod str
             EncodeUtf16 { chars: self.chars(), extra: 0 }
         }
         
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn contains<P: Pattern>(&self, pat: P) -> bool {
-            pat.is_contained_in(self)
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn contains<P: Pattern>(&self, pat: P) -> bool { pat.is_contained_in( self ) }
         
     
         
         #[stable(feature = "rust1", since = "1.0.0")]
-        pub fn starts_with<P: Pattern>(&self, pat: P) -> bool {
-            pat.is_prefix_of(self)
-        }
+        pub fn starts_with<P: Pattern>(&self, pat: P) -> bool { pat.is_prefix_of( self ) }
         
         #[stable(feature = "rust1", since = "1.0.0")]
         pub fn ends_with<P: Pattern>(&self, pat: P) -> bool where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            pat.is_suffix_of(self)
-        }
+        { pat.is_suffix_of( self ) }
         
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn find<P: Pattern>(&self, pat: P) -> Option<usize> {
-            pat.into_searcher(self).next_match().map(|(i, _)| i)
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn find<P: Pattern>(&self, pat: P) -> Option<usize> { pat.into_searcher(self).next_match().map(|( i, _)| i ) }
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rfind<P: Pattern>(&self, pat: P) -> Option<usize> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            pat.into_searcher(self).next_match_back().map(|(i, _)| i)
-        }
+        { pat.into_searcher(self).next_match_back().map(|( i, _)| i ) }
     
     
         
@@ -21500,35 +19711,25 @@ pub mod str
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rsplit<P: Pattern>(&self, pat: P) -> RSplit<'_, P> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            RSplit(self.split(pat).0)
-        }
+        { RSplit(self.split( pat).0 ) }
     
         
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn split_terminator<P: Pattern>(&self, pat: P) -> SplitTerminator<'_, P> {
-            SplitTerminator(SplitInternal { allow_trailing_empty: false, ..self.split(pat).0 })
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn split_terminator<P: Pattern>(&self, pat: P) -> SplitTerminator<'_, P> { SplitTerminator(SplitInternal { allow_trailing_empty: false, ..self.split( pat).0 } ) }
     
         
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rsplit_terminator<P: Pattern>(&self, pat: P) -> RSplitTerminator<'_, P> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            RSplitTerminator(self.split_terminator(pat).0)
-        }
+        { RSplitTerminator(self.split_terminator( pat).0 ) }
     
         
     
-        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn splitn<P: Pattern>(&self, n: usize, pat: P) -> SplitN<'_, P> {
-            SplitN(SplitNInternal { iter: self.split(pat).0, count: n })
-        }
+        #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn splitn<P: Pattern>(&self, n: usize, pat: P) -> SplitN<'_, P> { SplitN(SplitNInternal { iter: self.split( pat).0, count: n } ) }
 
         
     
         #[stable(feature = "rust1", since = "1.0.0")] #[inline] pub fn rsplitn<P: Pattern>(&self, n: usize, pat: P) -> RSplitN<'_, P> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            RSplitN(self.splitn(n, pat).0)
-        }
+        { RSplitN(self.splitn( n, pat).0 ) }
     
         #[stable(feature = "str_split_once", since = "1.52.0")] #[inline] pub fn split_once<P: Pattern>(&self, delimiter: P) -> Option<(&'_ str, &'_ str)> {
             let (start, end) = delimiter.into_searcher(self).next_match()?;
@@ -21544,46 +19745,32 @@ pub mod str
             unsafe { Some((self.get_unchecked(..start), self.get_unchecked(end..))) }
         }
         
-        #[stable(feature = "str_matches", since = "1.2.0")] #[inline] pub fn matches<P: Pattern>(&self, pat: P) -> Matches<'_, P> {
-            Matches(MatchesInternal(pat.into_searcher(self)))
-        }
+        #[stable(feature = "str_matches", since = "1.2.0")] #[inline] pub fn matches<P: Pattern>(&self, pat: P) -> Matches<'_, P> { Matches(MatchesInternal(pat.into_searcher( self)) ) }
         
         #[stable(feature = "str_matches", since = "1.2.0")] #[inline] pub fn rmatches<P: Pattern>(&self, pat: P) -> RMatches<'_, P> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            RMatches(self.matches(pat).0)
-        }
+        { RMatches(self.matches( pat).0 ) }
     
         
-        #[stable(feature = "str_match_indices", since = "1.5.0")] #[inline] pub fn match_indices<P: Pattern>(&self, pat: P) -> MatchIndices<'_, P> {
-            MatchIndices(MatchIndicesInternal(pat.into_searcher(self)))
-        }
+        #[stable(feature = "str_match_indices", since = "1.5.0")] #[inline] pub fn match_indices<P: Pattern>(&self, pat: P) -> MatchIndices<'_, P> { MatchIndices(MatchIndicesInternal(pat.into_searcher( self)) ) }
         
 
         
         #[stable(feature = "str_match_indices", since = "1.5.0")] #[inline] pub fn rmatch_indices<P: Pattern>(&self, pat: P) -> RMatchIndices<'_, P> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            RMatchIndices(self.match_indices(pat).0)
-        }
+        { RMatchIndices(self.match_indices( pat).0 ) }
 
         #[inline] #[must_use = "this returns the trimmed string as a slice, \
                     without modifying the original"] #[stable(feature = "rust1", since = "1.0.0")]
-        pub fn trim(&self) -> &str {
-            self.trim_matches(char::is_whitespace)
-        }
+        pub fn trim(&self) -> &str { self.trim_matches( char::is_whitespace ) }
         
         #[inline] #[must_use = "this returns the trimmed string as a new slice, \
                     without modifying the original"] #[stable(feature = "trim_direction", since = "1.30.0")]
-        pub fn trim_start(&self) -> &str {
-            self.trim_start_matches(char::is_whitespace)
-        }
+        pub fn trim_start(&self) -> &str { self.trim_start_matches( char::is_whitespace ) }
         
         #[inline] #[must_use = "this returns the trimmed string as a new slice, \
                     without modifying the original"] #[stable(feature = "trim_direction", since = "1.30.0")]
-        pub fn trim_end(&self) -> &str {
-            self.trim_end_matches(char::is_whitespace)
-        }
+        pub fn trim_end(&self) -> &str { self.trim_end_matches( char::is_whitespace ) }
     
         
     
@@ -21635,39 +19822,29 @@ pub mod str
         
         #[must_use = "this returns the remaining substring as a new slice, \
                     without modifying the original"] #[stable(feature = "str_strip", since = "1.45.0")]
-        pub fn strip_prefix<P: Pattern>(&self, prefix: P) -> Option<&str> {
-            prefix.strip_prefix_of(self)
-        }
+        pub fn strip_prefix<P: Pattern>(&self, prefix: P) -> Option<&str> { prefix.strip_prefix_of( self ) }
         
         #[must_use = "this returns the remaining substring as a new slice, \
                     without modifying the original"] #[stable(feature = "str_strip", since = "1.45.0")]
         pub fn strip_suffix<P: Pattern>(&self, suffix: P) -> Option<&str> where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            suffix.strip_suffix_of(self)
-        }
+        { suffix.strip_suffix_of( self ) }
         
         #[must_use = "this returns the remaining substring as a new slice, \
                     without modifying the original"] #[unstable(feature = "strip_circumfix", issue = "147946")]
         pub fn strip_circumfix<P: Pattern, S: Pattern>(&self, prefix: P, suffix: S) -> Option<&str> where
             for<'a> S::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            self.strip_prefix(prefix)?.strip_suffix(suffix)
-        }
+        { self.strip_prefix(prefix)?.strip_suffix( suffix ) }
         
         #[must_use = "this returns the remaining substring as a new slice, \
                     without modifying the original"] #[unstable(feature = "trim_prefix_suffix", issue = "142312")]
-        pub fn trim_prefix<P: Pattern>(&self, prefix: P) -> &str {
-            prefix.strip_prefix_of(self).unwrap_or(self)
-        }
+        pub fn trim_prefix<P: Pattern>(&self, prefix: P) -> &str { prefix.strip_prefix_of(self).unwrap_or( self ) }
         
         #[must_use = "this returns the remaining substring as a new slice, \
                     without modifying the original"] #[unstable(feature = "trim_prefix_suffix", issue = "142312")]
         pub fn trim_suffix<P: Pattern>(&self, suffix: P) -> &str where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            suffix.strip_suffix_of(self).unwrap_or(self)
-        }
+        { suffix.strip_suffix_of(self).unwrap_or( self ) }
         
 
         
@@ -21690,9 +19867,7 @@ pub mod str
             note = "superseded by `trim_start_matches`",
             suggestion = "trim_start_matches"
         )]
-        pub fn trim_left_matches<P: Pattern>(&self, pat: P) -> &str {
-            self.trim_start_matches(pat)
-        }
+        pub fn trim_left_matches<P: Pattern>(&self, pat: P) -> &str { self.trim_start_matches( pat ) }
         
 
         
@@ -21703,26 +19878,16 @@ pub mod str
         )]
         pub fn trim_right_matches<P: Pattern>(&self, pat: P) -> &str where
             for<'a> P::Searcher<'a>: ReverseSearcher<'a>,
-        {
-            self.trim_end_matches(pat)
-        }
+        { self.trim_end_matches( pat ) }
         
 
         
         #[inline] #[stable(feature = "rust1", since = "1.0.0")]
-        pub fn parse<F: FromStr>(&self) -> Result<F, F::Err> {
-            FromStr::from_str(self)
-        }
+        pub fn parse<F: FromStr>(&self) -> Result<F, F::Err> { FromStr::from_str( self ) }
 
-        #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[must_use] #[inline] pub const fn is_ascii(&self) -> bool {
-    
-            self.as_bytes().is_ascii()
-        }
+        #[stable(feature = "ascii_methods_on_intrinsics", since = "1.23.0")] #[must_use] #[inline] pub const fn is_ascii(&self) -> bool { self.as_bytes( ).is_ascii( ) }
 
-        #[unstable(feature = "ascii_char", issue = "110998")] #[must_use] #[inline] pub const fn as_ascii(&self) -> Option<&[ascii::Char]> {
-
-            self.as_bytes().as_ascii()
-        }
+        #[unstable(feature = "ascii_char", issue = "110998")] #[must_use] #[inline] pub const fn as_ascii(&self) -> Option<&[ascii::Char]> { self.as_bytes( ).as_ascii( ) }
     
         #[unstable(feature = "ascii_char", issue = "110998")] #[must_use] #[inline] pub const unsafe fn as_ascii_unchecked(&self) -> &[ascii::Char] {
             assert_unsafe_precondition!(
@@ -21794,6 +19959,7 @@ pub mod str
             self
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl const AsRef<[u8]> for str {
@@ -21801,6 +19967,7 @@ pub mod str
             self.as_bytes()
         }
     }
+    
     #[stable(feature = "rust1", since = "1.0.0")]
 
     impl const Default for &str {
@@ -21808,6 +19975,7 @@ pub mod str
             ""
         }
     }
+    
     #[stable(feature = "default_mut_str", since = "1.28.0")]
 
     impl const Default for &mut str {
@@ -21981,23 +20149,17 @@ pub mod time
         }
 
         #[unstable(feature = "duration_constructors", issue = "120301")] #[must_use] #[inline] pub const fn from_weeks(weeks: u64) -> Duration {
-            if weeks > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY * DAYS_PER_WEEK) {
-                panic!("overflow in Duration::from_weeks");
-            }
+            if weeks > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY * DAYS_PER_WEEK) { panic!("overflow in Duration::from_weeks"); }
             Duration::from_secs(weeks * MINS_PER_HOUR * SECS_PER_MINUTE * HOURS_PER_DAY * DAYS_PER_WEEK)
         }
 
         #[unstable(feature = "duration_constructors", issue = "120301")] #[must_use] #[inline] pub const fn from_days(days: u64) -> Duration {
-            if days > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY) {
-                panic!("overflow in Duration::from_days");
-            }
+            if days > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR * HOURS_PER_DAY) { panic!("overflow in Duration::from_days"); }
             Duration::from_secs(days * MINS_PER_HOUR * SECS_PER_MINUTE * HOURS_PER_DAY)
         }
 
         #[stable(feature = "duration_constructors_lite", since = "1.91.0")] #[must_use] #[inline] pub const fn from_hours(hours: u64) -> Duration {
-            if hours > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR) {
-                panic!("overflow in Duration::from_hours");
-            }
+            if hours > u64::MAX / (SECS_PER_MINUTE * MINS_PER_HOUR) { panic!("overflow in Duration::from_hours"); }
             Duration::from_secs(hours * MINS_PER_HOUR * SECS_PER_MINUTE)
         }
 
@@ -22083,9 +20245,7 @@ pub mod time
 
         pub const fn checked_sub(self, rhs: Duration) -> Option<Duration> {
             if let Some(mut secs) = self.secs.checked_sub(rhs.secs) {
-                let nanos = if self.nanos.as_inner() >= rhs.nanos.as_inner() {
-                    self.nanos.as_inner() - rhs.nanos.as_inner()
-                } else if let Some(sub_secs) = secs.checked_sub(1) {
+                let nanos = if self.nanos.as_inner() >= rhs.nanos.as_inner() { self.nanos.as_inner( ) - rhs.nanos.as_inner( ) } else if let Some(sub_secs) = secs.checked_sub(1) {
                     secs = sub_secs;
                     self.nanos.as_inner() + NANOS_PER_SEC - rhs.nanos.as_inner()
                 } else {
@@ -22155,15 +20315,11 @@ pub mod time
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use] #[inline]
 
-        pub const fn as_secs_f64(&self) -> f64 {
-            (self.secs as f64) + (self.nanos.as_inner() as f64) / (NANOS_PER_SEC as f64)
-        }
+        pub const fn as_secs_f64(&self) -> f64 { (self.secs as f64) + (self.nanos.as_inner() as f64) / ( NANOS_PER_SEC as f64 ) }
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use] #[inline]
 
-        pub const fn as_secs_f32(&self) -> f32 {
-            (self.secs as f32) + (self.nanos.as_inner() as f32) / (NANOS_PER_SEC as f32)
-        }
+        pub const fn as_secs_f32(&self) -> f32 { (self.secs as f32) + (self.nanos.as_inner() as f32) / ( NANOS_PER_SEC as f32 ) }
         
         #[unstable(feature = "duration_millis_float", issue = "122451")] #[must_use] #[inline] pub const fn as_millis_f64(&self) -> f64 {
             (self.secs as f64) * (MILLIS_PER_SEC as f64)
@@ -22190,24 +20346,16 @@ pub mod time
         }
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[inline] pub fn mul_f64(self, rhs: f64) -> Duration {
-            Duration::from_secs_f64(rhs * self.as_secs_f64())
-        }
+                    without modifying the original"] #[inline] pub fn mul_f64(self, rhs: f64) -> Duration { Duration::from_secs_f64(rhs * self.as_secs_f64( ) ) }
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[inline] pub fn mul_f32(self, rhs: f32) -> Duration {
-            Duration::from_secs_f32(rhs * self.as_secs_f32())
-        }
+                    without modifying the original"] #[inline] pub fn mul_f32(self, rhs: f32) -> Duration { Duration::from_secs_f32(rhs * self.as_secs_f32( ) ) }
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[inline] pub fn div_f64(self, rhs: f64) -> Duration {
-            Duration::from_secs_f64(self.as_secs_f64() / rhs)
-        }
+                    without modifying the original"] #[inline] pub fn div_f64(self, rhs: f64) -> Duration { Duration::from_secs_f64(self.as_secs_f64( ) / rhs ) }
         
         #[stable(feature = "duration_float", since = "1.38.0")] #[must_use = "this returns the result of the operation, \
-                    without modifying the original"] #[inline] pub fn div_f32(self, rhs: f32) -> Duration {
-            Duration::from_secs_f32(self.as_secs_f32() / rhs)
-        }
+                    without modifying the original"] #[inline] pub fn div_f32(self, rhs: f32) -> Duration { Duration::from_secs_f32(self.as_secs_f32( ) / rhs ) }
     
         #[stable(feature = "div_duration", since = "1.80.0")] #[must_use = "this returns the result of the operation, \
                     without modifying the original"] #[inline]
@@ -22229,14 +20377,14 @@ pub mod time
             self_nanos / rhs_nanos
         }
     }
+    
     #[stable(feature = "duration", since = "1.3.0")]
 
     impl const Add for Duration {
         type Output = Duration;
-        #[inline] fn add(self, rhs: Duration) -> Duration {
-            self.checked_add(rhs).expect("overflow when adding durations")
-        }
+        #[inline] fn add(self, rhs: Duration) -> Duration { self.checked_add(rhs).expect( "overflow when adding durations" ) }
     }
+    
     #[stable(feature = "time_augmented_assignment", since = "1.9.0")]
 
     impl const AddAssign for Duration {
@@ -22244,14 +20392,14 @@ pub mod time
             *self = *self + rhs;
         }
     }
+    
     #[stable(feature = "duration", since = "1.3.0")]
 
     impl const Sub for Duration {
         type Output = Duration;
-        #[inline] fn sub(self, rhs: Duration) -> Duration {
-            self.checked_sub(rhs).expect("overflow when subtracting durations")
-        }
+        #[inline] fn sub(self, rhs: Duration) -> Duration { self.checked_sub(rhs).expect( "overflow when subtracting durations" ) }
     }
+    
     #[stable(feature = "time_augmented_assignment", since = "1.9.0")]
 
     impl const SubAssign for Duration {
@@ -22259,14 +20407,14 @@ pub mod time
             *self = *self - rhs;
         }
     }
+    
     #[stable(feature = "duration", since = "1.3.0")]
 
     impl const Mul<u32> for Duration {
         type Output = Duration;
-        #[inline] fn mul(self, rhs: u32) -> Duration {
-            self.checked_mul(rhs).expect("overflow when multiplying duration by scalar")
-        }
+        #[inline] fn mul(self, rhs: u32) -> Duration { self.checked_mul(rhs).expect( "overflow when multiplying duration by scalar" ) }
     }
+    
     #[stable(feature = "symmetric_u32_duration_mul", since = "1.31.0")]
 
     impl const Mul<Duration> for u32 {
@@ -22275,6 +20423,7 @@ pub mod time
             rhs * self
         }
     }
+    
     #[stable(feature = "time_augmented_assignment", since = "1.9.0")]
 
     impl const MulAssign<u32> for Duration {
@@ -22282,15 +20431,15 @@ pub mod time
             *self = *self * rhs;
         }
     }
+    
     #[stable(feature = "duration", since = "1.3.0")]
 
     impl const Div<u32> for Duration {
         type Output = Duration;
         #[inline] #[track_caller]
-        fn div(self, rhs: u32) -> Duration {
-            self.checked_div(rhs).expect("divide by zero error when dividing duration by scalar")
-        }
+        fn div(self, rhs: u32) -> Duration { self.checked_div(rhs).expect( "divide by zero error when dividing duration by scalar" ) }
     }
+    
     #[stable(feature = "time_augmented_assignment", since = "1.9.0")]
 
     impl const DivAssign<u32> for Duration {
@@ -22323,18 +20472,17 @@ pub mod time
             Duration::new(total_secs, total_nanos as u32)
         }};
     }
+    
     #[stable(feature = "duration_sum", since = "1.16.0")]
     impl Sum for Duration {
-        fn sum<I: Iterator<Item = Duration>>(iter: I) -> Duration {
-            sum_durations!(iter)
-        }
+        fn sum<I: Iterator<Item = Duration>>(iter: I) -> Duration { sum_durations!( iter ) }
     }
+    
     #[stable(feature = "duration_sum", since = "1.16.0")]
     impl<'a> Sum<&'a Duration> for Duration {
-        fn sum<I: Iterator<Item = &'a Duration>>(iter: I) -> Duration {
-            sum_durations!(iter)
-        }
+        fn sum<I: Iterator<Item = &'a Duration>>(iter: I) -> Duration { sum_durations!( iter ) }
     }
+    
     #[stable(feature = "duration_debug_impl", since = "1.27.0")]
     impl fmt::Debug for Duration {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -22374,15 +20522,8 @@ pub mod time
                         }
                     }
 
-                    if carry {
-    
-                        integer_part.checked_add(1)
-                    } else {
-                        Some(integer_part)
-                    }
-                } else {
-                    Some(integer_part)
-                };
+                    if carry { integer_part.checked_add( 1 ) } else { Some( integer_part ) }
+                } else { Some( integer_part ) };
 
                 let end = f.precision().map(|p| crate::cmp::min(p, 9)).unwrap_or(pos);
 
@@ -22404,10 +20545,7 @@ pub mod time
                     write!(f, "{}", postfix)
                 };
                 match f.width() {
-                    None => {
-
-                        emit_without_padding(f)
-                    }
+                    None => { emit_without_padding( f ) }
                     Some(requested_w) => {
     
                         let mut actual_w = prefix.len() + postfix.chars().count();
@@ -22429,10 +20567,7 @@ pub mod time
                             let frac_part_w = f.precision().unwrap_or(pos);
                             actual_w += 1 + frac_part_w;
                         }
-                        if requested_w <= actual_w {
-
-                            emit_without_padding(f)
-                        } else {
+                        if requested_w <= actual_w { emit_without_padding( f ) } else {
 
                             let default_align = fmt::Alignment::Left;
                             let post_padding =
@@ -22445,9 +20580,7 @@ pub mod time
             }
 
             let prefix = if f.sign_plus() { "+" } else { "" };
-            if self.secs > 0 {
-                fmt_decimal(f, self.secs, self.nanos.as_inner(), NANOS_PER_SEC / 10, prefix, "s")
-            } else if self.nanos.as_inner() >= NANOS_PER_MILLI {
+            if self.secs > 0 { fmt_decimal(f, self.secs, self.nanos.as_inner( ), NANOS_PER_SEC / 10, prefix, "s" ) } else if self.nanos.as_inner() >= NANOS_PER_MILLI {
                 fmt_decimal(
                     f,
                     (self.nanos.as_inner() / NANOS_PER_MILLI) as u64,
@@ -22465,9 +20598,7 @@ pub mod time
                     prefix,
                     "µs",
                 )
-            } else {
-                fmt_decimal(f, self.nanos.as_inner() as u64, 0, 1, prefix, "ns")
-            }
+            } else { fmt_decimal(f, self.nanos.as_inner( ) as u64, 0, 1, prefix, "ns" ) }
         }
     }
     
@@ -22475,6 +20606,7 @@ pub mod time
     pub struct TryFromFloatSecsError {
         kind: TryFromFloatSecsErrorKind,
     }
+    
     #[stable(feature = "duration_checked_float", since = "1.66.0")]
     impl fmt::Display for TryFromFloatSecsError {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -22514,10 +20646,7 @@ pub mod time
             let bits = $secs.to_bits();
             let mant = (bits & MANT_MASK) | (MANT_MASK + 1);
             let exp = ((bits >> $mant_bits) & EXP_MASK) as i16 + MIN_EXP;
-            let (secs, nanos) = if exp < -31 {
-
-                (0u64, 0u32)
-            } else if exp < 0 {
+            let (secs, nanos) = if exp < -31 {  ( 0u64, 0u32 ) } else if exp < 0 {
 
                 let t = <$double_ty>::from(mant) << ($offset + exp);
                 let nanos_offset = $mant_bits + $offset;
@@ -22547,11 +20676,7 @@ pub mod time
                 let rem_msb = nanos_tmp & rem_msb_mask == 0;
                 let add_ns = !(rem_msb || (is_even && is_tie));
             let nanos = nanos + add_ns as u32;
-                if ($mant_bits == 23) || (nanos != NANOS_PER_SEC) {
-                    (secs, nanos)
-                } else {
-                    (secs + 1, 0)
-                }
+                if ($mant_bits == 23) || (nanos != NANOS_PER_SEC) {  ( secs, nanos ) } else {  ( secs + 1, 0 ) }
             } else if exp < 64 {
 
                 let secs = u64::from(mant) << (exp - $mant_bits);
@@ -22564,8 +20689,7 @@ pub mod time
     }
     
     impl Duration {
-        
-    
+  
         #[stable(feature = "duration_checked_float", since = "1.66.0")] #[inline] pub fn try_from_secs_f32(secs: f32) -> Result<Duration, TryFromFloatSecsError> {
             try_from_secs!(
                 secs = secs,
@@ -22612,21 +20736,14 @@ pub mod wtf8
     pub struct CodePoint(CodePointInner);
 
     impl fmt::Debug for CodePoint {
-        #[inline] fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result {
-            write!(formatter, "U+{:04X}", self.0.as_inner())
-        }
+        #[inline] fn fmt(&self, formatter: &mut fmt::Formatter<'_>) -> fmt::Result { write!(formatter, "U+{:04X}", self.0.as_inner( ) ) }
     }
     
     impl CodePoint {
 
-        #[inline] pub unsafe fn from_u32_unchecked(value: u32) -> CodePoint {
-
-            CodePoint(unsafe { CodePointInner::new_unchecked(value) })
-        }
+        #[inline] pub unsafe fn from_u32_unchecked(value: u32) -> CodePoint { CodePoint(unsafe { CodePointInner::new_unchecked( value) } ) }
         
-        #[inline] pub fn from_u32(value: u32) -> Option<CodePoint> {
-            Some(CodePoint(CodePointInner::new(value)?))
-        }
+        #[inline] pub fn from_u32(value: u32) -> Option<CodePoint> { Some(CodePoint(CodePointInner::new( value)?) ) }
         
         #[inline] pub fn from_char(value: char) -> CodePoint { unsafe { CodePoint::from_u32_unchecked(value as u32) } }
 
@@ -22656,9 +20773,7 @@ pub mod wtf8
             }
         }
 
-        #[inline] pub fn to_char_lossy(&self) -> char {
-            self.to_char().unwrap_or(char::REPLACEMENT_CHARACTER)
-        }
+        #[inline] pub fn to_char_lossy(&self) -> char { self.to_char().unwrap_or( char::REPLACEMENT_CHARACTER ) }
     }
 
         #[derive(Eq, Ord, PartialEq, PartialOrd)] #[repr(transparent)] #[doc(hidden)]
@@ -22691,9 +20806,7 @@ pub mod wtf8
             let mut pos = 0;
             while let Some((surrogate_pos, surrogate)) = self.next_surrogate(pos) {
 
-                write_str_escaped(formatter, unsafe {
-                    str::from_utf8_unchecked(&self.bytes[pos..surrogate_pos])
-                })?;
+                write_str_escaped(formatter, unsafe { str::from_utf8_unchecked( &self.bytes[pos..surrogate_pos] ) })?;
                 write!(formatter, "\\u{{{:x}}}", surrogate)?;
                 pos = surrogate_pos + 3;
             }
@@ -22711,9 +20824,7 @@ pub mod wtf8
                 match self.next_surrogate(pos) {
                     Some((surrogate_pos, _)) => {
 
-                        formatter.write_str(unsafe {
-                            str::from_utf8_unchecked(&wtf8_bytes[pos..surrogate_pos])
-                        })?;
+                        formatter.write_str(unsafe { str::from_utf8_unchecked( &wtf8_bytes[pos..surrogate_pos] ) })?;
                         formatter.write_char(char::REPLACEMENT_CHARACTER)?;
                         pos = surrogate_pos + 3;
                     }
@@ -22757,9 +20868,7 @@ pub mod wtf8
             &self.bytes
         }
     
-        #[inline] pub fn as_str(&self) -> Result<&str, str::Utf8Error> {
-            str::from_utf8(&self.bytes)
-        }
+        #[inline] pub fn as_str(&self) -> Result<&str, str::Utf8Error> { str::from_utf8( &self.bytes ) }
 
         #[inline] pub fn encode_wide(&self) -> EncodeWide<'_> {
             EncodeWide { code_points: self.code_points(), extra: 0 }
@@ -22820,9 +20929,7 @@ pub mod wtf8
             self.bytes.is_ascii()
         }
         
-        #[inline] pub fn eq_ignore_ascii_case(&self, other: &Self) -> bool {
-            self.bytes.eq_ignore_ascii_case(&other.bytes)
-        }
+        #[inline] pub fn eq_ignore_ascii_case(&self, other: &Self) -> bool { self.bytes.eq_ignore_ascii_case( &other.bytes ) }
     }
     
     
@@ -22832,9 +20939,7 @@ pub mod wtf8
             if range.start <= range.end
                 && self.is_code_point_boundary(range.start)
                 && self.is_code_point_boundary(range.end)
-            { unsafe { slice_unchecked(self, range.start, range.end) } } else {
-                slice_error_fail(self, range.start, range.end)
-            }
+            { unsafe { slice_unchecked(self, range.start, range.end) } } else { slice_error_fail( self, range.start, range.end ) }
         }
     }
     
@@ -22842,9 +20947,7 @@ pub mod wtf8
     impl ops::Index<ops::RangeFrom<usize>> for Wtf8 {
         type Output = Wtf8;
         #[inline] fn index(&self, range: ops::RangeFrom<usize>) -> &Wtf8 {
-            if self.is_code_point_boundary(range.start) { unsafe { slice_unchecked(self, range.start, self.len()) } } else {
-                slice_error_fail(self, range.start, self.len())
-            }
+            if self.is_code_point_boundary(range.start) { unsafe { slice_unchecked(self, range.start, self.len()) } } else { slice_error_fail(self, range.start, self.len( ) ) }
         }
     }
     
@@ -22852,9 +20955,7 @@ pub mod wtf8
     impl ops::Index<ops::RangeTo<usize>> for Wtf8 {
         type Output = Wtf8;
         #[inline] fn index(&self, range: ops::RangeTo<usize>) -> &Wtf8 {
-            if self.is_code_point_boundary(range.end) { unsafe { slice_unchecked(self, 0, range.end) } } else {
-                slice_error_fail(self, 0, range.end)
-            }
+            if self.is_code_point_boundary(range.end) { unsafe { slice_unchecked(self, 0, range.end) } } else { slice_error_fail( self, 0, range.end ) }
         }
     }
     
@@ -22975,8 +21076,10 @@ pub mod wtf8
             (low + ext, high.and_then(|n| n.checked_mul(2)).and_then(|n| n.checked_add(ext)))
         }
     }
+    
     #[stable(feature = "encode_wide_fused_iterator", since = "1.62.0")]
     impl FusedIterator for EncodeWide<'_> {}
+    
     #[stable(feature = "encode_wide_debug", since = "1.92.0")]
     impl fmt::Debug for EncodeWide<'_> {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
@@ -22999,9 +21102,7 @@ pub mod wtf8
     }
     
     impl Hash for CodePoint {
-        #[inline] fn hash<H: Hasher>(&self, state: &mut H) {
-            self.0.hash(state)
-        }
+        #[inline] fn hash<H: Hasher>(&self, state: &mut H) { self.0.hash( state ) }
     }
     
     impl Hash for Wtf8 {
@@ -23202,6 +21303,7 @@ pub mod task
         */
         
     }
+    
     #[stable(feature = "futures_api", since = "1.36.0")] pub use self::poll::Poll;
     mod wake
     {
@@ -23215,6 +21317,7 @@ pub mod task
         */
         
     }
+    
     #[stable(feature = "futures_api", since = "1.36.0")] pub use self::wake::{Context, ContextBuilder, LocalWaker, RawWaker, RawWakerVTable, Waker};
     mod ready
     {
@@ -23228,6 +21331,7 @@ pub mod task
         */
         
     }
+    
     #[stable(feature = "ready_macro", since = "1.64.0")] pub use self::ready::ready;
 }
 
@@ -23267,6 +21371,7 @@ pub mod alloc
         */
         
     }
+    
     #[stable(feature = "global_alloc", since = "1.28.0")] pub use self::global::GlobalAlloc;
     #[stable(feature = "alloc_layout", since = "1.28.0")] pub use self::layout::Layout;
     #[stable(feature = "alloc_layout", since = "1.28.0")] #[deprecated(
@@ -23290,9 +21395,7 @@ pub mod alloc
 
     #[unstable(feature = "allocator_api", issue = "32838")]
     impl fmt::Display for AllocError {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.write_str("memory allocation failed")
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.write_str( "memory allocation failed" ) }
     }
     
     #[unstable(feature = "allocator_api", issue = "32838")]
@@ -23386,13 +21489,9 @@ pub mod alloc
     where
         A: Allocator + ?Sized,
     {
-        #[inline] fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
-            (**self).allocate(layout)
-        }
+        #[inline] fn allocate(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> { (**self).allocate( layout ) }
         
-        #[inline] fn allocate_zeroed(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> {
-            (**self).allocate_zeroed(layout)
-        }
+        #[inline] fn allocate_zeroed(&self, layout: Layout) -> Result<NonNull<[u8]>, AllocError> { (**self).allocate_zeroed( layout ) }
         
         #[inline]
         unsafe fn deallocate(&self, ptr: NonNull<u8>, layout: Layout) { unsafe { (**self).deallocate(ptr, layout) } }
@@ -23436,8 +21535,7 @@ pub mod bool
     */
     impl bool 
     {
-        
-        #[stable(feature = "bool_to_option", since = "1.62.0")] #[inline] pub fn then_some<T>(self, t: T) -> Option<T> {
+      #[stable(feature = "bool_to_option", since = "1.62.0")] #[inline] pub fn then_some<T>(self, t: T) -> Option<T> {
             if self { Some(t) } else { None }
         }
         
@@ -23550,14 +21648,8 @@ pub mod escape
             let lookup_ascii = unsafe { ascii::Char::from_u8_unchecked(lookup & 0x7F) };
             if lookup_escaped {
 
-                if matches!(lookup_ascii, ascii::Char::Null) {
-                    hex_escape(byte)
-                } else {
-                    backslash(lookup_ascii)
-                }
-            } else {
-                verbatim(lookup_ascii)
-            }
+                if matches!(lookup_ascii, ascii::Char::Null) { hex_escape( byte ) } else { backslash( lookup_ascii ) }
+            } else { verbatim( lookup_ascii ) }
         }
     }
     
@@ -23629,19 +21721,13 @@ pub mod escape
         pub(crate) const fn empty() -> Self { unsafe { Self::new(MaybeEscapedCharacter { escape_seq: [ascii::Char::Null; N] }, 0..0) } }
         
         #[inline]
-        pub(crate) fn len(&self) -> usize {
-            usize::from(self.alive.end - self.alive.start)
-        }
+        pub(crate) fn len(&self) -> usize { usize::from( self.alive.end - self.alive.start ) }
         
         #[inline]
-        pub(crate) fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.alive.advance_by(n)
-        }
+        pub(crate) fn advance_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.alive.advance_by( n ) }
         
         #[inline]
-        pub(crate) fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> {
-            self.alive.advance_back_by(n)
-        }
+        pub(crate) fn advance_back_by(&mut self, n: usize) -> Result<(), NonZero<usize>> { self.alive.advance_back_by( n ) }
 
         #[inline]
         const fn to_char(&self) -> Option<char> {
@@ -23688,41 +21774,30 @@ pub mod escape
         }
         pub(crate) fn next(&mut self) -> Option<char> {
             let i = self.alive.next()?;
-            if let Some(c) = self.to_char() {
-                return Some(c);
-            }
+            if let Some(c) = self.to_char() { return Some(c); }
 
             Some(char::from(unsafe { self.data.escape_seq.get_unchecked(usize::from(i)).to_u8() }))
         }
     }
     
     impl<const N: usize> fmt::Display for EscapeIterInner<N, AlwaysEscaped> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-    
-            f.write_str(unsafe { self.to_str_unchecked() })
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.write_str(unsafe { self.to_str_unchecked( ) } ) }
     }
     
     impl<const N: usize> fmt::Display for EscapeIterInner<N, MaybeEscaped> {
         fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            if let Some(c) = self.to_char() {
-                return f.write_char(c);
-            }
+            if let Some(c) = self.to_char() { return f.write_char(c); }
 
             f.write_str(unsafe { self.to_str_unchecked() })
         }
     }
     
     impl<const N: usize> fmt::Debug for EscapeIterInner<N, AlwaysEscaped> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_tuple("EscapeIterInner").field(&format_args!("'{}'", self)).finish()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_tuple("EscapeIterInner").field(&format_args!( "'{}'", self)).finish( ) }
     }
     
     impl<const N: usize> fmt::Debug for EscapeIterInner<N, MaybeEscaped> {
-        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-            f.debug_tuple("EscapeIterInner").field(&format_args!("'{}'", self)).finish()
-        }
+        fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result { f.debug_tuple("EscapeIterInner").field(&format_args!( "'{}'", self)).finish( ) }
     }
 }
 
@@ -23791,33 +21866,15 @@ pub mod tuple
 
                 impl<$($T: [const] PartialOrd),+> const PartialOrd for ($($T,)+)
                 {
-                    #[inline] fn partial_cmp(&self, other: &($($T,)+)) -> Option<Ordering> {
-                        lexical_partial_cmp!($( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn lt(&self, other: &($($T,)+)) -> bool {
-                        lexical_ord!(lt, __chaining_lt, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn le(&self, other: &($($T,)+)) -> bool {
-                        lexical_ord!(le, __chaining_le, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn ge(&self, other: &($($T,)+)) -> bool {
-                        lexical_ord!(ge, __chaining_ge, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn gt(&self, other: &($($T,)+)) -> bool {
-                        lexical_ord!(gt, __chaining_gt, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn __chaining_lt(&self, other: &($($T,)+)) -> ControlFlow<bool> {
-                        lexical_chain!(__chaining_lt, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn __chaining_le(&self, other: &($($T,)+)) -> ControlFlow<bool> {
-                        lexical_chain!(__chaining_le, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn __chaining_gt(&self, other: &($($T,)+)) -> ControlFlow<bool> {
-                        lexical_chain!(__chaining_gt, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
-                    #[inline] fn __chaining_ge(&self, other: &($($T,)+)) -> ControlFlow<bool> {
-                        lexical_chain!(__chaining_ge, $( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
+                    #[inline] fn partial_cmp(&self, other: &($($T,)+)) -> Option<Ordering> { lexical_partial_cmp!($( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn lt(&self, other: &($($T,)+)) -> bool { lexical_ord!(lt, __chaining_lt, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn le(&self, other: &($($T,)+)) -> bool { lexical_ord!(le, __chaining_le, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn ge(&self, other: &($($T,)+)) -> bool { lexical_ord!(ge, __chaining_ge, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn gt(&self, other: &($($T,)+)) -> bool { lexical_ord!(gt, __chaining_gt, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn __chaining_lt(&self, other: &($($T,)+)) -> ControlFlow<bool> { lexical_chain!(__chaining_lt, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn __chaining_le(&self, other: &($($T,)+)) -> ControlFlow<bool> { lexical_chain!(__chaining_le, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn __chaining_gt(&self, other: &($($T,)+)) -> ControlFlow<bool> { lexical_chain!(__chaining_gt, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
+                    #[inline] fn __chaining_ge(&self, other: &($($T,)+)) -> ControlFlow<bool> { lexical_chain!(__chaining_ge, $( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
                 }
             }
             maybe_tuple_doc! {
@@ -23826,18 +21883,14 @@ pub mod tuple
 
                 impl<$($T: [const] Ord),+> const Ord for ($($T,)+)
                 {
-                    #[inline] fn cmp(&self, other: &($($T,)+)) -> Ordering {
-                        lexical_cmp!($( ${ignore($T)} self.${index()}, other.${index()} ),+)
-                    }
+                    #[inline] fn cmp(&self, other: &($($T,)+)) -> Ordering { lexical_cmp!($( ${ignore($T)} self.${index()}, other.${index( )} ),+ ) }
                 }
             }
             maybe_tuple_doc! {
                 $($T)+ @
                 #[stable(feature = "rust1", since = "1.0.0")]
                 impl<$($T: Default),+> Default for ($($T,)+) {
-                    #[inline] fn default() -> ($($T,)+) {
-                        ($({ let x: $T = Default::default(); x},)+)
-                    }
+                    #[inline] fn default() -> ($($T,)+) { ($({ let x: $T = Default::default( ); x},)+ ) }
                 }
             }
             maybe_tuple_doc! {
@@ -23878,14 +21931,12 @@ pub mod tuple
 
     macro_rules! maybe_tuple_doc {
         ($a:ident @ #[$meta:meta] $item:item) => {
-            #[doc(fake_variadic)]
-            #[doc = "This trait is implemented for tuples up to twelve items long."]
+            #[doc(fake_variadic)] #[doc = "This trait is implemented for tuples up to twelve items long."]
             #[$meta]
             $item
         };
         ($a:ident $($rest_a:ident)+ @ #[$meta:meta] $item:item) => {
-            #[doc(hidden)]
-            #[$meta]
+            #[doc(hidden)] #[$meta]
             $item
         };
     }
@@ -23898,10 +21949,7 @@ pub mod tuple
                 Continue(()) => lexical_ord!($rel, $chain_rel, $($rest_a, $rest_b),+),
             }
         }};
-        ($rel: ident, $chain_rel: ident, $a:expr, $b:expr) => {
-
-            PartialOrd::$rel(&$a, &$b)
-        };
+        ($rel: ident, $chain_rel: ident, $a:expr, $b:expr) => { PartialOrd::$rel( &$a, &$b ) };
     }
 
     macro_rules! lexical_chain {
@@ -23909,9 +21957,7 @@ pub mod tuple
             PartialOrd::$chain_rel(&$a, &$b)?;
             lexical_chain!($chain_rel $(,$rest_a, $rest_b)*)
         }};
-        ($chain_rel: ident) => {
-            Continue(())
-        };
+        ($chain_rel: ident) => { Continue(( ) ) };
     }
     macro_rules! lexical_partial_cmp {
         ($a:expr, $b:expr, $($rest_a:expr, $rest_b:expr),+) => {
@@ -23946,9 +21992,7 @@ pub mod unit
     pub use self::std::unit::{*};
     */
     impl FromIterator<()> for () {
-        fn from_iter<I: IntoIterator<Item = ()>>(iter: I) -> Self {
-            iter.into_iter().for_each(|()| {})
-        }
+        fn from_iter<I: IntoIterator<Item = ()>>(iter: I) -> Self { iter.into_iter().for_each(|( )| {} ) }
     }
     pub(crate) trait IsUnit {
         fn is_unit() -> bool;
@@ -23977,25 +22021,24 @@ pub mod primitive
         *
     };
     /*
-    pub use self::std::primitive::{*};
-    */
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::bool;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::char;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::f32;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::f64;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::i8;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::i16;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::i32;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::i64;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::i128;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::isize;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::str;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::u8;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::u16;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::u32;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::u64;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::u128;
-    #[stable(feature = "core_primitive", since = "1.43.0")] pub use self::usize;
+    pub use self::std::primitive::{*}; */
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use bool;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use char;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use f32;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use f64;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use i8;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use i16;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use i32;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use i64;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use i128;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use isize;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use str;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use u8;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use u16;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use u32;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use u64;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use u128;
+    #[stable(feature = "core_primitive", since = "1.43.0")] pub use usize;
 }
 
 #[allow(
@@ -24046,6 +22089,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(
         target_arch = "arm",
         target_arch = "aarch64",
@@ -24089,109 +22133,126 @@ pub mod core_arch
         */
         
     }
-    #[doc = include_str!("core_arch_docs.md")] #[stable(feature = "simd_arch", since = "1.27.0")]
-    pub mod arch {
-
+    
+    pub mod arch
+    {
         #[cfg(any(target_arch = "x86", doc))] #[doc(cfg(target_arch = "x86"))] #[stable(feature = "simd_x86", since = "1.27.0")]
-        pub mod x86 {
+        pub mod x86
+        {
             #[stable(feature = "simd_x86", since = "1.27.0")]
-            pub use self::crate::core_arch::x86::*;
+            pub use crate::core_arch::x86::*;
         }
         
         #[cfg(any(target_arch = "x86_64", doc))] #[doc(cfg(target_arch = "x86_64"))] #[stable(feature = "simd_x86", since = "1.27.0")]
-        pub mod x86_64 {
+        pub mod x86_64
+        {
             #[stable(feature = "simd_x86", since = "1.27.0")]
-            pub use self::crate::core_arch::x86::*;
+            pub use crate::core_arch::x86::*;
             #[stable(feature = "simd_x86", since = "1.27.0")]
-            pub use self::crate::core_arch::x86_64::*;
+            pub use crate::core_arch::x86_64::*;
         }
         
         #[cfg(any(target_arch = "arm", doc))] #[doc(cfg(target_arch = "arm"))] #[unstable(feature = "stdarch_arm_neon_intrinsics", issue = "111800")]
-        pub mod arm {
+        pub mod arm
+        {
             #[unstable(feature = "stdarch_arm_neon_intrinsics", issue = "111800")]
-            pub use self::crate::core_arch::arm::*;
+            pub use crate::core_arch::arm::*;
         }
         
         #[cfg(any(target_arch = "aarch64", target_arch = "arm64ec", doc))] #[doc(cfg(any(target_arch = "aarch64", target_arch = "arm64ec")))] #[stable(feature = "neon_intrinsics", since = "1.59.0")]
-        pub mod aarch64 {
+        pub mod aarch64
+        {
             #[stable(feature = "neon_intrinsics", since = "1.59.0")]
-            pub use self::crate::core_arch::aarch64::*;
+            pub use crate::core_arch::aarch64::*;
         }
         
         #[cfg(any(target_arch = "riscv32", doc))] #[doc(cfg(any(target_arch = "riscv32")))] #[unstable(feature = "riscv_ext_intrinsics", issue = "114544")]
-        pub mod riscv32 {
-            pub use self::crate::core_arch::riscv_shared::*;
-            pub use self::crate::core_arch::riscv32::*;
+        pub mod riscv32
+        {
+            pub use crate::core_arch::riscv_shared::*;
+            pub use crate::core_arch::riscv32::*;
         }
         
         #[cfg(any(target_arch = "riscv64", doc))] #[doc(cfg(any(target_arch = "riscv64")))] #[unstable(feature = "riscv_ext_intrinsics", issue = "114544")]
-        pub mod riscv64 {
-            pub use self::crate::core_arch::riscv64::*;
-
-            pub use self::crate::core_arch::riscv_shared::*;
+        pub mod riscv64
+        {
+            pub use crate::core_arch::riscv64::*;
+            pub use crate::core_arch::riscv_shared::*;
         }
     
     
         #[cfg(any(target_arch = "wasm32", doc))] #[doc(cfg(target_arch = "wasm32"))] #[stable(feature = "simd_wasm32", since = "1.33.0")]
-        pub mod wasm32 {
+        pub mod wasm32
+        {
             #[stable(feature = "simd_wasm32", since = "1.33.0")]
-            pub use self::crate::core_arch::wasm32::*;
+            pub use crate::core_arch::wasm32::*;
         }
         
         #[cfg(any(target_arch = "wasm64", doc))] #[doc(cfg(target_arch = "wasm64"))] #[unstable(feature = "simd_wasm64", issue = "90599")]
-        pub mod wasm64 {
+        pub mod wasm64
+        {
             #[unstable(feature = "simd_wasm64", issue = "90599")]
-            pub use self::crate::core_arch::wasm32::*;
+            pub use crate::core_arch::wasm32::*;
         }
         
         #[cfg(any(target_family = "wasm", doc))] #[doc(cfg(target_family = "wasm"))] #[unstable(feature = "simd_wasm64", issue = "90599")]
-        pub mod wasm {
+        pub mod wasm
+        {
             #[unstable(feature = "simd_wasm64", issue = "90599")]
-            pub use self::crate::core_arch::wasm32::*;
+            pub use crate::core_arch::wasm32::*;
         }
         
         #[cfg(any(target_arch = "mips", doc))] #[doc(cfg(target_arch = "mips"))] #[unstable(feature = "stdarch_mips", issue = "111198")]
-        pub mod mips {
-            pub use self::crate::core_arch::mips::*;
+        pub mod mips
+        {
+            pub use crate::core_arch::mips::*;
         }
         
         #[cfg(any(target_arch = "mips64", doc))] #[doc(cfg(target_arch = "mips64"))] #[unstable(feature = "stdarch_mips", issue = "111198")]
-        pub mod mips64 {
-            pub use self::crate::core_arch::mips::*;
+        pub mod mips64
+        {
+            pub use crate::core_arch::mips::*;
         }
         
         #[cfg(any(target_arch = "powerpc", doc))] #[doc(cfg(target_arch = "powerpc"))] #[unstable(feature = "stdarch_powerpc", issue = "111145")]
-        pub mod powerpc {
-            pub use self::crate::core_arch::powerpc::*;
+        pub mod powerpc
+        {
+            pub use crate::core_arch::powerpc::*;
         }
         
         #[cfg(any(target_arch = "powerpc64", doc))] #[doc(cfg(target_arch = "powerpc64"))] #[unstable(feature = "stdarch_powerpc", issue = "111145")]
-        pub mod powerpc64 {
-            pub use self::crate::core_arch::powerpc64::*;
+        pub mod powerpc64
+        {
+            pub use crate::core_arch::powerpc64::*;
         }
         
         #[cfg(any(target_arch = "nvptx64", doc))] #[doc(cfg(target_arch = "nvptx64"))] #[unstable(feature = "stdarch_nvptx", issue = "111199")]
-        pub mod nvptx {
-            pub use self::crate::core_arch::nvptx::*;
+        pub mod nvptx
+        {
+            pub use crate::core_arch::nvptx::*;
         }
         
         #[cfg(any(target_arch = "loongarch32", doc))] #[doc(cfg(target_arch = "loongarch32"))] #[unstable(feature = "stdarch_loongarch", issue = "117427")]
-        pub mod loongarch32 {
-            pub use self::crate::core_arch::loongarch_shared::*;
-            pub use self::crate::core_arch::loongarch32::*;
+        pub mod loongarch32
+        {
+            pub use crate::core_arch::loongarch_shared::*;
+            pub use crate::core_arch::loongarch32::*;
         }
         
         #[cfg(any(target_arch = "loongarch64", doc))] #[doc(cfg(target_arch = "loongarch64"))] #[unstable(feature = "stdarch_loongarch", issue = "117427")]
-        pub mod loongarch64 {
-            pub use self::crate::core_arch::loongarch_shared::*;
-            pub use self::crate::core_arch::loongarch64::*;
+        pub mod loongarch64
+        {
+            pub use crate::core_arch::loongarch_shared::*;
+            pub use crate::core_arch::loongarch64::*;
         }
         
         #[cfg(any(target_arch = "s390x", doc))] #[doc(cfg(target_arch = "s390x"))] #[unstable(feature = "stdarch_s390x", issue = "135681")]
-        pub mod s390x {
-            pub use self::crate::core_arch::s390x::*;
+        pub mod s390x
+        {
+            pub use crate::core_arch::s390x::*;
         }
     }
+
     #[cfg(any(target_arch = "x86", target_arch = "x86_64", doc))] #[doc(cfg(any(target_arch = "x86", target_arch = "x86_64")))]
     mod x86
     {
@@ -24205,8 +22266,20 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "x86_64", doc))] #[doc(cfg(target_arch = "x86_64"))]
     mod x86_64
+    {
+        /*!
+        `x86_64` intrinsics */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        #[macro_use]
+        mod macros
     {
         /*!
         */
@@ -24218,6 +22291,1099 @@ pub mod core_arch
         */
         
     }
+
+        mod fxsr
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::fxsr::*;
+
+        mod sse
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::sse::*;
+
+        mod sse2
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::sse2::*;
+
+        mod sse41
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::sse41::*;
+
+        mod sse42
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::sse42::*;
+
+        mod xsave
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::xsave::*;
+
+        mod abm
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::abm::*;
+
+        mod avx
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::avx::*;
+
+        mod bmi
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::bmi::*;
+        mod bmi2
+    {
+        /*!
+        */
+        use ::
+        {
+            *,
+        };
+        /*
+        */
+        
+    }
+        #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::bmi2::*;
+
+        mod tbm
+        {
+            /*!
+            Trailing Bit Manipulation (TBM) instruction set.*/
+            use ::
+            {
+                *,
+            };
+            /*
+            */
+            unsafe extern "C"
+            {
+                #[link_name = "llvm.x86.tbm.bextri.u64"] fn bextri_u64(a: u64, control: u64) -> u64;
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(bextr, CONTROL = 0x0404))] #[rustc_legacy_const_generics(1)] #[stable(feature = "simd_x86_updates", since = "1.82.0")]
+            pub fn _bextri_u64<const CONTROL: u64>(a: u64) -> u64 
+            {
+                static_assert_uimm_bits!(CONTROL, 16);
+                unsafe { bextri_u64(a, CONTROL) }
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blcfill))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blcfill_u64(x: u64) -> u64 {
+                x & x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blci))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blci_u64(x: u64) -> u64 {
+                x | !x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blcic))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blcic_u64(x: u64) -> u64 {
+                !x & x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blcmsk))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blcmsk_u64(x: u64) -> u64 {
+                x ^ x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blcs))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blcs_u64(x: u64) -> u64 {
+                x | x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blsfill))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blsfill_u64(x: u64) -> u64 {
+                x | x.wrapping_sub(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(blsic))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _blsic_u64(x: u64) -> u64 {
+                !x | x.wrapping_sub(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(t1mskc))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _t1mskc_u64(x: u64) -> u64 {
+                !x | x.wrapping_add(1)
+            }
+            
+            #[inline] #[target_feature(enable = "tbm")] #[cfg_attr(test, assert_instr(tzmsk))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _tzmsk_u64(x: u64) -> u64 {
+                !x & x.wrapping_sub(1)
+            }
+        } #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::tbm::*;
+
+        mod avx512f
+        {
+            /*!
+            */
+            use ::
+            {
+                core_arch::{simd::*, x86::*, x86_64::*},
+                mem::transmute,
+                *,
+            };
+            /*
+            */
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsd2si))]
+            pub fn _mm_cvtsd_i64(a: __m128d) -> i64 { _mm_cvtsd_si64( a ) }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtss2si))]
+            pub fn _mm_cvtss_i64(a: __m128) -> i64 { _mm_cvtss_si64( a ) }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtss2usi))]
+            pub fn _mm_cvtss_u64(a: __m128) -> u64 { unsafe { vcvtss2usi64(a.as_f32x4( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsd2usi))]
+            pub fn _mm_cvtsd_u64(a: __m128d) -> u64 { unsafe { vcvtsd2usi64(a.as_f64x2( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2ss))]
+            pub fn _mm_cvti64_ss(a: __m128, b: i64) -> __m128 
+            {
+                unsafe 
+                {
+                    let b = b as f32;
+                    simd_insert!(a, 0, b)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2sd))]
+            pub fn _mm_cvti64_sd(a: __m128d, b: i64) -> __m128d 
+            {
+                unsafe 
+                {
+                    let b = b as f64;
+                    simd_insert!(a, 0, b)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtusi2ss))]
+            pub fn _mm_cvtu64_ss(a: __m128, b: u64) -> __m128 
+            {
+                unsafe 
+                {
+                    let b = b as f32;
+                    simd_insert!(a, 0, b)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtusi2sd))]
+            pub fn _mm_cvtu64_sd(a: __m128d, b: u64) -> __m128d 
+            {
+                unsafe 
+                {
+                    let b = b as f64;
+                    simd_insert!(a, 0, b)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttsd2si))]
+            pub fn _mm_cvttsd_i64(a: __m128d) -> i64 { unsafe { vcvttsd2si64(a.as_f64x2( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttsd2usi))]
+            pub fn _mm_cvttsd_u64(a: __m128d) -> u64 { unsafe { vcvttsd2usi64(a.as_f64x2( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttss2si))]
+            pub fn _mm_cvttss_i64(a: __m128) -> i64 { unsafe { vcvttss2si64(a.as_f32x4( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttss2usi))]
+            pub fn _mm_cvttss_u64(a: __m128) -> u64 { unsafe { vcvttss2usi64(a.as_f32x4( ), _MM_FROUND_CUR_DIRECTION ) } }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2sd, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundi64_sd<const ROUNDING: i32>(a: __m128d, b: i64) -> __m128d 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64x2();
+                    let r = vcvtsi2sd64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2sd, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundsi64_sd<const ROUNDING: i32>(a: __m128d, b: i64) -> __m128d 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64x2();
+                    let r = vcvtsi2sd64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2ss, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundi64_ss<const ROUNDING: i32>(a: __m128, b: i64) -> __m128 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32x4();
+                    let r = vcvtsi2ss64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtusi2sd, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundu64_sd<const ROUNDING: i32>(a: __m128d, b: u64) -> __m128d 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64x2();
+                    let r = vcvtusi2sd64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsi2ss, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundsi64_ss<const ROUNDING: i32>(a: __m128, b: i64) -> __m128 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32x4();
+                    let r = vcvtsi2ss64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtusi2ss, ROUNDING = 8))] #[rustc_legacy_const_generics(2)]
+            pub fn _mm_cvt_roundu64_ss<const ROUNDING: i32>(a: __m128, b: u64) -> __m128 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32x4();
+                    let r = vcvtusi2ss64(a, b, ROUNDING);
+                    transmute(r)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsd2si, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundsd_si64<const ROUNDING: i32>(a: __m128d) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64.2();
+                    vcvtsd2si64(a, ROUNDING)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsd2si, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundsd_i64<const ROUNDING: i32>(a: __m128d) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64.2();
+                    vcvtsd2si64(a, ROUNDING)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtsd2usi, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundsd_u64<const ROUNDING: i32>(a: __m128d) -> u64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f64.2();
+                    vcvtsd2usi64(a, ROUNDING)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtss2si, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundss_si64<const ROUNDING: i32>(a: __m128) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32.4();
+                    vcvtss2si64(a, ROUNDING)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtss2si, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundss_i64<const ROUNDING: i32>(a: __m128) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32.4();
+                    vcvtss2si64(a, ROUNDING)
+                }
+            }
+
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvtss2usi, ROUNDING = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvt_roundss_u64<const ROUNDING: i32>(a: __m128) -> u64 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    let a = a.as_f32.4();
+                    vcvtss2usi64(a, ROUNDING)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttsd2si, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundsd_si64<const SAE: i32>(a: __m128d) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f64.2();
+                    vcvttsd2si64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttsd2si, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundsd_i64<const SAE: i32>(a: __m128d) -> i64 
+            {
+                unsafe
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f64.2();
+                    vcvttsd2si64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttsd2usi, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundsd_u64<const SAE: i32>(a: __m128d) -> u64 
+            {
+                unsafe
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f64.2();
+                    vcvttsd2usi64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttss2si, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundss_i64<const SAE: i32>(a: __m128) -> i64 
+            {
+                unsafe 
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f32x4();
+                    vcvttss2si64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttss2si, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundss_si64<const SAE: i32>(a: __m128) -> i64 
+            {
+                unsafe 
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f32x4();
+                    vcvttss2si64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512f")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")] #[cfg_attr(test, assert_instr(vcvttss2usi, SAE = 8))] #[rustc_legacy_const_generics(1)]
+            pub fn _mm_cvtt_roundss_u64<const SAE: i32>(a: __m128) -> u64 
+            {
+                unsafe 
+                {
+                    static_assert_sae!(SAE);
+                    let a = a.as_f32x4();
+                    vcvttss2usi64(a, SAE)
+                }
+            }
+
+            #[allow(improper_ctypes)]
+            unsafe extern "C" 
+            {
+                #[link_name = "llvm.x86.avx512.vcvtss2si64"] fn vcvtss2si64(a: f32x4, rounding: i32) -> i64;
+                #[link_name = "llvm.x86.avx512.vcvtss2usi64"] fn vcvtss2usi64(a: f32x4, rounding: i32) -> u64;
+                #[link_name = "llvm.x86.avx512.vcvtsd2si64"] fn vcvtsd2si64(a: f64x2, rounding: i32) -> i64;
+                #[link_name = "llvm.x86.avx512.vcvtsd2usi64"] fn vcvtsd2usi64(a: f64x2, rounding: i32) -> u64;
+                #[link_name = "llvm.x86.avx512.cvtsi2ss64"] fn vcvtsi2ss64(a: f32x4, b: i64, rounding: i32) -> f32x4;
+                #[link_name = "llvm.x86.avx512.cvtsi2sd64"] fn vcvtsi2sd64(a: f64x2, b: i64, rounding: i32) -> f64x2;
+                #[link_name = "llvm.x86.avx512.cvtusi642ss"] fn vcvtusi2ss64(a: f32x4, b: u64, rounding: i32) -> f32x4;
+                #[link_name = "llvm.x86.avx512.cvtusi642sd"] fn vcvtusi2sd64(a: f64x2, b: u64, rounding: i32) -> f64x2;
+                #[link_name = "llvm.x86.avx512.cvttss2si64"] fn vcvttss2si64(a: f32x4, rounding: i32) -> i64;
+                #[link_name = "llvm.x86.avx512.cvttss2usi64"] fn vcvttss2usi64(a: f32x4, rounding: i32) -> u64;
+                #[link_name = "llvm.x86.avx512.cvttsd2si64"] fn vcvttsd2si64(a: f64x2, rounding: i32) -> i64;
+                #[link_name = "llvm.x86.avx512.cvttsd2usi64"] fn vcvttsd2usi64(a: f64x2, rounding: i32) -> u64;
+            }
+        } #[stable(feature = "stdarch_x86_avx512", since = "1.89")] pub use self::avx512f::*;
+
+        mod avx512bw
+        {
+            /*!
+            */
+            use ::
+            {
+                *,
+            };
+            /*
+            */
+            #[inline] #[target_feature(enable = "avx512bw")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")]
+            pub fn _cvtmask64_u64(a: __mmask64) -> u64 { a }
+            
+            #[inline] #[target_feature(enable = "avx512bw")] #[stable(feature = "stdarch_x86_avx512", since = "1.89")]
+            pub fn _cvtu64_mask64(a: u64) -> __mmask64 { a }
+        } #[stable(feature = "stdarch_x86_avx512", since = "1.89")] pub use self::avx512bw::*;
+
+        mod bswap
+        {
+            /*!
+            */
+            use ::
+            {
+                *,
+            };
+            /*
+            */
+            #[inline] #[cfg_attr(test, assert_instr(bswap))] #[stable(feature = "simd_x86", since = "1.27.0")]
+            pub fn _bswap64(x: i64) -> i64 { x.swap_bytes() }
+        } #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::bswap::*;
+
+        mod rdrand
+        {
+            /*!
+            RDRAND and RDSEED instructions for returning random numbers from an Intel on-chip 
+            hardware random number generator which has been seeded by an on-chip entropy source.*/
+            use ::
+            {
+                *,
+            };
+            /*
+            */
+            #[allow(improper_ctypes)]
+            unsafe extern "unadjusted"
+            {
+                #[link_name = "llvm.x86.rdrand.64"] fn x86_rdrand64_step() -> (u64, i32);
+                #[link_name = "llvm.x86.rdseed.64"] fn x86_rdseed64_step() -> (u64, i32);
+            }
+        } #[stable(feature = "simd_x86", since = "1.27.0")] pub use self::rdrand::*;
+
+        mod cmpxchg16b
+        {
+            /*!
+            */
+            use ::
+            {
+                sync::atomic::{ Ordering },
+                *,
+            };
+            /*
+            */
+            #[inline] #[cfg_attr(miri, track_caller)] #[cfg_attr(test, assert_instr(cmpxchg16b, success = Ordering::SeqCst, failure = Ordering::SeqCst))] #[target_feature(enable = "cmpxchg16b")] #[stable(feature = "cmpxchg16b_intrinsic", since = "1.67.0")]
+            pub unsafe fn cmpxchg16b
+            (
+                dst: *mut u128,
+                old: u128,
+                new: u128,
+                success: Ordering,
+                failure: Ordering,
+            ) -> u128
+            {
+                debug_assert!(dst.addr().is_multiple_of(16));
+                let res = crate::sync::atomic::atomic_compare_exchange(dst, old, new, success, failure);
+                res.unwrap_or_else(|x| x)
+            }
+        }
+
+        #[stable(feature = "cmpxchg16b_intrinsic", since = "1.67.0")] pub use self::cmpxchg16b::*;
+
+        mod adx
+        {
+            /*!
+            */
+            use ::
+            {
+                *,
+            };
+            /*
+            */
+            #[allow(improper_ctypes)]
+            unsafe extern "unadjusted" 
+            {
+                #[link_name = "llvm.x86.addcarry.64"] fn llvm_addcarry_u64(a: u8, b: u64, c: u64) -> (u8, u64);
+                #[link_name = "llvm.x86.subborrow.64"] fn llvm_subborrow_u64(a: u8, b: u64, c: u64) -> (u8, u64);
+            }
+            
+            #[inline] #[cfg_attr(test, assert_instr(adc))] #[stable(feature = "simd_x86_adx", since = "1.33.0")]
+            pub fn _addcarry_u64(c_in: u8, a: u64, b: u64, out: &mut u64) -> u8 
+            {
+                let (a, b) = unsafe { llvm_addcarry_u64(c_in, a, b) };
+                *out = b;
+                a
+            }
+            
+            #[inline] #[target_feature(enable = "adx")] #[cfg_attr(test, assert_instr(adc))] #[stable(feature = "simd_x86_adx", since = "1.33.0")]
+            pub fn _addcarryx_u64(c_in: u8, a: u64, b: u64, out: &mut u64) -> u8 
+            { _addcarry_u64( c_in, a, b, out ) }
+            
+            #[inline] #[cfg_attr(test, assert_instr(sbb))] #[stable(feature = "simd_x86_adx", since = "1.33.0")]
+            pub fn _subborrow_u64(c_in: u8, a: u64, b: u64, out: &mut u64) -> u8 
+            {
+                let (a, b) = unsafe { llvm_subborrow_u64(c_in, a, b) };
+                *out = b;
+                a
+            }
+        } #[stable(feature = "simd_x86_adx", since = "1.33.0")] pub use self::adx::*;
+
+        mod bt
+        {
+            /*!
+            */
+            use ::
+            {
+                arch::{ asm },
+                *,
+            };
+            /*
+            */
+            #[cfg(target_pointer_width = "32")]
+            macro_rules! bt
+            {
+                ($inst:expr) => { concat!($inst, " {b}, ({p:e})") };
+            }
+
+            #[cfg(target_pointer_width = "64")]
+            macro_rules! bt
+            {
+                ($inst:expr) => { concat!($inst, " {b}, ({p})") };
+            }
+            
+            #[inline] #[cfg_attr(test, assert_instr(bt))] #[stable(feature = "simd_x86_bittest", since = "1.55.0")]
+            pub unsafe fn _bittest64(p: *const i64, b: i64) -> u8
+            {
+                let r: u8;
+                asm!
+                (
+                    bt!("btq"),
+                    "setc {r}",
+                    p = in(reg) p,
+                    b = in(reg) b,
+                    r = out(reg_byte) r,
+                    options(readonly, nostack, pure, att_syntax)
+                );
+                r
+            }
+            
+            #[inline] #[cfg_attr(test, assert_instr(bts))] #[stable(feature = "simd_x86_bittest", since = "1.55.0")]
+            pub unsafe fn _bittestandset64(p: *mut i64, b: i64) -> u8 {
+                let r: u8;
+                asm!(
+                    bt!("btsq"),
+                    "setc {r}",
+                    p = in(reg) p,
+                    b = in(reg) b,
+                    r = out(reg_byte) r,
+                    options(nostack, att_syntax)
+                );
+                r
+            }
+            
+            #[inline] #[cfg_attr(test, assert_instr(btr))] #[stable(feature = "simd_x86_bittest", since = "1.55.0")]
+            pub unsafe fn _bittestandreset64(p: *mut i64, b: i64) -> u8 {
+                let r: u8;
+                asm!(
+                    bt!("btrq"),
+                    "setc {r}",
+                    p = in(reg) p,
+                    b = in(reg) b,
+                    r = out(reg_byte) r,
+                    options(nostack, att_syntax)
+                );
+                r
+            }
+            
+            #[inline] #[cfg_attr(test, assert_instr(btc))] #[stable(feature = "simd_x86_bittest", since = "1.55.0")]
+            pub unsafe fn _bittestandcomplement64(p: *mut i64, b: i64) -> u8 
+            {
+                let r: u8;
+                asm!(
+                    bt!("btcq"),
+                    "setc {r}",
+                    p = in(reg) p,
+                    b = in(reg) b,
+                    r = out(reg_byte) r,
+                    options(nostack, att_syntax)
+                );
+                r
+            }            
+        } #[stable(feature = "simd_x86_bittest", since = "1.55.0")] pub use self::bt::*;
+
+        mod avx512fp16
+        {
+            /*!
+            */
+            use ::
+            {
+                core_arch::x86::*,
+                *,
+            };
+            /*
+            */
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsi2sh))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvti64_sh(a: __m128h, b: i64) -> __m128h
+            { unsafe { vcvtsi642sh( a, b, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsi2sh, ROUNDING = 8))] #[rustc_legacy_const_generics(2)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvt_roundi64_sh<const ROUNDING: i32>(a: __m128h, b: i64) -> __m128h 
+            {
+                unsafe
+                {
+                    static_assert_rounding!(ROUNDING);
+                    vcvtsi642sh(a, b, ROUNDING)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtusi2sh))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvtu64_sh(a: __m128h, b: u64) -> __m128h
+            { unsafe { vcvtusi642sh( a, b, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtusi2sh, ROUNDING = 8))] #[rustc_legacy_const_generics(2)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvt_roundu64_sh<const ROUNDING: i32>(a: __m128h, b: u64) -> __m128h
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    vcvtusi642sh(a, b, ROUNDING)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsh2si))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvtsh_i64(a: __m128h) -> i64 
+            { unsafe { vcvtsh2si64( a, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsh2si, ROUNDING = 8))] #[rustc_legacy_const_generics(1)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvt_roundsh_i64<const ROUNDING: i32>(a: __m128h) -> i64 
+            {
+                unsafe {
+                    static_assert_rounding!(ROUNDING);
+                    vcvtsh2si64(a, ROUNDING)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsh2usi))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvtsh_u64(a: __m128h) -> u64 
+            { unsafe { vcvtsh2usi64( a, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvtsh2usi, ROUNDING = 8))] #[rustc_legacy_const_generics(1)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvt_roundsh_u64<const ROUNDING: i32>(a: __m128h) -> u64 
+            {
+                unsafe 
+                {
+                    static_assert_rounding!(ROUNDING);
+                    vcvtsh2usi64(a, ROUNDING)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvttsh2si))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvttsh_i64(a: __m128h) -> i64 
+            { unsafe { vcvttsh2si64( a, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvttsh2si, SAE = 8))] #[rustc_legacy_const_generics(1)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvtt_roundsh_i64<const SAE: i32>(a: __m128h) -> i64 
+            {
+                unsafe {
+                    static_assert_sae!(SAE);
+                    vcvttsh2si64(a, SAE)
+                }
+            }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvttsh2usi))] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvttsh_u64(a: __m128h) -> u64 
+            { unsafe { vcvttsh2usi64( a, _MM_FROUND_CUR_DIRECTION ) } }
+            
+            #[inline] #[target_feature(enable = "avx512fp16")] #[cfg_attr(test, assert_instr(vcvttsh2usi, SAE = 8))] #[rustc_legacy_const_generics(1)] #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")]
+            pub fn _mm_cvtt_roundsh_u64<const SAE: i32>(a: __m128h) -> u64 
+            {
+                unsafe 
+                {
+                    static_assert_sae!(SAE);
+                    vcvttsh2usi64(a, SAE)
+                }
+            }
+
+            #[allow(improper_ctypes)]
+            unsafe extern "C"
+            {
+                #[link_name = "llvm.x86.avx512fp16.vcvtsi642sh"] fn vcvtsi642sh(a: __m128h, b: i64, rounding: i32) -> __m128h;
+                #[link_name = "llvm.x86.avx512fp16.vcvtusi642sh"] fn vcvtusi642sh(a: __m128h, b: u64, rounding: i32) -> __m128h;
+                #[link_name = "llvm.x86.avx512fp16.vcvtsh2si64"] fn vcvtsh2si64(a: __m128h, rounding: i32) -> i64;
+                #[link_name = "llvm.x86.avx512fp16.vcvtsh2usi64"] fn vcvtsh2usi64(a: __m128h, rounding: i32) -> u64;
+                #[link_name = "llvm.x86.avx512fp16.vcvttsh2si64"] fn vcvttsh2si64(a: __m128h, sae: i32) -> i64;
+                #[link_name = "llvm.x86.avx512fp16.vcvttsh2usi64"] fn vcvttsh2usi64(a: __m128h, sae: i32) -> u64;
+            }
+        } #[unstable(feature = "stdarch_x86_avx512_f16", issue = "127213")] pub use self::avx512fp16::*;
+
+        mod amx
+        {
+            /*!
+            */
+            use ::
+            {
+                core_arch::{simd::*, x86::*},
+                *,
+            };
+            /*
+            */
+            #[inline] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(ldtilecfg))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_loadconfig(mem_addr: *const u8) { ldtilecfg(mem_addr); }
+            
+            #[inline] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(sttilecfg))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_storeconfig(mem_addr: *mut u8) { sttilecfg(mem_addr); }
+            
+            #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(tileloadd, DST = 0))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_loadd<const DST: i32>(base: *const u8, stride: usize) 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                tileloadd64(DST as i8, base, stride);
+            }
+            
+            #[inline] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(tilerelease))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_release() { tilerelease(); }
+            
+            #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(tilestored, DST = 0))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_stored<const DST: i32>(base: *mut u8, stride: usize) {
+                static_assert_uimm_bits!(DST, 3);
+                tilestored64(DST as i8, base, stride);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(tileloaddt1, DST = 0))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_stream_loadd<const DST: i32>(base: *const u8, stride: usize) 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                tileloaddt164(DST as i8, base, stride);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-tile")] #[cfg_attr(test, assert_instr(tilezero, DST = 0))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_zero<const DST: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                tilezero(DST as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-bf16")] #[cfg_attr(test, assert_instr(tdpbf16ps, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbf16ps<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbf16ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-int8")] #[cfg_attr(test, assert_instr(tdpbssd, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbssd<const DST: i32, const A: i32, const B: i32>() {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbssd(DST as i8, A as i8, B as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-int8")] #[cfg_attr(test, assert_instr(tdpbsud, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbsud<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbsud(DST as i8, A as i8, B as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-int8")] #[cfg_attr(test, assert_instr(tdpbusd, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbusd<const DST: i32, const A: i32, const B: i32>()
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbusd(DST as i8, A as i8, B as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-int8")] #[cfg_attr(test, assert_instr(tdpbuud, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbuud<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbuud(DST as i8, A as i8, B as i8);
+            }
+            
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-fp16")] #[cfg_attr(test, assert_instr(tdpfp16ps, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpfp16ps<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpfp16ps(DST as i8, A as i8, B as i8);
+            }
+
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-complex")] #[cfg_attr(test, assert_instr(tcmmimfp16ps, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_cmmimfp16ps<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tcmmimfp16ps(DST as i8, A as i8, B as i8);
+            }
+
+            #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-complex")] #[cfg_attr(test, assert_instr(tcmmrlfp16ps, DST = 0, A = 1, B = 2))] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_cmmrlfp16ps<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tcmmrlfp16ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tdpbf8ps, DST = 0, A = 1, B = 2)
+            )] #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-fp8")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbf8ps<const DST: i32, const A: i32, const B: i32>() 
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbf8ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tdpbhf8ps, DST = 0, A = 1, B = 2)
+            )] #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-fp8")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dpbhf8ps<const DST: i32, const A: i32, const B: i32>()
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdpbhf8ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tdphbf8ps, DST = 0, A = 1, B = 2)
+            )] #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-fp8")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dphbf8ps<const DST: i32, const A: i32, const B: i32>()
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdphbf8ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tdphf8ps, DST = 0, A = 1, B = 2)
+            )] #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-fp8")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_dphf8ps<const DST: i32, const A: i32, const B: i32>()
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tdphf8ps(DST as i8, A as i8, B as i8);
+            }
+
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tileloaddrs, DST = 0)
+            )] #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-movrs")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_loaddrs<const DST: i32>(base: *const u8, stride: usize)
+            {
+                static_assert_uimm_bits!(DST, 3);
+                tileloaddrs64(DST as i8, base, stride);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tileloaddrst1, DST = 0)
+            )] #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-movrs")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_stream_loaddrs<const DST: i32>(base: *const u8, stride: usize) {
+                static_assert_uimm_bits!(DST, 3);
+                tileloaddrst164(DST as i8, base, stride);
+            }
+
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tmmultf32ps, DST = 0, A = 1, B = 2)
+            )] #[inline] #[rustc_legacy_const_generics(0, 1, 2)] #[target_feature(enable = "amx-tf32")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_mmultf32ps<const DST: i32, const A: i32, const B: i32>()
+            {
+                static_assert_uimm_bits!(DST, 3);
+                static_assert_uimm_bits!(A, 3);
+                static_assert_uimm_bits!(B, 3);
+                tmmultf32ps(DST as i8, A as i8, B as i8);
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tcvtrowd2ps, TILE = 0)
+            )] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_cvtrowd2ps<const TILE: i32>(row: u32) -> __m512
+            {
+                static_assert_uimm_bits!(TILE, 3);
+                tcvtrowd2ps(TILE as i8, row).as_m512()
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tcvtrowps2phh, TILE = 0)
+            )] #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-avx512,avx10.2")] 
+            #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-avx512,avx10.2")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_cvtrowps2phh<const TILE: i32>(row: u32) -> __m512h
+            {
+                static_assert_uimm_bits!(TILE, 3);
+                tcvtrowps2phh(TILE as i8, row).as_m512h()
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tcvtrowps2phl, TILE = 0)
+            )] #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-avx512,avx10.2")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_cvtrowps2phl<const TILE: i32>(row: u32) -> __m512h
+            {
+                static_assert_uimm_bits!(TILE, 3);
+                tcvtrowps2phl(TILE as i8, row).as_m512h()
+            }
+            
+            #[cfg_attr
+            (
+                all(test, any(target_os = "linux", target_env = "msvc")),
+                assert_instr(tilemovrow, TILE = 0)
+            )] #[inline] #[rustc_legacy_const_generics(0)] #[target_feature(enable = "amx-avx512,avx10.2")] #[unstable(feature = "x86_amx_intrinsics", issue = "126622")]
+            pub unsafe fn _tile_movrow<const TILE: i32>(row: u32) -> __m512i
+            {
+                static_assert_uimm_bits!(TILE, 3);
+                tilemovrow(TILE as i8, row).as_m512i()
+            }
+
+            #[allow(improper_ctypes)]
+            unsafe extern "C"
+            {
+                #[link_name = "llvm.x86.ldtilecfg"] fn ldtilecfg(mem_addr: *const u8);
+                #[link_name = "llvm.x86.sttilecfg"] fn sttilecfg(mem_addr: *mut u8);
+                #[link_name = "llvm.x86.tileloadd64"] fn tileloadd64(dst: i8, base: *const u8, stride: usize);
+                #[link_name = "llvm.x86.tileloaddt164"] fn tileloaddt164(dst: i8, base: *const u8, stride: usize);
+                #[link_name = "llvm.x86.tilerelease"] fn tilerelease();
+                #[link_name = "llvm.x86.tilestored64"] fn tilestored64(dst: i8, base: *mut u8, stride: usize);
+                #[link_name = "llvm.x86.tilezero"] fn tilezero(dst: i8);
+                #[link_name = "llvm.x86.tdpbf16ps"] fn tdpbf16ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbuud"] fn tdpbuud(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbusd"] fn tdpbusd(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbsud"] fn tdpbsud(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbssd"] fn tdpbssd(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpfp16ps"] fn tdpfp16ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tcmmimfp16ps"] fn tcmmimfp16ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tcmmrlfp16ps"] fn tcmmrlfp16ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbf8ps"] fn tdpbf8ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdpbhf8ps"] fn tdpbhf8ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdphbf8ps"] fn tdphbf8ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tdphf8ps"] fn tdphf8ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tileloaddrs64"] fn tileloaddrs64(dst: i8, base: *const u8, stride: usize);
+                #[link_name = "llvm.x86.tileloaddrst164"] fn tileloaddrst164(dst: i8, base: *const u8, stride: usize);
+                #[link_name = "llvm.x86.tmmultf32ps"] fn tmmultf32ps(dst: i8, a: i8, b: i8);
+                #[link_name = "llvm.x86.tcvtrowd2ps"] fn tcvtrowd2ps(tile: i8, row: u32) -> f32x16;
+                #[link_name = "llvm.x86.tcvtrowps2phh"] fn tcvtrowps2phh(tile: i8, row: u32) -> f16x32;
+                #[link_name = "llvm.x86.tcvtrowps2phl"] fn tcvtrowps2phl(tile: i8, row: u32) -> f16x32;
+                #[link_name = "llvm.x86.tilemovrow"] fn tilemovrow(tile: i8, row: u32) -> i32x16;
+            }
+        } #[unstable(feature = "x86_amx_intrinsics", issue = "126622")] pub use self::amx::*;        
+    }
+
     #[cfg(any(target_arch = "aarch64", target_arch = "arm64ec", doc))] #[doc(cfg(any(target_arch = "aarch64", target_arch = "arm64ec")))]
     mod aarch64
     {
@@ -24231,6 +23397,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "arm", doc))] #[doc(cfg(any(target_arch = "arm")))]
     mod arm
     {
@@ -24244,6 +23411,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "riscv32", doc))] #[doc(cfg(any(target_arch = "riscv32")))]
     mod riscv32
     {
@@ -24257,6 +23425,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "riscv64", doc))] #[doc(cfg(any(target_arch = "riscv64")))]
     mod riscv64
     {
@@ -24270,6 +23439,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_family = "wasm", doc))] #[doc(cfg(target_family = "wasm"))]
     mod wasm32
     {
@@ -24283,6 +23453,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "mips", target_arch = "mips64", doc))] #[doc(cfg(any(target_arch = "mips", target_arch = "mips64")))]
     mod mips
     {
@@ -24296,6 +23467,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "powerpc", target_arch = "powerpc64", doc))] #[doc(cfg(any(target_arch = "powerpc", target_arch = "powerpc64")))]
     mod powerpc
     {
@@ -24309,6 +23481,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "powerpc64", doc))] #[doc(cfg(target_arch = "powerpc64"))]
     mod powerpc64
     {
@@ -24322,6 +23495,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "nvptx64", doc))] #[doc(cfg(target_arch = "nvptx64"))]
     mod nvptx
     {
@@ -24335,6 +23509,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "loongarch32", doc))] #[doc(cfg(target_arch = "loongarch32"))]
     mod loongarch32
     {
@@ -24348,6 +23523,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "loongarch64", doc))] #[doc(cfg(target_arch = "loongarch64"))]
     mod loongarch64
     {
@@ -24361,6 +23537,7 @@ pub mod core_arch
         */
         
     }
+
     #[cfg(any(target_arch = "s390x", doc))] #[doc(cfg(target_arch = "s390x"))]
     mod s390x
     {
@@ -24386,7 +23563,7 @@ pub mod arch
         *
     };
     /*
-    pub use self::crate::core_arch::arch::*;
+    pub use crate::core_arch::arch::*;
     */
     
     #[stable(feature = "asm", since = "1.59.0")] pub macro asm("assembly template", $(operands,)* $(options($(option),*))?) {
@@ -24402,9 +23579,7 @@ pub mod arch
     }
 
     #[unstable(feature = "breakpoint", issue = "133724")] #[inline(always)]
-    pub fn breakpoint() {
-        core::intrinsics::breakpoint();
-    }
+    pub fn breakpoint() { core::intrinsics::breakpoint(); }
 }
 
 #[allow(missing_debug_implementations, dead_code, unsafe_op_in_unsafe_fn)]
@@ -24844,7 +24019,7 @@ pub mod core_simd
             } => {
                 $(
                     $(
-                    #[doc = concat!("A SIMD vector with ", number!($num_elements), " element", plural!($num_elements), " of type [`", stringify!($element_ty), "`].")]
+                    
                     #[allow(non_camel_case_types)]
                     pub type $alias = $crate::simd::Simd<$element_ty, $num_elements>;
                     )*
@@ -24863,8 +24038,8 @@ pub mod core_simd
             } => {
                 $(
                     $(
-                    #[doc = concat!("A SIMD mask with ", number!($num_elements), " element", plural!($num_elements), " for vectors with ", $size, " element types.")]
-                    ///
+                    
+
                     #[doc = concat!(
                         "The layout of this type is unspecified, and may change between platforms and/or Rust versions, and code should not assume that it is equivalent to `[",
                         stringify!($element_ty), "; ", $num_elements, "]`."
@@ -25270,18 +24445,14 @@ pub mod core_simd
                 T: MaskElement + PartialEq,
                 LaneCount<N>: SupportedLaneCount,
             {
-                #[inline] fn eq(&self, other: &Self) -> bool {
-                    self.0.eq(&other.0)
-                }
+                #[inline] fn eq(&self, other: &Self) -> bool { self.0.eq( &other.0 ) }
             }
             
             impl<T, const N: usize> PartialOrd for Mask<T, N> where
                 T: MaskElement + PartialOrd,
                 LaneCount<N>: SupportedLaneCount,
             {
-                #[inline] fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
-                    self.0.partial_cmp(&other.0)
-                }
+                #[inline] fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> { self.0.partial_cmp( &other.0 ) }
             }
             
             impl<T, const N: usize> Eq for Mask<T, N> where
@@ -25294,9 +24465,7 @@ pub mod core_simd
             T: MaskElement + Ord,
             LaneCount<N>: SupportedLaneCount,
             {
-                #[inline] fn cmp(&self, other: &Self) -> core::cmp::Ordering {
-                    self.0.cmp(&other.0)
-                }
+                #[inline] fn cmp(&self, other: &Self) -> core::cmp::Ordering { self.0.cmp( &other.0 ) }
             }
 
             pub(crate) trait ReverseBits
@@ -25313,10 +24482,7 @@ pub mod core_simd
                         fn reverse_bits(self, n: usize) -> Self {
                             let rev = <$int>::reverse_bits(self);
                             let bitsize = size_of::<$int>() * 8;
-                            if n < bitsize {
-
-                                rev >> (bitsize - n)
-                            } else {
+                            if n < bitsize { rev >> ( bitsize - n ) } else {
                                 rev
                             }
                         }
@@ -25332,14 +24498,10 @@ pub mod core_simd
                 LaneCount<N>: SupportedLaneCount,
             {
                 #[inline] #[must_use = "method returns a new mask and does not mutate the original value"]
-                pub(crate) fn splat(value: bool) -> Self {
-                    Self(Simd::splat(if value { T::TRUE } else { T::FALSE }))
-                }
+                pub(crate) fn splat(value: bool) -> Self { Self(Simd::splat( if value { T::TRUE } else { T::FALSE }) ) }
                 
                 #[inline] #[must_use = "method returns a new bool and does not mutate the original value"]
-                pub(crate) unsafe fn test_unchecked(&self, lane: usize) -> bool {
-                    T::eq(self.0[lane], T::TRUE)
-                }
+                pub(crate) unsafe fn test_unchecked(&self, lane: usize) -> bool { T::eq( self.0[lane], T::TRUE ) }
                 
                 #[inline] pub(crate) unsafe fn set_unchecked(&mut self, lane: usize, value: bool) {
                     self.0[lane] = if value { T::TRUE } else { T::FALSE }
@@ -25351,9 +24513,7 @@ pub mod core_simd
                 }
                 
                 #[inline] #[must_use = "method returns a new mask and does not mutate the original value"]
-                pub(crate) unsafe fn from_int_unchecked(value: Simd<T, N>) -> Self {
-                    Self(value)
-                }
+                pub(crate) unsafe fn from_int_unchecked(value: Simd<T, N>) -> Self { Self( value ) }
                 
                 #[inline] #[must_use = "method returns a new mask and does not mutate the original value"]
                 pub(crate) fn convert<U>(self) -> Mask<U, N> where
@@ -25367,9 +24527,7 @@ pub mod core_simd
 
                     let bitmask: U = unsafe { core::intrinsics::simd::simd_bitmask(resized) };
 
-                    if cfg!(target_endian = "big") {
-                        bitmask.reverse_bits(M)
-                    } else {
+                    if cfg!(target_endian = "big") { bitmask.reverse_bits( M ) } else {
                         bitmask
                     }
                 }
@@ -25378,9 +24536,7 @@ pub mod core_simd
                 LaneCount<M>: SupportedLaneCount,
                 {
 
-                    let bitmask = if cfg!(target_endian = "big") {
-                        bitmask.reverse_bits(M)
-                    } else {
+                    let bitmask = if cfg!(target_endian = "big") { bitmask.reverse_bits( M ) } else {
                         bitmask
                     };
 
@@ -25553,13 +24709,9 @@ pub mod core_simd
             T: MaskElement,
             LaneCount<N>: SupportedLaneCount,
         {
-            #[inline]
-            pub fn splat(value: bool) -> Self {
-                Self(mask_impl::Mask::splat(value))
-            }
+            #[inline] pub fn splat(value: bool) -> Self { Self(mask_impl::Mask::splat( value) ) }
 
-            #[inline]
-            pub fn from_array(array: [bool; N]) -> Self {
+            #[inline] pub fn from_array(array: [bool; N]) -> Self {
     
                 unsafe {
                     let bytes: [u8; N] = mem::transmute_copy(&array);
@@ -25569,8 +24721,7 @@ pub mod core_simd
                 }
             }
 
-            #[inline]
-            pub fn to_array(self) -> [bool; N] {
+            #[inline] pub fn to_array(self) -> [bool; N] {
     
                 unsafe {
                     let mut bytes: Simd<i8, N> = core::intrinsics::simd::simd_cast(self.to_int());
@@ -25602,9 +24753,7 @@ pub mod core_simd
             }
 
             #[inline] #[must_use = "method returns a new mask and does not mutate the original value"]
-            pub fn cast<U: MaskElement>(self) -> Mask<U, N> {
-                Mask(self.0.convert())
-            }
+            pub fn cast<U: MaskElement>(self) -> Mask<U, N> { Mask(self.0.convert( ) ) }
 
             #[inline] #[must_use = "method returns a new bool and does not mutate the original value"]
             pub unsafe fn test_unchecked(&self, index: usize) -> bool { unsafe { self.0.test_unchecked(index) } }
@@ -25617,8 +24766,7 @@ pub mod core_simd
                 unsafe { self.test_unchecked(index) }
             }
 
-            #[inline]
-            pub unsafe fn set_unchecked(&mut self, index: usize, value: bool) {
+            #[inline] pub unsafe fn set_unchecked(&mut self, index: usize, value: bool) {
 
                 unsafe {
                     self.0.set_unchecked(index, value);
@@ -25650,9 +24798,7 @@ pub mod core_simd
             }
 
             #[inline] #[must_use = "method returns a new mask and does not mutate the original value"]
-            pub fn from_bitmask(bitmask: u64) -> Self {
-                Self(mask_impl::Mask::from_bitmask_integer(bitmask))
-            }
+            pub fn from_bitmask(bitmask: u64) -> Self { Self(mask_impl::Mask::from_bitmask_integer( bitmask) ) }
 
             #[inline] #[must_use = "method returns the index and does not mutate the original value"]
             pub fn first_set(self) -> Option<usize> {
@@ -25686,9 +24832,7 @@ pub mod core_simd
                 let min_index: T = unsafe { core::mem::transmute_copy(&min_index) };
                 if min_index.eq(T::TRUE) {
                     None
-                } else {
-                    Some(min_index.to_usize())
-                }
+                } else { Some(min_index.to_usize( ) ) }
             }
         }
 
@@ -25697,9 +24841,7 @@ pub mod core_simd
             LaneCount<N>: SupportedLaneCount,
         {
             #[inline]
-            fn from(array: [bool; N]) -> Self {
-                Self::from_array(array)
-            }
+            fn from(array: [bool; N]) -> Self { Self::from_array( array ) }
         }
         
         impl<T, const N: usize> From<Mask<T, N>> for [bool; N] where
@@ -25717,9 +24859,7 @@ pub mod core_simd
             LaneCount<N>: SupportedLaneCount,
         {
             #[inline]
-            fn default() -> Self {
-                Self::splat(false)
-            }
+            fn default() -> Self { Self::splat( false ) }
         }
         
         impl<T, const N: usize> PartialEq for Mask<T, N> where
@@ -25737,9 +24877,7 @@ pub mod core_simd
             LaneCount<N>: SupportedLaneCount,
         {
             #[inline]
-            fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
-                self.0.partial_cmp(&other.0)
-            }
+            fn partial_cmp(&self, other: &Self) -> Option<Ordering> { self.0.partial_cmp( &other.0 ) }
         }
         
         impl<T, const N: usize> fmt::Debug for Mask<T, N> where
@@ -25760,9 +24898,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitand(self, rhs: Self) -> Self {
-                Self(self.0 & rhs.0)
-            }
+            fn bitand(self, rhs: Self) -> Self { Self( self.0 & rhs.0 ) }
         }
         
         impl<T, const N: usize> core::ops::BitAnd<bool> for Mask<T, N> where
@@ -25771,9 +24907,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitand(self, rhs: bool) -> Self {
-                self & Self::splat(rhs)
-            }
+            fn bitand(self, rhs: bool) -> Self { self & Self::splat( rhs ) }
         }
         
         impl<T, const N: usize> core::ops::BitAnd<Mask<T, N>> for bool where
@@ -25793,9 +24927,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitor(self, rhs: Self) -> Self {
-                Self(self.0 | rhs.0)
-            }
+            fn bitor(self, rhs: Self) -> Self { Self( self.0 | rhs.0 ) }
         }
         
         impl<T, const N: usize> core::ops::BitOr<bool> for Mask<T, N> where
@@ -25804,9 +24936,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitor(self, rhs: bool) -> Self {
-                self | Self::splat(rhs)
-            }
+            fn bitor(self, rhs: bool) -> Self { self | Self::splat( rhs ) }
         }
         
         impl<T, const N: usize> core::ops::BitOr<Mask<T, N>> for bool where
@@ -25826,9 +24956,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitxor(self, rhs: Self) -> Self::Output {
-                Self(self.0 ^ rhs.0)
-            }
+            fn bitxor(self, rhs: Self) -> Self::Output { Self( self.0 ^ rhs.0 ) }
         }
         
         impl<T, const N: usize> core::ops::BitXor<bool> for Mask<T, N> where
@@ -25837,9 +24965,7 @@ pub mod core_simd
         {
             type Output = Self;
             #[inline]
-            fn bitxor(self, rhs: bool) -> Self::Output {
-                self ^ Self::splat(rhs)
-            }
+            fn bitxor(self, rhs: bool) -> Self::Output { self ^ Self::splat( rhs ) }
         }
         
         impl<T, const N: usize> core::ops::BitXor<Mask<T, N>> for bool where
@@ -25859,9 +24985,7 @@ pub mod core_simd
         {
             type Output = Mask<T, N>;
             #[inline]
-            fn not(self) -> Self::Output {
-                Self(!self.0)
-            }
+            fn not(self) -> Self::Output { Self( !self.0 ) }
         }
         
         impl<T, const N: usize> core::ops::BitAndAssign for Mask<T, N> where
@@ -25879,9 +25003,7 @@ pub mod core_simd
             LaneCount<N>: SupportedLaneCount,
         {
             #[inline]
-            fn bitand_assign(&mut self, rhs: bool) {
-                *self &= Self::splat(rhs);
-            }
+            fn bitand_assign(&mut self, rhs: bool) { *self &= Self::splat(rhs); }
         }
         
         impl<T, const N: usize> core::ops::BitOrAssign for Mask<T, N> where
@@ -25899,9 +25021,7 @@ pub mod core_simd
         LaneCount<N>: SupportedLaneCount
         {
             #[inline]
-            fn bitor_assign(&mut self, rhs: bool) {
-                *self |= Self::splat(rhs);
-            }
+            fn bitor_assign(&mut self, rhs: bool) { *self |= Self::splat(rhs); }
         }
         
         impl<T, const N: usize> core::ops::BitXorAssign for Mask<T, N> where
@@ -25919,9 +25039,7 @@ pub mod core_simd
         LaneCount<N>: SupportedLaneCount
         {
             #[inline]
-            fn bitxor_assign(&mut self, rhs: bool) {
-                *self ^= Self::splat(rhs);
-            }
+            fn bitxor_assign(&mut self, rhs: bool) { *self ^= Self::splat(rhs); }
         }
 
         macro_rules! impl_from
@@ -25993,9 +25111,7 @@ pub mod core_simd
                         LaneCount<N>: SupportedLaneCount,
                     {
                         #[inline]
-                        fn $assign_call(&mut self, rhs: U) {
-                            *self = self.$call(rhs);
-                        }
+                        fn $assign_call(&mut self, rhs: U) { *self = self.$call(rhs); }
                     })*
                 }
             }
@@ -26109,9 +25225,7 @@ pub mod core_simd
                     {
                         type Output = Simd<T, N>;
                         #[inline]
-                        fn $call(self, rhs: $simd) -> Self::Output {
-                            (*self).$call(rhs)
-                        }
+                        fn $call(self, rhs: $simd) -> Self::Output { (*self).$call( rhs ) }
                     }
                 };
             }
@@ -26127,9 +25241,7 @@ pub mod core_simd
                     {
                         type Output = Simd<T, N>;
                         #[inline]
-                        fn $call(self, rhs: &$simd) -> Self::Output {
-                            self.$call(*rhs)
-                        }
+                        fn $call(self, rhs: &$simd) -> Self::Output { self.$call( *rhs ) }
                     }
                 };
             }
@@ -26156,9 +25268,7 @@ pub mod core_simd
                         {
                             type Output = $simd;
                             #[inline]
-                            fn $call(self, rhs: &'rhs $simd) -> Self::Output {
-                                (*self).$call(*rhs)
-                            }
+                            fn $call(self, rhs: &'rhs $simd) -> Self::Output { (*self).$call( *rhs ) }
                         }
                     )*
                 }
@@ -26225,36 +25335,28 @@ pub mod core_simd
                     {
                         type Output = Self;
                         #[inline]
-                        fn $trait_fn(self, rhs: $ty) -> Self::Output {
-                            self.$trait_fn(Simd::splat(rhs))
-                        }
+                        fn $trait_fn(self, rhs: $ty) -> Self::Output { self.$trait_fn(Simd::splat( rhs) ) }
                     }
                     impl<const N: usize> core::ops::$trait<&$ty> for Simd<$ty, N> where
                         LaneCount<N>: SupportedLaneCount,
                     {
                         type Output = Self;
                         #[inline]
-                        fn $trait_fn(self, rhs: &$ty) -> Self::Output {
-                            self.$trait_fn(Simd::splat(*rhs))
-                        }
+                        fn $trait_fn(self, rhs: &$ty) -> Self::Output { self.$trait_fn(Simd::splat( *rhs) ) }
                     }
                     impl<'lhs, const N: usize> core::ops::$trait<$ty> for &'lhs Simd<$ty, N> where
                         LaneCount<N>: SupportedLaneCount,
                     {
                         type Output = Simd<$ty, N>;
                         #[inline]
-                        fn $trait_fn(self, rhs: $ty) -> Self::Output {
-                            self.$trait_fn(Simd::splat(rhs))
-                        }
+                        fn $trait_fn(self, rhs: $ty) -> Self::Output { self.$trait_fn(Simd::splat( rhs) ) }
                     }
                     impl<'lhs, const N: usize> core::ops::$trait<&$ty> for &'lhs Simd<$ty, N> where
                         LaneCount<N>: SupportedLaneCount,
                     {
                         type Output = Simd<$ty, N>;
                         #[inline]
-                        fn $trait_fn(self, rhs: &$ty) -> Self::Output {
-                            self.$trait_fn(Simd::splat(*rhs))
-                        }
+                        fn $trait_fn(self, rhs: &$ty) -> Self::Output { self.$trait_fn(Simd::splat( *rhs) ) }
                     }
                 };
                 { $($ty:ty),* } => {
@@ -26310,9 +25412,7 @@ pub mod core_simd
                     {
                         type Output = Self;
                         #[inline]
-                        fn not(self) -> Self::Output {
-                            self ^ (Simd::splat(!(0 as $scalar)))
-                        }
+                        fn not(self) -> Self::Output { self ^ (Simd::splat(!( 0 as $scalar)) ) }
                     })*
                 }
             }
@@ -26377,9 +25477,7 @@ pub mod core_simd
                     $simd_call:ident, $op:tt
                 },
                 $int:ident ) => {
-                if $rhs.simd_eq(Simd::splat(0 as _)).any() {
-                    panic!($zero);
-                } else {
+                if $rhs.simd_eq(Simd::splat(0 as _)).any() { panic!($zero); } else {
 
                     let rhs = if <$int>::MIN != 0 {
     
@@ -26424,9 +25522,7 @@ pub mod core_simd
                             #[inline]
 
                             #[track_caller]
-                            fn $call(self, rhs: Self) -> Self::Output {
-                                $macro_impl!(self, rhs, $inner, $scalar)
-                            }
+                            fn $call(self, rhs: Self) -> Self::Output { $macro_impl!( self, rhs, $inner, $scalar ) }
                         }
                     )*
             }
@@ -26588,8 +25684,7 @@ pub mod core_simd
             LaneCount<N>: SupportedLaneCount,
         {
 
-            #[inline]
-            pub fn swizzle_dyn(self, idxs: Simd<u8, N>) -> Self {
+            #[inline] pub fn swizzle_dyn(self, idxs: Simd<u8, N>) -> Self {
                 #![allow(unused_imports, unused_unsafe)]
                 #[cfg(all(
                     any(target_arch = "aarch64", target_arch = "arm64ec"),
@@ -26818,15 +25913,11 @@ pub mod core_simd
                         }
                     }
                     #[inline] fn to_be_bytes(mut self) -> Self::Bytes {
-                        if !cfg!(target_endian = "big") {
-                            self = swap_bytes!($ty, self);
-                        }
+                        if !cfg!(target_endian = "big") { self = swap_bytes!($ty, self); }
                         self.to_ne_bytes()
                     }
                     #[inline] fn to_le_bytes(mut self) -> Self::Bytes {
-                        if !cfg!(target_endian = "little") {
-                            self = swap_bytes!($ty, self);
-                        }
+                        if !cfg!(target_endian = "little") { self = swap_bytes!($ty, self); }
                         self.to_ne_bytes()
                     }
                     #[inline] fn from_ne_bytes(bytes: Self::Bytes) -> Self {
@@ -26840,17 +25931,13 @@ pub mod core_simd
                         let ret = Self::from_ne_bytes(bytes);
                         if cfg!(target_endian = "big") {
                             ret
-                        } else {
-                            swap_bytes!($ty, ret)
-                        }
+                        } else { swap_bytes!( $ty, ret ) }
                     }
                     #[inline] fn from_le_bytes(bytes: Self::Bytes) -> Self {
                         let ret = Self::from_ne_bytes(bytes);
                         if cfg!(target_endian = "little") {
                             ret
-                        } else {
-                            swap_bytes!($ty, ret)
-                        }
+                        } else { swap_bytes!( $ty, ret ) }
                     }
                 }
                 )*
@@ -26927,9 +26014,7 @@ pub mod core_simd
                 const fn splat_const<T, const N: usize>(value: T) -> Simd<T, N> where
                     T: SimdElement,
                     LaneCount<N>: SupportedLaneCount,
-                {
-                    Simd::from_array([value; N])
-                }
+                { Simd::from_array( [value; N] ) }
                 fn splat_rt<T, const N: usize>(value: T) -> Simd<T, N> where
                     T: SimdElement,
                     LaneCount<N>: SupportedLaneCount,
@@ -26944,19 +26029,9 @@ pub mod core_simd
                 core::intrinsics::const_eval_select((value,), splat_const, splat_rt)
             }
 
-            #[inline]
-            pub const fn as_array(&self) -> &[T; N] {
-    
-    
-                unsafe { &*(self as *const Self as *const [T; N]) }
-            }
+            #[inline] pub const fn as_array(&self) -> &[T; N] { unsafe { &*( self as *const Self as *const [T; N] ) } }
 
-            #[inline]
-            pub fn as_mut_array(&mut self) -> &mut [T; N] {
-    
-    
-                unsafe { &mut *(self as *mut Self as *mut [T; N]) }
-            }
+            #[inline] pub fn as_mut_array(&mut self) -> &mut [T; N] { unsafe { &mut *( self as *mut Self as *mut [T; N] ) } }
 
             #[inline]
             const unsafe fn load(ptr: *const [T; N]) -> Self {
@@ -26977,14 +26052,9 @@ pub mod core_simd
                 unsafe { core::ptr::copy_nonoverlapping(tmp.as_array(), ptr, 1) }
             }
 
-            #[inline]
-            pub const fn from_array(array: [T; N]) -> Self {
-    
-                unsafe { Self::load(&array) }
-            }
+            #[inline] pub const fn from_array(array: [T; N]) -> Self { unsafe { Self::load( &array ) } }
 
-            #[inline]
-            pub const fn to_array(self) -> [T; N] {
+            #[inline] pub const fn to_array(self) -> [T; N] {
                 let mut tmp = core::mem::MaybeUninit::uninit();
             unsafe {
                     self.store(tmp.as_mut_ptr());
@@ -27014,32 +26084,22 @@ pub mod core_simd
             }
 
             #[must_use]
-            #[inline]
-            pub fn load_or_default(slice: &[T]) -> Self
+            #[inline] pub fn load_or_default(slice: &[T]) -> Self
             where
                 T: Default,
-            {
-                Self::load_or(slice, Default::default())
-            }
+            { Self::load_or(slice, Default::default( ) ) }
 
             #[must_use]
-            #[inline]
-            pub fn load_or(slice: &[T], or: Self) -> Self {
-                Self::load_select(slice, Mask::splat(true), or)
-            }
+            #[inline] pub fn load_or(slice: &[T], or: Self) -> Self { Self::load_select(slice, Mask::splat( true), or ) }
 
             #[must_use]
-            #[inline]
-            pub fn load_select_or_default(slice: &[T], enable: Mask<<T as SimdElement>::Mask, N>) -> Self
+            #[inline] pub fn load_select_or_default(slice: &[T], enable: Mask<<T as SimdElement>::Mask, N>) -> Self
             where
                 T: Default,
-            {
-                Self::load_select(slice, enable, Default::default())
-            }
+            { Self::load_select(slice, enable, Default::default( ) ) }
 
             #[must_use]
-            #[inline]
-            pub fn load_select(
+            #[inline] pub fn load_select(
                 slice: &[T],
                 mut enable: Mask<<T as SimdElement>::Mask, N>,
                 or: Self,
@@ -27050,8 +26110,7 @@ pub mod core_simd
             }
 
             #[must_use]
-            #[inline]
-            pub unsafe fn load_select_unchecked(
+            #[inline] pub unsafe fn load_select_unchecked(
                 slice: &[T],
                 enable: Mask<<T as SimdElement>::Mask, N>,
                 or: Self,
@@ -27062,8 +26121,7 @@ pub mod core_simd
             }
 
             #[must_use]
-            #[inline]
-            pub unsafe fn load_select_ptr(
+            #[inline] pub unsafe fn load_select_ptr(
                 ptr: *const T,
                 enable: Mask<<T as SimdElement>::Mask, N>,
                 or: Self,
@@ -27080,23 +26138,16 @@ pub mod core_simd
             }
 
             #[must_use]
-            #[inline]
-            pub fn gather_or(slice: &[T], idxs: Simd<usize, N>, or: Self) -> Self {
-                Self::gather_select(slice, Mask::splat(true), idxs, or)
-            }
+            #[inline] pub fn gather_or(slice: &[T], idxs: Simd<usize, N>, or: Self) -> Self { Self::gather_select(slice, Mask::splat( true), idxs, or ) }
 
             #[must_use]
-            #[inline]
-            pub fn gather_or_default(slice: &[T], idxs: Simd<usize, N>) -> Self
+            #[inline] pub fn gather_or_default(slice: &[T], idxs: Simd<usize, N>) -> Self
             where
                 T: Default,
-            {
-                Self::gather_or(slice, idxs, Self::splat(T::default()))
-            }
+            { Self::gather_or(slice, idxs, Self::splat(T::default( )) ) }
     
             #[must_use]
-            #[inline]
-            pub fn gather_select(
+            #[inline] pub fn gather_select(
                 slice: &[T],
                 enable: Mask<isize, N>,
                 idxs: Simd<usize, N>,
@@ -27137,15 +26188,13 @@ pub mod core_simd
                 or: Self,
             ) -> Self { unsafe { core::intrinsics::simd::simd_gather(or, source, enable.to_int()) } }
 
-            #[inline]
-            pub fn store_select(self, slice: &mut [T], mut enable: Mask<<T as SimdElement>::Mask, N>) {
+            #[inline] pub fn store_select(self, slice: &mut [T], mut enable: Mask<<T as SimdElement>::Mask, N>) {
                 enable &= mask_up_to(slice.len());
 
                 unsafe { self.store_select_ptr(slice.as_mut_ptr(), enable) }
             }
 
-            #[inline]
-            pub unsafe fn store_select_unchecked(
+            #[inline] pub unsafe fn store_select_unchecked(
                 self,
                 slice: &mut [T],
                 enable: Mask<<T as SimdElement>::Mask, N>,
@@ -27155,8 +26204,7 @@ pub mod core_simd
                 unsafe { self.store_select_ptr(ptr, enable) }
             }
     
-            #[inline]
-            pub unsafe fn store_select_ptr(self, ptr: *mut T, enable: Mask<<T as SimdElement>::Mask, N>) {
+            #[inline] pub unsafe fn store_select_ptr(self, ptr: *mut T, enable: Mask<<T as SimdElement>::Mask, N>) {
 
                 unsafe {
                     core::intrinsics::simd::simd_masked_store::<
@@ -27168,13 +26216,9 @@ pub mod core_simd
                 }
             }
     
-            #[inline]
-            pub fn scatter(self, slice: &mut [T], idxs: Simd<usize, N>) {
-                self.scatter_select(slice, Mask::splat(true), idxs)
-            }
+            #[inline] pub fn scatter(self, slice: &mut [T], idxs: Simd<usize, N>) { self.scatter_select(slice, Mask::splat( true), idxs ) }
     
-            #[inline]
-            pub fn scatter_select(self, slice: &mut [T], enable: Mask<isize, N>, idxs: Simd<usize, N>) {
+            #[inline] pub fn scatter_select(self, slice: &mut [T], enable: Mask<isize, N>, idxs: Simd<usize, N>) {
                 let enable: Mask<isize, N> = enable & idxs.simd_lt(Simd::splat(slice.len()));
 
                 unsafe { self.scatter_select_unchecked(slice, enable, idxs) }
@@ -27227,9 +26271,7 @@ pub mod core_simd
             T: SimdElement + Default,
         {
             #[inline]
-            fn default() -> Self {
-                Self::splat(T::default())
-            }
+            fn default() -> Self { Self::splat(T::default( ) ) }
         }
         
         impl<T, const N: usize> PartialEq for Simd<T, N> where
@@ -27248,8 +26290,7 @@ pub mod core_simd
                 mask.all()
             }
             
-            #[allow(clippy::partialeq_ne_impl)]
-            #[inline]
+            #[allow(clippy::partialeq_ne_impl)] #[inline]
             fn ne(&self, other: &Self) -> bool {
 
                 let mask = unsafe {
@@ -27292,9 +26333,7 @@ pub mod core_simd
             fn hash<H>(&self, state: &mut H)
             where
                 H: core::hash::Hasher,
-            {
-                self.as_array().hash(state)
-            }
+            { self.as_array().hash( state ) }
         }
 
         impl<T, const N: usize> AsRef<[T; N]> for Simd<T, N> where
@@ -27342,9 +26381,7 @@ pub mod core_simd
             T: SimdElement,
         {
             #[inline]
-            fn from(array: [T; N]) -> Self {
-                Self::from_array(array)
-            }
+            fn from(array: [T; N]) -> Self { Self::from_array( array ) }
         }
         
         impl<T, const N: usize> From<Simd<T, N>> for [T; N] where
@@ -27363,9 +26400,7 @@ pub mod core_simd
         {
             type Error = core::array::TryFromSliceError;
             #[inline]
-            fn try_from(slice: &[T]) -> Result<Self, core::array::TryFromSliceError> {
-                Ok(Self::from_array(slice.try_into()?))
-            }
+            fn try_from(slice: &[T]) -> Result<Self, core::array::TryFromSliceError> { Ok(Self::from_array(slice.try_into( )?) ) }
         }
         
         impl<T, const N: usize> TryFrom<&mut [T]> for Simd<T, N> where
@@ -27374,9 +26409,7 @@ pub mod core_simd
         {
             type Error = core::array::TryFromSliceError;
             #[inline]
-            fn try_from(slice: &mut [T]) -> Result<Self, core::array::TryFromSliceError> {
-                Ok(Self::from_array(slice.try_into()?))
-            }
+            fn try_from(slice: &mut [T]) -> Result<Self, core::array::TryFromSliceError> { Ok(Self::from_array(slice.try_into( )?) ) }
         }
         
         mod sealed 
@@ -27918,17 +26951,11 @@ pub mod core_simd
                             (self^m).saturating_sub(m)
                         }
                         
-                        #[inline] fn saturating_neg(self) -> Self {
-                            Self::splat(0).saturating_sub(self)
-                        }
+                        #[inline] fn saturating_neg(self) -> Self { Self::splat(0).saturating_sub( self ) }
                         
-                        #[inline] fn is_positive(self) -> Self::Mask {
-                            self.simd_gt(Self::splat(0))
-                        }
+                        #[inline] fn is_positive(self) -> Self::Mask { self.simd_gt(Self::splat( 0) ) }
                         
-                        #[inline] fn is_negative(self) -> Self::Mask {
-                            self.simd_lt(Self::splat(0))
-                        }
+                        #[inline] fn is_negative(self) -> Self::Mask { self.simd_lt(Self::splat( 0) ) }
                         
                         #[inline] fn signum(self) -> Self {
                             self.is_positive().select(
@@ -27955,29 +26982,17 @@ pub mod core_simd
                         
                         #[inline] fn reverse_bits(self) -> Self { unsafe { core::intrinsics::simd::simd_bitreverse(self) } }
                         
-                        #[inline] fn count_ones(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().count_ones()
-                        }
+                        #[inline] fn count_ones(self) -> Self::Unsigned { self.cast::<$unsigned>( ).count_ones( ) }
                         
-                        #[inline] fn count_zeros(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().count_zeros()
-                        }
+                        #[inline] fn count_zeros(self) -> Self::Unsigned { self.cast::<$unsigned>( ).count_zeros( ) }
                         
-                        #[inline] fn leading_zeros(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().leading_zeros()
-                        }
+                        #[inline] fn leading_zeros(self) -> Self::Unsigned { self.cast::<$unsigned>( ).leading_zeros( ) }
                         
-                        #[inline] fn trailing_zeros(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().trailing_zeros()
-                        }
+                        #[inline] fn trailing_zeros(self) -> Self::Unsigned { self.cast::<$unsigned>( ).trailing_zeros( ) }
                         
-                        #[inline] fn leading_ones(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().leading_ones()
-                        }
+                        #[inline] fn leading_ones(self) -> Self::Unsigned { self.cast::<$unsigned>( ).leading_ones( ) }
                         
-                        #[inline] fn trailing_ones(self) -> Self::Unsigned {
-                            self.cast::<$unsigned>().trailing_ones()
-                        }
+                        #[inline] fn trailing_ones(self) -> Self::Unsigned { self.cast::<$unsigned>( ).trailing_ones( ) }
                     }
                     )*
                 }
@@ -27996,59 +27011,41 @@ pub mod core_simd
 
                 unsafe fn to_int_unchecked<I: SimdCast>(self) -> Self::Cast<I> where Self::Scalar: core::convert::FloatToInt<I>;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn to_bits(self) -> Self::Bits;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn to_bits(self) -> Self::Bits;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn from_bits(bits: Self::Bits) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn from_bits(bits: Self::Bits) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn abs(self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn abs(self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn recip(self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn recip(self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn to_degrees(self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn to_degrees(self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn to_radians(self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn to_radians(self) -> Self;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_sign_positive(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_sign_positive(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_sign_negative(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_sign_negative(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_nan(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_nan(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_infinite(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_infinite(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_finite(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_finite(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_subnormal(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_subnormal(self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn is_normal(self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn is_normal(self) -> Self::Mask;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn signum(self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn signum(self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn copysign(self, sign: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn copysign(self, sign: Self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_min(self, other: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_min(self, other: Self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_max(self, other: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_max(self, other: Self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_clamp(self, min: Self, max: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_clamp(self, min: Self, max: Self) -> Self;
                 fn reduce_sum(self) -> Self::Scalar;
                 fn reduce_product(self) -> Self::Scalar;
                 fn reduce_max(self) -> Self::Scalar;
@@ -28122,14 +27119,9 @@ pub mod core_simd
                             Self::splat(1.0) / self
                         }
                         
-                        #[inline] fn to_degrees(self) -> Self {
-
-                            self * Self::splat(Self::Scalar::to_degrees(1.))
-                        }
+                        #[inline] fn to_degrees(self) -> Self { self * Self::splat(Self::Scalar::to_degrees( 1.) ) }
                         
-                        #[inline] fn to_radians(self) -> Self {
-                            self * Self::splat(Self::Scalar::to_radians(1.))
-                        }
+                        #[inline] fn to_radians(self) -> Self { self * Self::splat(Self::Scalar::to_radians( 1.) ) }
                         
                         #[inline] fn is_sign_positive(self) -> Self::Mask {
                             !self.is_sign_negative()
@@ -28140,17 +27132,11 @@ pub mod core_simd
                             sign_bits.simd_gt(Simd::splat(0))
                         }
                         
-                        #[inline] fn is_nan(self) -> Self::Mask {
-                            self.simd_ne(self)
-                        }
+                        #[inline] fn is_nan(self) -> Self::Mask { self.simd_ne( self ) }
                         
-                        #[inline] fn is_infinite(self) -> Self::Mask {
-                            self.abs().simd_eq(Self::splat(Self::Scalar::INFINITY))
-                        }
+                        #[inline] fn is_infinite(self) -> Self::Mask { self.abs().simd_eq(Self::splat( Self::Scalar::INFINITY) ) }
                         
-                        #[inline] fn is_finite(self) -> Self::Mask {
-                            self.abs().simd_lt(Self::splat(Self::Scalar::INFINITY))
-                        }
+                        #[inline] fn is_finite(self) -> Self::Mask { self.abs().simd_lt(Self::splat( Self::Scalar::INFINITY) ) }
                         
                         #[inline] fn is_subnormal(self) -> Self::Mask {
 
@@ -28158,13 +27144,9 @@ pub mod core_simd
                             not_zero & (self.to_bits() & Self::splat(Self::Scalar::INFINITY).to_bits()).simd_eq(Simd::splat(0))
                         }
                         
-                        #[inline] fn is_normal(self) -> Self::Mask {
-                            !(self.abs().simd_eq(Self::splat(0.0)) | self.is_nan() | self.is_subnormal() | self.is_infinite())
-                        }
+                        #[inline] fn is_normal(self) -> Self::Mask { !(self.abs().simd_eq(Self::splat(0.0)) | self.is_nan() | self.is_subnormal() | self.is_infinite( ) ) }
                         
-                        #[inline] fn signum(self) -> Self {
-                            self.is_nan().select(Self::splat(Self::Scalar::NAN), Self::splat(1.0).copysign(self))
-                        }
+                        #[inline] fn signum(self) -> Self { self.is_nan().select(Self::splat(Self::Scalar::NAN), Self::splat(1.0).copysign( self) ) }
                         
                         #[inline] fn copysign(self, sign: Self) -> Self {
                             let sign_bit = sign.to_bits() & Self::splat(-0.).to_bits();
@@ -28189,16 +27171,12 @@ pub mod core_simd
                         
                         #[inline] fn reduce_sum(self) -> Self::Scalar {
 
-                            if cfg!(all(target_arch = "x86", not(target_feature = "sse2"))) {
-                                self.as_array().iter().sum()
-                            } else { unsafe { core::intrinsics::simd::simd_reduce_add_ordered(self, -0.) } }
+                            if cfg!(all(target_arch = "x86", not(target_feature = "sse2"))) { self.as_array().iter( ).sum( ) } else { unsafe { core::intrinsics::simd::simd_reduce_add_ordered(self, -0.) } }
                         }
                         
                         #[inline] fn reduce_product(self) -> Self::Scalar {
 
-                            if cfg!(all(target_arch = "x86", not(target_feature = "sse2"))) {
-                                self.as_array().iter().product()
-                            } else { unsafe { core::intrinsics::simd::simd_reduce_mul_ordered(self, 1.) } }
+                            if cfg!(all(target_arch = "x86", not(target_feature = "sse2"))) { self.as_array().iter( ).product( ) } else { unsafe { core::intrinsics::simd::simd_reduce_mul_ordered(self, 1.) } }
                         }
                         
                         #[inline] fn reduce_max(self) -> Self::Scalar { unsafe { core::intrinsics::simd::simd_reduce_max(self) } }
@@ -28260,9 +27238,7 @@ pub mod core_simd
                 type CastPtr<U> = Simd<*const U, N>;
                 type MutPtr = Simd<*mut T, N>;
                 type Mask = Mask<isize, N>;
-                #[inline] fn is_null(self) -> Self::Mask {
-                    Simd::splat(core::ptr::null()).simd_eq(self)
-                }
+                #[inline] fn is_null(self) -> Self::Mask { Simd::splat(core::ptr::null()).simd_eq( self ) }
                 
                 #[inline] fn cast<U>(self) -> Self::CastPtr<U> {
 
@@ -28275,15 +27251,9 @@ pub mod core_simd
                 
                 #[inline] fn cast_mut(self) -> Self::MutPtr { unsafe { core::intrinsics::simd::simd_cast_ptr(self) } }
                 
-                #[inline] fn addr(self) -> Self::Usize {
-    
-                    unsafe { core::mem::transmute_copy(&self) }
-                }
+                #[inline] fn addr(self) -> Self::Usize { unsafe { core::mem::transmute_copy( &self ) } }
                 
-                #[inline] fn without_provenance(addr: Self::Usize) -> Self {
-    
-                    unsafe { core::mem::transmute_copy(&addr) }
-                }
+                #[inline] fn without_provenance(addr: Self::Usize) -> Self { unsafe { core::mem::transmute_copy( &addr ) } }
                 
                 #[inline] fn with_addr(self, addr: Self::Usize) -> Self {
     
@@ -28299,13 +27269,9 @@ pub mod core_simd
                 
                 #[inline] fn wrapping_offset(self, count: Self::Isize) -> Self { unsafe { core::intrinsics::simd::simd_arith_offset(self, count) } }
                 
-                #[inline] fn wrapping_add(self, count: Self::Usize) -> Self {
-                    self.wrapping_offset(count.cast())
-                }
+                #[inline] fn wrapping_add(self, count: Self::Usize) -> Self { self.wrapping_offset(count.cast( ) ) }
                 
-                #[inline] fn wrapping_sub(self, count: Self::Usize) -> Self {
-                    self.wrapping_offset(-count.cast::<isize>())
-                }
+                #[inline] fn wrapping_sub(self, count: Self::Usize) -> Self { self.wrapping_offset(-count.cast::<isize>( ) ) }
             }
 
             pub trait SimdMutPtr: Copy + Sealed
@@ -28339,9 +27305,7 @@ pub mod core_simd
                 type ConstPtr = Simd<*const T, N>;
                 type Mask = Mask<isize, N>;
 
-                #[inline] fn is_null(self) -> Self::Mask {
-                    Simd::splat(core::ptr::null_mut()).simd_eq(self)
-                }
+                #[inline] fn is_null(self) -> Self::Mask { Simd::splat(core::ptr::null_mut()).simd_eq( self ) }
 
                 #[inline] fn cast<U>(self) -> Self::CastPtr<U> {
     
@@ -28353,15 +27317,9 @@ pub mod core_simd
 
                 #[inline] fn cast_const(self) -> Self::ConstPtr { unsafe { core::intrinsics::simd::simd_cast_ptr(self) } }
 
-                #[inline] fn addr(self) -> Self::Usize {
-    
-                    unsafe { core::mem::transmute_copy(&self) }
-                }
+                #[inline] fn addr(self) -> Self::Usize { unsafe { core::mem::transmute_copy( &self ) } }
 
-                #[inline] fn without_provenance(addr: Self::Usize) -> Self {
-    
-                    unsafe { core::mem::transmute_copy(&addr) }
-                }
+                #[inline] fn without_provenance(addr: Self::Usize) -> Self { unsafe { core::mem::transmute_copy( &addr ) } }
 
                 #[inline] fn with_addr(self, addr: Self::Usize) -> Self {
     
@@ -28376,13 +27334,9 @@ pub mod core_simd
 
                 #[inline] fn wrapping_offset(self, count: Self::Isize) -> Self { unsafe { core::intrinsics::simd::simd_arith_offset(self, count) } }
 
-                #[inline] fn wrapping_add(self, count: Self::Usize) -> Self {
-                    self.wrapping_offset(count.cast())
-                }
+                #[inline] fn wrapping_add(self, count: Self::Usize) -> Self { self.wrapping_offset(count.cast( ) ) }
 
-                #[inline] fn wrapping_sub(self, count: Self::Usize) -> Self {
-                    self.wrapping_offset(-count.cast::<isize>())
-                }
+                #[inline] fn wrapping_sub(self, count: Self::Usize) -> Self { self.wrapping_offset(-count.cast::<isize>( ) ) }
             }
         }
         
@@ -28406,29 +27360,22 @@ pub mod core_simd
             */
             pub trait SimdPartialOrd:SPE 
             {
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_lt(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_lt(self, other: Self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_le(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_le(self, other: Self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_gt(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_gt(self, other: Self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_ge(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_ge(self, other: Self) -> Self::Mask;
             }
 
             pub trait SimdOrd: SimdPartialOrd 
             {
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_max(self, other: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_max(self, other: Self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_min(self, other: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_min(self, other: Self) -> Self;
 
-                #[must_use = "method returns a new vector and does not mutate the original value"]
-                fn simd_clamp(self, min: Self, max: Self) -> Self;
+                #[must_use = "method returns a new vector and does not mutate the original value"] fn simd_clamp(self, min: Self, max: Self) -> Self;
             }
 
             macro_rules! impl_integer 
@@ -28450,13 +27397,9 @@ pub mod core_simd
                     impl<const N: usize> SimdOrd for Simd<$integer, N> where
                         LaneCount<N>: SupportedLaneCount,
                     {
-                        #[inline] fn simd_max(self, other: Self) -> Self {
-                            self.simd_lt(other).select(other, self)
-                        }
+                        #[inline] fn simd_max(self, other: Self) -> Self { self.simd_lt(other).select( other, self ) }
                         
-                        #[inline] fn simd_min(self, other: Self) -> Self {
-                            self.simd_gt(other).select(other, self)
-                        }
+                        #[inline] fn simd_min(self, other: Self) -> Self { self.simd_gt(other).select( other, self ) }
                         #[inline]
                         #[track_caller]
                         fn simd_clamp(self, min: Self, max: Self) -> Self {
@@ -28515,13 +27458,9 @@ pub mod core_simd
                         LaneCount<N>: SupportedLaneCount,
                     {
                         #[inline]
-                        fn simd_max(self, other: Self) -> Self {
-                            self.simd_gt(other).select_mask(other, self)
-                        }
+                        fn simd_max(self, other: Self) -> Self { self.simd_gt(other).select_mask( other, self ) }
                         
-                        #[inline] fn simd_min(self, other: Self) -> Self {
-                            self.simd_lt(other).select_mask(other, self)
-                        }
+                        #[inline] fn simd_min(self, other: Self) -> Self { self.simd_lt(other).select_mask( other, self ) }
                         #[inline]
                         #[track_caller]
                         fn simd_clamp(self, min: Self, max: Self) -> Self {
@@ -28553,13 +27492,9 @@ pub mod core_simd
             impl<T, const N: usize> SimdOrd for Simd<*const T, N> where
                 LaneCount<N>: SupportedLaneCount,
             {
-                #[inline] fn simd_max(self, other: Self) -> Self {
-                    self.simd_lt(other).select(other, self)
-                }
+                #[inline] fn simd_max(self, other: Self) -> Self { self.simd_lt(other).select( other, self ) }
                 
-                #[inline] fn simd_min(self, other: Self) -> Self {
-                    self.simd_gt(other).select(other, self)
-                }
+                #[inline] fn simd_min(self, other: Self) -> Self { self.simd_gt(other).select( other, self ) }
                 
                 #[inline] #[track_caller] fn simd_clamp(self, min: Self, max: Self) -> Self {
                     assert!(
@@ -28585,13 +27520,9 @@ pub mod core_simd
             impl<T, const N: usize> SimdOrd for Simd<*mut T, N> where
                 LaneCount<N>: SupportedLaneCount,
             {
-                #[inline] fn simd_max(self, other: Self) -> Self {
-                    self.simd_lt(other).select(other, self)
-                }
+                #[inline] fn simd_max(self, other: Self) -> Self { self.simd_lt(other).select( other, self ) }
                 
-                #[inline] fn simd_min(self, other: Self) -> Self {
-                    self.simd_gt(other).select(other, self)
-                }
+                #[inline] fn simd_min(self, other: Self) -> Self { self.simd_gt(other).select( other, self ) }
                 
                 #[inline] #[track_caller] fn simd_clamp(self, min: Self, max: Self) -> Self {
                     assert!(
@@ -28610,11 +27541,9 @@ pub mod core_simd
             {
                 type Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_eq(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_eq(self, other: Self) -> Self::Mask;
 
-                #[must_use = "method returns a new mask and does not mutate the original value"]
-                fn simd_ne(self, other: Self) -> Self::Mask;
+                #[must_use = "method returns a new mask and does not mutate the original value"] fn simd_ne(self, other: Self) -> Self::Mask;
             }
 
             macro_rules! impl_number 
@@ -28672,19 +27601,19 @@ pub mod core_simd
             }
         }
         
-        pub use self::crate::core_simd::alias::*;
-        pub use self::crate::core_simd::cast::*;
-        pub use self::crate::core_simd::lane_count::{LaneCount, SupportedLaneCount};
-        pub use self::crate::core_simd::masks::*;
-        pub use self::crate::core_simd::swizzle::*;
-        pub use self::crate::core_simd::to_bytes::ToBytes;
-        pub use self::crate::core_simd::vector::*;
+        pub use crate::core_simd::alias::*;
+        pub use crate::core_simd::cast::*;
+        pub use crate::core_simd::lane_count::{LaneCount, SupportedLaneCount};
+        pub use crate::core_simd::masks::*;
+        pub use crate::core_simd::swizzle::*;
+        pub use crate::core_simd::to_bytes::ToBytes;
+        pub use crate::core_simd::vector::*;
     }
 }
 
 #[unstable(feature = "portable_simd", issue = "86656")]
 pub mod simd 
 {
-    #[unstable(feature = "portable_simd", issue = "86656")] pub use self::crate::core_simd::simd::*;
+    #[unstable(feature = "portable_simd", issue = "86656")] pub use crate::core_simd::simd::*;
 }
-// 28690
+// 27619
