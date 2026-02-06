@@ -4,6 +4,7 @@ pub type Entity<Type> = Option<Box<Type>>;
 */
 
 pub type Definition = Vec<Entity>;
+pub type Definitions = Vec<Definition>;
 
 #[derive( Clone, Debug )]
 pub enum Entity<T=()>
@@ -74,6 +75,73 @@ pub enum Entity<T=()>
     Human,
     Antecedent,
     __(T)
+}
+
+
+
+impl Entity
+{
+    pub fn who() -> Definitions
+    {
+        vec!
+        [
+            vec!
+            [
+                Entity::What,
+                Entity::Person,
+                Entity::Or,
+                Entity::People,
+            ],
+
+            vec!
+            [
+                Entity::Which,
+                Entity::Person,
+                Entity::Or,
+                Entity::People,
+            ],
+
+            vec!
+            [
+                Entity::Ask,
+                Entity::For,
+                Entity::The,
+                Entity::Identity,
+                Entity::Of,
+                Entity::Someone,
+            ],
+
+            vec!
+            [
+                
+                Entity::Used,
+                Entity::In,
+                Entity::A,
+                Entity::Direct,
+                Entity::Or,
+                Entity::Indirect,
+                Entity::Question,
+            ],
+
+            vec!
+            [
+                Entity::Whose,
+            ],
+
+            vec!
+            [
+                
+                Entity::Introduces,
+                Entity::A,
+                Entity::Relative,
+                Entity::Clause,
+                Entity::Having,
+                Entity::A,
+                Entity::Human,
+                Entity::Antecedent,
+            ],
+        ]
+    }
 }
 
 #[derive( Clone, Debug )]
@@ -152,64 +220,7 @@ impl Identity
     {
         Self::Who
         (
-            vec!
-            [
-                vec!
-                [
-                    Entity::What,
-                    Entity::Person,
-                    Entity::Or,
-                    Entity::People,
-                ],
-
-                vec!
-                [
-                    Entity::Which,
-                    Entity::Person,
-                    Entity::Or,
-                    Entity::People,
-                ],
-
-                vec!
-                [
-                    Entity::Ask,
-                    Entity::For,
-                    Entity::The,
-                    Entity::Identity,
-                    Entity::Of,
-                    Entity::Someone,
-                ],
-
-                vec!
-                [
-                    
-                    Entity::Used,
-                    Entity::In,
-                    Entity::A,
-                    Entity::Direct,
-                    Entity::Or,
-                    Entity::Indirect,
-                    Entity::Question,
-                ],
-
-                vec!
-                [
-                    Entity::Whose,
-                ],
-
-                vec!
-                [
-                    
-                    Entity::Introduces,
-                    Entity::A,
-                    Entity::Relative,
-                    Entity::Clause,
-                    Entity::Having,
-                    Entity::A,
-                    Entity::Human,
-                    Entity::Antecedent,
-                ],
-            ]
+            Entity::who()       
         )
     }
 }
