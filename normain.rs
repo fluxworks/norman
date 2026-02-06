@@ -1,3 +1,19 @@
+
+pub trait Syntax
+{
+
+}
+
+#[allow( bare_trait_objects )]
+pub struct Word( pub Syntax );
+
+pub struct Sentence<'a>( pub Vec<&'a Word> );
+
+pub struct Is<'a>( pub Vec<Sentence<'a>> );
+
+
+
+
 /*
 What person or people; which person or people; asks for the identity of someone; 
 used in a direct or indirect question (interrogative) */
@@ -126,10 +142,7 @@ pub struct Abstract { pub id:Identity }
 pub struct Unknown { pub id:Identity }
 
 #[derive( Clone, Debug )]
-pub struct Animal { pub id:Identity }
-
-#[derive( Clone, Debug )]
-pub struct Is { pub id:Identity }
+pub struct Animal { pub id:Identity } 
 
 #[derive( Clone, Debug )]
 pub enum Be
