@@ -13,6 +13,7 @@ pub enum Entity<T=()>
     Perjorate,
     What,
     Who,
+    Whose,
     Which,
     Where,
     Why,
@@ -32,6 +33,7 @@ pub enum Entity<T=()>
     Transgender,
     Gender,
     Person,
+    People,
     Animal,
     Animate,
     Inanimate,
@@ -47,12 +49,30 @@ pub enum Entity<T=()>
     Unknown,
     Is,
     Be,
+    Of,
     It,
     To,
     Use,
     Nor,
     Or,
     Inside,
+    Ask,
+    For,
+    The,
+    Identity,
+    Someone,
+    Used,
+    In,
+    A,
+    Direct,
+    Indirect,
+    Question,
+    Introduces,
+    Relative,
+    Clause,
+    Having,
+    Human,
+    Antecedent,
     __(T)
 }
 
@@ -64,6 +84,7 @@ pub enum Identity
     Perjorate( Vec<Definition> ),
     What( Vec<Definition> ),
     Who( Vec<Definition> ),
+    Whose( Vec<Definition> ),
     Which( Vec<Definition> ),
     Where( Vec<Definition> ),
     Why( Vec<Definition> ),
@@ -83,6 +104,7 @@ pub enum Identity
     Transgender( Vec<Definition> ),
     Gender( Vec<Definition> ),
     Person( Vec<Definition> ),
+    People( Vec<Definition> ),
     Animal( Vec<Definition> ),
     Animate( Vec<Definition> ),
     Inanimate( Vec<Definition> ),
@@ -103,5 +125,91 @@ pub enum Identity
     Use( Vec<Definition> ),
     Nor( Vec<Definition> ),
     Or( Vec<Definition> ),
+    Ask( Vec<Definition> ),
+    For( Vec<Definition> ),
+    The( Vec<Definition> ),
+    Identity( Vec<Definition> ),
+    Of( Vec<Definition> ),
+    Someone( Vec<Definition> ),
+    Used( Vec<Definition> ),
+    In( Vec<Definition> ),
+    A( Vec<Definition> ),
+    Direct( Vec<Definition> ),
+    Indirect( Vec<Definition> ),
+    Question( Vec<Definition> ),
+    Introduces( Vec<Definition> ),
+    Relative( Vec<Definition> ),
+    Clause( Vec<Definition> ),
+    Having( Vec<Definition> ),
+    Human( Vec<Definition> ),
+    Anteceden( Vec<Definition> ),
     __(),
+}
+
+impl Identity
+{
+    pub fn who() -> Self
+    {
+        Self::Who
+        (
+            vec!
+            [
+                vec!
+                [
+                    Entity::What,
+                    Entity::Person,
+                    Entity::Or,
+                    Entity::People,
+                ],
+
+                vec!
+                [
+                    Entity::Which,
+                    Entity::Person,
+                    Entity::Or,
+                    Entity::People,
+                ],
+
+                vec!
+                [
+                    Entity::Ask,
+                    Entity::For,
+                    Entity::The,
+                    Entity::Identity,
+                    Entity::Of,
+                    Entity::Someone,
+                ],
+
+                vec!
+                [
+                    
+                    Entity::Used,
+                    Entity::In,
+                    Entity::A,
+                    Entity::Direct,
+                    Entity::Or,
+                    Entity::Indirect,
+                    Entity::Question,
+                ],
+
+                vec!
+                [
+                    Entity::Whose,
+                ],
+
+                vec!
+                [
+                    
+                    Entity::Introduces,
+                    Entity::A,
+                    Entity::Relative,
+                    Entity::Clause,
+                    Entity::Having,
+                    Entity::A,
+                    Entity::Human,
+                    Entity::Antecedent,
+                ],
+            ]
+        )
+    }
 }
