@@ -33,6 +33,10 @@ pub enum Entity
     Transgender,
     Gender,
     Noun,
+    Verb,
+    Adverb,
+    Adjective,
+    Pronoun,
     Person,
     Place,
     Thing,
@@ -48,8 +52,11 @@ pub enum Entity
     FusedRelative,
     Interjection,
     Indexable,
-    Notable,
-    Determiner,
+    Noteable,
+    Determiner,    
+    Conjunction,
+    Exclamative,
+    Ambiguous,
     Never,
     Sometime,
     Time,
@@ -3060,6 +3067,19 @@ pub enum Entity
     Emphasises,
     Noteworthy,
     Addressed,
+    Prepositional,
+    Emphasise,
+    Taken,
+    Exclamations,
+    Indicating,
+    Emphasizes,
+    Assertion,
+    Made,
+    Contradict,
+    Evidently,
+    Held,
+    Approximation,
+    Followed,
 }
 
 impl Entity
@@ -3237,7 +3257,6 @@ impl Entity
             ]
         ]
     }
-
     
     pub fn what() -> Definitions
     {
@@ -3349,6 +3368,24 @@ impl Entity
 
             vec!
             [
+                Entity::Relative,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Which,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Who,
+            ],
+            
+            vec!
+            [
                 Entity::Interjection,
                 Entity::An,
                 Entity::Expression,
@@ -3430,7 +3467,7 @@ impl Entity
 
             vec!
             [
-                Entity::Notable,
+                Entity::Noteable,
                 Entity::Emphasises,
                 Entity::That,
                 Entity::Something,
@@ -3446,7 +3483,7 @@ impl Entity
 
             vec!
             [
-                Entity::Notable,
+                Entity::Noteable,
                 Entity::Used,
                 Entity::In,
                 Entity::Combination,
@@ -3465,6 +3502,155 @@ impl Entity
                 Entity::Addressed,
                 Entity::By,
                 Entity::What,
+            ],
+
+            vec!
+            [
+                Entity::Adverb,
+                Entity::Used,
+                Entity::Before,
+                Entity::A,
+                Entity::Prepositional,
+                Entity::Phrase,
+                Entity::To,
+                Entity::Emphasise,
+                Entity::That,
+                Entity::Something,
+                Entity::Is,
+                Entity::Taken,
+                Entity::Into,
+                Entity::Consideration,
+                Entity::As,
+                Entity::A,
+                Entity::Cause,
+                Entity::Or,
+                Entity::Reason,
+            ],
+            
+            vec!
+            [
+                Entity::Adverb,
+                Entity::Used,
+                Entity::In,
+                Entity::The,
+                Entity::Conjunction,
+                Entity::With,
+                Entity::With,
+            ],
+
+            vec!
+            [
+                Entity::Exclamative,
+                Entity::Used,
+                Entity::To,
+                Entity::Form,
+                Entity::Exclamations,
+                Entity::Indicating,
+                Entity::That,
+                Entity::Something,
+                Entity::Is,
+                Entity::Remarkable,
+            ],
+
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Used,
+                Entity::To,
+                Entity::Form,
+                Entity::Exclamations,
+                Entity::Followed,
+                Entity::By,
+                Entity::A,
+                Entity::Question,
+            ],
+
+            vec!
+            [
+                Entity::Noun,
+                Entity::Emphasizes,
+                Entity::The,
+                Entity::Truth,
+                Entity::Of,
+                Entity::An,
+                Entity::Assertion,
+                Entity::Made,
+                Entity::To,
+                Entity::Contradict,
+                Entity::An,
+                Entity::Evidently,
+                Entity::False,
+                Entity::Assumption,
+                Entity::Held,
+                Entity::By,
+                Entity::The,
+                Entity::Person,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::Indicating,
+                Entity::A,
+                Entity::Guess,
+                Entity::To,
+                Entity::Try,
+                Entity::To,
+                Entity::Recall,
+                Entity::Information,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::Indicating,
+                Entity::An,
+                Entity::Approximation,
+                Entity::To,
+                Entity::Try,
+                Entity::To,
+                Entity::Recall,
+                Entity::Information,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::Indicating,
+                Entity::A,
+                Entity::Pause,
+                Entity::To,
+                Entity::Try,
+                Entity::To,
+                Entity::Recall,
+                Entity::Information,
+            ],
+
+            vec!
+            [
+                Entity::Adjective,
+                Entity::As,
+                Entity::A,
+                Entity::Relative,
+                Entity::Pronoun,
+            ],
+
+            vec!
+            [
+                Entity::Ambiguous,
+                Entity::Something,
+            ],
+
+            vec!
+            [
+                Entity::Ambiguous,
+                Entity::Thing,
+            ],
+
+            vec!
+            [
+                Entity::Ambiguous,
+                Entity::Stuff,
             ],
         ]
     }
@@ -3510,13 +3696,20 @@ pub enum Identity
     Sometime( Definitions ),
     Time( Definitions ),
     Abstract( Definitions ),
-    Noun( Definitions ),
+    Noun( Definitions ),    
+    Verb( Definitions ),
+    Adverb( Definitions ),
+    Adjective( Definitions ),
+    Pronoun( Definitions ),
     Interrogative( Definitions ),
     Relative( Definitions ),
     Interjection( Definitions ),
     Indexable( Definitions ),
-    Notable( Definitions ),
+    Noteable( Definitions ),
     Determiner( Definitions ),
+    Conjunction( Definitions ),
+    Exclamative( Definitions ),
+    Ambiguous( Definitions ),
     Unknown( Definitions ),
     Is( Definitions ),
     Be( Definitions ),
@@ -6523,6 +6716,19 @@ pub enum Identity
     Emphasises( Definitions ),
     Noteworthy( Definitions ),
     Addressed( Definitions ),
+    Prepositional( Definitions ),
+    Emphasise( Definitions ),
+    Taken( Definitions ),
+    Exclamations( Definitions ),
+    Indicating( Definitions ),
+    Emphasizes( Definitions ),
+    Assertion( Definitions ),
+    Made( Definitions ),
+    Contradict( Definitions ),
+    Evidently( Definitions ),
+    Held( Definitions ),
+    Approximation( Definitions ),
+    Followed( Definitions ),
 }
 
 impl Identity
