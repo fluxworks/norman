@@ -43,7 +43,13 @@ pub enum Entity
     Project,
     Subject,
     Object,
+    Interrogative,
+    Relative,
     FusedRelative,
+    Interjection,
+    Indexable,
+    Notable,
+    Determiner,
     Never,
     Sometime,
     Time,
@@ -70,7 +76,6 @@ pub enum Entity
     Indirect,
     Question,
     Introduces,
-    Relative,
     Clause,
     Having,
     Human,
@@ -3044,6 +3049,17 @@ pub enum Entity
     Denizen,
     Whomever,
     Noone,
+    Ended,
+    Possibilities,
+    Things,
+    Disbelief,
+    Abrupt,
+    Unfriendly,
+    Enquiry,
+    Desires,
+    Emphasises,
+    Noteworthy,
+    Addressed,
 }
 
 impl Entity
@@ -3221,6 +3237,237 @@ impl Entity
             ]
         ]
     }
+
+    
+    pub fn what() -> Definitions
+    {
+        vec!
+        [
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+            ],
+
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Thing,
+            ],
+
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Event,
+            ],
+
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Circumstance,
+            ],
+
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Of,
+                Entity::An,
+                Entity::Open,
+                Entity::Ended,
+                Entity::Set,
+                Entity::Of,
+                Entity::Possibilities,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Which,
+                Entity::The,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Which,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::That,
+                Entity::Which,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::Those,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::The,
+                Entity::Thing,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::The,
+                Entity::Things,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Any,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::All,
+                Entity::That,
+            ],
+
+            vec!
+            [
+                Entity::Relative,
+                Entity::Whatever,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::An,
+                Entity::Expression,
+                Entity::Of,
+                Entity::Surprise,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::An,
+                Entity::Expression,
+                Entity::Of,
+                Entity::Disbelief,
+            ],
+            
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::Anything,
+                Entity::That,
+            ],
+            
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::All,
+                Entity::That,
+            ],
+            
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::Whatever,
+            ],
+            
+            vec!
+            [
+                Entity::Indexable,
+                Entity::The,
+                Entity::Identity,
+                Entity::Of,
+                Entity::A,
+                Entity::Thing,
+                Entity::As,
+                Entity::An,
+                Entity::Answer,
+                Entity::To,
+                Entity::A,
+                Entity::Question,
+                Entity::Of,
+                Entity::What,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::What,
+                Entity::Do,
+                Entity::You,
+                Entity::Want,
+            ],
+
+            vec!
+            [
+                Entity::Interjection,
+                Entity::An,
+                Entity::Abrupt,
+                Entity::Usually,
+                Entity::Unfriendly,
+                Entity::Enquiry,
+                Entity::As,
+                Entity::To,
+                Entity::What,
+                Entity::A,
+                Entity::Person,
+                Entity::Desires,
+            ],
+
+            vec!
+            [
+                Entity::Notable,
+                Entity::Emphasises,
+                Entity::That,
+                Entity::Something,
+                Entity::Is,
+                Entity::Noteworthy,
+                Entity::Or,
+                Entity::Remarkable,
+                Entity::In,
+                Entity::Quality,
+                Entity::Or,
+                Entity::Degree,
+            ],
+
+            vec!
+            [
+                Entity::Notable,
+                Entity::Used,
+                Entity::In,
+                Entity::Combination,
+                Entity::With,
+                Entity::Some,
+                Entity::Other,
+                Entity::Determiner,
+            ],
+
+            vec!
+            [
+                Entity::Indexable,
+                Entity::Something,
+                Entity::That,
+                Entity::Is,
+                Entity::Addressed,
+                Entity::By,
+                Entity::What,
+            ],
+        ]
+    }
 }
 
 #[derive( Clone, Debug )]
@@ -3264,6 +3511,12 @@ pub enum Identity
     Time( Vec<Definition> ),
     Abstract( Vec<Definition> ),
     Noun( Vec<Definition> ),
+    Interrogative( Vec<Definition> ),
+    Relative( Vec<Definition> ),
+    Interjection( Vec<Definition> ),
+    Indexable( Vec<Definition> ),
+    Notable( Vec<Definition> ),
+    Determiner( Vec<Definition> ),
     Unknown( Vec<Definition> ),
     Is( Vec<Definition> ),
     Be( Vec<Definition> ),
@@ -3285,7 +3538,6 @@ pub enum Identity
     Indirect( Vec<Definition> ),
     Question( Vec<Definition> ),
     Introduces( Vec<Definition> ),
-    Relative( Vec<Definition> ),
     Clause( Vec<Definition> ),
     Having( Vec<Definition> ),
     Human( Vec<Definition> ),
@@ -6259,7 +6511,18 @@ pub enum Identity
     Inhabitant( Vec<Definition> ),
     Denizen( Vec<Definition> ),
     Whomever( Vec<Definition> ),
-    Noone( Vec<Definition> ),
+    Noone( Vec<Definition> ),    
+    Ended( Vec<Definition> ),
+    Possibilities( Vec<Definition> ),
+    Things( Vec<Definition> ),
+    Disbelief( Vec<Definition> ),
+    Abrupt( Vec<Definition> ),
+    Unfriendly( Vec<Definition> ),
+    Enquiry( Vec<Definition> ),
+    Desires( Vec<Definition> ),
+    Emphasises( Vec<Definition> ),
+    Noteworthy( Vec<Definition> ),
+    Addressed( Vec<Definition> ),
 }
 
 impl Identity
@@ -6269,6 +6532,14 @@ impl Identity
         Self::Who
         (
             Entity::who()       
+        )
+    }
+
+    pub fn what() -> Self
+    {
+        Self::What
+        (
+            Entity::what()       
         )
     }
 
