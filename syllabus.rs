@@ -3025,7 +3025,6 @@ pub enum Entity
     Yourself,
     Youth,
     Zone,
-    /**/
     Whoever,
     Stands,
     Nations,
@@ -3037,6 +3036,14 @@ pub enum Entity
     Coordinates,
     Governments,
     Services,
+    Persons,
+    Peoples,
+    Mortal,
+    Personage,
+    Inhabitant,
+    Denizen,
+    Whomever,
+    Noone,
 }
 
 impl Entity
@@ -6038,7 +6045,7 @@ pub enum Identity
     Tube( Vec<Definition> ),
     Tunnel( Vec<Definition> ),
     Turn( Vec<Definition> ),
-    Tv( Vec<Definition> ),
+    TV( Vec<Definition> ),
     Twelve( Vec<Definition> ),
     Twenty( Vec<Definition> ),
     Twice( Vec<Definition> ),
@@ -6233,7 +6240,7 @@ pub enum Identity
     Yours( Vec<Definition> ),
     Yourself( Vec<Definition> ),
     Youth( Vec<Definition> ),
-    Zone( Vec<Definition> ),    
+    Zone( Vec<Definition> ),
     Whoever( Vec<Definition> ),
     Stands( Vec<Definition> ),
     Nations( Vec<Definition> ),
@@ -6245,6 +6252,14 @@ pub enum Identity
     Coordinates( Vec<Definition> ),
     Governments( Vec<Definition> ),
     Services( Vec<Definition> ),
+    Persons( Vec<Definition> ),
+    Peoples( Vec<Definition> ),
+    Mortal( Vec<Definition> ),
+    Personage( Vec<Definition> ),
+    Inhabitant( Vec<Definition> ),
+    Denizen( Vec<Definition> ),
+    Whomever( Vec<Definition> ),
+    Noone( Vec<Definition> ),
 }
 
 impl Identity
@@ -6256,14 +6271,78 @@ impl Identity
             Entity::who()       
         )
     }
+
+    pub fn synonyms( &self ) -> Definition
+    {
+        use Identity::{*};
+        match self
+        {
+            Who( _ ) =>
+            {
+                vec!
+                [
+                    Entity::Whom,
+                    Entity::Which,
+                    Entity::Whoever,
+                    Entity::Persons,
+                    Entity::Peoples,
+                    Entity::One,
+                    Entity::Individual,
+                    Entity::Being,
+                    Entity::Mortal,
+                    Entity::Soul,
+                    Entity::Party,
+                    Entity::Personage,
+                    Entity::Human,
+                    Entity::Man,
+                    Entity::Woman,
+                    Entity::Character,
+                    Entity::Customer,
+                    Entity::Inhabitant,
+                    Entity::Denizen,
+                ]
+            }
+            _ =>
+            {
+                vec![]
+            }
+        }
+    }
+
+    pub fn antonyms( &self ) -> Definition
+    {
+        use Identity::{*};
+        match self
+        {
+            Who( _ ) =>
+            {
+                vec!
+                [
+                    Entity::What,
+                    Entity::Whoever,
+                    Entity::Whomever,
+                    Entity::Nobody,
+                    Entity::Anyone,
+                    Entity::Noone,
+                    Entity::Everybody,
+                    Entity::As,
+                    Entity::How,
+                ]
+            }
+            _ =>
+            {
+                vec![]
+            }
+        }
+    }
 }
 
 pub unsafe fn domain()
 {
     unsafe
     {
-        let test = Identity::who();
-        println!( r#"{:?}"#, test );
+        let who = Identity::who();
+        println!( r#"{:?}"#, who.antonyms() );
     }
 }
 
@@ -6274,4 +6353,3 @@ pub fn main()
         domain();        
     }
 }
-// 6277
