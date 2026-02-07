@@ -32,7 +32,10 @@ pub enum Entity
     Reference,
     Transgender,
     Gender,
+    Noun,
     Person,
+    Place,
+    Thing,
     People,
     Animal,
     Animate,
@@ -40,12 +43,11 @@ pub enum Entity
     Project,
     Subject,
     Object,
-    Place,
+    FusedRelative,
     Never,
     Sometime,
     Time,
     Abstract,
-    Noun,
     Unknown,
     Is,
     Be,
@@ -2736,7 +2738,6 @@ pub enum Entity
     They,
     Thick,
     Thin,
-    Thing,
     Think,
     Thinking,
     Third,
@@ -3024,6 +3025,18 @@ pub enum Entity
     Yourself,
     Youth,
     Zone,
+    /**/
+    Whoever,
+    Stands,
+    Nations,
+    Understood,
+    Referring,
+    Initialism,
+    An,
+    Activities,
+    Coordinates,
+    Governments,
+    Services,
 }
 
 impl Entity
@@ -3087,6 +3100,118 @@ impl Entity
                 Entity::Human,
                 Entity::Antecedent,
             ],
+            vec!
+            [
+                Entity::With,
+                Entity::Antecedent,
+                Entity::As,
+                Entity::Subject,
+            ],
+
+            vec!
+            [
+                Entity::With,
+                Entity::Antecedent,
+                Entity::As,
+                Entity::Object,
+            ],
+
+            vec!
+            [
+                Entity::Noun,
+                Entity::A,
+                Entity::Person,
+                Entity::Under,
+                Entity::Discussion,
+            ],
+
+            vec!
+            [
+                Entity::Noun,
+                Entity::A,
+                Entity::Question,
+                Entity::Of,
+                Entity::Which,
+                Entity::Person,
+            ],
+
+            vec!
+            [
+                Entity::Whoever,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::He,
+                Entity::Who,
+            ],
+
+            vec!
+            [
+                Entity::FusedRelative,
+                Entity::They,
+                Entity::Who,
+            ],
+
+            vec!
+            [
+                Entity::Military,
+                Entity::Stands,
+                Entity::For,
+                Entity::United,
+                Entity::Nations,
+                Entity::World,
+                Entity::Health,
+                Entity::Organization,
+            ],
+
+            vec!
+            [
+                Entity::Used,
+                Entity::When,
+                Entity::Referring,
+                Entity::To,
+                Entity::God,
+                Entity::Or,
+                Entity::Another,
+                Entity::Important,
+                Entity::Figure,
+                Entity::Who,
+                Entity::Is,
+                Entity::Understood,
+                Entity::From,
+                Entity::Context,
+            ],
+
+            vec!
+            [
+                Entity::Noun,
+                Entity::Initialism,
+                Entity::Of,
+                Entity::World,
+                Entity::Health,
+                Entity::Organization,
+            ],
+
+            vec!
+            [
+                Entity::Noun,
+                Entity::An,
+                Entity::Agency,
+                Entity::Which,
+                Entity::Coordinates,
+                Entity::International,
+                Entity::Health,
+                Entity::Activities,
+                Entity::And,
+                Entity::To,
+                Entity::Help,
+                Entity::Governments,
+                Entity::Improve,
+                Entity::Health,
+                Entity::Services
+            ]
         ]
     }
 }
@@ -6108,7 +6233,18 @@ pub enum Identity
     Yours( Vec<Definition> ),
     Yourself( Vec<Definition> ),
     Youth( Vec<Definition> ),
-    Zone( Vec<Definition> ),
+    Zone( Vec<Definition> ),    
+    Whoever( Vec<Definition> ),
+    Stands( Vec<Definition> ),
+    Nations( Vec<Definition> ),
+    Understood( Vec<Definition> ),
+    Referring( Vec<Definition> ),
+    Initialism( Vec<Definition> ),
+    An( Vec<Definition> ),
+    Activities( Vec<Definition> ),
+    Coordinates( Vec<Definition> ),
+    Governments( Vec<Definition> ),
+    Services( Vec<Definition> ),
 }
 
 impl Identity
@@ -6126,7 +6262,7 @@ pub unsafe fn domain()
 {
     unsafe
     {
-        let test = Identity::Test( Vec::new() );
+        let test = Identity::who();
         println!( r#"{:?}"#, test );
     }
 }
@@ -6138,4 +6274,4 @@ pub fn main()
         domain();        
     }
 }
-// 6141
+// 6277
