@@ -57,6 +57,8 @@ pub enum Entity
     Conjunction,
     Exclamative,
     Ambiguous,
+    Truncation,
+    Rhetorical,    
     Never,
     Sometime,
     Time,
@@ -3080,6 +3082,10 @@ pub enum Entity
     Held,
     Approximation,
     Followed,
+    Tag,
+    Inviting,
+    Asking,
+    Questions,
 }
 
 impl Entity
@@ -3652,12 +3658,63 @@ impl Entity
                 Entity::Ambiguous,
                 Entity::Stuff,
             ],
+
+            vec!
+            [
+                Entity::Truncation,
+                Entity::What,
+                Entity::Do,
+                Entity::You,
+                Entity::Say,
+            ],
+
+            vec!
+            [
+                Entity::Rhetorical,
+                Entity::Used,
+                Entity::As,
+                Entity::A,
+                Entity::Tag,
+                Entity::Question,
+                Entity::To,
+                Entity::Emphasise,
+                Entity::A,
+                Entity::Statement,
+                Entity::Inviting,
+                Entity::Agreement,
+            ],
+
+            vec!
+            [
+                Entity::Pronoun,
+                Entity::Used,
+                Entity::In,
+                Entity::Asking,
+                Entity::Questions,
+                Entity::Regarding,
+                Entity::Either,
+                Entity::Persons,
+                Entity::Or,
+                Entity::Things,
+            ],
+
+            vec!
+            [
+                Entity::Adjective,
+                Entity::How,
+            ],
+
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Which,
+            ],
         ]
     }
 }
 
 #[derive( Clone, Debug )]
-pub enum Identity
+pub enum Ident
 {
     Defense( Definitions ),
     Offense( Definitions ),
@@ -3709,7 +3766,9 @@ pub enum Identity
     Determiner( Definitions ),
     Conjunction( Definitions ),
     Exclamative( Definitions ),
-    Ambiguous( Definitions ),
+    Ambiguous( Definitions ),    
+    Truncation( Definitions ),
+    Rhetorical( Definitions ),
     Unknown( Definitions ),
     Is( Definitions ),
     Be( Definitions ),
@@ -6729,9 +6788,13 @@ pub enum Identity
     Held( Definitions ),
     Approximation( Definitions ),
     Followed( Definitions ),
+    Tag( Definitions ),
+    Inviting( Definitions ),    
+    Asking( Definitions ),
+    Questions( Definitions ),
 }
 
-impl Identity
+impl Ident
 {
     pub fn who() -> Self
     {
@@ -6751,7 +6814,7 @@ impl Identity
 
     pub fn synonyms( &self ) -> Definition
     {
-        use Identity::{*};
+        use Ident::{*};
         match self
         {
             Who( _ ) =>
@@ -6788,7 +6851,7 @@ impl Identity
 
     pub fn antonyms( &self ) -> Definition
     {
-        use Identity::{*};
+        use Ident::{*};
         match self
         {
             Who( _ ) =>
@@ -6818,7 +6881,7 @@ pub unsafe fn domain()
 {
     unsafe
     {
-        let who = Identity::who();
+        let who = Ident::who();
         println!( r#"{:?}"#, who.antonyms() );
     }
 }
