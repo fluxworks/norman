@@ -1,3 +1,8 @@
+#![allow
+(
+    unused_imports,
+    unused_unsafe,
+)]
 /*
 pub type Event<Type> = Option<Box<Type>>;
 pub type Entity<Type> = Option<Box<Type>>;
@@ -6875,6 +6880,2688 @@ impl Ident
             }
         }
     }
+}
+
+#[macro_use] pub mod macros
+{
+    use ::
+    {
+        *,
+    };
+
+    #[macro_export] macro_rules! tri
+    {
+        ($expr:expr) =>
+        {
+            match $expr
+            {
+                Ok(val) => val,
+                Err(err) => return Err(err),
+            }
+        };
+    }
+
+    #[macro_export(local_inner_macros)] macro_rules! forward_to_deserialize_any
+    {
+        (<$visitor:ident: Visitor<$lifetime:tt>> $($func:ident)*) =>
+        {
+            $(forward_to_deserialize_any_helper!{$func<$lifetime, $visitor>})*
+        };
+        
+        ($($func:ident)*) =>
+        {
+            $(forward_to_deserialize_any_helper!{$func<'de, V>})*
+        };
+    }
+
+    #[macro_export] macro_rules! forward_to_deserialize_any_method
+    {
+        ($func:ident<$l:tt, $v:ident>($($arg:ident : $ty:ty),*)) =>
+        {
+            #[inline] fn $func<$v>(self, $($arg: $ty,)* visitor: $v) -> ::Result<$v::Value, <Self as ::core::serde::de::Deserializer<$l>>::Error> where
+            $v: ::core::serde::de::Visitor<$l>,
+            {
+                $( let _ = $arg; )*
+                self.deserialize_any(visitor)
+            }
+        };
+    }
+    
+    #[macro_export(local_inner_macros)] macro_rules! forward_to_deserialize_any_helper 
+    {
+        (bool<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_bool<$l, $v>()}
+        };
+        
+        (i8<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_i8<$l, $v>()}
+        };
+        
+        (i16<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_i16<$l, $v>()}
+        };
+        
+        (i32<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_i32<$l, $v>()}
+        };
+        
+        (i64<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_i64<$l, $v>()}
+        };
+        
+        (i128<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_i128<$l, $v>()}
+        };
+        
+        (u8<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_u8<$l, $v>()}
+        };
+        
+        (u16<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_u16<$l, $v>()}
+        };
+        
+        (u32<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_u32<$l, $v>()}
+        };
+        
+        (u64<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_u64<$l, $v>()}
+        };
+        
+        (u128<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_u128<$l, $v>()}
+        };
+        
+        (f32<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_f32<$l, $v>()}
+        };
+        
+        (f64<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_f64<$l, $v>()}
+        };
+        
+        (char<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_char<$l, $v>()}
+        };
+        
+        (str<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_str<$l, $v>()}
+        };
+        
+        (string<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_string<$l, $v>()}
+        };
+        
+        (bytes<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_bytes<$l, $v>()}
+        };
+        
+        (byte_buf<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_byte_buf<$l, $v>()}
+        };
+        
+        (option<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_option<$l, $v>()}
+        };
+        
+        (unit<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_unit<$l, $v>()}
+        };
+        
+        (unit_struct<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_unit_struct<$l, $v>(name: &'static str)}
+        };
+        
+        (newtype_struct<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_newtype_struct<$l, $v>(name: &'static str)}
+        };
+        
+        (seq<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_seq<$l, $v>()}
+        };
+        
+        (tuple<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_tuple<$l, $v>(len: usize)}
+        };
+        
+        (tuple_struct<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_tuple_struct<$l, $v>(name: &'static str, len: usize)}
+        };
+        
+        (map<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_map<$l, $v>()}
+        };
+        
+        (struct<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_struct<$l, $v>(name: &'static str, fields: &'static [&'static str])}
+        };
+        
+        (enum<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_enum<$l, $v>(name: &'static str, variants: &'static [&'static str])}
+        };
+        
+        (identifier<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_identifier<$l, $v>()}
+        };
+        
+        (ignored_any<$l:tt, $v:ident>) =>
+        {
+            forward_to_deserialize_any_method!{deserialize_ignored_any<$l, $v>()}
+        };
+    }
+
+    #[macro_export] macro_rules! __require_serde_not_serde_core
+    {
+        () =>
+        {
+            compile_error!
+            (
+                "Serde derive requires a dependency on the serde crate, not serde_core"
+            );
+        };
+    }
+}
+
+pub mod alloc
+{
+    pub use std::alloc::{ * };
+}
+
+pub mod borrow
+{
+    pub use std::borrow::{ * };
+}
+
+pub mod boxed
+{
+    pub use std::boxed::{ * };
+}
+
+pub mod cell
+{
+    pub use std::cell::{ * };
+}
+
+pub mod cmp
+{
+    pub use std::cmp::{ * };
+}
+
+pub mod collections
+{
+    pub use std::collections::{ * };
+}
+
+pub mod core
+{
+    use ::
+    {
+        *,
+    };
+
+    pub mod csv
+    {
+        use ::
+        {
+            *,
+        };
+    }
+
+    pub mod serde
+    {
+        /*! Serde is a framework for ***ser***ializing and ***de***serializing Rust data structures efficiently and generically. */
+        use ::
+        {
+            *,
+        };
+        /*
+            [package]
+            name = "serde_core"
+            version = "1.0.221"
+            authors = ["Erick Tryzelaar <erick.tryzelaar@gmail.com>", "David Tolnay <dtolnay@gmail.com>"]
+            build = "build.rs"
+            categories = ["encoding", "no-std", "no-std::no-alloc"]
+            description = "Serde traits only, with no support for derive -- use the `serde` crate instead"
+            documentation = "https://docs.rs/serde_core"
+            edition = "2021"
+            homepage = "https://serde.rs"
+            keywords = ["serde", "serialization", "no_std"]
+            license = "MIT OR Apache-2.0"
+            repository = "https://github.com/serde-rs/serde"
+            rust-version = "1.56"
+
+            [dev-dependencies]
+            serde = { version = "1", path = "../serde" }
+            serde_derive = { version = "1", path = "../serde_derive" }
+
+            [package.metadata.playground]
+            features = ["rc", "result"]
+
+            [package.metadata.docs.rs]
+            features = ["rc", "result", "unstable"]
+            targets = ["x86_64-unknown-linux-gnu"]
+            rustdoc-args = [
+                "--generate-link-to-definition",
+                "--extern-html-root-url=core=https://doc.rust-lang.org",
+                "--extern-html-root-url=alloc=https://doc.rust-lang.org",
+                "--extern-html-root-url=std=https://doc.rust-lang.org",
+            ]
+
+            # This cfg cannot be enabled, but it still forces Cargo to keep serde_derive's
+            # version in lockstep with serde's, even if someone depends on the two crates
+            # separately with serde's "derive" feature disabled. Every serde_derive release
+            # is compatible with exactly one serde release because the generated code
+            # involves nonpublic APIs which are not bound by semver.
+            [target.'cfg(any())'.dependencies]
+            serde_derive = { version = "=1.0.221", path = "../serde_derive" }
+
+
+            ### FEATURES #################################################################
+
+            [features]
+            default = ["std", "result"]
+
+            # Provide impls for common standard library types like Vec<T> and HashMap<K, V>.
+            # Requires a dependency on the Rust standard library.
+            std = []
+
+            # Provide impls for types that require unstable functionality. For tracking and
+            # discussion of unstable functionality please refer to this issue:
+            #
+            #    https://github.com/serde-rs/serde/issues/812
+            unstable = []
+
+            # Provide impls for types in the Rust core allocation and collections library
+            # including String, Box<T>, Vec<T>, and Cow<T>. This is a subset of std but may
+            # be enabled without depending on all of std.
+            alloc = []
+
+            # Opt into impls for Rc<T> and Arc<T>. Serializing and deserializing these types
+            # does not preserve identity and may result in multiple copies of the same data.
+            # Be sure that this is what you want before enabling this feature.
+            rc = []
+
+            # Provide impls for Result<T, E>. Convenient in some contexts but can lead to
+            # confusion if ? or unwrap are used incautiously.
+            result = []
+        */
+        pub mod lib
+        {
+            /*! A facade around all the types we need from the `std`, `core`, and `alloc` crates.*/
+            pub use ::
+            {
+                borrow::{ Cow, ToOwned },
+                boxed::{ Box },
+                cell::{ Cell, RefCell },
+                cmp::{ Reverse },
+                collections::{ BTreeMap, BTreeSet, BinaryHeap, HashMap, HashSet, LinkedList, VecDeque },
+                ffi::{ CStr, CString, OsStr, OsString },
+                fmt::{ self, Debug, Display, Write as FmtWrite },
+                hash::{ BuildHasher, Hash },
+                io::{ Write },
+                marker::{ PhantomData },
+                num::{ Saturating, Wrapping },
+                ops::{ Bound, Range, RangeFrom, RangeInclusive, RangeTo },
+                path::{ Path, PathBuf },
+                rc::{ Rc, Weak as RcWeak },
+                string::{ String, ToString },
+                sync::{ Arc, Weak as ArcWeak, Mutex, RwLock },
+                time::{ Duration, SystemTime, UNIX_EPOCH },
+                vec::{ Vec },
+                *,
+            };
+            /*
+            */
+        }
+        
+        pub mod de
+        {
+            //! Generic data structure deserialization framework.
+            use ::
+            {
+                core::
+                {
+                    fmt::{ Display, Write },
+                    marker::{ PhantomData },
+                    serde::
+                    {
+                        InPlaceSeed
+                    },
+                },
+                error::{ Error as StdError },
+                *,
+            };
+
+            macro_rules! declare_error_trait
+            {
+                (Error: Sized $(+ $($supertrait:ident)::+)*) =>
+                {
+                    pub trait Error: Sized $(+ $($supertrait)::+)* 
+                    {
+                        fn custom<T>(msg: T) -> Self where T:Display;                
+                        #[cold] fn invalid_type(unexp: Unexpected, exp: &dyn Expected) -> Self { Error::custom(format_args!("invalid type: {}, expected {}", unexp, exp)) }
+                        #[cold] fn invalid_value(unexp: Unexpected, exp: &dyn Expected) -> Self { Error::custom(format_args!("invalid value: {}, expected {}", unexp, exp)) }
+                        #[cold] fn invalid_length(len: usize, exp: &dyn Expected) -> Self { Error::custom(format_args!("invalid length {}, expected {}", len, exp)) }
+                        
+                        #[cold] fn unknown_variant(variant: &str, expected: &'static [&'static str]) -> Self
+                        {
+                            if expected.is_empty()
+                            {
+                                Error::custom( format_args!( "unknown variant `{}`, there are no variants", variant ) )
+                            }
+                            
+                            else
+                            {
+                                Error::custom( format_args!( "unknown variant `{}`, expected {}", variant, OneOf { names: expected } ) )
+                            }
+                        }
+                        
+                        #[cold] fn unknown_field(field: &str, expected: &'static [&'static str]) -> Self
+                        {
+                            if expected.is_empty()
+                            {
+                                Error::custom( format_args!( "unknown field `{}`, there are no fields", field ) )
+                            }
+                            
+                            else
+                            {
+                                Error::custom( format_args!( "unknown field `{}`, expected {}", field, OneOf { names: expected } ) )
+                            }
+                        }
+                        
+                        #[cold] fn missing_field(field: &'static str) -> Self { Error::custom(format_args!("missing field `{}`", field)) }
+                        #[cold] fn duplicate_field(field: &'static str) -> Self { Error::custom(format_args!("duplicate field `{}`", field)) }
+                    }
+                }
+            }
+
+            pub mod value
+            {
+                //! Building blocks for deserializing basic values using the `IntoDeserializer` trait.
+                use ::
+                {
+                    core::serde::
+                    {
+                        de::{ self, Deserializer, Expected, IntoDeserializer, SeqAccess, Visitor },
+                        ser, First, Second, size_hint
+                    },
+                    *,
+                };
+
+                macro_rules! impl_copy_clone 
+                {
+                    ($ty:ident $(<$lifetime:tt>)*) => 
+                    {
+                        impl<$($lifetime,)* E> Copy for $ty<$($lifetime,)* E> {}
+
+                        impl<$($lifetime,)* E> Clone for $ty<$($lifetime,)* E> 
+                        {
+                            fn clone(&self) -> Self { *self }
+                        }
+                    };
+                }
+                
+                #[derive(Clone, PartialEq)]
+                pub struct Error
+                {
+                    err: ErrorImpl,
+                }
+
+                type ErrorImpl = Box<str>;
+
+                impl de::Error for Error
+                {
+                    #[cold] fn custom<T>(msg: T) -> Self where
+                    T: Display
+                    {
+                        Error { err: msg.to_string().into_boxed_str() }
+                    }
+                }
+
+                impl ser::Error for Error
+                {
+                    #[cold] fn custom<T>(msg: T) -> Self where
+                    T: Display
+                    { de::Error::custom(msg) }
+                }
+
+                impl Display for Error 
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result { formatter.write_str(&self.err) }
+                }
+
+                impl Debug for Error
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        let mut debug = formatter.debug_tuple("Error");
+                        debug.field(&self.err);
+                        debug.finish()
+                    }
+                }
+                
+                impl error::Error for Error
+                {
+                    fn description(&self) -> &str { &self.err }
+                }
+
+                impl<'de, E> IntoDeserializer<'de, E> for () where
+                E: de::Error
+                {
+                    type Deserializer = UnitDeserializer<E>;
+                    fn into_deserializer(self) -> UnitDeserializer<E> { UnitDeserializer::new() }
+                }
+                
+                pub struct UnitDeserializer<E>
+                {
+                    marker: PhantomData<E>,
+                }
+
+                impl_copy_clone!(UnitDeserializer);
+
+                impl<E> UnitDeserializer<E>
+                {
+                    pub fn new() -> Self
+                    {
+                        UnitDeserializer
+                        {
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl<'de, E> de::Deserializer<'de> for UnitDeserializer<E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    forward_to_deserialize_any! 
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf unit unit_struct newtype_struct seq tuple tuple_struct
+                        map struct enum identifier ignored_any
+                    }
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        visitor.visit_unit()
+                    }
+
+                    fn deserialize_option<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        visitor.visit_none()
+                    }
+                }
+
+                impl<'de, E> IntoDeserializer<'de, E> for UnitDeserializer<E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+
+                impl<E> Debug for UnitDeserializer<E> 
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result { formatter.debug_struct("UnitDeserializer").finish() }
+                }
+                
+                macro_rules! primitive_deserializer
+                {
+                    ($ty:ty, $doc:tt, $name:ident, $method:ident $($cast:tt)*) =>
+                    {
+                        #[doc = "A deserializer holding"]
+                        #[doc = $doc]
+                        pub struct $name<E> {
+                            value: $ty,
+                            marker: PhantomData<E>
+                        }
+
+                        impl_copy_clone!($name);
+
+                        impl<'de, E> IntoDeserializer<'de, E> for $ty
+                        where
+                            E: de::Error,
+                        {
+                            type Deserializer = $name<E>;
+
+                            fn into_deserializer(self) -> $name<E> {
+                                $name::new(self)
+                            }
+                        }
+
+                        impl<E> $name<E> {
+                            #[allow(missing_docs)]
+                            pub fn new(value: $ty) -> Self {
+                                $name {
+                                    value,
+                                    marker: PhantomData,
+                                }
+                            }
+                        }
+
+                        impl<'de, E> de::Deserializer<'de> for $name<E>
+                        where
+                            E: de::Error,
+                        {
+                            type Error = E;
+
+                            forward_to_deserialize_any! {
+                                bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str
+                                string bytes byte_buf option unit unit_struct newtype_struct seq
+                                tuple tuple_struct map struct enum identifier ignored_any
+                            }
+
+                            fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error>
+                            where
+                                V: de::Visitor<'de>,
+                            {
+                                visitor.$method(self.value $($cast)*)
+                            }
+                        }
+
+                        impl<'de, E> IntoDeserializer<'de, E> for $name<E>
+                        where
+                            E: de::Error,
+                        {
+                            type Deserializer = Self;
+
+                            fn into_deserializer(self) -> Self {
+                                self
+                            }
+                        }
+
+                        impl<E> Debug for $name<E> {
+                            fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                                formatter
+                                    .debug_struct(stringify!($name))
+                                    .field("value", &self.value)
+                                    .finish()
+                            }
+                        }
+                    }
+                }
+
+                primitive_deserializer!(bool, "a `bool`.", BoolDeserializer, visit_bool);
+                primitive_deserializer!(i8, "an `i8`.", I8Deserializer, visit_i8);
+                primitive_deserializer!(i16, "an `i16`.", I16Deserializer, visit_i16);
+                primitive_deserializer!(i32, "an `i32`.", I32Deserializer, visit_i32);
+                primitive_deserializer!(i64, "an `i64`.", I64Deserializer, visit_i64);
+                primitive_deserializer!(i128, "an `i128`.", I128Deserializer, visit_i128);
+                primitive_deserializer!(isize, "an `isize`.", IsizeDeserializer, visit_i64 as i64);
+                primitive_deserializer!(u8, "a `u8`.", U8Deserializer, visit_u8);
+                primitive_deserializer!(u16, "a `u16`.", U16Deserializer, visit_u16);
+                primitive_deserializer!(u64, "a `u64`.", U64Deserializer, visit_u64);
+                primitive_deserializer!(u128, "a `u128`.", U128Deserializer, visit_u128);
+                primitive_deserializer!(usize, "a `usize`.", UsizeDeserializer, visit_u64 as u64);
+                primitive_deserializer!(f32, "an `f32`.", F32Deserializer, visit_f32);
+                primitive_deserializer!(f64, "an `f64`.", F64Deserializer, visit_f64);
+                primitive_deserializer!(char, "a `char`.", CharDeserializer, visit_char);
+                
+                pub struct U32Deserializer<E> 
+                {
+                    value: u32,
+                    marker: PhantomData<E>,
+                }
+
+                impl_copy_clone!(U32Deserializer);
+
+                impl<'de, E> IntoDeserializer<'de, E> for u32 where
+                E: de::Error
+                {
+                    type Deserializer = U32Deserializer<E>;
+                    fn into_deserializer(self) -> U32Deserializer<E> { U32Deserializer::new(self) }
+                }
+
+                impl<E> U32Deserializer<E>
+                {
+                    pub fn new(value: u32) -> Self
+                    {
+                        U32Deserializer
+                        {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl<'de, E> de::Deserializer<'de> for U32Deserializer<E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    forward_to_deserialize_any! 
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>,
+                    {
+                        visitor.visit_u32(self.value)
+                    }
+
+                    fn deserialize_enum<V>( self, name: &str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        let _ = name;
+                        let _ = variants;
+                        visitor.visit_enum(self)
+                    }
+                }
+
+                impl<'de, E> IntoDeserializer<'de, E> for U32Deserializer<E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+
+                impl<'de, E> de::EnumAccess<'de> for U32Deserializer<E> where
+                E: de::Error
+                {
+                    type Error = E;
+                    type Variant = private::UnitOnly<E>;
+
+                    fn variant_seed<T>(self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                    T: de::DeserializeSeed<'de>
+                    { seed.deserialize(self).map(private::unit_only) }
+                }
+
+                impl<E> Debug for U32Deserializer<E> 
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result 
+                    {
+                        formatter
+                        .debug_struct("U32Deserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+                
+                pub struct StrDeserializer<'a, E> 
+                {
+                    value: &'a str,
+                    marker: PhantomData<E>,
+                }
+
+                impl_copy_clone!(StrDeserializer<'de>);
+
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for &'a str where
+                E: de::Error,
+                {
+                    type Deserializer = StrDeserializer<'a, E>;
+                    fn into_deserializer(self) -> StrDeserializer<'a, E> { StrDeserializer::new(self) }
+                }
+
+                impl<'a, E> StrDeserializer<'a, E>
+                {
+                    pub fn new(value: &'a str) -> Self
+                    {
+                        StrDeserializer
+                        {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl<'de, 'a, E> de::Deserializer<'de> for StrDeserializer<'a, E> where
+                E: de::Error,
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    { visitor.visit_str(self.value) }
+
+                    fn deserialize_enum<V>( self, name: &str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        let _ = name;
+                        let _ = variants;
+                        visitor.visit_enum(self)
+                    }
+
+                    forward_to_deserialize_any!
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+                }
+
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for StrDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+
+                impl<'de, 'a, E> de::EnumAccess<'de> for StrDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Error = E;
+                    type Variant = private::UnitOnly<E>;
+
+                    fn variant_seed<T>(self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                    T: de::DeserializeSeed<'de>
+                    { seed.deserialize(self).map(private::unit_only) }
+                }
+
+                impl<'a, E> Debug for StrDeserializer<'a, E>
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        formatter
+                        .debug_struct("StrDeserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+                
+                pub struct BorrowedStrDeserializer<'de, E>
+                {
+                    value: &'de str,
+                    marker: PhantomData<E>,
+                }
+
+                impl_copy_clone!(BorrowedStrDeserializer<'de>);
+
+                impl<'de, E> BorrowedStrDeserializer<'de, E>
+                {
+                    pub fn new(value: &'de str) -> BorrowedStrDeserializer<'de, E>
+                    {
+                        BorrowedStrDeserializer
+                        {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl<'de, E> de::Deserializer<'de> for BorrowedStrDeserializer<'de, E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    { visitor.visit_borrowed_str(self.value) }
+
+                    fn deserialize_enum<V>( self, name: &str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        let _ = name;
+                        let _ = variants;
+                        visitor.visit_enum(self)
+                    }
+
+                    forward_to_deserialize_any! 
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+                }
+
+                impl<'de, E> IntoDeserializer<'de, E> for BorrowedStrDeserializer<'de, E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+
+                impl<'de, E> de::EnumAccess<'de> for BorrowedStrDeserializer<'de, E> where
+                E: de::Error
+                {
+                    type Error = E;
+                    type Variant = private::UnitOnly<E>;
+
+                    fn variant_seed<T>(self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                    T: de::DeserializeSeed<'de>
+                    { seed.deserialize(self).map(private::unit_only) }
+                }
+
+                impl<'de, E> Debug for BorrowedStrDeserializer<'de, E>
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        formatter
+                        .debug_struct("BorrowedStrDeserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+                
+                pub struct StringDeserializer<E>
+                {
+                    value: String,
+                    marker: PhantomData<E>,
+                }
+                
+                impl<E> Clone for StringDeserializer<E>
+                {
+                    fn clone(&self) -> Self
+                    {
+                        StringDeserializer
+                        {
+                            value: self.value.clone(),
+                            marker: PhantomData,
+                        }
+                    }
+                }
+                
+                impl<'de, E> IntoDeserializer<'de, E> for String where
+                E: de::Error
+                {
+                    type Deserializer = StringDeserializer<E>;
+                    fn into_deserializer(self) -> StringDeserializer<E> { StringDeserializer::new(self) }
+                }
+                
+                impl<E> StringDeserializer<E> 
+                {
+                    pub fn new(value: String) -> Self
+                    {
+                        StringDeserializer
+                        {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+                
+                impl<'de, E> de::Deserializer<'de> for StringDeserializer<E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>,
+                    { visitor.visit_string(self.value) }
+
+                    fn deserialize_enum<V>( self, name: &str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        let _ = name;
+                        let _ = variants;
+                        visitor.visit_enum(self)
+                    }
+
+                    forward_to_deserialize_any!
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+                }
+                
+                impl<'de, E> IntoDeserializer<'de, E> for StringDeserializer<E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+                
+                impl<'de, E> de::EnumAccess<'de> for StringDeserializer<E> where
+                E: de::Error
+                {
+                    type Error = E;
+                    type Variant = private::UnitOnly<E>;
+
+                    fn variant_seed<T>(self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                    T: de::DeserializeSeed<'de>
+                    { seed.deserialize(self).map(private::unit_only) }
+                }
+                
+                impl<E> Debug for StringDeserializer<E>
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        formatter
+                        .debug_struct("StringDeserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+                
+                pub struct CowStrDeserializer<'a, E> 
+                {
+                    value: Cow<'a, str>,
+                    marker: PhantomData<E>,
+                }
+                
+                impl<'a, E> Clone for CowStrDeserializer<'a, E> 
+                {
+                    fn clone(&self) -> Self 
+                    {
+                        CowStrDeserializer 
+                        {
+                            value: self.value.clone(),
+                            marker: PhantomData,
+                        }
+                    }
+                }
+                
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for Cow<'a, str> where
+                E: de::Error
+                {
+                    type Deserializer = CowStrDeserializer<'a, E>;
+                    fn into_deserializer(self) -> CowStrDeserializer<'a, E> { CowStrDeserializer::new(self) }
+                }
+                
+                impl<'a, E> CowStrDeserializer<'a, E>
+                {
+                    pub fn new(value: Cow<'a, str>) -> Self
+                    {
+                        CowStrDeserializer
+                        {
+                            value,
+                            marker: PhantomData
+                        }
+                    }
+                }
+                
+                impl<'de, 'a, E> de::Deserializer<'de> for CowStrDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        match self.value
+                        {
+                            Cow::Borrowed(string) => visitor.visit_str(string),
+                            Cow::Owned(string) => visitor.visit_string(string),
+                        }
+                    }
+
+                    fn deserialize_enum<V>( self, name: &str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where
+                    V: de::Visitor<'de>
+                    {
+                        let _ = name;
+                        let _ = variants;
+                        visitor.visit_enum(self)
+                    }
+
+                    forward_to_deserialize_any!
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+                }
+                
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for CowStrDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+                    fn into_deserializer(self) -> Self { self }
+                }
+                
+                impl<'de, 'a, E> de::EnumAccess<'de> for CowStrDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Error = E;
+                    type Variant = private::UnitOnly<E>;
+
+                    fn variant_seed<T>(self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                    T: de::DeserializeSeed<'de>
+                    { seed.deserialize(self).map(private::unit_only) }
+                }
+                
+                impl<'a, E> Debug for CowStrDeserializer<'a, E>
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        formatter
+                        .debug_struct("CowStrDeserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+                
+                pub struct BytesDeserializer<'a, E>
+                {
+                    value: &'a [u8],
+                    marker: PhantomData<E>,
+                }
+
+                impl<'a, E> BytesDeserializer<'a, E>
+                {
+                    pub fn new(value: &'a [u8]) -> Self
+                    {
+                        BytesDeserializer
+                        {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl_copy_clone!(BytesDeserializer<'a>);
+
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for &'a [u8] where
+                E: de::Error
+                {
+                    type Deserializer = BytesDeserializer<'a, E>;
+                    fn into_deserializer(self) -> BytesDeserializer<'a, E> { BytesDeserializer::new(self) }
+                }
+
+                impl<'de, 'a, E> Deserializer<'de> for BytesDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                    V: Visitor<'de>
+                    { visitor.visit_bytes(self.value) }
+
+                    forward_to_deserialize_any!
+                    {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, 'a, E> IntoDeserializer<'de, E> for BytesDeserializer<'a, E> where
+                E: de::Error
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self { self }
+                }
+
+                impl<'a, E> Debug for BytesDeserializer<'a, E>
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result
+                    {
+                        formatter
+                        .debug_struct("BytesDeserializer")
+                        .field("value", &self.value)
+                        .finish()
+                    }
+                }
+
+                /// A deserializer holding a `&[u8]` with a lifetime tied to another
+                /// deserializer. Always calls [`Visitor::visit_borrowed_bytes`].
+                pub struct BorrowedBytesDeserializer<'de, E> {
+                    value: &'de [u8],
+                    marker: PhantomData<E>,
+                }
+
+                impl<'de, E> BorrowedBytesDeserializer<'de, E> {
+                    /// Create a new borrowed deserializer from the given borrowed bytes.
+                    pub fn new(value: &'de [u8]) -> Self {
+                        BorrowedBytesDeserializer {
+                            value,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl_copy_clone!(BorrowedBytesDeserializer<'de>);
+
+                impl<'de, E> Deserializer<'de> for BorrowedBytesDeserializer<'de, E> where
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: Visitor<'de>,
+                    {
+                        visitor.visit_borrowed_bytes(self.value)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, E> IntoDeserializer<'de, E> for BorrowedBytesDeserializer<'de, E> where
+                    E: de::Error,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                impl<'de, E> Debug for BorrowedBytesDeserializer<'de, E> {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                        formatter
+                            .debug_struct("BorrowedBytesDeserializer")
+                            .field("value", &self.value)
+                            .finish()
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                /// A deserializer that iterates over a sequence.
+                #[derive(Clone)]
+                pub struct SeqDeserializer<I, E> {
+                    iter: iter::Fuse<I>,
+                    count: usize,
+                    marker: PhantomData<E>,
+                }
+
+                impl<I, E> SeqDeserializer<I, E> where
+                    I: Iterator,
+                {
+                    /// Construct a new `SeqDeserializer<I, E>`.
+                    pub fn new(iter: I) -> Self {
+                        SeqDeserializer {
+                            iter: iter.fuse(),
+                            count: 0,
+                            marker: PhantomData,
+                        }
+                    }
+                }
+
+                impl<I, E> SeqDeserializer<I, E> where
+                    I: Iterator,
+                    E: de::Error,
+                {
+                    /// Check for remaining elements after passing a `SeqDeserializer` to
+                    /// `Visitor::visit_seq`.
+                    pub fn end(self) -> Result<(), E> {
+                        let remaining = self.iter.count();
+                        if remaining == 0 {
+                            Ok(())
+                        } else {
+                            // First argument is the number of elements in the data, second
+                            // argument is the number of elements expected by the Deserialize.
+                            Err(de::Error::invalid_length(
+                                self.count + remaining,
+                                &ExpectedInSeq(self.count),
+                            ))
+                        }
+                    }
+                }
+
+                impl<'de, I, T, E> de::Deserializer<'de> for SeqDeserializer<I, E> where
+                    I: Iterator<Item = T>,
+                    T: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(mut self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        let v = tri!(visitor.visit_seq(&mut self));
+                        tri!(self.end());
+                        Ok(v)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, I, T, E> IntoDeserializer<'de, E> for SeqDeserializer<I, E> where
+                    I: Iterator<Item = T>,
+                    T: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                impl<'de, I, T, E> de::SeqAccess<'de> for SeqDeserializer<I, E> where
+                    I: Iterator<Item = T>,
+                    T: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn next_element_seed<V>(&mut self, seed: V) -> Result<Option<V::Value>, Self::Error> where
+                        V: de::DeserializeSeed<'de>,
+                    {
+                        match self.iter.next() {
+                            Some(value) => {
+                                self.count += 1;
+                                seed.deserialize(value.into_deserializer()).map(Some)
+                            }
+                            None => Ok(None),
+                        }
+                    }
+
+                    fn size_hint(&self) -> Option<usize> {
+                        size_hint::from_bounds(&self.iter)
+                    }
+                }
+
+                struct ExpectedInSeq(usize);
+
+                impl Expected for ExpectedInSeq {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                        if self.0 == 1 {
+                            formatter.write_str("1 element in sequence")
+                        } else {
+                            write!(formatter, "{} elements in sequence", self.0)
+                        }
+                    }
+                }
+
+                impl<I, E> Debug for SeqDeserializer<I, E> where
+                    I: Debug,
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                        formatter
+                            .debug_struct("SeqDeserializer")
+                            .field("iter", &self.iter)
+                            .field("count", &self.count)
+                            .finish()
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                #[cfg(any(feature = "std", feature = "alloc"))]
+                #[cfg_attr(docsrs, doc(cfg(any(feature = "std", feature = "alloc"))))]
+                impl<'de, T, E> IntoDeserializer<'de, E> for Vec<T> where
+                    T: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Deserializer = SeqDeserializer<<Self as IntoIterator>::IntoIter, E>;
+
+                    fn into_deserializer(self) -> Self::Deserializer {
+                        SeqDeserializer::new(self.into_iter())
+                    }
+                }
+
+                #[cfg(any(feature = "std", feature = "alloc"))]
+                #[cfg_attr(docsrs, doc(cfg(any(feature = "std", feature = "alloc"))))]
+                impl<'de, T, E> IntoDeserializer<'de, E> for BTreeSet<T> where
+                    T: IntoDeserializer<'de, E> + Eq + Ord,
+                    E: de::Error,
+                {
+                    type Deserializer = SeqDeserializer<<Self as IntoIterator>::IntoIter, E>;
+
+                    fn into_deserializer(self) -> Self::Deserializer {
+                        SeqDeserializer::new(self.into_iter())
+                    }
+                }
+
+                #[cfg(feature = "std")]
+                #[cfg_attr(docsrs, doc(cfg(feature = "std")))]
+                impl<'de, T, S, E> IntoDeserializer<'de, E> for HashSet<T, S> where
+                    T: IntoDeserializer<'de, E> + Eq + Hash,
+                    S: BuildHasher,
+                    E: de::Error,
+                {
+                    type Deserializer = SeqDeserializer<<Self as IntoIterator>::IntoIter, E>;
+
+                    fn into_deserializer(self) -> Self::Deserializer {
+                        SeqDeserializer::new(self.into_iter())
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                /// A deserializer holding a `SeqAccess`.
+                #[derive(Clone, Debug)]
+                pub struct SeqAccessDeserializer<A> {
+                    seq: A,
+                }
+
+                impl<A> SeqAccessDeserializer<A> {
+                    /// Construct a new `SeqAccessDeserializer<A>`.
+                    pub fn new(seq: A) -> Self {
+                        SeqAccessDeserializer { seq }
+                    }
+                }
+
+                impl<'de, A> de::Deserializer<'de> for SeqAccessDeserializer<A> where
+                    A: de::SeqAccess<'de>,
+                {
+                    type Error = A::Error;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        visitor.visit_seq(self.seq)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, A> IntoDeserializer<'de, A::Error> for SeqAccessDeserializer<A> where
+                    A: de::SeqAccess<'de>,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                /// A deserializer that iterates over a map.
+                pub struct MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                {
+                    iter: iter::Fuse<I>,
+                    value: Option<Second<I::Item>>,
+                    count: usize,
+                    lifetime: PhantomData<&'de ()>,
+                    error: PhantomData<E>,
+                }
+
+                impl<'de, I, E> MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                {
+                    /// Construct a new `MapDeserializer<I, E>`.
+                    pub fn new(iter: I) -> Self {
+                        MapDeserializer {
+                            iter: iter.fuse(),
+                            value: None,
+                            count: 0,
+                            lifetime: PhantomData,
+                            error: PhantomData,
+                        }
+                    }
+                }
+
+                impl<'de, I, E> MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                    E: de::Error,
+                {
+                    /// Check for remaining elements after passing a `MapDeserializer` to
+                    /// `Visitor::visit_map`.
+                    pub fn end(self) -> Result<(), E> {
+                        let remaining = self.iter.count();
+                        if remaining == 0 {
+                            Ok(())
+                        } else {
+                            // First argument is the number of elements in the data, second
+                            // argument is the number of elements expected by the Deserialize.
+                            Err(de::Error::invalid_length(
+                                self.count + remaining,
+                                &ExpectedInMap(self.count),
+                            ))
+                        }
+                    }
+                }
+
+                impl<'de, I, E> MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                {
+                    fn next_pair(&mut self) -> Option<(First<I::Item>, Second<I::Item>)> {
+                        match self.iter.next() {
+                            Some(kv) => {
+                                self.count += 1;
+                                Some(private::Pair::split(kv))
+                            }
+                            None => None,
+                        }
+                    }
+                }
+
+                impl<'de, I, E> de::Deserializer<'de> for MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                    First<I::Item>: IntoDeserializer<'de, E>,
+                    Second<I::Item>: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn deserialize_any<V>(mut self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        let value = tri!(visitor.visit_map(&mut self));
+                        tri!(self.end());
+                        Ok(value)
+                    }
+
+                    fn deserialize_seq<V>(mut self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        let value = tri!(visitor.visit_seq(&mut self));
+                        tri!(self.end());
+                        Ok(value)
+                    }
+
+                    fn deserialize_tuple<V>(self, len: usize, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        let _ = len;
+                        self.deserialize_seq(visitor)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct tuple_struct map
+                        struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, I, E> IntoDeserializer<'de, E> for MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                    First<I::Item>: IntoDeserializer<'de, E>,
+                    Second<I::Item>: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                impl<'de, I, E> de::MapAccess<'de> for MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                    First<I::Item>: IntoDeserializer<'de, E>,
+                    Second<I::Item>: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn next_key_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>, Self::Error> where
+                        T: de::DeserializeSeed<'de>,
+                    {
+                        match self.next_pair() {
+                            Some((key, value)) => {
+                                self.value = Some(value);
+                                seed.deserialize(key.into_deserializer()).map(Some)
+                            }
+                            None => Ok(None),
+                        }
+                    }
+
+                    fn next_value_seed<T>(&mut self, seed: T) -> Result<T::Value, Self::Error> where
+                        T: de::DeserializeSeed<'de>,
+                    {
+                        let value = self.value.take();
+                        // Panic because this indicates a bug in the program rather than an
+                        // expected failure.
+                        let value = value.expect("MapAccess::next_value called before next_key");
+                        seed.deserialize(value.into_deserializer())
+                    }
+
+                    fn next_entry_seed<TK, TV>(
+                        &mut self,
+                        kseed: TK,
+                        vseed: TV,
+                    ) -> Result<Option<(TK::Value, TV::Value)>, Self::Error> where
+                        TK: de::DeserializeSeed<'de>,
+                        TV: de::DeserializeSeed<'de>,
+                    {
+                        match self.next_pair() {
+                            Some((key, value)) => {
+                                let key = tri!(kseed.deserialize(key.into_deserializer()));
+                                let value = tri!(vseed.deserialize(value.into_deserializer()));
+                                Ok(Some((key, value)))
+                            }
+                            None => Ok(None),
+                        }
+                    }
+
+                    fn size_hint(&self) -> Option<usize> {
+                        size_hint::from_bounds(&self.iter)
+                    }
+                }
+
+                impl<'de, I, E> de::SeqAccess<'de> for MapDeserializer<'de, I, E> where
+                    I: Iterator,
+                    I::Item: private::Pair,
+                    First<I::Item>: IntoDeserializer<'de, E>,
+                    Second<I::Item>: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn next_element_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>, Self::Error> where
+                        T: de::DeserializeSeed<'de>,
+                    {
+                        match self.next_pair() {
+                            Some((k, v)) => {
+                                let de = PairDeserializer(k, v, PhantomData);
+                                seed.deserialize(de).map(Some)
+                            }
+                            None => Ok(None),
+                        }
+                    }
+
+                    fn size_hint(&self) -> Option<usize> {
+                        size_hint::from_bounds(&self.iter)
+                    }
+                }
+
+                // Cannot #[derive(Clone)] because of the bound `Second<I::Item>: Clone`.
+                impl<'de, I, E> Clone for MapDeserializer<'de, I, E> where
+                    I: Iterator + Clone,
+                    I::Item: private::Pair,
+                    Second<I::Item>: Clone,
+                {
+                    fn clone(&self) -> Self {
+                        MapDeserializer {
+                            iter: self.iter.clone(),
+                            value: self.value.clone(),
+                            count: self.count,
+                            lifetime: self.lifetime,
+                            error: self.error,
+                        }
+                    }
+                }
+
+                impl<'de, I, E> Debug for MapDeserializer<'de, I, E> where
+                    I: Iterator + Debug,
+                    I::Item: private::Pair,
+                    Second<I::Item>: Debug,
+                {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                        formatter
+                            .debug_struct("MapDeserializer")
+                            .field("iter", &self.iter)
+                            .field("value", &self.value)
+                            .field("count", &self.count)
+                            .finish()
+                    }
+                }
+
+                // Used in the `impl SeqAccess for MapDeserializer` to visit the map as a
+                // sequence of pairs.
+                struct PairDeserializer<A, B, E>(A, B, PhantomData<E>);
+
+                impl<'de, A, B, E> de::Deserializer<'de> for PairDeserializer<A, B, E> where
+                    A: IntoDeserializer<'de, E>,
+                    B: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct tuple_struct map
+                        struct enum identifier ignored_any
+                    }
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        self.deserialize_seq(visitor)
+                    }
+
+                    fn deserialize_seq<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        let mut pair_visitor = PairVisitor(Some(self.0), Some(self.1), PhantomData);
+                        let pair = tri!(visitor.visit_seq(&mut pair_visitor));
+                        if pair_visitor.1.is_none() {
+                            Ok(pair)
+                        } else {
+                            let remaining = pair_visitor.size_hint().unwrap();
+                            // First argument is the number of elements in the data, second
+                            // argument is the number of elements expected by the Deserialize.
+                            Err(de::Error::invalid_length(2, &ExpectedInSeq(2 - remaining)))
+                        }
+                    }
+
+                    fn deserialize_tuple<V>(self, len: usize, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        if len == 2 {
+                            self.deserialize_seq(visitor)
+                        } else {
+                            // First argument is the number of elements in the data, second
+                            // argument is the number of elements expected by the Deserialize.
+                            Err(de::Error::invalid_length(2, &ExpectedInSeq(len)))
+                        }
+                    }
+                }
+
+                struct PairVisitor<A, B, E>(Option<A>, Option<B>, PhantomData<E>);
+
+                impl<'de, A, B, E> de::SeqAccess<'de> for PairVisitor<A, B, E> where
+                    A: IntoDeserializer<'de, E>,
+                    B: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Error = E;
+
+                    fn next_element_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>, Self::Error> where
+                        T: de::DeserializeSeed<'de>,
+                    {
+                        if let Some(k) = self.0.take() {
+                            seed.deserialize(k.into_deserializer()).map(Some)
+                        } else if let Some(v) = self.1.take() {
+                            seed.deserialize(v.into_deserializer()).map(Some)
+                        } else {
+                            Ok(None)
+                        }
+                    }
+
+                    fn size_hint(&self) -> Option<usize> {
+                        if self.0.is_some() {
+                            Some(2)
+                        } else if self.1.is_some() {
+                            Some(1)
+                        } else {
+                            Some(0)
+                        }
+                    }
+                }
+
+                struct ExpectedInMap(usize);
+
+                impl Expected for ExpectedInMap {
+                    fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result {
+                        if self.0 == 1 {
+                            formatter.write_str("1 element in map")
+                        } else {
+                            write!(formatter, "{} elements in map", self.0)
+                        }
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                #[cfg(any(feature = "std", feature = "alloc"))]
+                #[cfg_attr(docsrs, doc(cfg(any(feature = "std", feature = "alloc"))))]
+                impl<'de, K, V, E> IntoDeserializer<'de, E> for BTreeMap<K, V> where
+                    K: IntoDeserializer<'de, E> + Eq + Ord,
+                    V: IntoDeserializer<'de, E>,
+                    E: de::Error,
+                {
+                    type Deserializer = MapDeserializer<'de, <Self as IntoIterator>::IntoIter, E>;
+
+                    fn into_deserializer(self) -> Self::Deserializer {
+                        MapDeserializer::new(self.into_iter())
+                    }
+                }
+
+                #[cfg(feature = "std")]
+                #[cfg_attr(docsrs, doc(cfg(feature = "std")))]
+                impl<'de, K, V, S, E> IntoDeserializer<'de, E> for HashMap<K, V, S> where
+                    K: IntoDeserializer<'de, E> + Eq + Hash,
+                    V: IntoDeserializer<'de, E>,
+                    S: BuildHasher,
+                    E: de::Error,
+                {
+                    type Deserializer = MapDeserializer<'de, <Self as IntoIterator>::IntoIter, E>;
+
+                    fn into_deserializer(self) -> Self::Deserializer {
+                        MapDeserializer::new(self.into_iter())
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                /// A deserializer holding a `MapAccess`.
+                #[derive(Clone, Debug)]
+                pub struct MapAccessDeserializer<A> {
+                    map: A,
+                }
+
+                impl<A> MapAccessDeserializer<A> {
+                    /// Construct a new `MapAccessDeserializer<A>`.
+                    pub fn new(map: A) -> Self {
+                        MapAccessDeserializer { map }
+                    }
+                }
+
+                impl<'de, A> de::Deserializer<'de> for MapAccessDeserializer<A> where
+                    A: de::MapAccess<'de>,
+                {
+                    type Error = A::Error;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        visitor.visit_map(self.map)
+                    }
+
+                    fn deserialize_enum<V>(
+                        self,
+                        _name: &str,
+                        _variants: &'static [&'static str],
+                        visitor: V,
+                    ) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        visitor.visit_enum(self)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct identifier ignored_any
+                    }
+                }
+
+                impl<'de, A> IntoDeserializer<'de, A::Error> for MapAccessDeserializer<A> where
+                    A: de::MapAccess<'de>,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                impl<'de, A> de::EnumAccess<'de> for MapAccessDeserializer<A> where
+                    A: de::MapAccess<'de>,
+                {
+                    type Error = A::Error;
+                    type Variant = private::MapAsEnum<A>;
+
+                    fn variant_seed<T>(mut self, seed: T) -> Result<(T::Value, Self::Variant), Self::Error> where
+                        T: de::DeserializeSeed<'de>,
+                    {
+                        match tri!(self.map.next_key_seed(seed)) {
+                            Some(key) => Ok((key, private::map_as_enum(self.map))),
+                            None => Err(de::Error::invalid_type(de::Unexpected::Map, &"enum")),
+                        }
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                /// A deserializer holding an `EnumAccess`.
+                #[derive(Clone, Debug)]
+                pub struct EnumAccessDeserializer<A> {
+                    access: A,
+                }
+
+                impl<A> EnumAccessDeserializer<A> {
+                    /// Construct a new `EnumAccessDeserializer<A>`.
+                    pub fn new(access: A) -> Self {
+                        EnumAccessDeserializer { access }
+                    }
+                }
+
+                impl<'de, A> de::Deserializer<'de> for EnumAccessDeserializer<A> where
+                    A: de::EnumAccess<'de>,
+                {
+                    type Error = A::Error;
+
+                    fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                        V: de::Visitor<'de>,
+                    {
+                        visitor.visit_enum(self.access)
+                    }
+
+                    forward_to_deserialize_any! {
+                        bool i8 i16 i32 i64 i128 u8 u16 u32 u64 u128 f32 f64 char str string
+                        bytes byte_buf option unit unit_struct newtype_struct seq tuple
+                        tuple_struct map struct enum identifier ignored_any
+                    }
+                }
+
+                impl<'de, A> IntoDeserializer<'de, A::Error> for EnumAccessDeserializer<A> where
+                    A: de::EnumAccess<'de>,
+                {
+                    type Deserializer = Self;
+
+                    fn into_deserializer(self) -> Self {
+                        self
+                    }
+                }
+
+                ////////////////////////////////////////////////////////////////////////////////
+
+                mod private {
+                    use crate::lib::*;
+
+                    use crate::de::{
+                        self, DeserializeSeed, Deserializer, MapAccess, Unexpected, VariantAccess, Visitor,
+                    };
+
+                    pub struct UnitOnly<E> {
+                        marker: PhantomData<E>,
+                    }
+
+                    pub fn unit_only<T, E>(t: T) -> (T, UnitOnly<E>) {
+                        (
+                            t,
+                            UnitOnly {
+                                marker: PhantomData,
+                            },
+                        )
+                    }
+
+                    impl<'de, E> de::VariantAccess<'de> for UnitOnly<E> where
+                        E: de::Error,
+                    {
+                        type Error = E;
+
+                        fn unit_variant(self) -> Result<(), Self::Error> {
+                            Ok(())
+                        }
+
+                        fn newtype_variant_seed<T>(self, _seed: T) -> Result<T::Value, Self::Error>
+                        where
+                            T: de::DeserializeSeed<'de>,
+                        {
+                            Err(de::Error::invalid_type(
+                                Unexpected::UnitVariant,
+                                &"newtype variant",
+                            ))
+                        }
+
+                        fn tuple_variant<V>(self, _len: usize, _visitor: V) -> Result<V::Value, Self::Error>
+                        where
+                            V: de::Visitor<'de>,
+                        {
+                            Err(de::Error::invalid_type(
+                                Unexpected::UnitVariant,
+                                &"tuple variant",
+                            ))
+                        }
+
+                        fn struct_variant<V>(
+                            self,
+                            _fields: &'static [&'static str],
+                            _visitor: V,
+                        ) -> Result<V::Value, Self::Error>
+                        where
+                            V: de::Visitor<'de>,
+                        {
+                            Err(de::Error::invalid_type(
+                                Unexpected::UnitVariant,
+                                &"struct variant",
+                            ))
+                        }
+                    }
+
+                    pub struct MapAsEnum<A> {
+                        map: A,
+                    }
+
+                    pub fn map_as_enum<A>(map: A) -> MapAsEnum<A> {
+                        MapAsEnum { map }
+                    }
+
+                    impl<'de, A> VariantAccess<'de> for MapAsEnum<A> where
+                        A: MapAccess<'de>,
+                    {
+                        type Error = A::Error;
+
+                        fn unit_variant(mut self) -> Result<(), Self::Error> {
+                            self.map.next_value()
+                        }
+
+                        fn newtype_variant_seed<T>(mut self, seed: T) -> Result<T::Value, Self::Error>
+                        where
+                            T: DeserializeSeed<'de>,
+                        {
+                            self.map.next_value_seed(seed)
+                        }
+
+                        fn tuple_variant<V>(mut self, len: usize, visitor: V) -> Result<V::Value, Self::Error>
+                        where
+                            V: Visitor<'de>,
+                        {
+                            self.map.next_value_seed(SeedTupleVariant { len, visitor })
+                        }
+
+                        fn struct_variant<V>(
+                            mut self,
+                            _fields: &'static [&'static str],
+                            visitor: V,
+                        ) -> Result<V::Value, Self::Error>
+                        where
+                            V: Visitor<'de>,
+                        {
+                            self.map.next_value_seed(SeedStructVariant { visitor })
+                        }
+                    }
+
+                    struct SeedTupleVariant<V> {
+                        len: usize,
+                        visitor: V,
+                    }
+
+                    impl<'de, V> DeserializeSeed<'de> for SeedTupleVariant<V> where
+                        V: Visitor<'de>,
+                    {
+                        type Value = V::Value;
+
+                        fn deserialize<D>(self, deserializer: D) -> Result<Self::Value, D::Error>
+                        where
+                            D: Deserializer<'de>,
+                        {
+                            deserializer.deserialize_tuple(self.len, self.visitor)
+                        }
+                    }
+
+                    struct SeedStructVariant<V> {
+                        visitor: V,
+                    }
+
+                    impl<'de, V> DeserializeSeed<'de> for SeedStructVariant<V> where
+                        V: Visitor<'de>,
+                    {
+                        type Value = V::Value;
+
+                        fn deserialize<D>(self, deserializer: D) -> Result<Self::Value, D::Error>
+                        where
+                            D: Deserializer<'de>,
+                        {
+                            deserializer.deserialize_map(self.visitor)
+                        }
+                    }
+
+                    /// Avoid having to restate the generic types on `MapDeserializer`. The
+                    /// `Iterator::Item` contains enough information to figure out K and V.
+                    pub trait Pair {
+                        type First;
+                        type Second;
+                        fn split(self) -> (Self::First, Self::Second);
+                    }
+
+                    impl<A, B> Pair for (A, B) {
+                        type First = A;
+                        type Second = B;
+                        fn split(self) -> (A, B) {
+                            self
+                        }
+                    }
+
+                    pub type First<T> = <T as Pair>::First;
+                    pub type Second<T> = <T as Pair>::Second;
+                }
+            }
+
+            mod ignored_any
+            {
+                use ::
+                {
+                    *,
+                };
+            }
+
+            pub use self::ignored_any::IgnoredAny;
+
+            mod impls
+            {
+                use ::
+                {
+                    *,
+                };
+            }
+            
+            declare_error_trait!(Error: Sized + StdError);
+            
+            #[derive(Copy, Clone, PartialEq, Debug)]
+            pub enum Unexpected<'a> 
+            {
+                Bool(bool),
+                Unsigned(u64),
+                Signed(i64),
+                Float(f64),
+                Char(char),
+                Str(&'a str),
+                Bytes(&'a [u8]),
+                Unit,
+                Option,
+                NewtypeStruct,
+                Seq,
+                Map,
+                Enum,
+                UnitVariant,
+                NewtypeVariant,
+                TupleVariant,
+                StructVariant,
+                Other(&'a str),
+            }
+
+            impl<'a> fmt::Display for Unexpected<'a> 
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result 
+                {
+                    use self::Unexpected::*;
+                    match *self 
+                    {
+                        Bool(b) => write!(formatter, "boolean `{}`", b),
+                        Unsigned(i) => write!(formatter, "integer `{}`", i),
+                        Signed(i) => write!(formatter, "integer `{}`", i),
+                        Float(f) => write!(formatter, "floating point `{}`", WithDecimalPoint(f)),
+                        Char(c) => write!(formatter, "character `{}`", c),
+                        Str(s) => write!(formatter, "string {:?}", s),
+                        Bytes(_) => formatter.write_str("byte array"),
+                        Unit => formatter.write_str("unit value"),
+                        Option => formatter.write_str("Option value"),
+                        NewtypeStruct => formatter.write_str("newtype struct"),
+                        Seq => formatter.write_str("sequence"),
+                        Map => formatter.write_str("map"),
+                        Enum => formatter.write_str("enum"),
+                        UnitVariant => formatter.write_str("unit variant"),
+                        NewtypeVariant => formatter.write_str("newtype variant"),
+                        TupleVariant => formatter.write_str("tuple variant"),
+                        StructVariant => formatter.write_str("struct variant"),
+                        Other(other) => formatter.write_str(other),
+                    }
+                }
+            }
+            
+            pub trait Expected 
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result;
+            }
+
+            impl<'de, T> Expected for T where
+            T: Visitor<'de>,
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result { self.expecting(formatter) }
+            }
+
+            impl Expected for &str
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result { formatter.write_str(self) }
+            }
+
+            impl Display for dyn Expected + '_
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result { Expected::fmt(self, formatter) }
+            }
+            
+            pub trait Deserialize<'de>: Sized 
+            {
+                fn deserialize<D>(deserializer: D) -> Result<Self, D::Error> where D: Deserializer<'de>;
+                
+                fn deserialize_in_place<D>(deserializer: D, place: &mut Self) -> Result<(), D::Error> where
+                D: Deserializer<'de>,
+                {
+                    *place = tri!(Deserialize::deserialize(deserializer));
+                    Ok(())
+                }
+            }
+            
+            pub trait DeserializeOwned: for<'de> Deserialize<'de> {}
+
+            impl<T> DeserializeOwned for T where T: for<'de> Deserialize<'de> {}
+            
+            pub trait DeserializeSeed<'de>: Sized 
+            {
+                type Value;
+                fn deserialize<D>(self, deserializer: D) -> Result<Self::Value, D::Error> where D: Deserializer<'de>;
+            }
+
+            impl<'de, T> DeserializeSeed<'de> for PhantomData<T> where
+            T: Deserialize<'de>,
+            {
+                type Value = T;
+
+                #[inline] fn deserialize<D>(self, deserializer: D) -> Result<T, D::Error> where
+                D: Deserializer<'de>,
+                { T::deserialize(deserializer) }
+            }
+            
+            pub trait Deserializer<'de>: Sized
+            {
+                type Error: Error;
+                fn deserialize_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_bool<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_i8<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_i16<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_i32<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_i64<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                
+                fn deserialize_i128<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                V: Visitor<'de>,
+                {
+                    let _ = visitor;
+                    Err(Error::custom("i128 is not supported"))
+                }
+                
+                fn deserialize_u8<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;                
+                fn deserialize_u16<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_u32<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_u64<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                
+                fn deserialize_u128<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                V: Visitor<'de>,
+                {
+                    let _ = visitor;
+                    Err(Error::custom("u128 is not supported"))
+                }
+
+                fn deserialize_f32<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_f64<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_char<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;                
+                fn deserialize_str<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_string<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_bytes<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_byte_buf<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_option<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_unit<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_unit_struct<V>( self, name: &'static str, visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_newtype_struct<V>( self, name: &'static str, visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_seq<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_tuple<V>(self, len: usize, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_tuple_struct<V>( self, name: &'static str, len: usize, visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_map<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_struct<V>( self, name: &'static str, fields: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_enum<V>( self, name: &'static str, variants: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_identifier<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn deserialize_ignored_any<V>(self, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+
+                #[inline] fn is_human_readable(&self) -> bool { true }
+                fn __deserialize_content_v1<V>(self, visitor: V) -> Result<V::Value, Self::Error> where
+                V: Visitor<'de, Value = ::core::serde::Content<'de>>
+                { self.deserialize_any(visitor) }
+            }
+            
+            pub trait Visitor<'de>: Sized
+            {
+                type Value;
+                fn expecting(&self, formatter: &mut fmt::Formatter) -> fmt::Result;
+                
+                fn visit_bool<E>(self, v: bool) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Bool(v), &self)) }
+                
+                fn visit_i8<E>(self, v: i8) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_i64(v as i64) }
+                
+                fn visit_i16<E>(self, v: i16) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_i64(v as i64) }
+                
+                fn visit_i32<E>(self, v: i32) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_i64(v as i64) }
+                
+                fn visit_i64<E>(self, v: i64) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Signed(v), &self)) }
+                
+                fn visit_i128<E>(self, v: i128) -> Result<Self::Value, E> where
+                E: Error
+                {
+                    let mut buf = [0u8; 58];
+                    let mut writer = ::core::serde::format::Buf::new(&mut buf);
+                    fmt::Write::write_fmt(&mut writer, format_args!("integer `{}` as i128", v)).unwrap();
+                    Err( Error::invalid_type( Unexpected::Other(writer.as_str()), &self ) )
+                }
+                
+                fn visit_u8<E>(self, v: u8) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_u64(v as u64) }
+                
+                fn visit_u16<E>(self, v: u16) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_u64(v as u64) }
+                
+                fn visit_u32<E>(self, v: u32) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_u64(v as u64) }
+                
+                fn visit_u64<E>(self, v: u64) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Unsigned(v), &self)) }
+                
+                fn visit_u128<E>(self, v: u128) -> Result<Self::Value, E> where
+                E: Error
+                {
+                    let mut buf = [0u8; 57];
+                    let mut writer = ::core::serde::format::Buf::new(&mut buf);
+                    fmt::Write::write_fmt(&mut writer, format_args!("integer `{}` as u128", v)).unwrap();
+                    Err( Error::invalid_type( Unexpected::Other(writer.as_str()), &self ) )
+                }
+                
+                fn visit_f32<E>(self, v: f32) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_f64(v as f64) }
+                
+                fn visit_f64<E>(self, v: f64) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Float(v), &self)) }
+                
+                #[inline] fn visit_char<E>(self, v: char) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_str(v.encode_utf8(&mut [0u8; 4])) }
+                
+                fn visit_str<E>(self, v: &str) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Str(v), &self)) }
+                
+                #[inline] fn visit_borrowed_str<E>(self, v: &'de str) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_str(v) }
+                
+                #[inline] fn visit_string<E>(self, v: String) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_str(&v) }
+                
+                fn visit_bytes<E>(self, v: &[u8]) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Bytes(v), &self)) }
+                
+                #[inline] fn visit_borrowed_bytes<E>(self, v: &'de [u8]) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_bytes(v) }
+                
+                fn visit_byte_buf<E>(self, v: Vec<u8>) -> Result<Self::Value, E> where
+                E: Error
+                { self.visit_bytes(&v) }
+                
+                fn visit_none<E>(self) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Option, &self)) }
+                
+                fn visit_some<D>(self, deserializer: D) -> Result<Self::Value, D::Error> where
+                D: Deserializer<'de>
+                {
+                    let _ = deserializer;
+                    Err(Error::invalid_type(Unexpected::Option, &self))
+                }
+                
+                fn visit_unit<E>(self) -> Result<Self::Value, E> where
+                E: Error
+                { Err(Error::invalid_type(Unexpected::Unit, &self)) }
+                
+                fn visit_newtype_struct<D>(self, deserializer: D) -> Result<Self::Value, D::Error> where
+                D: Deserializer<'de>
+                {
+                    let _ = deserializer;
+                    Err(Error::invalid_type(Unexpected::NewtypeStruct, &self))
+                }
+                
+                fn visit_seq<A>(self, seq: A) -> Result<Self::Value, A::Error> where
+                A: SeqAccess<'de>
+                {
+                    let _ = seq;
+                    Err(Error::invalid_type(Unexpected::Seq, &self))
+                }
+                
+                fn visit_map<A>(self, map: A) -> Result<Self::Value, A::Error> where
+                A: MapAccess<'de>
+                {
+                    let _ = map;
+                    Err(Error::invalid_type(Unexpected::Map, &self))
+                }
+                
+                fn visit_enum<A>(self, data: A) -> Result<Self::Value, A::Error> where
+                A: EnumAccess<'de>,
+                {
+                    let _ = data;
+                    Err(Error::invalid_type(Unexpected::Enum, &self))
+                }
+                
+                fn __private_visit_untagged_option<D>(self, _: D) -> Result<Self::Value, ()> where
+                D: Deserializer<'de>,
+                { Err(()) }
+            }
+            
+            pub trait SeqAccess<'de> 
+            {
+                type Error: Error;
+                fn next_element_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>, Self::Error> where T: DeserializeSeed<'de>;
+                
+                #[inline] fn next_element<T>(&mut self) -> Result<Option<T>, Self::Error> where
+                T: Deserialize<'de>
+                { self.next_element_seed(PhantomData) }
+                
+                #[inline] fn size_hint(&self) -> Option<usize> { None }
+            }
+
+            impl<'de, A> SeqAccess<'de> for &mut A where
+            A: ?Sized + SeqAccess<'de>
+            {
+                type Error = A::Error;
+
+                #[inline] fn next_element_seed<T>(&mut self, seed: T) -> Result<Option<T::Value>, Self::Error> where
+                T: DeserializeSeed<'de>,
+                { (**self).next_element_seed(seed) }
+
+                #[inline] fn next_element<T>(&mut self) -> Result<Option<T>, Self::Error> where
+                T: Deserialize<'de>
+                { (**self).next_element() }
+
+                #[inline] fn size_hint(&self) -> Option<usize> { (**self).size_hint() }
+            }
+            
+            pub trait MapAccess<'de> 
+            {
+                type Error: Error;
+                fn next_key_seed<K>(&mut self, seed: K) -> Result<Option<K::Value>, Self::Error> where K: DeserializeSeed<'de>;
+                fn next_value_seed<V>(&mut self, seed: V) -> Result<V::Value, Self::Error> where V: DeserializeSeed<'de>;
+                
+                #[inline] fn next_entry_seed<K, V>( &mut self, kseed: K, vseed: V ) -> Result<Option<(K::Value, V::Value)>, Self::Error> where
+                K: DeserializeSeed<'de>,
+                V: DeserializeSeed<'de>
+                {
+                    match tri!(self.next_key_seed(kseed))
+                    {
+                        Some(key) =>
+                        {
+                            let value = tri!(self.next_value_seed(vseed));
+                            Ok(Some((key, value)))
+                        }
+
+                        None => Ok(None),
+                    }
+                }
+                
+                #[inline] fn next_key<K>(&mut self) -> Result<Option<K>, Self::Error> where
+                K: Deserialize<'de>
+                { self.next_key_seed(PhantomData) }
+                
+                #[inline] fn next_value<V>(&mut self) -> Result<V, Self::Error> where
+                V: Deserialize<'de>
+                { self.next_value_seed(PhantomData) }
+                
+                #[inline] fn next_entry<K, V>(&mut self) -> Result<Option<(K, V)>, Self::Error> where
+                K: Deserialize<'de>,
+                V: Deserialize<'de>
+                { self.next_entry_seed(PhantomData, PhantomData) }
+                
+                #[inline] fn size_hint(&self) -> Option<usize> { None }
+            }
+
+            impl<'de, A> MapAccess<'de> for &mut A where
+            A: ?Sized + MapAccess<'de>
+            {
+                type Error = A::Error;
+
+                #[inline] fn next_key_seed<K>(&mut self, seed: K) -> Result<Option<K::Value>, Self::Error> where
+                K: DeserializeSeed<'de>
+                { (**self).next_key_seed(seed) }
+
+                #[inline] fn next_value_seed<V>(&mut self, seed: V) -> Result<V::Value, Self::Error> where
+                V: DeserializeSeed<'de>
+                { (**self).next_value_seed(seed) }
+
+                #[inline] fn next_entry_seed<K, V>( &mut self, kseed: K, vseed: V ) -> Result<Option<(K::Value, V::Value)>, Self::Error> where
+                K: DeserializeSeed<'de>,
+                V: DeserializeSeed<'de>
+                { (**self).next_entry_seed(kseed, vseed) }
+
+                #[inline] fn next_entry<K, V>(&mut self) -> Result<Option<(K, V)>, Self::Error> where
+                K: Deserialize<'de>,
+                V: Deserialize<'de>
+                { (**self).next_entry() }
+
+                #[inline] fn next_key<K>(&mut self) -> Result<Option<K>, Self::Error> where
+                K: Deserialize<'de>
+                { (**self).next_key() }
+
+                #[inline] fn next_value<V>(&mut self) -> Result<V, Self::Error> where
+                V: Deserialize<'de>
+                { (**self).next_value() }
+
+                #[inline] fn size_hint(&self) -> Option<usize> { (**self).size_hint() }
+            }
+            
+            pub trait EnumAccess<'de>: Sized 
+            {
+                type Error: Error;
+                type Variant: VariantAccess<'de, Error = Self::Error>;
+                fn variant_seed<V>(self, seed: V) -> Result<(V::Value, Self::Variant), Self::Error> where V: DeserializeSeed<'de>;
+                
+                #[inline] fn variant<V>(self) -> Result<(V, Self::Variant), Self::Error> where
+                V: Deserialize<'de>
+                { self.variant_seed(PhantomData) }
+            }
+            
+            pub trait VariantAccess<'de>: Sized 
+            {
+                type Error: Error;
+                fn unit_variant(self) -> Result<(), Self::Error>;
+                fn newtype_variant_seed<T>(self, seed: T) -> Result<T::Value, Self::Error> where T: DeserializeSeed<'de>;
+                
+                #[inline] fn newtype_variant<T>(self) -> Result<T, Self::Error> where
+                T: Deserialize<'de>
+                { self.newtype_variant_seed(PhantomData) }
+                
+                fn tuple_variant<V>(self, len: usize, visitor: V) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+                fn struct_variant<V>( self, fields: &'static [&'static str], visitor: V ) -> Result<V::Value, Self::Error> where V: Visitor<'de>;
+            }
+            
+            pub trait IntoDeserializer<'de, E: Error = value::Error> 
+            {
+                type Deserializer: Deserializer<'de, Error = E>;
+                fn into_deserializer(self) -> Self::Deserializer;
+            }
+            
+            struct OneOf 
+            {
+                names: &'static [&'static str],
+            }
+
+            impl Display for OneOf 
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result 
+                {
+                    match self.names.len() 
+                    {
+                        0 => panic!(),
+                        1 => write!(formatter, "`{}`", self.names[0]),
+                        2 => write!(formatter, "`{}` or `{}`", self.names[0], self.names[1]),
+                        _ => 
+                        {
+                            tri!(formatter.write_str("one of "));
+                            for (i, alt) in self.names.iter().enumerate()
+                            {
+                                if i > 0 { tri!(formatter.write_str(", ")); }
+                                tri!(write!(formatter, "`{}`", alt));
+                            }
+
+                            Ok(())
+                        }
+                    }
+                }
+            }
+
+            struct WithDecimalPoint(f64);
+
+            impl Display for WithDecimalPoint 
+            {
+                fn fmt(&self, formatter: &mut fmt::Formatter) -> fmt::Result 
+                {
+                    struct LookForDecimalPoint<'f, 'a> 
+                    {
+                        formatter: &'f mut fmt::Formatter<'a>,
+                        has_decimal_point: bool,
+                    }
+
+                    impl<'f, 'a> fmt::Write for LookForDecimalPoint<'f, 'a> 
+                    {
+                        fn write_str(&mut self, fragment: &str) -> fmt::Result 
+                        {
+                            self.has_decimal_point |= fragment.contains('.');
+                            self.formatter.write_str(fragment)
+                        }
+
+                        fn write_char(&mut self, ch: char) -> fmt::Result 
+                        {
+                            self.has_decimal_point |= ch == '.';
+                            self.formatter.write_char(ch)
+                        }
+                    }
+
+                    if self.0.is_finite() 
+                    {
+                        let mut writer = LookForDecimalPoint 
+                        {
+                            formatter,
+                            has_decimal_point: false,
+                        };
+
+                        tri!(write!(writer, "{}", self.0));
+                        
+                        if !writer.has_decimal_point { tri!(formatter.write_str(".0")); }
+                    }
+
+                    else { tri!(write!(formatter, "{}", self.0)); }
+
+                    Ok(())
+                }
+            }
+        }
+
+        pub mod ser
+        {
+            use ::
+            {
+                *,
+            };
+        }
+    }
+}
+
+pub mod csv
+{
+    use ::
+    {
+        *,
+    };
+}
+
+pub mod error
+{
+    pub use std::error::{ * };
+}
+
+pub mod ffi
+{
+    pub use std::ffi::{ * };
+}
+
+pub mod fmt
+{
+    pub use std::fmt::{ * };
+}
+
+pub mod hash
+{
+    pub use std::hash::{ * };
+}
+
+pub mod io
+{
+    pub use std::io::{ * };
+}
+
+pub mod iter
+{
+    pub use std::iter::{ * };
+}
+
+pub mod marker
+{
+    pub use std::marker::{ * };
+}
+
+pub mod mem
+{
+    pub use std::mem::{ * };
+}
+
+pub mod net
+{
+    pub use std::net::{ * };
+}
+
+pub mod num
+{
+    pub use std::num::{ * };
+}
+
+pub mod ops
+{
+    pub use std::ops::{ * };
+}
+
+pub mod path
+{
+    pub use std::path::{ * };
+}
+
+pub mod rc
+{
+    pub use std::rc::{ * };
+}
+
+pub mod result
+{
+    pub use std::result::{ * };
+}
+
+pub mod str
+{
+    pub use std::str::{ * };
+}
+
+pub mod string
+{
+    pub use std::string::{ * };
+}
+
+pub mod sync
+{
+    pub use std::sync::{ * };
+}
+
+pub mod time
+{
+    pub use std::time::{ * };
+}
+
+pub mod vec
+{
+    pub use std::vec::{ * };
 }
 
 pub unsafe fn domain()
