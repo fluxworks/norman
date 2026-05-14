@@ -3824,7 +3824,7 @@ pub unsafe fn domain()
     unsafe
     {
         let who = Ident::who();
-        println!( r#"{:?}"#, who.antonyms() );
+        println!( r#"Who::antonyms( {:?} )"#, who.antonyms() );
     }
 }
 
