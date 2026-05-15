@@ -3141,6 +3141,17 @@ term!
     Questions
 );
 
+macro_rules! definition
+{
+    ($($i:ident)* ) =>
+    {
+        vec!
+        [
+            $( Entity::$i, )*
+        ]
+    };
+}
+
 impl Entity
 {
     
@@ -3148,173 +3159,23 @@ impl Entity
     {
         vec!
         [
-            vec!
-            [
-                Entity::What,
-                Entity::Person,
-                Entity::Or,
-                Entity::People,
-            ],
-
-            vec!
-            [
-                Entity::Which,
-                Entity::Person,
-                Entity::Or,
-                Entity::People,
-            ],
-
-            vec!
-            [
-                Entity::Ask,
-                Entity::For,
-                Entity::The,
-                Entity::Identity,
-                Entity::Of,
-                Entity::Someone,
-            ],
-
-            vec!
-            [
-                
-                Entity::Used,
-                Entity::In,
-                Entity::A,
-                Entity::Direct,
-                Entity::Or,
-                Entity::Indirect,
-                Entity::Question,
-            ],
-
-            vec!
-            [
-                Entity::Whose,
-            ],
-
-            vec!
-            [
-                
-                Entity::Introduces,
-                Entity::A,
-                Entity::Relative,
-                Entity::Clause,
-                Entity::Having,
-                Entity::A,
-                Entity::Human,
-                Entity::Antecedent,
-            ],
-            vec!
-            [
-                Entity::With,
-                Entity::Antecedent,
-                Entity::As,
-                Entity::Subject,
-            ],
-
-            vec!
-            [
-                Entity::With,
-                Entity::Antecedent,
-                Entity::As,
-                Entity::Object,
-            ],
-
-            vec!
-            [
-                Entity::Noun,
-                Entity::A,
-                Entity::Person,
-                Entity::Under,
-                Entity::Discussion,
-            ],
-
-            vec!
-            [
-                Entity::Noun,
-                Entity::A,
-                Entity::Question,
-                Entity::Of,
-                Entity::Which,
-                Entity::Person,
-            ],
-
-            vec!
-            [
-                Entity::Whoever,
-            ],
-
-            vec!
-            [
-                Entity::FusedRelative,
-                Entity::He,
-                Entity::Who,
-            ],
-
-            vec!
-            [
-                Entity::FusedRelative,
-                Entity::They,
-                Entity::Who,
-            ],
-
-            vec!
-            [
-                Entity::Military,
-                Entity::Stands,
-                Entity::For,
-                Entity::United,
-                Entity::Nations,
-                Entity::World,
-                Entity::Health,
-                Entity::Organization,
-            ],
-
-            vec!
-            [
-                Entity::Used,
-                Entity::When,
-                Entity::Referring,
-                Entity::To,
-                Entity::God,
-                Entity::Or,
-                Entity::Another,
-                Entity::Important,
-                Entity::Figure,
-                Entity::Who,
-                Entity::Is,
-                Entity::Understood,
-                Entity::From,
-                Entity::Context,
-            ],
-
-            vec!
-            [
-                Entity::Noun,
-                Entity::Initialism,
-                Entity::Of,
-                Entity::World,
-                Entity::Health,
-                Entity::Organization,
-            ],
-
-            vec!
-            [
-                Entity::Noun,
-                Entity::An,
-                Entity::Agency,
-                Entity::Which,
-                Entity::Coordinates,
-                Entity::International,
-                Entity::Health,
-                Entity::Activities,
-                Entity::And,
-                Entity::To,
-                Entity::Help,
-                Entity::Governments,
-                Entity::Improve,
-                Entity::Health,
-                Entity::Services
-            ]
+            definition![ What Person Or People ],
+            definition![ Which Person Or People ],
+            definition![ Ask For The Identity Of Someone ],
+            definition![ Used In A Direct Or Indirect Question ],
+            definition![ Whose ],
+            definition![ Introduces A Relative Clause Having A Human Antecedent ],
+            definition![ With Antecedent As Subject ],
+            definition![ With Antecedent As Object ],
+            definition![ Noun A Person Under Discussion ],
+            definition![ Noun A Question Of Which Person ],
+            definition![ Whoever ],
+            definition![ FusedRelative He Who ],
+            definition![ FusedRelative They Who ],
+            definition![ Military Stands For United Nations World Health Organization ],
+            definition![ Used When Referring To God Or Another Important Figure Who Is Understood From Context ],
+            definition![ Noun Initialism Of World Health Organization ],
+            definition![ Noun An Agency Which Coordinates International Health Activities And To Help Governments Improve Health Service ]
         ]
     }
     
@@ -3322,447 +3183,447 @@ impl Entity
     {
         vec!
         [
-            vec!
+            definition!
             [
-                Entity::Interrogative,
-                Entity::Which,
+                Interrogative
+                Which
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Thing,
+                Interrogative
+                Which
+                Thing
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Event,
+                Interrogative
+                Which
+                Event
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Circumstance,
+                Interrogative
+                Which
+                Circumstance
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Of,
-                Entity::An,
-                Entity::Open,
-                Entity::Ended,
-                Entity::Set,
-                Entity::Of,
-                Entity::Possibilities,
+                Interrogative
+                Which
+                Of
+                An
+                Open
+                Ended
+                Set
+                Of
+                Possibilities
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Which,
-                Entity::The,
+                Relative
+                Which
+                The
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Which,
-                Entity::That,
+                Relative
+                Which
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::That,
-                Entity::Which,
+                FusedRelative
+                That
+                Which
             ],
 
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::Those,
-                Entity::That,
+                FusedRelative
+                Those
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::The,
-                Entity::Thing,
-                Entity::That,
+                FusedRelative
+                The
+                Thing
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::The,
-                Entity::Things,
-                Entity::That,
+                FusedRelative
+                The
+                Things
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Any,
-                Entity::That,
+                Relative
+                Any
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::All,
-                Entity::That,
+                Relative
+                All
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Whatever,
+                Relative
+                Whatever
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::That,
+                Relative
+                That
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Which,
+                Relative
+                Which
             ],
 
-            vec!
+            definition!
             [
-                Entity::Relative,
-                Entity::Who,
+                Relative
+                Who
             ],
             
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::An,
-                Entity::Expression,
-                Entity::Of,
-                Entity::Surprise,
+                Interjection
+                An
+                Expression
+                Of
+                Surprise
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::An,
-                Entity::Expression,
-                Entity::Of,
-                Entity::Disbelief,
+                Interjection
+                An
+                Expression
+                Of
+                Disbelief
             ],
             
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::Anything,
-                Entity::That,
+                FusedRelative
+                Anything
+                That
             ],
             
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::All,
-                Entity::That,
+                FusedRelative
+                All
+                That
             ],
             
-            vec!
+            definition!
             [
-                Entity::FusedRelative,
-                Entity::Whatever,
+                FusedRelative
+                Whatever
             ],
             
-            vec!
+            definition!
             [
-                Entity::Indexable,
-                Entity::The,
-                Entity::Identity,
-                Entity::Of,
-                Entity::A,
-                Entity::Thing,
-                Entity::As,
-                Entity::An,
-                Entity::Answer,
-                Entity::To,
-                Entity::A,
-                Entity::Question,
-                Entity::Of,
-                Entity::What,
+                Indexable
+                The
+                Identity
+                Of
+                A
+                Thing
+                As
+                An
+                Answer
+                To
+                A
+                Question
+                Of
+                What
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::What,
-                Entity::Do,
-                Entity::You,
-                Entity::Want,
+                Interjection
+                What
+                Do
+                You
+                Want
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::An,
-                Entity::Abrupt,
-                Entity::Usually,
-                Entity::Unfriendly,
-                Entity::Enquiry,
-                Entity::As,
-                Entity::To,
-                Entity::What,
-                Entity::A,
-                Entity::Person,
-                Entity::Desires,
+                Interjection
+                An
+                Abrupt
+                Usually
+                Unfriendly
+                Enquiry
+                As
+                To
+                What
+                A
+                Person
+                Desires
             ],
 
-            vec!
+            definition!
             [
-                Entity::Noteable,
-                Entity::Emphasises,
-                Entity::That,
-                Entity::Something,
-                Entity::Is,
-                Entity::Noteworthy,
-                Entity::Or,
-                Entity::Remarkable,
-                Entity::In,
-                Entity::Quality,
-                Entity::Or,
-                Entity::Degree,
+                Noteable
+                Emphasises
+                That
+                Something
+                Is
+                Noteworthy
+                Or
+                Remarkable
+                In
+                Quality
+                Or
+                Degree
             ],
 
-            vec!
+            definition!
             [
-                Entity::Noteable,
-                Entity::Used,
-                Entity::In,
-                Entity::Combination,
-                Entity::With,
-                Entity::Some,
-                Entity::Other,
-                Entity::Determiner,
+                Noteable
+                Used
+                In
+                Combination
+                With
+                Some
+                Other
+                Determiner
             ],
 
-            vec!
+            definition!
             [
-                Entity::Indexable,
-                Entity::Something,
-                Entity::That,
-                Entity::Is,
-                Entity::Addressed,
-                Entity::By,
-                Entity::What,
+                Indexable
+                Something
+                That
+                Is
+                Addressed
+                By
+                What
             ],
 
-            vec!
+            definition!
             [
-                Entity::Adverb,
-                Entity::Used,
-                Entity::Before,
-                Entity::A,
-                Entity::Prepositional,
-                Entity::Phrase,
-                Entity::To,
-                Entity::Emphasise,
-                Entity::That,
-                Entity::Something,
-                Entity::Is,
-                Entity::Taken,
-                Entity::Into,
-                Entity::Consideration,
-                Entity::As,
-                Entity::A,
-                Entity::Cause,
-                Entity::Or,
-                Entity::Reason,
+                Adverb
+                Used
+                Before
+                A
+                Prepositional
+                Phrase
+                To
+                Emphasise
+                That
+                Something
+                Is
+                Taken
+                Into
+                Consideration
+                As
+                A
+                Cause
+                Or
+                Reason
             ],
             
-            vec!
+            definition!
             [
-                Entity::Adverb,
-                Entity::Used,
-                Entity::In,
-                Entity::The,
-                Entity::Conjunction,
-                Entity::With,
-                Entity::With,
+                Adverb
+                Used
+                In
+                The
+                Conjunction
+                With
+                With
             ],
 
-            vec!
+            definition!
             [
-                Entity::Exclamative,
-                Entity::Used,
-                Entity::To,
-                Entity::Form,
-                Entity::Exclamations,
-                Entity::Indicating,
-                Entity::That,
-                Entity::Something,
-                Entity::Is,
-                Entity::Remarkable,
+                Exclamative
+                Used
+                To
+                Form
+                Exclamations
+                Indicating
+                That
+                Something
+                Is
+                Remarkable
             ],
 
-            vec!
+            definition!
             [
-                Entity::Adjective,
-                Entity::Used,
-                Entity::To,
-                Entity::Form,
-                Entity::Exclamations,
-                Entity::Followed,
-                Entity::By,
-                Entity::A,
-                Entity::Question,
+                Adjective
+                Used
+                To
+                Form
+                Exclamations
+                Followed
+                By
+                A
+                Question
             ],
 
-            vec!
+            definition!
             [
-                Entity::Noun,
-                Entity::Emphasizes,
-                Entity::The,
-                Entity::Truth,
-                Entity::Of,
-                Entity::An,
-                Entity::Assertion,
-                Entity::Made,
-                Entity::To,
-                Entity::Contradict,
-                Entity::An,
-                Entity::Evidently,
-                Entity::False,
-                Entity::Assumption,
-                Entity::Held,
-                Entity::By,
-                Entity::The,
-                Entity::Person,
+                Noun
+                Emphasizes
+                The
+                Truth
+                Of
+                An
+                Assertion
+                Made
+                To
+                Contradict
+                An
+                Evidently
+                False
+                Assumption
+                Held
+                By
+                The
+                Person
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::Indicating,
-                Entity::A,
-                Entity::Guess,
-                Entity::To,
-                Entity::Try,
-                Entity::To,
-                Entity::Recall,
-                Entity::Information,
+                Interjection
+                Indicating
+                A
+                Guess
+                To
+                Try
+                To
+                Recall
+                Information
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::Indicating,
-                Entity::An,
-                Entity::Approximation,
-                Entity::To,
-                Entity::Try,
-                Entity::To,
-                Entity::Recall,
-                Entity::Information,
+                Interjection
+                Indicating
+                An
+                Approximation
+                To
+                Try
+                To
+                Recall
+                Information
             ],
 
-            vec!
+            definition!
             [
-                Entity::Interjection,
-                Entity::Indicating,
-                Entity::A,
-                Entity::Pause,
-                Entity::To,
-                Entity::Try,
-                Entity::To,
-                Entity::Recall,
-                Entity::Information,
+                Interjection
+                Indicating
+                A
+                Pause
+                To
+                Try
+                To
+                Recall
+                Information
             ],
 
-            vec!
+            definition!
             [
-                Entity::Adjective,
-                Entity::As,
-                Entity::A,
-                Entity::Relative,
-                Entity::Pronoun,
+                Adjective
+                As
+                A
+                Relative
+                Pronoun
             ],
 
-            vec!
+            definition!
             [
-                Entity::Ambiguous,
-                Entity::Something,
+                Ambiguous
+                Something
             ],
 
-            vec!
+            definition!
             [
-                Entity::Ambiguous,
-                Entity::Thing,
+                Ambiguous
+                Thing
             ],
 
-            vec!
+            definition!
             [
-                Entity::Ambiguous,
-                Entity::Stuff,
+                Ambiguous
+                Stuff
             ],
 
-            vec!
+            definition!
             [
-                Entity::Truncation,
-                Entity::What,
-                Entity::Do,
-                Entity::You,
-                Entity::Say,
+                Truncation
+                What
+                Do
+                You
+                Say
             ],
 
-            vec!
+            definition!
             [
-                Entity::Rhetorical,
-                Entity::Used,
-                Entity::As,
-                Entity::A,
-                Entity::Tag,
-                Entity::Question,
-                Entity::To,
-                Entity::Emphasise,
-                Entity::A,
-                Entity::Statement,
-                Entity::Inviting,
-                Entity::Agreement,
+                Rhetorical
+                Used
+                As
+                A
+                Tag
+                Question
+                To
+                Emphasise
+                A
+                Statement
+                Inviting
+                Agreement
             ],
 
-            vec!
+            definition!
             [
-                Entity::Pronoun,
-                Entity::Used,
-                Entity::In,
-                Entity::Asking,
-                Entity::Questions,
-                Entity::Regarding,
-                Entity::Either,
-                Entity::Persons,
-                Entity::Or,
-                Entity::Things,
+                Pronoun
+                Used
+                In
+                Asking
+                Questions
+                Regarding
+                Either
+                Persons
+                Or
+                Things
             ],
 
-            vec!
+            definition!
             [
-                Entity::Adjective,
-                Entity::How,
+                Adjective
+                How
             ],
 
-            vec!
+            definition!
             [
-                Entity::Adjective,
-                Entity::Which,
-            ],
+                Adjective
+                Which
+            ]
         ]
     }
 
