@@ -30,17 +30,22 @@ macro_rules! term
 
 term!
 (
-    Defense,
-    Offense,
-    Perjorate,
-    What,
-    Who,
+    Who,    
+    What,    
     Whose,
     Which,
+    Whichever,
     Where,
     Why,
     How,
     When,
+    Whom,
+    Whomevers,
+    Whosoever,
+    Whosoevers,
+    Whomsoevers,
+    Whoevers,
+    /**/
     Mock,
     Inequal,
     Equal,
@@ -72,6 +77,7 @@ term!
     Interrogative,
     Relative,
     FusedRelative,
+    Possessive,
     Interjection,
     Indexable,
     Noteable,
@@ -97,9 +103,11 @@ term!
     Inside,
     Ask,
     For,
+    Forasmuch,
     The,
     Identity,
     Someone,
+    Someones,
     Used,
     In,
     A,
@@ -242,8 +250,10 @@ term!
     Anxiety,
     Any,
     Anybody,
+    Anybodys,
     Anymore,
     Anyone,
+    Anyones,
     Anything,
     Anyway,
     Anywhere,
@@ -377,6 +387,7 @@ term!
     Believe,
     Bell,
     Belong,
+    Belonging,
     Below,
     Belt,
     Bench,
@@ -808,8 +819,9 @@ term!
     Deeply,
     Deer,
     Defeat,
-    Defend,
+    Defend,    
     Defendant,
+    Defense,
     Defensive,
     Deficit,
     Define,
@@ -840,6 +852,7 @@ term!
     Desert,
     Deserve,
     Design,
+    Designates,
     Designer,
     Desire,
     Desk,
@@ -1052,6 +1065,7 @@ term!
     Everybody,
     Everyday,
     Everyone,
+    Everyones,
     Everything,
     Everywhere,
     Evidence,
@@ -1148,6 +1162,7 @@ term!
     Fewer,
     Fiber,
     Fiction,
+    Fie,
     Field,
     Fifteen,
     Fifth,
@@ -1242,6 +1257,7 @@ term!
     Funeral,
     Funny,
     Furniture,
+    Further,
     Furthermore,
     Future,
     Gain,
@@ -1278,6 +1294,7 @@ term!
     Girlfriend,
     Give,
     Given,
+    Gives,
     Glad,
     Glance,
     Glass,
@@ -1359,6 +1376,7 @@ term!
     Help,
     Helpful,
     Her,
+    Hers,
     Here,
     Heritage,
     Hero,
@@ -1404,6 +1422,7 @@ term!
     Housing,
     However,
     Huge,
+    Huh,
     Humor,
     Hundred,
     Hungry,
@@ -1436,6 +1455,7 @@ term!
     Implement,
     Implication,
     Imply,
+    Implied,
     Importance,
     Important,
     Impose,
@@ -1736,6 +1756,7 @@ term!
     Memory,
     Mental,
     Mention,
+    Mentioned,
     Menu,
     Mere,
     Merely,
@@ -1851,6 +1872,7 @@ term!
     Nine,
     No,
     Nobody,
+    Nobodys,
     Nod,
     Noise,
     Nomination,
@@ -1873,7 +1895,7 @@ term!
     Number,
     Numerous,
     Nurse,
-    Nut,
+    Nut,    
     Objective,
     Obligation,
     Observation,
@@ -1891,6 +1913,7 @@ term!
     Odd,
     Odds,
     Off,
+    Offense,
     Offensive,
     Offer,
     Office,
@@ -1906,6 +1929,7 @@ term!
     On,
     Once,
     One,
+    Ones,
     Ongoing,
     Onion,
     Online,
@@ -1939,6 +1963,7 @@ term!
     Otherwise,
     Ought,
     Our,
+    Ours,
     Ourselves,
     Out,
     Outcome,
@@ -2009,6 +2034,7 @@ term!
     Performance,
     Perhaps,
     Period,
+    Perjorate,
     Permanent,
     Permission,
     Permit,
@@ -2348,6 +2374,7 @@ term!
     River,
     Road,
     Rock,
+    Roger,
     Role,
     Roll,
     Romantic,
@@ -2551,6 +2578,7 @@ term!
     Solve,
     Some,
     Somebody,
+    Somebodys,
     Somehow,
     Something,
     Sometimes,
@@ -2561,6 +2589,7 @@ term!
     Soon,
     Sophisticated,
     Sorry,
+    Pardon,
     Sort,
     Soul,
     Sound,
@@ -2762,6 +2791,7 @@ term!
     That,
     Theater,
     Their,
+    Theirs,
     Them,
     Theme,
     Themselves,
@@ -2771,6 +2801,7 @@ term!
     There,
     Therefore,
     These,
+    Those,
     They,
     Thick,
     Thin,
@@ -2779,7 +2810,6 @@ term!
     Third,
     Thirty,
     This,
-    Those,
     Though,
     Thought,
     Thousand,
@@ -2990,6 +3020,7 @@ term!
     Western,
     Wet,
     Whatever,
+    Whatsoever,
     Wheel,
     Whenever,
     Whereas,
@@ -2998,7 +3029,6 @@ term!
     Whisper,
     White,
     Whole,
-    Whom,
     Wide,
     Widely,
     Widespread,
@@ -3046,6 +3076,7 @@ term!
     Writing,
     Wrong,
     Yard,
+    Yass,
     Yeah,
     Year,
     Yell,
@@ -3734,6 +3765,197 @@ impl Entity
             ],
         ]
     }
+
+    pub fn whose() -> Definitions
+    {
+        vec!
+        [
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Of,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Belonging,
+                Entity::To,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Persons,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Which,
+                Entity::Peoples,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Relative,
+                Entity::That,
+                Entity::Of,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Relative,
+                Entity::Those,
+                Entity::Of,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Relative,
+                Entity::That,
+                Entity::Belonging,
+                Entity::To,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::Relative,
+                Entity::Those,
+                Entity::Belonging,
+                Entity::To,
+                Entity::Whom,
+            ],
+            vec!
+            [
+                Entity::Possessive,
+                Entity::Of,
+                Entity::Who,
+            ],
+            vec!
+            [
+                Entity::Possessive,
+                Entity::Of,
+                Entity::Which,
+            ],
+        ]
+    }
+
+    pub fn which() -> Definitions
+    {
+        vec!
+        [
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::What,
+                Entity::Of,
+                Entity::Those,
+                Entity::Mentioned,
+                Entity::Or,
+                Entity::Implied,
+            ],
+            
+            vec!
+            [
+                Entity::Interrogative,
+                Entity::What,
+                Entity::One,
+                Entity::Or,
+                Entity::Ones,                
+                Entity::Of,
+                Entity::Those,
+                Entity::Mentioned,
+                Entity::Or,
+                Entity::Implied,
+            ],
+            
+            vec!
+            [
+                Entity::Adverb,
+                Entity::Whichever,
+            ],
+            
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Of,
+                Entity::What,
+                Entity::Sort,
+                Entity::Or,
+                Entity::Kind,
+            ],
+            
+            vec!
+            [
+                Entity::Relative,
+                Entity::Designates,
+                Entity::Those,
+                Entity::Previously,
+                Entity::Mentioned,
+            ],
+            
+            vec!
+            [
+                Entity::Relative,
+                Entity::Gives,
+                Entity::Further,
+                Entity::Information,
+                Entity::About,
+                Entity::Something,
+                Entity::Previously,
+                Entity::Mentioned,
+            ],
+        ]
+    }
+
+    pub fn whichever() -> Definitions
+    {
+        vec!
+        [
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Regardless,
+                Entity::Of,
+            ],
+            vec!
+            [
+                Entity::Adjective,
+                Entity::No,
+                Entity::Matter,
+                Entity::Which,
+            ],
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Any,
+                Entity::That,
+            ],
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Those,
+                Entity::That,
+            ],
+            vec!
+            [
+                Entity::Adjective,
+                Entity::According,
+                Entity::To,
+            ],
+            vec!
+            [
+                Entity::Adjective,
+                Entity::Depending,
+                Entity::Upon,
+                Entity::Which,
+            ],
+        ]
+    }
 }
 
 impl Ident
@@ -3751,6 +3973,30 @@ impl Ident
         Self::What
         (
             Entity::what()       
+        )
+    }
+
+    pub fn whose() -> Self
+    {
+        Self::Whose
+        (
+            Entity::whose()       
+        )
+    }
+
+    pub fn which() -> Self
+    {
+        Self::Which
+        (
+            Entity::which()       
+        )
+    }
+    
+    pub fn whichever() -> Self
+    {
+        Self::Whichever
+        (
+            Entity::whichever()       
         )
     }
 
@@ -3784,6 +4030,78 @@ impl Ident
                     Entity::Denizen,
                 ]
             }
+
+            What( _ ) =>
+            {
+                vec!
+                [
+                    Entity::Which,
+                    Entity::Whatever,
+                    Entity::Whichever,
+                    Entity::As,
+                    Entity::How,
+                    Entity::Anything,
+                    Entity::Why,
+                    Entity::Forasmuch,
+                    Entity::Something,
+                    Entity::Like,
+                    Entity::Whatsoever,
+                    Entity::Any,
+                    Entity::Pardon,
+                    Entity::Huh,
+                    Entity::Fie,
+                ]
+            }
+
+            Whose( _ ) =>
+            {
+                vec!
+                [
+                    Entity::Whom,
+                    Entity::Whomevers,
+                    Entity::Whoever,
+                    Entity::Whatever,
+                    Entity::Whosoever,
+                    Entity::Whosoevers,
+                    Entity::Whomsoevers,
+                    Entity::Whoevers,
+                ]
+            }
+
+            Which( _ ) =>
+            {
+                vec!
+                [
+                    Entity::That,
+                    Entity::What,
+                    Entity::Who,
+                    Entity::Whom,
+                    Entity::Such,
+                    Entity::This,
+                ]
+            }
+            
+            Whichever( _ ) =>
+            {
+                vec!
+                [
+                    Entity::Any,
+                    Entity::Whatever,
+                    Entity::Either,
+                    Entity::What,
+                    Entity::That,
+                    Entity::Whatsoever,
+                    Entity::Whether,
+                    Entity::Both,
+                    Entity::Regardless,
+                    Entity::Whoever,
+                    Entity::One,
+                    Entity::Anything,
+                    Entity::Such,
+                    Entity::So,
+                ]
+            }
+
             _ =>
             {
                 vec![]
@@ -3811,6 +4129,79 @@ impl Ident
                     Entity::How,
                 ]
             }
+
+            What( _ ) =>
+            {
+                vec!
+                [
+                    Entity::Not,
+                    Entity::Understood,
+                    Entity::Yass,
+                    Entity::Despite,
+                    Entity::Roger,
+                ]
+            }
+            
+            Whose( _ ) =>
+            {
+                vec!
+                [
+                    Entity::My,
+                    Entity::Mine,
+                    Entity::Our,
+                    Entity::Ours,
+                    Entity::Your,
+                    Entity::Yours,
+                    Entity::His,
+                    Entity::Her,
+                    Entity::Hers,
+                    Entity::Its,
+                    Entity::Their,
+                    Entity::Theirs,
+                    Entity::This,
+                    Entity::That,
+                    Entity::These,
+                    Entity::Those,
+                    Entity::Somebodys,
+                    Entity::Anyones,
+                    Entity::Everyones,
+                    Entity::Nobodys,
+                    Entity::Anybodys,
+                    Entity::Someones,
+                ]
+            }
+
+            Which( _ ) =>
+            {
+                vec!
+                [
+                    Entity::None,
+                    Entity::Neither,
+                    Entity::Nothing,
+                    Entity::Nobody,
+                    Entity::Nowhere,
+                    Entity::Never,
+                    Entity::Whoever,
+                    Entity::Any,
+                    Entity::All,
+                    Entity::Whatever,
+                    Entity::Whichever,
+                ]
+            }
+            
+            Whichever( _ ) =>
+            {
+                vec!
+                [
+                    Entity::None,
+                    Entity::Neither,
+                    Entity::Nothing,
+                    Entity::Nobody,
+                    Entity::Nowhere,
+                    Entity::Never,
+                ]
+            }
+
             _ =>
             {
                 vec![]
@@ -3835,4 +4226,4 @@ pub fn main()
         domain();        
     }
 }
-// 3838
+// 4229
