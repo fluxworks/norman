@@ -36,6 +36,7 @@ term!
     Which,
     Whichever,
     Where,
+    Wherever,
     Why,
     How,
     When,
@@ -66,6 +67,7 @@ term!
     Pronoun,
     Person,
     Place,
+    Places,
     Thing,
     People,
     Animal,
@@ -254,6 +256,7 @@ term!
     Anymore,
     Anyone,
     Anyones,
+    Anyplace,
     Anything,
     Anyway,
     Anywhere,
@@ -571,12 +574,14 @@ term!
     Choice,
     Cholesterol,
     Choose,
+    Chooses,
     Christian,
     Christmas,
     Church,
     Cigarette,
     Circle,
     Circumstance,
+    Circumstances,
     Cite,
     Citizen,
     City,
@@ -708,6 +713,7 @@ term!
     Continue,
     Continued,
     Contract,
+    Contrary,
     Contrast,
     Contribute,
     Contribution,
@@ -717,6 +723,7 @@ term!
     Convention,
     Conventional,
     Conversation,
+    Conversely,
     Convert,
     Conviction,
     Convince,
@@ -922,6 +929,7 @@ term!
     Do,
     Doctor,
     Document,
+    Does,
     Dog,
     Domestic,
     Dominant,
@@ -1005,6 +1013,7 @@ term!
     Emotional,
     Emphasis,
     Emphasize,
+    Emphatic,
     Employ,
     Employee,
     Employer,
@@ -1349,6 +1358,7 @@ term!
     Handle,
     Hang,
     Happen,
+    Happens,
     Happy,
     Hard,
     Hardly,
@@ -1375,6 +1385,7 @@ term!
     Hello,
     Help,
     Helpful,
+    Hence,
     Her,
     Hers,
     Here,
@@ -1654,6 +1665,7 @@ term!
     Light,
     Like,
     Likely,
+    Likes,
     Limit,
     Limitation,
     Limited,
@@ -1671,9 +1683,13 @@ term!
     Load,
     Loan,
     Local,
+    Locale,
+    Locality,
     Locate,
+    Located,
     Location,
     Lock,
+    Locus,
     Long,
     LongTerm,
     Look,
@@ -2540,6 +2556,7 @@ term!
     Sit,
     Site,
     Situation,
+    Situations,
     Six,
     Size,
     Ski,
@@ -2580,6 +2597,7 @@ term!
     Somebody,
     Somebodys,
     Somehow,
+    Someplace,
     Something,
     Sometimes,
     Somewhat,
@@ -2616,6 +2634,7 @@ term!
     Spiritual,
     Split,
     Spokesman,
+    Sporadically,
     Sport,
     Spot,
     Spread,
@@ -2821,6 +2840,7 @@ term!
     Throughout,
     Throw,
     Thus,
+    Thusly,
     Ticket,
     Tie,
     Tight,
@@ -2913,6 +2933,7 @@ term!
     Undergo,
     Understand,
     Understanding,
+    Unemployment,
     Unfortunately,
     Uniform,
     Union,
@@ -3023,8 +3044,16 @@ term!
     Whatsoever,
     Wheel,
     Whenever,
+    Whereabout,
+    Whereabouts,
     Whereas,
+    Whereat,
+    Wherein,
+    Wheresoever,
+    Whereupon,
     Whether,
+    Whither,
+    Whithersoever,
     While,
     Whisper,
     White,
@@ -3267,6 +3296,75 @@ impl Entity
             definition![ Adjective Depending Upon Which ],
         ]
     }
+
+    pub fn r#where() -> Definitions
+    {
+        vec!
+        [
+            definition![ Interrogative Used In A Direct Or Indirect Question ],
+            definition![ Conjunction In At Which Place Or Situation ],
+            definition![ Conjunction Into Which Place Or Situation ],
+            definition![ Adverb What Place ],
+            definition![ Conjunction In At ],
+            definition![ Conjunction In A Place That ],
+            definition![ Conjunction Into The Place That ],
+            definition![ Adverb In What Situation ],
+            definition![ Conjunction In At Or To Any Place That ],
+            definition![ Conjunction Wherever ],
+            definition![ Conjunction Anywhere ],
+            definition![ Conjunction In A Position Case ],
+            definition![ Conjunction In Which ],
+            definition![ Conjunction If ],
+            definition![ Relative In At Or To Which ],
+            definition![ Noun The Place In Which Something Happens ],
+            definition![ FusedRelative The Place In At Or To Which ],
+            definition![ Conjunction While On The Contrary ],
+            definition![ Conjunction Although ],
+            definition![ Conjunction Whereas ],
+            definition![ Interrogative At Or In What Place ],
+            definition![ Interrogative Hence ],
+            definition![ Interrogative In What Situation Position Or Circumstances ],
+            definition![ Relative At Or In Which Place ],
+            definition![ Relative At The Place In Which ],
+            definition![ Relative Hence In The Case Or Instance In Which ],
+            definition![ Noun Place Or Situation ],
+            definition![ Interrogative To What Or Which Place ],
+            definition![ Interrogative Hence ],
+            definition![ Interrogative To What Goal ],
+            definition![ Interrogative To What Result ],
+            definition![ Interrogative To What Issue ],
+            definition![ Interrogative Whither ],
+            definition![ Conjunction Whether ],
+        ]
+    }
+
+    pub fn wherever() -> Definitions
+    {
+        vec!
+        [
+            definition![ Conjunction Regardless Of The Place In At Or To Which ],
+            definition![ Interrogative Where Ever ],
+            definition![ Interrogative An Emphatic Form Of Where ],
+            definition![ Conjunction In At Or To Any Place That ],
+            definition![ Conjunction Anywhere ],
+            definition![ Conjunction In At Or To All Places Or Situations That ],
+            definition![ Conjunction Everywhere ],
+            definition![ Adverb In At Or To Any Place That One Likes Or Chooses ],
+            definition![ FusedRelative The Place No Matter Wherein At Or To Which ],
+            definition![ Conjunction Used To Show That One Does Not Know Where Someone Or Something Is Located ],
+            definition![ Adverb Where In The World ],
+            definition![ Adverb At Or In Whatever Place ],
+            definition![ Adverb Wheresoever ],
+        ]
+    } 
+
+    pub fn why() -> Definitions
+    {
+        vec!
+        [
+            definition![],
+        ]
+    }
 }
 
 impl Ident
@@ -3310,6 +3408,30 @@ impl Ident
             Entity::whichever()       
         )
     }
+    
+    pub fn r#where() -> Self
+    {
+        Self::Where
+        (
+            Entity::r#where()       
+        )
+    }
+    
+    pub fn wherever() -> Self
+    {
+        Self::Wherever
+        (
+            Entity::wherever()       
+        )
+    }
+    
+    pub fn why() -> Self
+    {
+        Self::Why
+        (
+            Entity::why()       
+        )
+    }
 
     pub fn synonyms( &self ) -> Definition
     {
@@ -3321,6 +3443,8 @@ impl Ident
             Whose( _ ) => { definition![ Whom Whomevers Whoever Whatever Whosoever Whosoevers Whomsoevers Whoevers ] }
             Which( _ ) => { definition![ That What Who Whom Such This ] }            
             Whichever( _ ) => { definition![ Any Whatever Either What That Whatsoever Whether Both Regardless Whoever One Anything Such So ] }
+            Where( _ ) => { definition![ Wherever Whither Location Somewhere Whereabouts Locus Wherein Place Whereupon Anyplace Whereat Site How Spot Everywhere Point Position Wheresoever Situation Locale Locality ] }
+            Wherever( _ ) => { definition![ Everywhere Anywhere Somewhere Anyplace Whenever Wheresoever Place Where Whither Around Elsewhere Throughout Whereabouts Wherein Site Whithersoever Whereat ] }
             _ => { vec![] }
         }
     }
@@ -3335,6 +3459,8 @@ impl Ident
             Whose( _ ) => { definition![ My Mine Our Ours Your Yours His Her Hers Its Their Theirs This That These Those Somebodys Anyones Everyones Nobodys Anybodys Someones ] }
             Which( _ ) => { definition![ None Neither Nothing Nobody Nowhere Never Whoever Any All Whatever Whichever ] }
             Whichever( _ ) => { definition![ None Neither Nothing Nobody Nowhere Never ] }
+            Where( _ ) => { definition![ So Thusly Unemployment Whole Nowhere Conversely Somewhere Everywhere Someplace There ] }
+            Wherever( _ ) => { definition![ Unemployment Nowhere Never Where Hardly Sporadically ] }
             _ => { vec![] }
         }
     }
@@ -3344,8 +3470,8 @@ pub unsafe fn domain()
 {
     unsafe
     {
-        let who = Ident::who();
-        println!( r#"Who::antonyms( {:?} )"#, who.antonyms() );
+        let w = Ident::r#where();
+        println!( r#"Where::antonyms( {:?} )"#, w.antonyms() );
     }
 }
 
@@ -3356,4 +3482,4 @@ pub fn main()
         domain();        
     }
 }
-// 3359
+// 3485
