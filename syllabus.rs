@@ -3183,447 +3183,51 @@ impl Entity
     {
         vec!
         [
-            definition!
-            [
-                Interrogative
-                Which
-            ],
-
-            definition!
-            [
-                Interrogative
-                Which
-                Thing
-            ],
-
-            definition!
-            [
-                Interrogative
-                Which
-                Event
-            ],
-
-            definition!
-            [
-                Interrogative
-                Which
-                Circumstance
-            ],
-
-            definition!
-            [
-                Interrogative
-                Which
-                Of
-                An
-                Open
-                Ended
-                Set
-                Of
-                Possibilities
-            ],
-
-            definition!
-            [
-                Relative
-                Which
-                The
-            ],
-
-            definition!
-            [
-                Relative
-                Which
-                That
-            ],
-
-            definition!
-            [
-                FusedRelative
-                That
-                Which
-            ],
-
-            definition!
-            [
-                FusedRelative
-                Those
-                That
-            ],
-
-            definition!
-            [
-                FusedRelative
-                The
-                Thing
-                That
-            ],
-
-            definition!
-            [
-                FusedRelative
-                The
-                Things
-                That
-            ],
-
-            definition!
-            [
-                Relative
-                Any
-                That
-            ],
-
-            definition!
-            [
-                Relative
-                All
-                That
-            ],
-
-            definition!
-            [
-                Relative
-                Whatever
-            ],
-
-            definition!
-            [
-                Relative
-                That
-            ],
-
-            definition!
-            [
-                Relative
-                Which
-            ],
-
-            definition!
-            [
-                Relative
-                Who
-            ],
-            
-            definition!
-            [
-                Interjection
-                An
-                Expression
-                Of
-                Surprise
-            ],
-
-            definition!
-            [
-                Interjection
-                An
-                Expression
-                Of
-                Disbelief
-            ],
-            
-            definition!
-            [
-                FusedRelative
-                Anything
-                That
-            ],
-            
-            definition!
-            [
-                FusedRelative
-                All
-                That
-            ],
-            
-            definition!
-            [
-                FusedRelative
-                Whatever
-            ],
-            
-            definition!
-            [
-                Indexable
-                The
-                Identity
-                Of
-                A
-                Thing
-                As
-                An
-                Answer
-                To
-                A
-                Question
-                Of
-                What
-            ],
-
-            definition!
-            [
-                Interjection
-                What
-                Do
-                You
-                Want
-            ],
-
-            definition!
-            [
-                Interjection
-                An
-                Abrupt
-                Usually
-                Unfriendly
-                Enquiry
-                As
-                To
-                What
-                A
-                Person
-                Desires
-            ],
-
-            definition!
-            [
-                Noteable
-                Emphasises
-                That
-                Something
-                Is
-                Noteworthy
-                Or
-                Remarkable
-                In
-                Quality
-                Or
-                Degree
-            ],
-
-            definition!
-            [
-                Noteable
-                Used
-                In
-                Combination
-                With
-                Some
-                Other
-                Determiner
-            ],
-
-            definition!
-            [
-                Indexable
-                Something
-                That
-                Is
-                Addressed
-                By
-                What
-            ],
-
-            definition!
-            [
-                Adverb
-                Used
-                Before
-                A
-                Prepositional
-                Phrase
-                To
-                Emphasise
-                That
-                Something
-                Is
-                Taken
-                Into
-                Consideration
-                As
-                A
-                Cause
-                Or
-                Reason
-            ],
-            
-            definition!
-            [
-                Adverb
-                Used
-                In
-                The
-                Conjunction
-                With
-                With
-            ],
-
-            definition!
-            [
-                Exclamative
-                Used
-                To
-                Form
-                Exclamations
-                Indicating
-                That
-                Something
-                Is
-                Remarkable
-            ],
-
-            definition!
-            [
-                Adjective
-                Used
-                To
-                Form
-                Exclamations
-                Followed
-                By
-                A
-                Question
-            ],
-
-            definition!
-            [
-                Noun
-                Emphasizes
-                The
-                Truth
-                Of
-                An
-                Assertion
-                Made
-                To
-                Contradict
-                An
-                Evidently
-                False
-                Assumption
-                Held
-                By
-                The
-                Person
-            ],
-
-            definition!
-            [
-                Interjection
-                Indicating
-                A
-                Guess
-                To
-                Try
-                To
-                Recall
-                Information
-            ],
-
-            definition!
-            [
-                Interjection
-                Indicating
-                An
-                Approximation
-                To
-                Try
-                To
-                Recall
-                Information
-            ],
-
-            definition!
-            [
-                Interjection
-                Indicating
-                A
-                Pause
-                To
-                Try
-                To
-                Recall
-                Information
-            ],
-
-            definition!
-            [
-                Adjective
-                As
-                A
-                Relative
-                Pronoun
-            ],
-
-            definition!
-            [
-                Ambiguous
-                Something
-            ],
-
-            definition!
-            [
-                Ambiguous
-                Thing
-            ],
-
-            definition!
-            [
-                Ambiguous
-                Stuff
-            ],
-
-            definition!
-            [
-                Truncation
-                What
-                Do
-                You
-                Say
-            ],
-
-            definition!
-            [
-                Rhetorical
-                Used
-                As
-                A
-                Tag
-                Question
-                To
-                Emphasise
-                A
-                Statement
-                Inviting
-                Agreement
-            ],
-
-            definition!
-            [
-                Pronoun
-                Used
-                In
-                Asking
-                Questions
-                Regarding
-                Either
-                Persons
-                Or
-                Things
-            ],
-
-            definition!
-            [
-                Adjective
-                How
-            ],
-
-            definition!
-            [
-                Adjective
-                Which
-            ]
+            definition![ Interrogative Which ],
+            definition![ Interrogative Which Thing ],
+            definition![ Interrogative Which Event ],
+            definition![ Interrogative Which Circumstance ],
+            definition![ Interrogative Which Of An Open Ended Set Of Possibilities ],
+            definition![ Relative Which The ],
+            definition![ Relative Which That ],
+            definition![ FusedRelative That Which ],
+            definition![ FusedRelative Those That ],
+            definition![ FusedRelative The Thing That ],
+            definition![ FusedRelative The Things That ],
+            definition![ Relative Any That ],
+            definition![ Relative All That ],
+            definition![ Relative Whatever ],
+            definition![ Relative That ],
+            definition![ Relative Which ],
+            definition![ Relative Who ],            
+            definition![ Interjection An Expression Of Surprise ],
+            definition![ Interjection An Expression Of Disbelief ],            
+            definition![ FusedRelative Anything That ],            
+            definition![ FusedRelative All That ],            
+            definition![ FusedRelative Whatever ],            
+            definition![ Indexable The Identity Of A Thing As An Answer To A Question Of What ],
+            definition![ Interjection What Do You Want ],
+            definition![ Interjection An Abrupt Usually Unfriendly Enquiry As To What A Person Desires ],
+            definition![ Noteable Emphasises That Something Is Noteworthy Or Remarkable In Quality Or Degree ],
+            definition![ Noteable Used In Combination With Some Other Determiner ],
+            definition![ Indexable Something That Is Addressed By What ],
+            definition![ Adverb Used Before A Prepositional Phrase To Emphasise That Something Is Taken Into Consideration As A Cause Or Reason ],            
+            definition![ Adverb Used In The Conjunction With With ],
+            definition![ Exclamative Used To Form Exclamations Indicating That Something Is Remarkable ],
+            definition![ Adjective Used To Form Exclamations Followed By A Question ],
+            definition![ Noun Emphasizes The Truth Of An Assertion Made To Contradict An Evidently False Assumption Held By The Person ],
+            definition![ Interjection Indicating A Guess To Try To Recall Information ],
+            definition![ Interjection Indicating An Approximation To Try To Recall Information ],
+            definition![ Interjection Indicating A Pause To Try To Recall Information ],
+            definition![ Adjective As A Relative Pronoun ],
+            definition![ Ambiguous Something ],
+            definition![ Ambiguous Thing ],
+            definition![ Ambiguous Stuff ],
+            definition![ Truncation What Do You Say ],
+            definition![ Rhetorical Used As A Tag Question To Emphasise A Statement Inviting Agreement ],
+            definition![ Pronoun Used In Asking Questions Regarding Either Persons Or Things ],
+            definition![ Adjective How ],
+            definition![ Adjective Which ],
         ]
     }
 
@@ -3631,77 +3235,9 @@ impl Entity
     {
         vec!
         [
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Of,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Belonging,
-                Entity::To,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Persons,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Which,
-                Entity::Peoples,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Relative,
-                Entity::That,
-                Entity::Of,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Relative,
-                Entity::Those,
-                Entity::Of,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Relative,
-                Entity::That,
-                Entity::Belonging,
-                Entity::To,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::Relative,
-                Entity::Those,
-                Entity::Belonging,
-                Entity::To,
-                Entity::Whom,
-            ],
-            vec!
-            [
-                Entity::Possessive,
-                Entity::Of,
-                Entity::Who,
-            ],
-            vec!
-            [
-                Entity::Possessive,
-                Entity::Of,
-                Entity::Which,
-            ],
+            definition![ Interrogative Of Whom ],
+            definition![ Interrogative Belonging To Whom ],            definition![ Interrogative Which Persons ],            definition![ Interrogative Which Peoples ],            definition![ Interrogative Relative That Of Whom ],            definition![ Interrogative Relative Those Of Whom ],            definition![ Interrogative Relative That Belonging To Whom ],            definition![ Interrogative Relative Those Belonging To Whom ],            definition![ Possessive Of Who ],
+            definition![ Possessive Of Which ],
         ]
     }
 
@@ -3709,67 +3245,13 @@ impl Entity
     {
         vec!
         [
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::What,
-                Entity::Of,
-                Entity::Those,
-                Entity::Mentioned,
-                Entity::Or,
-                Entity::Implied,
-            ],
-            
-            vec!
-            [
-                Entity::Interrogative,
-                Entity::What,
-                Entity::One,
-                Entity::Or,
-                Entity::Ones,                
-                Entity::Of,
-                Entity::Those,
-                Entity::Mentioned,
-                Entity::Or,
-                Entity::Implied,
-            ],
-            
-            vec!
-            [
-                Entity::Adverb,
-                Entity::Whichever,
-            ],
-            
-            vec!
-            [
-                Entity::Adjective,
-                Entity::Of,
-                Entity::What,
-                Entity::Sort,
-                Entity::Or,
-                Entity::Kind,
-            ],
-            
-            vec!
-            [
-                Entity::Relative,
-                Entity::Designates,
-                Entity::Those,
-                Entity::Previously,
-                Entity::Mentioned,
-            ],
-            
-            vec!
-            [
-                Entity::Relative,
-                Entity::Gives,
-                Entity::Further,
-                Entity::Information,
-                Entity::About,
-                Entity::Something,
-                Entity::Previously,
-                Entity::Mentioned,
-            ],
+            definition![ Interrogative What Of Those Mentioned Or Implied ],            
+            definition![ Interrogative What One Or Ones],
+            definition![ Of Those Mentioned Or Implied ],            
+            definition![ Adverb Whichever ],            
+            definition![ Adjective Of What Sort Or Kind ],            
+            definition![ Relative Designates Those Previously Mentioned ],            
+            definition![ Relative Gives Further Information About Something Previously Mentioned ],
         ]
     }
 
@@ -3777,44 +3259,12 @@ impl Entity
     {
         vec!
         [
-            vec!
-            [
-                Entity::Adjective,
-                Entity::Regardless,
-                Entity::Of,
-            ],
-            vec!
-            [
-                Entity::Adjective,
-                Entity::No,
-                Entity::Matter,
-                Entity::Which,
-            ],
-            vec!
-            [
-                Entity::Adjective,
-                Entity::Any,
-                Entity::That,
-            ],
-            vec!
-            [
-                Entity::Adjective,
-                Entity::Those,
-                Entity::That,
-            ],
-            vec!
-            [
-                Entity::Adjective,
-                Entity::According,
-                Entity::To,
-            ],
-            vec!
-            [
-                Entity::Adjective,
-                Entity::Depending,
-                Entity::Upon,
-                Entity::Which,
-            ],
+            definition![ Adjective Regardless Of ],
+            definition![ Adjective No Matter Which ],
+            definition![ Adjective Any That ],
+            definition![ Adjective Those That ],
+            definition![ Adjective According To ],
+            definition![ Adjective Depending Upon Which ],
         ]
     }
 }
@@ -3866,107 +3316,12 @@ impl Ident
         use Ident::{*};
         match self
         {
-            Who( _ ) =>
-            {
-                vec!
-                [
-                    Entity::Whom,
-                    Entity::Which,
-                    Entity::Whoever,
-                    Entity::Persons,
-                    Entity::Peoples,
-                    Entity::One,
-                    Entity::Individual,
-                    Entity::Being,
-                    Entity::Mortal,
-                    Entity::Soul,
-                    Entity::Party,
-                    Entity::Personage,
-                    Entity::Human,
-                    Entity::Man,
-                    Entity::Woman,
-                    Entity::Character,
-                    Entity::Customer,
-                    Entity::Inhabitant,
-                    Entity::Denizen,
-                ]
-            }
-
-            What( _ ) =>
-            {
-                vec!
-                [
-                    Entity::Which,
-                    Entity::Whatever,
-                    Entity::Whichever,
-                    Entity::As,
-                    Entity::How,
-                    Entity::Anything,
-                    Entity::Why,
-                    Entity::Forasmuch,
-                    Entity::Something,
-                    Entity::Like,
-                    Entity::Whatsoever,
-                    Entity::Any,
-                    Entity::Pardon,
-                    Entity::Huh,
-                    Entity::Fie,
-                ]
-            }
-
-            Whose( _ ) =>
-            {
-                vec!
-                [
-                    Entity::Whom,
-                    Entity::Whomevers,
-                    Entity::Whoever,
-                    Entity::Whatever,
-                    Entity::Whosoever,
-                    Entity::Whosoevers,
-                    Entity::Whomsoevers,
-                    Entity::Whoevers,
-                ]
-            }
-
-            Which( _ ) =>
-            {
-                vec!
-                [
-                    Entity::That,
-                    Entity::What,
-                    Entity::Who,
-                    Entity::Whom,
-                    Entity::Such,
-                    Entity::This,
-                ]
-            }
-            
-            Whichever( _ ) =>
-            {
-                vec!
-                [
-                    Entity::Any,
-                    Entity::Whatever,
-                    Entity::Either,
-                    Entity::What,
-                    Entity::That,
-                    Entity::Whatsoever,
-                    Entity::Whether,
-                    Entity::Both,
-                    Entity::Regardless,
-                    Entity::Whoever,
-                    Entity::One,
-                    Entity::Anything,
-                    Entity::Such,
-                    Entity::So,
-                ]
-            }
-
-            _ =>
-            {
-                vec![]
-            }
+            Who( _ ) => { definition![ Whom Which Whoever Persons Peoples One Individual Being Mortal Soul Party Personage Human Man Woman Character Customer Inhabitant Denizen ] }
+            What( _ ) => { definition![ Which Whatever Whichever As How Anything Why Forasmuch Something Like Whatsoever Any Pardon Huh Fie ] }
+            Whose( _ ) => { definition![ Whom Whomevers Whoever Whatever Whosoever Whosoevers Whomsoevers Whoevers ] }
+            Which( _ ) => { definition![ That What Who Whom Such This ] }            
+            Whichever( _ ) => { definition![ Any Whatever Either What That Whatsoever Whether Both Regardless Whoever One Anything Such So ] }
+            _ => { vec![] }
         }
     }
 
@@ -3975,98 +3330,12 @@ impl Ident
         use Ident::{*};
         match self
         {
-            Who( _ ) =>
-            {
-                vec!
-                [
-                    Entity::What,
-                    Entity::Whoever,
-                    Entity::Whomever,
-                    Entity::Nobody,
-                    Entity::Anyone,
-                    Entity::Noone,
-                    Entity::Everybody,
-                    Entity::As,
-                    Entity::How,
-                ]
-            }
-
-            What( _ ) =>
-            {
-                vec!
-                [
-                    Entity::Not,
-                    Entity::Understood,
-                    Entity::Yass,
-                    Entity::Despite,
-                    Entity::Roger,
-                ]
-            }
-            
-            Whose( _ ) =>
-            {
-                vec!
-                [
-                    Entity::My,
-                    Entity::Mine,
-                    Entity::Our,
-                    Entity::Ours,
-                    Entity::Your,
-                    Entity::Yours,
-                    Entity::His,
-                    Entity::Her,
-                    Entity::Hers,
-                    Entity::Its,
-                    Entity::Their,
-                    Entity::Theirs,
-                    Entity::This,
-                    Entity::That,
-                    Entity::These,
-                    Entity::Those,
-                    Entity::Somebodys,
-                    Entity::Anyones,
-                    Entity::Everyones,
-                    Entity::Nobodys,
-                    Entity::Anybodys,
-                    Entity::Someones,
-                ]
-            }
-
-            Which( _ ) =>
-            {
-                vec!
-                [
-                    Entity::None,
-                    Entity::Neither,
-                    Entity::Nothing,
-                    Entity::Nobody,
-                    Entity::Nowhere,
-                    Entity::Never,
-                    Entity::Whoever,
-                    Entity::Any,
-                    Entity::All,
-                    Entity::Whatever,
-                    Entity::Whichever,
-                ]
-            }
-            
-            Whichever( _ ) =>
-            {
-                vec!
-                [
-                    Entity::None,
-                    Entity::Neither,
-                    Entity::Nothing,
-                    Entity::Nobody,
-                    Entity::Nowhere,
-                    Entity::Never,
-                ]
-            }
-
-            _ =>
-            {
-                vec![]
-            }
+            Who( _ ) => { definition![ What Whoever Whomever Nobody Anyone Noone Everybody As How ] }
+            What( _ ) => { definition![ Not Understood Yass Despite Roger ] }
+            Whose( _ ) => { definition![ My Mine Our Ours Your Yours His Her Hers Its Their Theirs This That These Those Somebodys Anyones Everyones Nobodys Anybodys Someones ] }
+            Which( _ ) => { definition![ None Neither Nothing Nobody Nowhere Never Whoever Any All Whatever Whichever ] }
+            Whichever( _ ) => { definition![ None Neither Nothing Nobody Nowhere Never ] }
+            _ => { vec![] }
         }
     }
 }
@@ -4087,4 +3356,4 @@ pub fn main()
         domain();        
     }
 }
-// 4229
+// 3359
