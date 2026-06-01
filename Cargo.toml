@@ -1,0 +1,25 @@
+[package]
+name = "dictionary"
+version = "26.06.01"
+edition = "2024"
+
+[[bin]]
+name = "dictionary"
+path = "src/dictionary.rs"
+test = false
+
+[dependencies]
+# Add dependencies here.
+[dev-dependencies]
+# Add development dependencies here.
+#
+# To reduce bootstrap's compile times, only include the bootstrap itself.
+[profile.dev]
+debug = 0
+
+[profile.dev.package]
+# Only use debuginfo=1 to further reduce compile times.
+dictionary.debug = 1
+
+[features]
+# Add features here.
