@@ -4,6 +4,21 @@ version = "26.06.01"
 edition = "2024"
 
 [[bin]]
+name = "core"
+path = "src/core.rs"
+test = false
+
+[[bin]]
+name = "domain"
+path = "src/domain.rs"
+test = false
+
+[[bin]]
+name = "nocore"
+path = "src/nocore.rs"
+test = false
+
+[[bin]]
 name = "dictionary"
 path = "src/dictionary.rs"
 test = false
