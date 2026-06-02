@@ -6,7 +6,7 @@
 
 use std::fmt::Debug;
 
-macro_rules! term
+#[macro_export] #[macro_use] macro_rules! term
 {
     ($($i:ident), * ) =>
     {
@@ -26,4 +26,32 @@ macro_rules! term
         pub type Definition = Vec<Entity>;
         pub type Definitions = Vec<Definition>;
     };
+}
+
+#[macro_export] #[macro_use] macro_rules! definition
+{
+    ($($i:ident)* ) =>
+    {
+        vec!
+        [
+            $( Entity::$i, )*
+        ]
+    };
+}
+
+pub unsafe fn domain()
+{
+    unsafe
+    {
+        let when = Ident::when();
+        println!( r#"when::synonyms( {:?} )"#, when );
+    }
+}
+
+pub fn main()
+{
+    unsafe
+    {
+        domain();        
+    }
 }
